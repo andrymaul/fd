@@ -733,7 +733,7 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
           )}
 
-          {/* Quick Trial Start Button for Pemula Users and Admin Testing */}
+          {/* Quick Trial Start Button for Starter Users and Admin Testing */}
           {isTrialEnabled && currentUser && !isTrialActive && (!hasClaimedTrial || currentUser.role === 'admin') && onStartTrial && (
             <button
               onClick={onStartTrial}
@@ -746,7 +746,7 @@ export const Header: React.FC<HeaderProps> = ({
           )}
 
           {/* Quick Pricing Badge */}
-          {currentUser && (currentUser.subscriptionPlan === 'Gratis' || currentUser.subscriptionPlan === 'Pemula') && !isTrialActive && (
+          {currentUser && (currentUser.subscriptionPlan === 'Gratis' || currentUser.subscriptionPlan === 'Starter' || currentUser.subscriptionPlan === 'Pemula') && !isTrialActive && (
             <button
               onClick={onOpenPricingModal}
               title="Upgrade ke Paket Pro Akses Penuh"

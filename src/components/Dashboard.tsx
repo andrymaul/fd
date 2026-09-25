@@ -123,7 +123,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-900/60 text-amber-900 dark:text-amber-200 border border-amber-300 dark:border-amber-700 font-bold">Live Preview</span>
               </p>
               <p className="text-[11px] text-slate-600 dark:text-slate-300 font-medium">
-                Klik tombol di samping untuk menguji langsung alur user Pemula, aktivasi trial 3 hari, hingga trial berakhir:
+                Klik tombol di samping untuk menguji langsung alur user Starter, aktivasi trial 3 hari, hingga trial berakhir:
               </p>
             </div>
           </div>
@@ -146,10 +146,10 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
             <button
               onClick={() => onSimulateTrial('free-new')}
-              title="Ubah akun menjadi Akun Pemula baru yang belum pernah trial"
+              title="Ubah akun menjadi Akun Starter baru yang belum pernah trial"
               className="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-bold text-xs cursor-pointer shadow-xs transition-transform hover:scale-105"
             >
-              1. Jadi Akun Pemula
+              1. Jadi Akun Starter
             </button>
             <button
               onClick={() => onSimulateTrial('start-trial')}
@@ -160,7 +160,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
             </button>
             <button
               onClick={() => onSimulateTrial('trial-expired')}
-              title="Simulasikan Waktu 72 Jam Habis (Downgrade ke Pemula & Munculkan Modal Selesai)"
+              title="Simulasikan Waktu 72 Jam Habis (Downgrade ke Starter & Munculkan Modal Selesai)"
               className="px-3 py-1.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-300 dark:border-rose-800 hover:bg-rose-100 text-rose-700 dark:text-rose-300 font-bold text-xs cursor-pointer shadow-xs transition-transform hover:scale-105"
             >
               3. Simulasikan Trial Selesai
@@ -228,7 +228,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                   </span>
                 ) : (
                   <span className="text-xs font-black text-teal-300 font-outfit">
-                    {currentUser?.subscriptionPlan || 'Pemula'}
+                    {currentUser?.subscriptionPlan || 'Starter'}
                   </span>
                 )}
               </div>
@@ -257,7 +257,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         </div>
       </div>
 
-      {/* Trial Invitation Callout for Pemula users and Admin Testing */}
+      {/* Trial Invitation Callout for Starter users and Admin Testing */}
       {isTrialEnabled && currentUser && !isTrialActive && (!hasClaimedTrial || currentUser.role === 'admin') && onStartTrial && (
         <div className="bg-gradient-to-r from-teal-500/10 via-emerald-500/10 to-teal-500/10 dark:from-teal-950/40 dark:via-emerald-950/40 dark:to-teal-950/40 border-2 border-teal-500/30 rounded-3xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm animate-in fade-in">
           <div className="flex items-center gap-3.5">

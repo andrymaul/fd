@@ -80,10 +80,10 @@ export const ProFeatureGate: React.FC<ProFeatureGateProps> = ({
         {/* Feature Comparison Box */}
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4 text-left max-w-2xl mx-auto text-xs">
           
-          {/* Paket Pemula Card */}
+          {/* Paket Starter Card */}
           <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#06191c] border border-slate-200 dark:border-slate-800 space-y-2">
             <div className="flex items-center justify-between">
-              <span className="font-black text-slate-800 dark:text-white">Paket Pemula (Gratis)</span>
+              <span className="font-black text-slate-800 dark:text-white">Paket Starter (Gratis)</span>
               <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Aktif</span>
             </div>
             <ul className="space-y-1.5 text-slate-600 dark:text-slate-400 font-medium">
@@ -115,7 +115,7 @@ export const ProFeatureGate: React.FC<ProFeatureGateProps> = ({
             <ul className="space-y-1.5 text-teal-950 dark:text-teal-100 font-medium">
               <li className="flex items-center gap-1.5">
                 <Check className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 shrink-0" />
-                <span>Semua Fitur Paket Pemula</span>
+                <span>Semua Fitur Paket Starter</span>
               </li>
               <li className="flex items-center gap-1.5">
                 <Check className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 shrink-0" />

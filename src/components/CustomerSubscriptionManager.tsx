@@ -177,7 +177,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
               name: (rc.name && !rc.name.includes('@')) ? rc.name : (existing.name || rc.name),
               institution: rc.institution || existing.institution || '',
               phone: rc.phone || existing.phone || '',
-              subscriptionPlan: rc.subscriptionPlan || existing.subscriptionPlan || 'Pemula'
+              subscriptionPlan: rc.subscriptionPlan === 'Pemula' ? 'Starter' : (rc.subscriptionPlan || existing.subscriptionPlan || 'Starter')
             });
           }
         }
@@ -222,7 +222,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
 
   // Import from Firebase State
   const [importEmailsText, setImportEmailsText] = useState('');
-  const [importPlan, setImportPlan] = useState<'Pro' | 'Pemula'>('Pro');
+  const [importPlan, setImportPlan] = useState<'Pro' | 'Starter'>('Pro');
   const [importInstitution, setImportInstitution] = useState('');
 
   const handleImportEmailsFromFirebase = async (e: React.FormEvent) => {
@@ -242,7 +242,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
     }
 
     const expiryDate = new Date();
-    expiryDate.setFullYear(expiryDate.getFullYear() + (importPlan === 'Pemula' ? 5 : 1));
+    expiryDate.setFullYear(expiryDate.getFullYear() + (importPlan === 'Starter' ? 5 : 1));
 
     const newProfiles: UserProfile[] = [];
 
@@ -261,13 +261,13 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
           institution: importInstitution || 'Klinik / Faskes Terdaftar',
           licenseNumber: '',
           notes: 'Diimpor langsung dari data pendaftaran Firebase Console',
-          role: importPlan === 'Pemula' ? 'free' : 'customer',
+          role: importPlan === 'Starter' ? 'free' : 'customer',
           subscriptionPlan: importPlan,
           subscriptionStatus: 'active',
-          maxDrugsOverride: importPlan === 'Pemula' ? 20 : 30,
-          canExportPdf: importPlan !== 'Pemula',
-          canAccessRenal: importPlan !== 'Pemula',
-          canAccessPolypharmacy: importPlan !== 'Pemula',
+          maxDrugsOverride: importPlan === 'Starter' ? 20 : 30,
+          canExportPdf: importPlan !== 'Starter',
+          canAccessRenal: importPlan !== 'Starter',
+          canAccessPolypharmacy: importPlan !== 'Starter',
           expiresAt: expiryDate.toISOString(),
           createdAt: new Date().toISOString()
         };
@@ -298,7 +298,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
     phone: '',
     institution: '',
     licenseNumber: '',
-    subscriptionPlan: 'Pro' as 'Pemula' | 'Pro' | 'Gratis' | string,
+    subscriptionPlan: 'Pro' as 'Starter' | 'Pemula' | 'Pro' | 'Gratis' | string,
     subscriptionStatus: 'active' as 'active' | 'expired' | 'trial',
     createdAtDate: '',
     expiresAtDate: '',
@@ -412,7 +412,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
   const stats = useMemo(() => {
     const total = customers.length;
     const proCount = customers.filter(c => (c.subscriptionPlan === 'Pro' || c.subscriptionPlan === 'Elite' || c.subscriptionPlan === 'Klinik') && c.subscriptionStatus === 'active').length;
-    const freeCount = customers.filter(c => (c.subscriptionPlan === 'Pemula' || c.subscriptionPlan === 'Gratis') || c.subscriptionStatus === 'trial').length;
+    const freeCount = customers.filter(c => (c.subscriptionPlan === 'Starter' || c.subscriptionPlan === 'Pemula' || c.subscriptionPlan === 'Gratis') || c.subscriptionStatus === 'trial').length;
     const activeCount = customers.filter(c => c.subscriptionStatus === 'active').length;
     const onlineCount = customers.filter(c => isCustomerOnline(c)).length;
     const unverifiedCount = customers.filter(c => !c.isEmailVerified).length;
@@ -436,7 +436,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       
       const matchesPlan = selectedPlanFilter === 'Semua' || 
         cust.subscriptionPlan === selectedPlanFilter ||
-        (selectedPlanFilter === 'Pemula' && cust.subscriptionPlan === 'Gratis') ||
+        ((selectedPlanFilter === 'Starter' || selectedPlanFilter === 'Pemula') && (cust.subscriptionPlan === 'Starter' || cust.subscriptionPlan === 'Pemula' || cust.subscriptionPlan === 'Gratis')) ||
         (selectedPlanFilter === 'Pro' && (cust.subscriptionPlan === 'Pro' || cust.subscriptionPlan === 'Elite' || cust.subscriptionPlan === 'Klinik'));
       
       const matchesStatus = selectedStatusFilter === 'Semua' || cust.subscriptionStatus === selectedStatusFilter;
@@ -555,7 +555,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
     setEditModalTab('profile');
     setShowModalPassword(false);
     
-    const isPro = cust.subscriptionPlan !== 'Gratis' && cust.subscriptionPlan !== 'Pemula';
+    const isPro = cust.subscriptionPlan !== 'Gratis' && cust.subscriptionPlan !== 'Pemula' && cust.subscriptionPlan !== 'Starter';
 
     const createdFormatted = cust.createdAt 
       ? new Date(cust.createdAt).toISOString().split('T')[0]
@@ -621,7 +621,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       institution: formState.institution,
       licenseNumber: formState.licenseNumber,
       notes: formState.notes,
-      role: (formState.subscriptionPlan === 'Gratis' || formState.subscriptionPlan === 'Pemula') ? 'free' : 'customer',
+      role: (formState.subscriptionPlan === 'Gratis' || formState.subscriptionPlan === 'Starter' || formState.subscriptionPlan === 'Pemula') ? 'free' : 'customer',
       subscriptionPlan: formState.subscriptionPlan,
       subscriptionStatus: formState.subscriptionStatus,
       maxDrugsOverride: Number(formState.maxDrugsOverride),
@@ -1017,7 +1017,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       `"${(c.phone || '').replace(/"/g, '""')}"`,
       `"${(c.institution || '').replace(/"/g, '""')}"`,
       `"${(c.licenseNumber || '').replace(/"/g, '""')}"`,
-      `"${c.subscriptionPlan || 'Pemula'}"`,
+      `"${c.subscriptionPlan === 'Pemula' ? 'Starter' : (c.subscriptionPlan || 'Starter')}"`,
       `"${c.subscriptionStatus || 'active'}"`,
       `"${c.createdAt ? new Date(c.createdAt).toLocaleDateString('id-ID') : '-'}"`,
       `"${c.expiresAt ? new Date(c.expiresAt).toLocaleDateString('id-ID') : '-'}"`
@@ -1215,22 +1215,22 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
           <p className="text-[11px] text-amber-200/70 font-semibold">Rp 199rb / tahun per akun</p>
         </div>
 
-        {/* 3. Paket Pemula Gratis - Quiet Executive Slate */}
+        {/* 3. Paket Starter Gratis - Quiet Executive Slate */}
         <div 
           onClick={() => {
             setSelectedCardFilter('free');
-            setSelectedPlanFilter('Pemula');
+            setSelectedPlanFilter('Starter');
             setSelectedOnlineFilter('Semua');
           }}
           className={`p-5 rounded-2xl space-y-2 cursor-pointer transition-all duration-200 hover:scale-[1.015] hover:shadow-2xl text-slate-100 border ${
-            selectedPlanFilter === 'Pemula'
+            selectedPlanFilter === 'Starter' || selectedPlanFilter === 'Pemula'
               ? 'ring-2 ring-slate-400 bg-gradient-to-br from-[#1e293b] via-[#141d2b] to-[#0b1017] border-slate-400/70 shadow-xl shadow-slate-950/40'
               : 'bg-gradient-to-br from-[#161f2e] via-[#0f1722] to-[#090e15] border-slate-700/60 shadow-lg shadow-black/20 hover:border-slate-500/60'
           }`}
-          title="Klik untuk memfilter pelanggan Paket Pemula"
+          title="Klik untuk memfilter pelanggan Paket Starter"
         >
           <div className="flex items-center justify-between text-slate-300">
-            <span className="text-[11px] font-extrabold uppercase tracking-wider text-slate-300/90 font-outfit">Paket Pemula Gratis</span>
+            <span className="text-[11px] font-extrabold uppercase tracking-wider text-slate-300/90 font-outfit">Paket Starter Gratis</span>
             <div className="w-8 h-8 rounded-xl bg-slate-700/30 text-slate-300 border border-slate-600/40 flex items-center justify-center backdrop-blur-xs shadow-2xs">
               <Building2 className="w-4 h-4 text-slate-300" />
             </div>
@@ -1274,12 +1274,12 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
             value={selectedPlanFilter}
             onChange={(e) => {
               setSelectedPlanFilter(e.target.value);
-              setSelectedCardFilter(e.target.value === 'Pro' ? 'pro' : e.target.value === 'Pemula' ? 'free' : 'all');
+              setSelectedCardFilter(e.target.value === 'Pro' ? 'pro' : (e.target.value === 'Starter' || e.target.value === 'Pemula') ? 'free' : 'all');
             }}
             className="bg-slate-50 dark:bg-[#06191c] border border-slate-200 dark:border-[#184c53] rounded-xl text-xs px-2.5 py-2 font-bold text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-[#3dbfd1] cursor-pointer shrink-0 font-outfit"
           >
             <option value="Semua">📦 Semua Paket</option>
-            <option value="Pemula">Pemula (Gratis)</option>
+            <option value="Starter">Starter (Gratis)</option>
             <option value="Pro">Pro (199rb/thn)</option>
           </select>
 
@@ -1649,7 +1649,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                         ) : (
                           <div className="inline-flex items-center gap-1.5 flex-wrap">
                             <span className="inline-flex items-center bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700/80 px-2.5 py-0.5 rounded-full text-[11px] font-bold font-outfit">
-                              Pemula
+                              Starter
                             </span>
                             <button
                               type="button"
@@ -1745,7 +1745,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                               <MessageSquare className="w-3.5 h-3.5 text-amber-500" />
                             </button>
                           )}
-                          {(cust.subscriptionPlan === 'Pemula' || cust.subscriptionPlan === 'Gratis') && (
+                          {(cust.subscriptionPlan === 'Starter' || cust.subscriptionPlan === 'Pemula' || cust.subscriptionPlan === 'Gratis') && (
                             <button
                               type="button"
                               onClick={() => handleOpenWaTemplate(cust, 'pro_offer')}
@@ -1967,7 +1967,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                     onChange={(e) => setFormState({ ...formState, subscriptionPlan: e.target.value as any })}
                     className="w-full px-3.5 py-2 bg-slate-50 dark:bg-[#06191c] border border-slate-200 dark:border-[#184c53] rounded-xl text-xs font-bold text-slate-700 dark:text-slate-200 focus:ring-2 focus:ring-[#3dbfd1] focus:outline-none"
                   >
-                    <option value="Pemula">Pemula (Gratis)</option>
+                    <option value="Starter">Starter (Gratis)</option>
                     <option value="Pro">Pro (Rp 199.000 / tahun)</option>
                   </select>
                 </div>
@@ -2222,7 +2222,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                         onChange={(e) => setFormState({ ...formState, subscriptionPlan: e.target.value as any })}
                         className="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-[#06191c] border border-slate-200 dark:border-[#184c53] rounded-xl text-xs font-bold text-slate-700 dark:text-slate-200 focus:ring-2 focus:ring-[#3dbfd1] focus:outline-none"
                       >
-                        <option value="Pemula">Pemula (Gratis)</option>
+                        <option value="Starter">Starter (Gratis)</option>
                         <option value="Pro">Pro (Rp 199.000 / tahun)</option>
                       </select>
                     </div>
@@ -2409,7 +2409,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                         className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-200 font-bold text-xs hover:bg-slate-300 transition-colors cursor-pointer font-outfit"
                       >
                         <Lock className="w-3.5 h-3.5" />
-                        <span>Batasi ke Pemula</span>
+                        <span>Batasi ke Starter</span>
                       </button>
                     </div>
                   </div>
@@ -2434,7 +2434,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                           onChange={(e) => setFormState({ ...formState, maxDrugsOverride: Number(e.target.value) })}
                           className="w-28 px-3.5 py-2 bg-white dark:bg-[#092327] border border-slate-200 dark:border-[#184c53] rounded-xl text-xs font-black font-mono focus:ring-2 focus:ring-[#3dbfd1] focus:outline-none"
                         />
-                        <span className="text-xs text-slate-500 font-medium">obat sekaligus (Standar: 20 Pemula / 99 Pro)</span>
+                        <span className="text-xs text-slate-500 font-medium">obat sekaligus (Standar: 20 Starter / 99 Pro)</span>
                       </div>
                     </div>
 
@@ -3090,7 +3090,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                     className="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-[#06191c] border border-slate-200 dark:border-[#184c53] rounded-xl text-xs font-bold text-slate-700 dark:text-slate-200 focus:ring-2 focus:ring-[#3dbfd1] focus:outline-none"
                   >
                     <option value="Pro">Pro (1 Tahun Akses Penuh)</option>
-                    <option value="Pemula">Pemula (Gratis Dasar)</option>
+                    <option value="Starter">Starter (Gratis Dasar)</option>
                   </select>
                 </div>
 
@@ -3221,14 +3221,14 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                   type="button"
                   onClick={() => setWaMessage(`Halo ${waModalCustomer.name}${waModalCustomer.institution ? ` (${waModalCustomer.institution})` : ''},\n\nSemoga aktivitas pelayanan kefarmasian Anda senantiasa berjalan lancar. 🙏\n\nKami melihat Anda telah bergabung di platform Farmasi Druggist. Untuk menunjang praktik klinis harian di apotek/faskes Anda agar semakin presisi, cepat, dan aman, kami ingin memberikan Penawaran Khusus Upgrade Paket Pro Tahunan:\n\n🌟 Fitur Unggulan Paket Pro Farmasi Druggist:\n1. Cek Interaksi Multi-Obat Tanpa Batas + Ekspor Lembar Telaah PDF Resmi\n2. Kompatibilitas IV Y-Site & Syringe Admixtures (147+ Obat Injeksi, 363 Pasangan Uji)\n3. Evaluasi Polifarmasi & Pasien Geriatri (Kriteria Beers 2023 & STOPP/START)\n4. Penyesuaian Dosis Pasien Ginjal (Cockcroft-Gault, CKD-EPI, eGFR)\n5. Kalkulator Puyer Pediatri & BUD (USP 795/797)\n6. Skrining Keamanan Bumil & Menyusui (Trimester 1-3 & Klasifikasi Laktasi Hale)\n7. Interaksi Obat-Lab & Interaksi Herbal/Suplemen Tradisional\n8. Generator Kartu Edukasi WhatsApp Pasien (PIO Instan 1-Klik)\n9. Bank Soal & Tryout CBT UKMPPAI / UKTVF Lengkap\n\n💎 Promo Spesial Sejawat:\nHanya Rp 199.000 / tahun (hanya ~Rp 16.500/bulan) dari tarif normal Rp 399.000.\n\nJika Anda berminat mengaktifkan seluruh fitur Pro ini sekarang, cukup balas pesan ini untuk instruksi aktivasi instan dari admin. Terima kasih! 🩺✨`)}
                   className={`p-2.5 text-left rounded-xl text-xs transition-colors cursor-pointer border sm:col-span-2 ${
-                    (waModalCustomer.subscriptionPlan === 'Pemula' || waModalCustomer.subscriptionPlan === 'Gratis')
+                    (waModalCustomer.subscriptionPlan === 'Starter' || waModalCustomer.subscriptionPlan === 'Pemula' || waModalCustomer.subscriptionPlan === 'Gratis')
                       ? 'bg-gradient-to-r from-amber-500/15 via-amber-400/10 to-teal-500/10 hover:from-amber-500/25 hover:to-teal-500/20 border-amber-400/60 dark:border-amber-400/40 text-slate-900 dark:text-amber-100 ring-1 ring-amber-400/30'
                       : 'bg-slate-50 dark:bg-[#0d2c31]/60 hover:bg-teal-50 dark:hover:bg-[#156d67]/30 border-slate-200 dark:border-[#184c53]'
                   }`}
                 >
                   <div className="font-bold text-slate-900 dark:text-white flex items-center justify-between gap-1.5">
                     <span className="flex items-center gap-1.5"><span>🚀</span> Penawaran Fitur Pro & Promo Tahunan</span>
-                    {(waModalCustomer.subscriptionPlan === 'Pemula' || waModalCustomer.subscriptionPlan === 'Gratis') && (
+                    {(waModalCustomer.subscriptionPlan === 'Starter' || waModalCustomer.subscriptionPlan === 'Pemula' || waModalCustomer.subscriptionPlan === 'Gratis') && (
                       <span className="text-[9.5px] font-black px-2 py-0.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-400 text-slate-950 shadow-2xs">
                         ⭐ Promo Disarankan (Rp 199rb)
                       </span>

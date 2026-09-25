@@ -317,7 +317,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
       }
     }
   }, [preselectedDrugName, preselectedDrugNames, effectiveDrugs]);
-  const isFreePlan = !currentUser || currentUser.subscriptionPlan === 'Gratis' || currentUser.subscriptionPlan === 'Pemula';
+  const isFreePlan = !currentUser || currentUser.subscriptionPlan === 'Gratis' || currentUser.subscriptionPlan === 'Starter' || currentUser.subscriptionPlan === 'Pemula';
   const isProPlan = Boolean(currentUser && (currentUser.subscriptionPlan === 'Pro' || currentUser.role === 'admin'));
 
   const userPlanObj = pricingPlans?.find(p => 

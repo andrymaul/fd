@@ -210,7 +210,7 @@ export interface UserProfile {
   licenseNumber?: string;
   notes?: string;
   role: UserRole;
-  subscriptionPlan: 'Pemula' | 'Pro' | 'Gratis' | string;
+  subscriptionPlan: 'Starter' | 'Pemula' | 'Pro' | 'Gratis' | string;
   subscriptionStatus: 'active' | 'expired' | 'trial';
   maxDrugsOverride?: number;
   canExportPdf?: boolean;

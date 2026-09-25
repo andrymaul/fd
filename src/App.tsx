@@ -159,7 +159,13 @@ export default function App() {
         localStorage.setItem('farmasi_current_user', 'null_session');
         return null;
       }
-      if (parsed.subscriptionPlan === 'Klinik' || parsed.subscriptionPlan === 'Elite' || (parsed.role === 'admin' && parsed.subscriptionPlan !== 'Pemula')) {
+      if (parsed.subscriptionPlan === 'Pemula') {
+        parsed.subscriptionPlan = 'Starter';
+        try {
+          localStorage.setItem('farmasi_current_user', JSON.stringify(parsed));
+        } catch (e) {}
+      }
+      if (parsed.subscriptionPlan === 'Klinik' || parsed.subscriptionPlan === 'Elite' || (parsed.role === 'admin' && parsed.subscriptionPlan !== 'Starter')) {
         parsed.subscriptionPlan = 'Pro';
         try {
           localStorage.setItem('farmasi_current_user', JSON.stringify(parsed));
@@ -528,7 +534,7 @@ export default function App() {
           licenseNumber: newUser.licenseNumber || '',
           notes: newUser.notes || '',
           role: newUser.role || 'free',
-          subscriptionPlan: newUser.subscriptionPlan || 'Pemula',
+          subscriptionPlan: (newUser.subscriptionPlan === 'Pemula' ? 'Starter' : newUser.subscriptionPlan) || 'Starter',
           subscriptionStatus: newUser.subscriptionStatus || 'active',
           maxDrugsOverride: 99,
           canExportPdf: false,
@@ -670,7 +676,7 @@ export default function App() {
       if (expiryTime > 0 && Date.now() >= expiryTime) {
         const downgradedUser: UserProfile = {
           ...currentUser,
-          subscriptionPlan: 'Pemula',
+          subscriptionPlan: 'Starter',
           subscriptionStatus: 'active',
           hasClaimedTrial: true,
           notes: (currentUser.notes ? currentUser.notes + ' | ' : '') + 'Masa uji coba 3 hari selesai otomatis'
@@ -746,7 +752,7 @@ export default function App() {
       const updated: UserProfile = {
         ...currentUser,
         role: 'free',
-        subscriptionPlan: 'Pemula',
+        subscriptionPlan: 'Starter',
         subscriptionStatus: 'active',
         hasClaimedTrial: false,
         expiresAt: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString()
@@ -769,7 +775,7 @@ export default function App() {
       const updated: UserProfile = {
         ...currentUser,
         role: 'free',
-        subscriptionPlan: 'Pemula',
+        subscriptionPlan: 'Starter',
         subscriptionStatus: 'active',
         hasClaimedTrial: true,
         expiresAt: new Date(Date.now() - 1000).toISOString()

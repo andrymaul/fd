@@ -124,7 +124,7 @@ export const CompleteProfileModal: React.FC<CompleteProfileModalProps> = ({
                   {isMandatory ? 'Lengkapi Data Profil Akun' : 'Profil Pengguna'}
                 </h2>
                 <span className="px-2 py-0.5 rounded-full text-[10px] font-black bg-teal-400/20 text-teal-300 border border-teal-400/30 uppercase tracking-wider">
-                  {currentUser.subscriptionPlan || 'Pemula'}
+                  {currentUser.subscriptionPlan || 'Starter'}
                 </span>
               </div>
               <p className="text-xs text-teal-100/80 mt-0.5 font-medium">

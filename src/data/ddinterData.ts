@@ -675,7 +675,7 @@ export const SAMPLE_THERAPEUTIC_DUPLICATIONS: TherapeuticDuplication[] = dedupli
 export const PRICING_PLANS: PricingPlan[] = [
   {
     id: 'free',
-    name: 'Pemula',
+    name: 'Starter',
     priceFormatted: 'Gratis',
     priceValue: 0,
     period: 'Selamanya (Akses Gratis)',
@@ -736,7 +736,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     period: 'per tahun (Hanya Rp 16.500/bln)',
     description: 'Akses penuh ke seluruh modul klinis: IV ICU, BUD racikan, dosis anak, bumil & busui, polifarmasi, PPRA, Generator AI, hingga Pusat Belajar Farmasi.',
     features: [
-      'Semua Fitur Paket Pemula',
+      'Semua Fitur Paket Starter',
       'Cek Interaksi Polifarmasi Tanpa Batas (>10 Obat Sekaligus)',
       'Kompatibilitas Injeksi IV & ICU (ASHP)',
       'Toksikologi, Overdosis & Antidotum IGD (SiKer BPOM)',
@@ -834,8 +834,8 @@ export const PRICING_FAQS = [
     a: 'Paket Pro sedang promo spesial dari harga normal Rp 999.000/tahun menjadi hanya Rp 199.000/tahun (hemat 80% atau hanya ~Rp 16.500/bulan). Masa aktif berlaku 1 tahun penuh (365 hari).'
   },
   {
-    q: 'Apa perbedaan mendasar antara Paket Pemula dan Paket Pro?',
-    a: 'Paket Pemula 100% gratis untuk pencarian seluruh monografi obat, cek interaksi obat hingga 4 obat sekaligus, modul swamedikasi keluhan apotek & DOWA BPOM, dan panduan cara pakai obat. Paket Pro membuka seluruh 18+ modul klinis terpadu: evaluasi polifarmasi tanpa batas (>10 obat sekaligus), kriteria Beers 2023, kompatibilitas IV ICU ASHP Trissel’s, kalkulator BUD racikan USP <795>, dosis anak, keamanan bumil & busui, kartu PIO WhatsApp, Pusat Belajar Farmasi, interaksi lab semu, jamu/herbal, efek samping Naranjo, kalkulator ginjal & skor medis, panduan terapi PNPK Kemenkes, cetak laporan PDF dengan kop surat klinik, dan arsip riwayat cloud.'
+    q: 'Apa perbedaan mendasar antara Paket Starter dan Paket Pro?',
+    a: 'Paket Starter 100% gratis untuk pencarian seluruh monografi obat, cek interaksi obat hingga 4 obat sekaligus, modul swamedikasi keluhan apotek & DOWA BPOM, dan panduan cara pakai obat. Paket Pro membuka seluruh 18+ modul klinis terpadu: evaluasi polifarmasi tanpa batas (>10 obat sekaligus), kriteria Beers 2023, kompatibilitas IV ICU ASHP Trissel’s, kalkulator BUD racikan USP <795>, dosis anak, keamanan bumil & busui, kartu PIO WhatsApp, Pusat Belajar Farmasi, interaksi lab semu, jamu/herbal, efek samping Naranjo, kalkulator ginjal & skor medis, panduan terapi PNPK Kemenkes, cetak laporan PDF dengan kop surat klinik, dan arsip riwayat cloud.'
   },
   {
     q: 'Metode pembayaran apa saja yang didukung untuk Paket Pro?',

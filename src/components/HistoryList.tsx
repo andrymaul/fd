@@ -99,7 +99,7 @@ export const HistoryList: React.FC<HistoryListProps> = ({
   }, [historyRecords, searchTerm, selectedSeverity, selectedTimeRange]);
 
   // Plan limitation check
-  const isLimited = !currentUser || currentUser.subscriptionPlan === 'Gratis' || currentUser.subscriptionPlan === 'Pemula';
+  const isLimited = !currentUser || currentUser.subscriptionPlan === 'Gratis' || currentUser.subscriptionPlan === 'Starter' || currentUser.subscriptionPlan === 'Pemula';
   const displayedRecords = isLimited ? filteredRecords.slice(0, 3) : filteredRecords;
 
   // Copy structured CPPT medical record format
@@ -671,7 +671,7 @@ Sistem Verifikasi: FarmasiDruggist Evidence-Based CDSS (DDInter 2.0 / FORNAS VI)
                 <div>
                   <h4 className="text-sm font-extrabold text-amber-950 font-outfit">Arsip Riwayat Dibatasi ({historyRecords.length - 3} Catatan Lain Terkunci)</h4>
                   <p className="text-xs text-amber-800 leading-relaxed">
-                    Paket Pemula hanya menampilkan 3 catatan pemeriksaan terakhir. Tingkatkan ke Paket Pro untuk membuka seluruh riwayat tanpa batas, ekspor CSV, dan cetak lembar telaah tak terbatas.
+                    Paket Starter hanya menampilkan 3 catatan pemeriksaan terakhir. Tingkatkan ke Paket Pro untuk membuka seluruh riwayat tanpa batas, ekspor CSV, dan cetak lembar telaah tak terbatas.
                   </p>
                 </div>
               </div>

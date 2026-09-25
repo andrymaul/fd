@@ -159,7 +159,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({
                         : 'bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-300 hover:scale-[1.01] active:scale-95'
                     }`}
                   >
-                    {plan.priceValue === 0 ? 'Mulai Akses Pemula Gratis' : 'Ambil Promo Paket Pro Rp 199rb / Tahun'}
+                    {plan.priceValue === 0 ? 'Mulai Akses Starter Gratis' : 'Ambil Promo Paket Pro Rp 199rb / Tahun'}
                   </button>
                   <p className="text-[10px] text-center text-slate-400 mt-2 font-medium">
                     {plan.priceValue === 0 ? 'Tanpa kartu kredit • Langsung pakai' : 'Konfirmasi instan via WhatsApp Admin'}

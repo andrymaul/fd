@@ -84,7 +84,7 @@ export const TrialConfirmModal: React.FC<TrialConfirmModalProps> = ({
 
         {/* Terms note */}
         <div className="relative z-10 p-3 rounded-xl bg-amber-50/80 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/60 text-[11px] text-amber-900 dark:text-amber-200/90 leading-relaxed">
-          <strong>Catatan:</strong> Uji coba berlaku 72 jam sejak diaktifkan dan hanya dapat diklaim <strong>1 kali per akun</strong>. Setelah 3 hari, akun otomatis kembali ke paket Pemula tanpa dipungut biaya apapun.
+          <strong>Catatan:</strong> Uji coba berlaku 72 jam sejak diaktifkan dan hanya dapat diklaim <strong>1 kali per akun</strong>. Setelah 3 hari, akun otomatis kembali ke paket Starter tanpa dipungut biaya apapun.
         </div>
 
         {/* Action Buttons */}
@@ -161,7 +161,7 @@ export const TrialExpiredModal: React.FC<TrialExpiredModalProps> = ({
           </h2>
 
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 font-medium leading-relaxed max-w-md mx-auto">
-            Terima kasih telah mencoba fitur klinis <strong>Farmasi Druggist</strong>! Akun Anda kini kembali ke <strong>Paket Pemula (Gratis)</strong>. Seluruh data riwayat penapisan Anda tetap tersimpan dengan aman.
+            Terima kasih telah mencoba fitur klinis <strong>Farmasi Druggist</strong>! Akun Anda kini kembali ke <strong>Paket Starter (Gratis)</strong>. Seluruh data riwayat penapisan Anda tetap tersimpan dengan aman.
           </p>
         </div>
 
@@ -195,7 +195,7 @@ export const TrialExpiredModal: React.FC<TrialExpiredModalProps> = ({
             onClick={onClose}
             className="w-full sm:w-auto px-5 py-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold transition-colors cursor-pointer"
           >
-            Lanjut Pakai Pemula
+            Lanjut Pakai Starter
           </button>
           <button
             type="button"

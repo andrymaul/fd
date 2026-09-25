@@ -389,7 +389,7 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
 
             <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
               {trial.isEnabled 
-                ? `Pengguna akun Pemula dapat mengklik tombol "Coba Gratis" untuk mendapatkan akses instan selama ${trial.durationDays} hari tanpa konfirmasi admin.`
+                ? `Pengguna akun Starter dapat mengklik tombol "Coba Gratis" untuk mendapatkan akses instan selama ${trial.durationDays} hari tanpa konfirmasi admin.`
                 : 'Semua tombol dan banner uji coba di Header, Dashboard, Pricing Modal, dan Fitur Gate disembunyikan secara bersih. Calon pengguna langsung diarahkan ke paket berbayar resmi.'}
             </p>
           </div>
@@ -457,7 +457,7 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
                 Izinkan Pengguna Lama Mencoba Ulang (Promo Re-Trial Event)
               </span>
               <span className="text-[11px] text-slate-500 block">
-                Bila diaktifkan, akun Pemula yang sudah pernah trial di masa lalu dapat mengklaim trial 1x lagi.
+                Bila diaktifkan, akun Starter yang sudah pernah trial di masa lalu dapat mengklaim trial 1x lagi.
               </span>
             </div>
           </label>
@@ -738,7 +738,7 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-slate-100 text-slate-700 font-bold text-xs border border-slate-200 shadow-xs transition-colors cursor-pointer font-outfit"
                   >
                     <Lock className="w-3.5 h-3.5 text-slate-500" />
-                    <span>Batasi ke Fitur Dasar (Pemula)</span>
+                    <span>Batasi ke Fitur Dasar (Starter)</span>
                   </button>
                 </div>
               </div>
