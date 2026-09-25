@@ -2158,7 +2158,12 @@ export default function App() {
         </main>
 
         {/* Footer Hanya Tampil di Halaman Publik (Landing Page & Pricing Page) */}
-        {isPublicPage && <Footer onSelectTab={handleSelectTab} />}
+        {isPublicPage && (
+          <Footer 
+            onSelectTab={handleSelectTab} 
+            customerCount={customerList.length > 0 ? customerList.length : undefined} 
+          />
+        )}
       </div>
 
       {/* MODALS WITH SUSPENSE */}
