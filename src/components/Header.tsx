@@ -122,12 +122,16 @@ export const Header: React.FC<HeaderProps> = ({
   // Landing Header Rendering - Clean White Glassmorphism with Seamless Light Background
   if (isLanding) {
     return (
-      <header className="sticky top-0 z-50 w-full bg-white/85 backdrop-blur-xl pt-2 pb-2 sm:pt-3 sm:pb-3 px-3 sm:px-6 transition-all duration-300 border-b border-slate-200/80 shadow-xs">
+      <header className={`sticky top-0 z-50 w-full pt-2 pb-2 sm:pt-3 sm:pb-3 px-3 sm:px-6 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-white/85 backdrop-blur-xl border-b border-slate-200/80 shadow-xs' 
+          : 'bg-transparent border-b border-teal-200/30'
+      }`}>
         <div className="max-w-6xl mx-auto">
           <div className={`rounded-full transition-all duration-300 px-3.5 sm:px-5 py-2 sm:py-2.5 flex items-center justify-between gap-3 ${
             isScrolled 
               ? 'bg-white/95 backdrop-blur-2xl border border-slate-200/90 shadow-md shadow-slate-900/5' 
-              : 'bg-slate-50/90 backdrop-blur-xl border border-slate-200/70 shadow-xs'
+              : 'bg-white/90 backdrop-blur-xl border border-teal-100/90 shadow-sm shadow-teal-900/5'
           }`}>
             
             {/* Brand Logo */}

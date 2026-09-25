@@ -228,12 +228,12 @@ export const LandingPage: React.FC<LandingPageProps> = ({
 
 
   return (
-    <div className="space-y-12 sm:space-y-16 pb-20 bg-slate-50 text-slate-900 transition-colors duration-300">
+    <div className="space-y-12 sm:space-y-16 pb-20 bg-transparent text-slate-900 transition-colors duration-300">
       
       {/* =========================================================================
           HERO EXPLORATION SECTION: Lightweight, Fast & Intuitive ("Eksplorasi apa hari ini?")
           ========================================================================= */}
-      <section id="hero-section" className="relative bg-gradient-to-b from-teal-50/40 via-white to-slate-50 text-slate-900 pt-8 sm:pt-12 pb-4 sm:pb-6">
+      <section id="hero-section" className="relative bg-gradient-to-b from-[#daf6f2] via-[#ebf9f6]/90 to-transparent text-slate-900 pt-8 sm:pt-12 pb-4 sm:pb-6">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-5">
           
           {/* Main Title */}

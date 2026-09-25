@@ -1563,7 +1563,9 @@ export default function App() {
   const isPublicPage = isLanding || isPricing || isFaq;
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-800 flex flex-col md:flex-row selection:bg-teal-900 selection:text-teal-100 transition-colors duration-300">
+    <div className={`min-h-screen font-sans text-slate-800 flex flex-col md:flex-row selection:bg-teal-900 selection:text-teal-100 transition-colors duration-300 ${
+      isPublicPage ? 'bg-[#f0fbf8]' : 'bg-slate-50'
+    }`}>
 
       {/* Sidebar Navigation - Hanya untuk tab selain Landing, Pricing & FAQ Page */}
       {!isPublicPage && (
@@ -1581,13 +1583,25 @@ export default function App() {
         />
       )}
 
-      {/* Container Utama Aplikasi with Modern Clinical Clean Slate Theme */}
-      <div className="flex-1 flex flex-col min-w-0 min-h-screen bg-slate-50 relative overflow-x-clip transition-colors duration-200">
+      {/* Container Utama Aplikasi with Fresh Clinical Mint Ambient Theme */}
+      <div className={`flex-1 flex flex-col min-w-0 min-h-screen relative overflow-x-clip transition-colors duration-200 ${
+        isPublicPage ? 'bg-[#f0fbf8]' : 'bg-slate-50'
+      }`}>
         
-        {/* Subtle Ambient Glow Mesh Orbs matching Logo Palette */}
-        <div className="fixed top-0 left-1/4 w-96 h-96 bg-[#156d67]/5 rounded-full blur-3xl pointer-events-none -z-10" />
-        <div className="fixed top-1/3 right-10 w-80 h-80 bg-[#3dbfd1]/5 rounded-full blur-3xl pointer-events-none -z-10" />
-        <div className="fixed bottom-10 left-1/3 w-96 h-96 bg-[#38b2a3]/5 rounded-full blur-3xl pointer-events-none -z-10" />
+        {/* Soft Ambient Glow Mesh Orbs for Fresh Mint Ambiance */}
+        {isPublicPage ? (
+          <>
+            <div className="fixed -top-24 -left-20 w-[550px] h-[550px] bg-gradient-to-br from-[#2dd4bf]/25 via-[#10b981]/20 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+            <div className="fixed top-20 -right-20 w-[500px] h-[500px] bg-gradient-to-bl from-[#38bdf8]/20 via-[#2dd4bf]/15 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+            <div className="fixed top-1/2 left-1/4 w-[600px] h-[600px] bg-gradient-to-tr from-[#34d399]/15 via-[#2dd4bf]/10 to-transparent rounded-full blur-3xl pointer-events-none -z-10" />
+          </>
+        ) : (
+          <>
+            <div className="fixed top-0 left-1/4 w-96 h-96 bg-[#156d67]/5 rounded-full blur-3xl pointer-events-none -z-10" />
+            <div className="fixed top-1/3 right-10 w-80 h-80 bg-[#3dbfd1]/5 rounded-full blur-3xl pointer-events-none -z-10" />
+            <div className="fixed bottom-10 left-1/3 w-96 h-96 bg-[#38b2a3]/5 rounded-full blur-3xl pointer-events-none -z-10" />
+          </>
+        )}
 
         <Header
           activeTab={activeTab}
