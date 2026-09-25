@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { UserProfile } from '../types';
-import { Logo } from './Logo';
-import { Mail, Phone, Lock, Eye, EyeOff, Building2, RefreshCw, CheckCircle2, Sparkles, ArrowLeft, ShieldCheck, Check } from 'lucide-react';
+import { Mail, Phone, Lock, Eye, EyeOff, Building2, RefreshCw, CheckCircle2, Sparkles, ArrowLeft, Check } from 'lucide-react';
 import { loginWithEmail, registerWithEmail, resendVerificationEmail } from '../firebase';
 
 interface LoginPageProps {
@@ -156,7 +155,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({
   if (unverifiedEmail) {
     return (
       <div className="w-full min-h-[calc(100vh-140px)] flex items-center justify-center py-10 px-4 sm:px-6">
-        <div className="w-full max-w-md bg-white rounded-3xl shadow-xl shadow-teal-900/5 border border-slate-200/90 p-7 sm:p-9 space-y-6 text-center animate-fadeIn">
+        <div className="w-full max-w-md space-y-6 text-center animate-fadeIn">
           
           {/* Mail Icon */}
           <div className="relative w-20 h-20 mx-auto">
@@ -240,41 +239,17 @@ export const LoginPage: React.FC<LoginPageProps> = ({
   // 2. TAMPILAN UTAMA HALAMAN LOGIN & DAFTAR (DEDICATED FULL PAGE /login)
   return (
     <div className="w-full min-h-[calc(100vh-140px)] flex items-center justify-center py-8 sm:py-12 px-4 sm:px-6">
-      <div className="w-full max-w-md bg-white rounded-3xl shadow-xl shadow-teal-900/5 border border-slate-200/90 p-6 sm:p-9 space-y-6 animate-fadeIn">
+      <div className="w-full max-w-md space-y-6 animate-fadeIn">
         
-        {/* Tombol Navigasi Kembali ke Beranda */}
-        <div className="flex items-center justify-between pb-1">
-          <a
-            href="/"
-            onClick={handleGoHome}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-teal-700 transition-colors group cursor-pointer"
-            title="Kembali ke Halaman Depan"
-          >
-            <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" />
-            <span>Beranda</span>
-          </a>
-
-          <div className="flex items-center gap-1 text-[11px] font-bold text-teal-700 bg-teal-50 px-2.5 py-1 rounded-full border border-teal-200/60 font-outfit">
-            <ShieldCheck className="w-3.5 h-3.5 text-teal-600" />
-            <span>Aman &amp; Terenkripsi</span>
-          </div>
-        </div>
-
-        {/* Branding & Judul Halaman */}
-        <div className="text-center space-y-2">
-          <div className="flex justify-center">
-            <Logo size="md" />
-          </div>
-          <h1 className="text-2xl font-black text-slate-900 font-outfit pt-1">
+        {/* Judul Halaman */}
+        <div className="text-center">
+          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 font-outfit tracking-tight">
             {isRegister ? 'Daftar Akun Baru' : 'Masuk Akun'}
           </h1>
-          <p className="text-xs text-slate-500 font-medium leading-relaxed">
-            Platform Informasi Obat &amp; Evaluasi Interaksi Klinis
-          </p>
         </div>
 
         {/* Tab Pilihan Masuk / Daftar */}
-        <div className="grid grid-cols-2 p-1 bg-slate-100 rounded-2xl text-xs font-bold font-outfit">
+        <div className="grid grid-cols-2 p-1 bg-white/70 backdrop-blur-xs border border-teal-200/60 rounded-2xl text-xs font-bold font-outfit shadow-2xs">
           <button
             type="button"
             onClick={() => {
