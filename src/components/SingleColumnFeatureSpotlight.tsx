@@ -1175,7 +1175,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
   return (
     <div className="w-full space-y-5">
       
-      {/* CSS Animasi Marquee Berjalan Halus (Infinite Loop) */}
+      {/* CSS Animasi Marquee Berjalan Halus & Efek Melayang (Floating Card) */}
       <style>{`
         @keyframes marqueeTrack {
           0% { transform: translateX(0%); }
@@ -1189,6 +1189,36 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         .animate-running-marquee:hover,
         .animate-running-marquee:focus-within {
           animation-play-state: paused !important;
+        }
+
+        @keyframes floatingCard {
+          0%, 100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-8px);
+          }
+        }
+        .animate-floating-card {
+          animation: floatingCard 6s ease-in-out infinite;
+        }
+        .animate-floating-card:hover {
+          animation-play-state: paused;
+          transform: translateY(-12px);
+        }
+
+        @keyframes floatingShadow {
+          0%, 100% {
+            transform: scale(1);
+            opacity: 0.85;
+          }
+          50% {
+            transform: scale(0.90);
+            opacity: 0.5;
+          }
+        }
+        .animate-floating-shadow {
+          animation: floatingShadow 6s ease-in-out infinite;
         }
       `}</style>
 
@@ -1242,12 +1272,18 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         </div>
       </div>
 
-      {/* 2. Main Spotlight Card (Fokus 1 Kolom Penuh) */}
-      <div 
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className="relative bg-white dark:bg-[#04151a]/95 rounded-3xl border-2 border-slate-200/90 dark:border-teal-500/30 shadow-2xl shadow-slate-200/50 dark:shadow-[0_25px_60px_rgba(0,0,0,0.6)] overflow-hidden transition-all duration-500"
-      >
+      {/* 2. Main Spotlight Card (Fokus 1 Kolom Penuh) with Floating / Melayang Effect */}
+      <div className="relative group/card pt-2 pb-6">
+        
+        {/* Soft Ambient Floating Ground Shadow (Detached Underglow) */}
+        <div className="absolute bottom-1 inset-x-8 sm:inset-x-16 h-10 sm:h-12 bg-teal-950/25 dark:bg-black/70 blur-2xl rounded-full pointer-events-none -z-10 animate-floating-shadow" />
+        
+        {/* Floating Card Body */}
+        <div 
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          className="animate-floating-card relative bg-white/95 dark:bg-[#04151a]/95 backdrop-blur-xl rounded-3xl border border-teal-100/90 dark:border-teal-500/30 ring-1 ring-slate-900/5 dark:ring-teal-500/20 shadow-[0_22px_55px_-12px_rgba(13,69,65,0.2),0_10px_25px_-6px_rgba(0,0,0,0.06)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.8)] overflow-hidden transition-all duration-500 hover:shadow-[0_35px_75px_-15px_rgba(13,69,65,0.28),0_14px_35px_-8px_rgba(0,0,0,0.1)] cursor-default"
+        >
         {/* Dynamic Ambient Background Glow */}
         <div className={`absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-br ${currentModule.theme.glow} rounded-full blur-3xl pointer-events-none transition-all duration-700`} />
         <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-teal-500/10 dark:bg-teal-500/15 rounded-full blur-3xl pointer-events-none" />
@@ -1400,5 +1436,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
       </div>
 
     </div>
-  );
+
+  </div>
+);
 };
