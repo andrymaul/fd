@@ -229,13 +229,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({
 
 
   return (
-    <div className="space-y-24 pb-24 bg-slate-50 text-slate-900 transition-colors duration-300">
+    <div className="space-y-12 sm:space-y-16 pb-20 bg-slate-50 text-slate-900 transition-colors duration-300">
       
       {/* =========================================================================
           HERO EXPLORATION SECTION: Lightweight, Fast & Intuitive ("Eksplorasi apa hari ini?")
           ========================================================================= */}
-      <section id="hero-section" className="relative bg-gradient-to-b from-teal-50/40 via-white to-slate-50 text-slate-900 pt-12 sm:pt-16 pb-12 sm:pb-16 border-b border-slate-200/80">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6">
+      <section id="hero-section" className="relative bg-gradient-to-b from-teal-50/40 via-white to-slate-50 text-slate-900 pt-8 sm:pt-12 pb-4 sm:pb-6">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-5">
           
           {/* Main Title */}
           <div>
@@ -288,17 +288,13 @@ export const LandingPage: React.FC<LandingPageProps> = ({
             </div>
           </form>
 
-
-
         </div>
       </section>
 
       {/* =========================================================================
           STAGE 3: MODERN BENTO GRID ARCHITECTURE - 26 MODUL KLINIS (NEO-CLINICAL TECH)
           ========================================================================= */}
-      <section id="bento-features" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        
-
+      <section id="bento-features" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-8">
 
         {/* Single-Column Spotlight Showcase */}
         <SingleColumnFeatureSpotlight
@@ -309,11 +305,10 @@ export const LandingPage: React.FC<LandingPageProps> = ({
 
       </section>
 
-
       {/* =========================================================================
           STAGE 5 & 6: INTERACTIVE ACCORDION FAQ SECTION
           ========================================================================= */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 pt-8 sm:pt-12">
         <div className="text-center">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#082a24] dark:text-white font-outfit">
             Pertanyaan Sering Diajukan (FAQ)
