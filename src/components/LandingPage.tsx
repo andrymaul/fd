@@ -233,7 +233,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
       {/* =========================================================================
           HERO EXPLORATION SECTION: Lightweight, Fast & Intuitive ("Eksplorasi apa hari ini?")
           ========================================================================= */}
-      <section id="hero-section" className="relative bg-gradient-to-b from-[#daf6f2] via-[#ebf9f6]/90 to-transparent text-slate-900 pt-8 sm:pt-12 pb-4 sm:pb-6">
+      <section id="hero-section" className="relative bg-transparent text-slate-900 pt-6 sm:pt-10 pb-4 sm:pb-6">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-5">
           
           {/* Main Title */}

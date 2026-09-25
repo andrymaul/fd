@@ -1564,7 +1564,7 @@ export default function App() {
 
   return (
     <div className={`min-h-screen font-sans text-slate-800 flex flex-col md:flex-row selection:bg-teal-900 selection:text-teal-100 transition-colors duration-300 ${
-      isPublicPage ? 'bg-[#f0fbf8]' : 'bg-slate-50'
+      isPublicPage ? 'bg-[#daf6f2]' : 'bg-slate-50'
     }`}>
 
       {/* Sidebar Navigation - Hanya untuk tab selain Landing, Pricing & FAQ Page */}
@@ -1585,7 +1585,7 @@ export default function App() {
 
       {/* Container Utama Aplikasi with Fresh Clinical Mint Ambient Theme */}
       <div className={`flex-1 flex flex-col min-w-0 min-h-screen relative overflow-x-clip transition-colors duration-200 ${
-        isPublicPage ? 'bg-[#f0fbf8]' : 'bg-slate-50'
+        isPublicPage ? 'bg-gradient-to-b from-[#daf6f2] via-[#eefbf8] to-[#f4faf9]' : 'bg-slate-50'
       }`}>
         
         {/* Soft Ambient Glow Mesh Orbs for Fresh Mint Ambiance */}

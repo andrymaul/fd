@@ -45,7 +45,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({
       {/* =========================================================================
           HERO HEADER SECTION
           ========================================================================= */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#daf6f2] via-[#ebf9f6]/90 to-transparent pt-10 sm:pt-14 pb-12 sm:pb-16 border-b border-teal-200/40">
+      <section className="relative overflow-hidden bg-transparent pt-8 sm:pt-12 pb-12 sm:pb-16 border-b border-teal-200/30">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5">
           
           {/* Back to Home Button */}
