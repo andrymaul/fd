@@ -80,7 +80,7 @@ export const Footer: React.FC<FooterProps> = ({ customerCount: propCustomerCount
 
   return (
     <footer className="bg-white border-t border-slate-200/80 py-4 sm:py-5 text-slate-600 transition-colors duration-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
         {/* Pojok Kiri: Ikon + Angka Subskripsi Realtime + Tulisan User */}
         <div className="flex items-center gap-1.5 text-slate-700">
           <Users className="w-4 h-4 text-teal-600 shrink-0" />
@@ -91,6 +91,35 @@ export const Footer: React.FC<FooterProps> = ({ customerCount: propCustomerCount
             User
           </span>
         </div>
+
+        {/* Bagian Tengah: Created by Badge Pill dengan Link YouTube */}
+        <a
+          href="https://www.youtube.com/@FarmasiDruggist"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Kunjungi Channel YouTube Resmi @FarmasiDruggist"
+          className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white hover:bg-slate-50 border border-slate-200/90 hover:border-slate-300 shadow-2xs hover:shadow-xs transition-all cursor-pointer font-outfit text-xs"
+        >
+          <span className="text-slate-500 font-medium">Created by</span>
+          <div className="flex items-center gap-1.5">
+            <img 
+              src="/logo.png" 
+              alt="Farmasi Druggist" 
+              className="w-5 h-5 rounded-full object-cover border border-slate-200/80 shadow-2xs shrink-0" 
+            />
+            <span className="font-bold text-slate-800 group-hover:text-red-600 transition-colors font-outfit">
+              Farmasi Druggist
+            </span>
+            <svg 
+              className="w-4 h-4 text-[#FF0000] shrink-0 transition-transform group-hover:scale-110 ml-0.5" 
+              viewBox="0 0 24 24" 
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </div>
+        </a>
 
         {/* Pojok Kanan: Hak Cipta */}
         <p className="font-medium text-slate-500 text-center sm:text-right font-outfit">
