@@ -151,18 +151,9 @@ export const FaqPage: React.FC<FaqPageProps> = ({ onSelectTab, onOpenAuthModal }
             </a>
           </div>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-50 border border-teal-200/80 text-[11px] font-black text-teal-800 uppercase tracking-wider font-outfit shadow-2xs">
-            <HelpCircle className="w-3.5 h-3.5 text-teal-600" />
-            <span>Pusat Bantuan &amp; Tanya Jawab Resmi</span>
-          </div>
-
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-outfit">
             Pertanyaan Sering Diajukan (FAQ)
           </h1>
-
-          <p className="text-sm sm:text-base text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
-            Temukan jawaban lengkap seputar cara penggunaan, akurasi database klinis DDInter 2.0, paket lisensi, dan panduan teknis FarmasiDruggist.
-          </p>
 
           {/* FAQ Search Bar */}
           <div className="max-w-xl mx-auto pt-2">
@@ -193,10 +184,10 @@ export const FaqPage: React.FC<FaqPageProps> = ({ onSelectTab, onOpenAuthModal }
       {/* =========================================================================
           FAQ CONTENT & ACCORDION SECTION
           ========================================================================= */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
-        {/* Category Filter Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2">
+        {/* Category Filter Pills (Semua 5 Kategori Rapi dalam 1 Baris) */}
+        <div className="flex flex-wrap md:flex-nowrap items-center justify-center gap-2 overflow-x-auto pb-1 max-w-full">
           {[
             { id: 'all', label: 'Semua Pertanyaan', count: ALL_FAQS.length },
             { id: 'pricing', label: 'Tarif & Akun Pro', count: ALL_FAQS.filter(f => f.category === 'pricing').length },
@@ -208,7 +199,7 @@ export const FaqPage: React.FC<FaqPageProps> = ({ onSelectTab, onOpenAuthModal }
               key={cat.id}
               type="button"
               onClick={() => setSelectedCategory(cat.id as any)}
-              className={`px-3.5 py-2 rounded-full text-xs font-bold transition-all cursor-pointer font-outfit flex items-center gap-1.5 shadow-2xs ${
+              className={`px-3 sm:px-3.5 py-2 rounded-full text-xs font-bold transition-all cursor-pointer font-outfit flex items-center gap-1.5 shadow-2xs shrink-0 ${
                 selectedCategory === cat.id
                   ? 'bg-teal-600 text-white shadow-teal-700/20'
                   : 'bg-white hover:bg-slate-100 text-slate-700 border border-slate-200/90'
@@ -225,7 +216,7 @@ export const FaqPage: React.FC<FaqPageProps> = ({ onSelectTab, onOpenAuthModal }
         </div>
 
         {/* Accordion List */}
-        <div className="space-y-3">
+        <div className="max-w-4xl mx-auto space-y-3">
           {filteredFaqs.length === 0 ? (
             <div className="p-12 text-center bg-white rounded-3xl border border-slate-200 space-y-3 shadow-xs">
               <HelpCircle className="w-10 h-10 text-slate-300 mx-auto" />
