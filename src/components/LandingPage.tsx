@@ -262,29 +262,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>
-
-            {/* Quick Keyword Suggestions */}
-            <div className="flex flex-wrap items-center justify-center gap-1.5 mt-3 text-xs">
-              <span className="font-semibold text-slate-400 text-[11px]">Pencarian Cepat:</span>
-              {['Warfarin', 'Aspirin', 'Simvastatin', 'Sakit Maag', 'Diare'].map((sample) => (
-                <button
-                  key={sample}
-                  type="button"
-                  onClick={() => {
-                    if (sample === 'Sakit Maag' || sample === 'Diare') {
-                      onSelectTab('swamedikasi');
-                    } else {
-                      if (onSearchDrug) onSearchDrug(sample);
-                      onSelectTab('drugs');
-                    }
-                  }}
-                  className="px-2.5 py-1 rounded-full text-[11px] font-semibold transition-all cursor-pointer bg-white hover:bg-teal-50 text-slate-600 hover:text-teal-800 border border-slate-200 hover:border-teal-300 shadow-2xs flex items-center gap-1"
-                >
-                  <Pill className="w-2.5 h-2.5 text-teal-600" />
-                  <span>{sample}</span>
-                </button>
-              ))}
-            </div>
           </form>
 
         </div>
@@ -293,7 +270,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({
       {/* =========================================================================
           STAGE 3: MODERN BENTO GRID ARCHITECTURE - 26 MODUL KLINIS (NEO-CLINICAL TECH)
           ========================================================================= */}
-      <section id="bento-features" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-8">
+      <section id="bento-features" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-10">
 
         {/* Single-Column Spotlight Showcase */}
         <SingleColumnFeatureSpotlight
