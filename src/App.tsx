@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
 import { Footer } from './components/Footer';
 import { LandingPage } from './components/LandingPage';
+import { PricingPage } from './components/PricingPage';
 import { Dashboard } from './components/Dashboard';
 import { DrugDirectory } from './components/DrugDirectory';
 import { InteractionChecker } from './components/InteractionChecker';
@@ -172,6 +173,13 @@ export default function App() {
 
   const [activeTab, setActiveTab] = useState<string>(() => {
     try {
+      if (typeof window !== 'undefined') {
+        const path = window.location.pathname.toLowerCase();
+        const hash = window.location.hash.toLowerCase();
+        if (path === '/pricing' || path === '/pricing/' || hash === '#pricing' || hash === '#pricing-section') {
+          return 'pricing';
+        }
+      }
       const savedUser = localStorage.getItem('farmasi_current_user');
       const hasUser = savedUser && savedUser !== 'null_session' && savedUser !== 'null' && savedUser !== 'undefined';
       if (!hasUser) {
@@ -205,6 +213,31 @@ export default function App() {
 
   const [pendingTargetTab, setPendingTargetTab] = useState<string | null>(null);
   const [preselectedSwamedikasiProtocolId, setPreselectedSwamedikasiProtocolId] = useState<string | null>(null);
+
+  // Dedicated route listener for /pricing and URL synchronization
+  useEffect(() => {
+    const handleUrlRouting = () => {
+      if (typeof window === 'undefined') return;
+      const path = window.location.pathname.toLowerCase();
+      const hash = window.location.hash.toLowerCase();
+
+      if (path === '/pricing' || path === '/pricing/' || hash === '#pricing' || hash === '#pricing-section') {
+        if (activeTab !== 'pricing') {
+          setActiveTab('pricing');
+        }
+        window.scrollTo({ top: 0, behavior: 'auto' });
+      } else if (path === '/' || path === '') {
+        if (activeTab === 'pricing') {
+          setActiveTab('landing');
+          window.scrollTo({ top: 0, behavior: 'auto' });
+        }
+      }
+    };
+
+    handleUrlRouting();
+    window.addEventListener('popstate', handleUrlRouting);
+    return () => window.removeEventListener('popstate', handleUrlRouting);
+  }, [activeTab]);
 
   // Clinical Clean Light Mode - Locked permanently for highest contrast & professional medical clarity
   const theme = 'light';
@@ -929,19 +962,27 @@ export default function App() {
     if (targetTab === 'drug-notes' || targetTab === 'hafalan' || targetTab === 'jembatan-keledai') targetTab = 'drug-notes';
 
     if (targetTab === 'pricing') {
-      if (activeTab === 'landing') {
-        const pricingElem = document.getElementById('pricing-section');
-        if (pricingElem) {
-          pricingElem.scrollIntoView({ behavior: 'smooth' });
-          return;
-        }
+      if (window.location.pathname !== '/pricing') {
+        window.history.pushState(null, '', '/pricing');
       }
-      setShowPricingModal(true);
+      setActiveTab('pricing');
+      localStorage.setItem('farmasi_active_tab', 'pricing');
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      return;
+    }
+
+    if (targetTab === 'landing') {
+      if (window.location.pathname !== '/') {
+        window.history.pushState(null, '', '/');
+      }
+      setActiveTab('landing');
+      localStorage.setItem('farmasi_active_tab', 'landing');
+      window.scrollTo({ top: 0, behavior: 'auto' });
       return;
     }
 
     // Enforce auth requirement for internal clinical workspace tools when user is not logged in (user must login first)
-    if (!currentUser && targetTab !== 'landing') {
+    if (!currentUser && targetTab !== 'landing' && targetTab !== 'pricing') {
       setPendingTargetTab(targetTab);
       setShowAuthModal(true);
       return;
@@ -1490,12 +1531,14 @@ export default function App() {
   };
 
   const isLanding = activeTab === 'landing';
+  const isPricing = activeTab === 'pricing';
+  const isPublicPage = isLanding || isPricing;
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800 flex flex-col md:flex-row selection:bg-teal-900 selection:text-teal-100 transition-colors duration-300">
 
-      {/* Sidebar Navigation - Hanya untuk tab selain Landing Page */}
-      {!isLanding && (
+      {/* Sidebar Navigation - Hanya untuk tab selain Landing & Pricing Page */}
+      {!isPublicPage && (
         <Sidebar
           activeTab={activeTab}
           setActiveTab={handleSelectTab}
@@ -1535,8 +1578,8 @@ export default function App() {
           isTrialEnabled={trialSettings.isEnabled}
         />
 
-        <main className={`flex-1 ${isLanding ? '' : 'p-4 sm:p-6 lg:p-8'} print:p-0 print:m-0 print:w-full print:bg-white`}>
-          {isLanding ? (
+        <main className={`flex-1 ${isPublicPage ? '' : 'p-4 sm:p-6 lg:p-8'} print:p-0 print:m-0 print:w-full print:bg-white`}>
+          {activeTab === 'landing' ? (
             <LandingPage
               drugs={drugs}
               interactions={interactions}
@@ -1546,6 +1589,14 @@ export default function App() {
               currentUser={currentUser}
               onOpenPricingModal={() => setShowPricingModal(true)}
               onOpenAuthModal={() => setShowAuthModal(true)}
+            />
+          ) : activeTab === 'pricing' ? (
+            <PricingPage
+              currentUser={currentUser}
+              pricingPlans={pricingPlans}
+              onOpenAuthModal={() => setShowAuthModal(true)}
+              onSelectTab={handleSelectTab}
+              onOpenPricingModal={() => setShowPricingModal(true)}
             />
           ) : (
             <React.Suspense fallback={<ClinicalTabSkeleton />}>
@@ -2072,8 +2123,8 @@ export default function App() {
           )}
         </main>
 
-        {/* Footer Hanya Tampil di Landing Page */}
-        {isLanding && <Footer onSelectTab={handleSelectTab} />}
+        {/* Footer Hanya Tampil di Halaman Publik (Landing Page & Pricing Page) */}
+        {isPublicPage && <Footer onSelectTab={handleSelectTab} />}
       </div>
 
       {/* MODALS WITH SUSPENSE */}
