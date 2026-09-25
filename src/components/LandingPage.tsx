@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
-import { PRICING_PLANS, PRICING_FAQS, INITIAL_INTERACTIONS } from '../data/ddinterData';
+import { PRICING_PLANS, INITIAL_INTERACTIONS } from '../data/ddinterData';
 import { Drug, DrugInteraction, DrugFoodInteraction, UserProfile, PricingPlan } from '../types';
 import { 
   ShieldAlert, 
@@ -186,7 +186,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({
   onOpenAuthModal
 }) => {
   const [heroSearch, setHeroSearch] = useState('');
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   // Animated rotating placeholder for hero search bar
   const samplePlaceholders = useMemo(() => [
@@ -304,62 +303,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({
         />
 
       </section>
-
-      {/* =========================================================================
-          STAGE 5 & 6: INTERACTIVE ACCORDION FAQ SECTION
-          ========================================================================= */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 pt-8 sm:pt-12">
-        <div className="text-center">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#082a24] dark:text-white font-outfit">
-            Pertanyaan Sering Diajukan (FAQ)
-          </h2>
-        </div>
-
-        <div className="space-y-3">
-          {PRICING_FAQS.map((faq, idx) => {
-            const isOpen = openFaqIndex === idx;
-
-            return (
-              <div 
-                key={idx} 
-                className={`bg-white dark:bg-[#061d23] rounded-2xl border transition-all duration-200 overflow-hidden ${
-                  isOpen 
-                    ? 'border-teal-500 shadow-md ring-1 ring-teal-500/30' 
-                    : 'border-slate-200/90 dark:border-teal-500/20 shadow-xs hover:border-teal-300 dark:hover:border-teal-500/50'
-                }`}
-              >
-                <button
-                  type="button"
-                  onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
-                  className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 cursor-pointer select-none"
-                >
-                  <h3 className={`text-xs sm:text-sm font-bold flex items-center gap-2.5 transition-colors ${
-                    isOpen ? 'text-teal-700 dark:text-teal-300' : 'text-[#082a24] dark:text-white'
-                  }`}>
-                    <span className={`p-1.5 rounded-xl transition-colors shrink-0 ${
-                      isOpen ? 'bg-teal-100 dark:bg-teal-950 text-teal-700 dark:text-teal-300' : 'bg-slate-100 dark:bg-slate-800 text-slate-500'
-                    }`}>
-                      <HelpCircle className="w-4 h-4" />
-                    </span>
-                    <span className="font-outfit">{faq.q}</span>
-                  </h3>
-                  <ChevronDown className={`w-4 h-4 shrink-0 transition-transform duration-200 ${
-                    isOpen ? 'rotate-180 text-teal-600 dark:text-teal-400' : 'text-slate-400'
-                  }`} />
-                </button>
-
-                {isOpen && (
-                  <div className="px-5 pb-5 pt-1 text-xs text-slate-600 dark:text-slate-300 pl-12 leading-relaxed border-t border-slate-100 dark:border-teal-500/20 font-medium">
-                    {faq.a}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-
 
     </div>
   );

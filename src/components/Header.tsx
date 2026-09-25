@@ -10,6 +10,7 @@ import {
   CreditCard, 
   LogOut, 
   LogIn, 
+  HelpCircle,
   ShieldCheck, 
   Stethoscope, 
   HeartPulse,
@@ -101,7 +102,7 @@ export const Header: React.FC<HeaderProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isLanding = activeTab === 'landing' || activeTab === 'pricing';
+  const isLanding = activeTab === 'landing' || activeTab === 'pricing' || activeTab === 'faq';
 
   // Landing Header Rendering - Clean White Glassmorphism with Seamless Light Background
   if (isLanding) {
@@ -144,6 +145,28 @@ export const Header: React.FC<HeaderProps> = ({
 
             {/* Right Action Buttons */}
             <div className="flex items-center space-x-2 shrink-0">
+              {/* FAQ Button (Terhubung ke URL /faq) */}
+              <a
+                href="/faq"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (window.location.pathname !== '/faq') {
+                    window.history.pushState(null, '', '/faq');
+                  }
+                  setActiveTab('faq');
+                  window.scrollTo({ top: 0, behavior: 'auto' });
+                }}
+                title="Pertanyaan Sering Diajukan (/faq)"
+                className={`h-8 px-3 sm:px-3.5 rounded-full text-xs font-bold transition-all flex items-center justify-center gap-1.5 whitespace-nowrap cursor-pointer font-outfit ${
+                  activeTab === 'faq'
+                    ? 'text-teal-900 bg-teal-50 border border-teal-300 shadow-xs'
+                    : 'text-slate-700 hover:text-teal-900 bg-white hover:bg-teal-50/80 border border-slate-200/90 hover:border-teal-300 shadow-2xs hover:scale-[1.02] active:scale-95'
+                }`}
+              >
+                <HelpCircle className="w-3.5 h-3.5 text-teal-600 shrink-0" />
+                <span>FAQ</span>
+              </a>
+
               {/* Pricing Button (Terhubung ke URL /pricing) */}
               <a
                 href="/pricing"
@@ -156,7 +179,11 @@ export const Header: React.FC<HeaderProps> = ({
                   window.scrollTo({ top: 0, behavior: 'auto' });
                 }}
                 title="Lihat Tarif & Lisensi Layanan (/pricing)"
-                className="h-8 px-3 sm:px-3.5 rounded-full text-xs font-bold text-slate-700 hover:text-teal-900 bg-white hover:bg-teal-50/80 border border-slate-200/90 hover:border-teal-300 transition-all flex items-center justify-center gap-1.5 whitespace-nowrap cursor-pointer shadow-2xs hover:scale-[1.02] active:scale-95 font-outfit"
+                className={`h-8 px-3 sm:px-3.5 rounded-full text-xs font-bold transition-all flex items-center justify-center gap-1.5 whitespace-nowrap cursor-pointer font-outfit ${
+                  activeTab === 'pricing'
+                    ? 'text-teal-900 bg-teal-50 border border-teal-300 shadow-xs'
+                    : 'text-slate-700 hover:text-teal-900 bg-white hover:bg-teal-50/80 border border-slate-200/90 hover:border-teal-300 shadow-2xs hover:scale-[1.02] active:scale-95'
+                }`}
               >
                 <CreditCard className="w-3.5 h-3.5 text-teal-600 shrink-0" />
                 <span>Pricing</span>
@@ -227,6 +254,24 @@ export const Header: React.FC<HeaderProps> = ({
                 <span>26 Modul Klinis</span>
               </button>
               <a
+                href="/faq"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (window.location.pathname !== '/faq') {
+                    window.history.pushState(null, '', '/faq');
+                  }
+                  setActiveTab('faq');
+                  window.scrollTo({ top: 0, behavior: 'auto' });
+                  setLandingMobileMenuOpen(false);
+                }}
+                className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-2 ${
+                  activeTab === 'faq' ? 'bg-teal-50 text-teal-900 font-extrabold' : 'text-slate-700 hover:bg-slate-100'
+                }`}
+              >
+                <HelpCircle className="w-3.5 h-3.5 text-teal-600" />
+                <span>FAQ</span>
+              </a>
+              <a
                 href="/pricing"
                 onClick={(e) => {
                   e.preventDefault();
@@ -237,7 +282,9 @@ export const Header: React.FC<HeaderProps> = ({
                   window.scrollTo({ top: 0, behavior: 'auto' });
                   setLandingMobileMenuOpen(false);
                 }}
-                className="w-full text-left px-3 py-2 rounded-xl text-xs font-bold text-slate-700 hover:bg-slate-100 flex items-center gap-2"
+                className={`w-full text-left px-3 py-2 rounded-xl text-xs font-bold flex items-center gap-2 ${
+                  activeTab === 'pricing' ? 'bg-teal-50 text-teal-900 font-extrabold' : 'text-slate-700 hover:bg-slate-100'
+                }`}
               >
                 <CreditCard className="w-3.5 h-3.5 text-teal-600" />
                 <span>Pricing</span>

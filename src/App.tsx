@@ -4,6 +4,7 @@ import { Sidebar } from './components/Sidebar';
 import { Footer } from './components/Footer';
 import { LandingPage } from './components/LandingPage';
 import { PricingPage } from './components/PricingPage';
+import { FaqPage } from './components/FaqPage';
 import { Dashboard } from './components/Dashboard';
 import { DrugDirectory } from './components/DrugDirectory';
 import { InteractionChecker } from './components/InteractionChecker';
@@ -185,6 +186,9 @@ export default function App() {
         if (path === '/pricing' || path === '/pricing/') {
           return 'pricing';
         }
+        if (path === '/faq' || path === '/faq/') {
+          return 'faq';
+        }
         if (path === '/' || path === '') {
           return 'landing';
         }
@@ -201,8 +205,8 @@ export default function App() {
       } catch (e) {}
       const savedTab = localStorage.getItem('farmasi_active_tab');
       if (savedTab) {
-        // Jangan pernah me-restore tab 'pricing' dari session lama agar tidak membuka pricing otomatis
-        if (savedTab === 'pricing') {
+        // Jangan pernah me-restore tab 'pricing' atau 'faq' dari session lama agar tidak membuka otomatis
+        if (savedTab === 'pricing' || savedTab === 'faq') {
           localStorage.setItem('farmasi_active_tab', 'landing');
           return 'landing';
         }
@@ -228,7 +232,7 @@ export default function App() {
   const [pendingTargetTab, setPendingTargetTab] = useState<string | null>(null);
   const [preselectedSwamedikasiProtocolId, setPreselectedSwamedikasiProtocolId] = useState<string | null>(null);
 
-  // Dedicated route listener for /pricing and URL synchronization
+  // Dedicated route listener for /pricing, /faq, and URL synchronization
   useEffect(() => {
     const handleUrlRouting = () => {
       if (typeof window === 'undefined') return;
@@ -244,8 +248,10 @@ export default function App() {
 
       if (path === '/pricing' || path === '/pricing/') {
         setActiveTab((prev) => (prev !== 'pricing' ? 'pricing' : prev));
+      } else if (path === '/faq' || path === '/faq/') {
+        setActiveTab((prev) => (prev !== 'faq' ? 'faq' : prev));
       } else if (path === '/' || path === '') {
-        setActiveTab((prev) => (prev === 'pricing' ? 'landing' : prev));
+        setActiveTab((prev) => (prev === 'pricing' || prev === 'faq' ? 'landing' : prev));
       }
     };
 
@@ -808,7 +814,7 @@ export default function App() {
   }, [currentUser]);
 
   useEffect(() => {
-    if (activeTab && activeTab !== 'pricing') {
+    if (activeTab && activeTab !== 'pricing' && activeTab !== 'faq') {
       localStorage.setItem('farmasi_active_tab', activeTab);
     }
   }, [activeTab]);
@@ -945,12 +951,12 @@ export default function App() {
     }
   }, [currentUser]);
 
-  // Protective guard: if not logged in or non-admin on restricted tab, redirect to landing (allow pricing)
+  // Protective guard: if not logged in or non-admin on restricted tab, redirect to landing (allow pricing & faq)
   useEffect(() => {
     if (!currentUser) {
       const savedUser = localStorage.getItem('farmasi_current_user');
       if (!savedUser || savedUser === 'null_session') {
-        if (activeTab !== 'landing' && activeTab !== 'pricing') {
+        if (activeTab !== 'landing' && activeTab !== 'pricing' && activeTab !== 'faq') {
           setActiveTab('landing');
           localStorage.setItem('farmasi_active_tab', 'landing');
         }
@@ -985,6 +991,15 @@ export default function App() {
       return;
     }
 
+    if (targetTab === 'faq') {
+      if (window.location.pathname !== '/faq') {
+        window.history.pushState(null, '', '/faq');
+      }
+      setActiveTab('faq');
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      return;
+    }
+
     if (targetTab === 'landing') {
       window.history.pushState(null, '', '/');
       setActiveTab('landing');
@@ -994,7 +1009,7 @@ export default function App() {
     }
 
     // Enforce auth requirement for internal clinical workspace tools when user is not logged in (user must login first)
-    if (!currentUser && targetTab !== 'landing' && targetTab !== 'pricing') {
+    if (!currentUser && targetTab !== 'landing' && targetTab !== 'pricing' && targetTab !== 'faq') {
       setPendingTargetTab(targetTab);
       setShowAuthModal(true);
       return;
@@ -1544,12 +1559,13 @@ export default function App() {
 
   const isLanding = activeTab === 'landing';
   const isPricing = activeTab === 'pricing';
-  const isPublicPage = isLanding || isPricing;
+  const isFaq = activeTab === 'faq';
+  const isPublicPage = isLanding || isPricing || isFaq;
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800 flex flex-col md:flex-row selection:bg-teal-900 selection:text-teal-100 transition-colors duration-300">
 
-      {/* Sidebar Navigation - Hanya untuk tab selain Landing & Pricing Page */}
+      {/* Sidebar Navigation - Hanya untuk tab selain Landing, Pricing & FAQ Page */}
       {!isPublicPage && (
         <Sidebar
           activeTab={activeTab}
@@ -1610,6 +1626,11 @@ export default function App() {
               onOpenAuthModal={() => setShowAuthModal(true)}
               onSelectTab={handleSelectTab}
               onOpenPricingModal={() => setShowPricingModal(true)}
+            />
+          ) : activeTab === 'faq' ? (
+            <FaqPage
+              onSelectTab={handleSelectTab}
+              onOpenAuthModal={() => setShowAuthModal(true)}
             />
           ) : (
             <React.Suspense fallback={<ClinicalTabSkeleton />}>

@@ -73,6 +73,11 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
                 </a>
               </li>
               <li>
+                <button onClick={() => onSelectTab('faq')} className="hover:text-teal-300 transition-colors cursor-pointer text-slate-300">
+                  Pertanyaan Sering Diajukan (FAQ)
+                </button>
+              </li>
+              <li>
                 <button onClick={() => onSelectTab('pricing')} className="hover:text-teal-300 transition-colors cursor-pointer text-slate-300">
                   Harga Layanan Apps
                 </button>
