@@ -1672,15 +1672,10 @@ export default function App() {
         <main className={`flex-1 ${isPublicPage ? (isLogin ? 'flex flex-col justify-between' : '') : 'p-4 sm:p-6 lg:p-8'} print:p-0 print:m-0 print:w-full print:bg-white`}>
           {activeTab === 'landing' ? (
             <LandingPage
-              drugs={drugs}
-              interactions={interactions}
-              foodInteractions={foodInteractions}
               onSelectTab={handleSelectTab}
               onSearchDrug={handleHeroSearchDrug}
               onOpenSwamedikasiProtocol={handleOpenSwamedikasiWithProtocol}
               currentUser={currentUser}
-              onOpenPricingModal={() => setShowPricingModal(true)}
-              onOpenAuthModal={() => handleSelectTab('login')}
             />
           ) : activeTab === 'pricing' ? (
             <PricingPage
@@ -2213,12 +2208,8 @@ export default function App() {
                   />
                 ) : (
                   <LandingPage
-                    drugs={drugs}
-                    interactions={interactions}
                     onSelectTab={handleSelectTab}
                     currentUser={currentUser}
-                    onOpenPricingModal={() => setShowPricingModal(true)}
-                    onOpenAuthModal={() => handleSelectTab('login')}
                   />
                 )
               )}

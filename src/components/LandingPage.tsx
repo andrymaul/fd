@@ -1,21 +1,14 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import { PRICING_PLANS, INITIAL_INTERACTIONS } from '../data/ddinterData';
-import { Drug, DrugInteraction, DrugFoodInteraction, UserProfile, PricingPlan } from '../types';
+import React, { useState, useEffect, memo } from 'react';
+import { UserProfile } from '../types';
 import { Search, ArrowRight, Users } from 'lucide-react';
 import { SingleColumnFeatureSpotlight } from './SingleColumnFeatureSpotlight';
 import { subscribeVisitorStats, VisitorStats, getVisitorStats } from '../services/visitorStatsService';
 
 interface LandingPageProps {
-  drugs: Drug[];
-  interactions?: DrugInteraction[];
-  foodInteractions?: DrugFoodInteraction[];
   currentUser?: UserProfile | null;
-  pricingPlans?: PricingPlan[];
   onSelectTab: (tab: string) => void;
   onOpenSwamedikasiProtocol?: (protocolId: string) => void;
   onSearchDrug?: (query: string) => void;
-  onOpenPricingModal: () => void;
-  onOpenAuthModal: () => void;
 }
 
 const formatCompactVisits = (num: number): string => {
@@ -31,17 +24,11 @@ const formatCompactVisits = (num: number): string => {
   return num.toString();
 };
 
-export const LandingPage: React.FC<LandingPageProps> = ({
-  drugs,
-  interactions = INITIAL_INTERACTIONS,
-  foodInteractions = [],
+export const LandingPage: React.FC<LandingPageProps> = memo(({
   currentUser,
-  pricingPlans = PRICING_PLANS,
   onSelectTab,
   onOpenSwamedikasiProtocol,
-  onSearchDrug,
-  onOpenPricingModal,
-  onOpenAuthModal
+  onSearchDrug
 }) => {
   const [heroSearch, setHeroSearch] = useState('');
   const [visitorStats, setVisitorStats] = useState<VisitorStats>(() => getVisitorStats());
@@ -52,24 +39,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({
     });
     return () => unsubscribe();
   }, []);
-
-  // Animated rotating placeholder for hero search bar
-  const samplePlaceholders = useMemo(() => [
-    'Cari Warfarin, Simvastatin, Clopidogrel...',
-    'Cari Keluhan: Meriang, Sakit Maag, Diare, Flu Batuk...',
-    'Cari Paxlovid, Ketoconazole, Amiodarone...',
-    'Cari Paracetamol, Amoxicillin, Cetirizine...',
-    'Cari Dosis Puyer Anak, Salbutamol, Dexamethasone...',
-    'Cari Interaksi Obat Bumil & Busui Trimester 1-3...'
-  ], []);
-  const [placeholderIndex, setPlaceholderIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setPlaceholderIndex((prev) => (prev + 1) % samplePlaceholders.length);
-    }, 3500);
-    return () => clearInterval(timer);
-  }, [samplePlaceholders.length]);
 
 
   const handleHeroSearchSubmit = (e: React.FormEvent) => {
@@ -162,4 +131,6 @@ export const LandingPage: React.FC<LandingPageProps> = ({
 
     </div>
   );
-};
+});
+
+LandingPage.displayName = 'LandingPage';

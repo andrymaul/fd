@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect, useCallback, useMemo, memo } from 'react';
 import { 
   Building2, 
   Baby, 
@@ -70,7 +70,7 @@ interface SpotlightModule {
   onAction?: () => void;
 }
 
-export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlightProps> = ({
+export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlightProps> = memo(({
   onSelectTab,
   onOpenSwamedikasiProtocol,
   currentUser
@@ -1438,4 +1438,6 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
 
   </div>
 );
-};
+});
+
+SingleColumnFeatureSpotlight.displayName = 'SingleColumnFeatureSpotlight';

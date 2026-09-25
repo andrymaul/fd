@@ -25,6 +25,9 @@ export default defineConfig(() => {
             if (id.includes('node_modules/react') || id.includes('node_modules/react-dom')) {
               return 'vendor-react';
             }
+            if (id.includes('src/data/ddinterDrugs') || id.includes('src/data/ddinterInteractions')) {
+              return 'data-ddinter-core';
+            }
             if (id.includes('src/data/ddinterDuplicationsData') || id.includes('src/data/ddinterDiseaseInteractionsData')) {
               return 'data-polypharmacy';
             }
