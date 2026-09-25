@@ -45,9 +45,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({
 
   const handleBackToHome = (e: React.MouseEvent) => {
     e.preventDefault();
-    if (window.location.pathname !== '/') {
-      window.history.pushState(null, '', '/');
-    }
+    window.history.pushState(null, '', '/');
     onSelectTab('landing');
     window.scrollTo({ top: 0, behavior: 'auto' });
   };

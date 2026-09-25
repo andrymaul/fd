@@ -176,8 +176,17 @@ export default function App() {
       if (typeof window !== 'undefined') {
         const path = window.location.pathname.toLowerCase();
         const hash = window.location.hash.toLowerCase();
-        if (path === '/pricing' || path === '/pricing/' || hash === '#pricing' || hash === '#pricing-section') {
+        // Bersihkan hash legacy #pricing atau #pricing-section jika ada di URL browser
+        if (hash === '#pricing' || hash === '#pricing-section') {
+          try {
+            window.history.replaceState(null, '', path === '/pricing' ? '/pricing' : '/');
+          } catch (e) {}
+        }
+        if (path === '/pricing' || path === '/pricing/') {
           return 'pricing';
+        }
+        if (path === '/' || path === '') {
+          return 'landing';
         }
       }
       const savedUser = localStorage.getItem('farmasi_current_user');
@@ -192,6 +201,11 @@ export default function App() {
       } catch (e) {}
       const savedTab = localStorage.getItem('farmasi_active_tab');
       if (savedTab) {
+        // Jangan pernah me-restore tab 'pricing' dari session lama agar tidak membuka pricing otomatis
+        if (savedTab === 'pricing') {
+          localStorage.setItem('farmasi_active_tab', 'landing');
+          return 'landing';
+        }
         if ((savedTab.startsWith('admin') || savedTab === 'instagram-studio') && (!parsedUser || parsedUser.role !== 'admin')) {
           localStorage.setItem('farmasi_active_tab', 'landing');
           return 'landing';
@@ -221,7 +235,14 @@ export default function App() {
       const path = window.location.pathname.toLowerCase();
       const hash = window.location.hash.toLowerCase();
 
-      if (path === '/pricing' || path === '/pricing/' || hash === '#pricing' || hash === '#pricing-section') {
+      // Bersihkan hash otomatis
+      if (hash === '#pricing' || hash === '#pricing-section') {
+        try {
+          window.history.replaceState(null, '', path === '/pricing' ? '/pricing' : '/');
+        } catch (e) {}
+      }
+
+      if (path === '/pricing' || path === '/pricing/') {
         if (activeTab !== 'pricing') {
           setActiveTab('pricing');
         }
@@ -966,15 +987,12 @@ export default function App() {
         window.history.pushState(null, '', '/pricing');
       }
       setActiveTab('pricing');
-      localStorage.setItem('farmasi_active_tab', 'pricing');
       window.scrollTo({ top: 0, behavior: 'auto' });
       return;
     }
 
     if (targetTab === 'landing') {
-      if (window.location.pathname !== '/') {
-        window.history.pushState(null, '', '/');
-      }
+      window.history.pushState(null, '', '/');
       setActiveTab('landing');
       localStorage.setItem('farmasi_active_tab', 'landing');
       window.scrollTo({ top: 0, behavior: 'auto' });
@@ -1585,6 +1603,7 @@ export default function App() {
               interactions={interactions}
               foodInteractions={foodInteractions}
               onSelectTab={handleSelectTab}
+              onSearchDrug={handleHeroSearchDrug}
               onOpenSwamedikasiProtocol={handleOpenSwamedikasiWithProtocol}
               currentUser={currentUser}
               onOpenPricingModal={() => setShowPricingModal(true)}
