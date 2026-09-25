@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from './components/Header';
-import { Sidebar } from './components/Sidebar';
 import { Footer } from './components/Footer';
 import { LandingPage } from './components/LandingPage';
 import { PricingPage } from './components/PricingPage';
@@ -1612,25 +1611,9 @@ export default function App() {
   const isPublicPage = isLanding || isPricing || isFaq || isLogin;
 
   return (
-    <div className={`min-h-screen font-sans text-slate-800 flex flex-col md:flex-row selection:bg-teal-900 selection:text-teal-100 transition-colors duration-300 ${
+    <div className={`min-h-screen font-sans text-slate-800 flex flex-col selection:bg-teal-900 selection:text-teal-100 transition-colors duration-300 ${
       isPublicPage ? 'bg-[#daf6f2]' : 'bg-slate-50'
     }`}>
-
-      {/* Sidebar Navigation - Hanya untuk tab selain Landing, Pricing & FAQ Page */}
-      {!isPublicPage && (
-        <Sidebar
-          activeTab={activeTab}
-          setActiveTab={handleSelectTab}
-          currentUser={currentUser}
-          onOpenAuthModal={() => handleSelectTab('login')}
-          onLogout={handleLogout}
-          onOpenPricingModal={() => setShowPricingModal(true)}
-          onOpenChangelogModal={() => handleSelectTab('changelog')}
-          mobileOpen={mobileSidebarOpen}
-          setMobileOpen={setMobileSidebarOpen}
-          theme={theme}
-        />
-      )}
 
       {/* Container Utama Aplikasi with Fresh Clinical Mint Ambient Theme */}
       <div className={`flex-1 flex flex-col min-w-0 min-h-screen relative overflow-x-clip transition-colors duration-200 ${
@@ -2122,7 +2105,7 @@ export default function App() {
                 />
               )}
 
-              {(activeTab === 'admin' || (activeTab.startsWith('admin-') && activeTab !== 'admin-instagram')) && (
+              {(activeTab === 'admin' || activeTab.startsWith('admin-')) && (
                 <AdminPanel
                   drugs={drugs}
                   interactions={interactions}
@@ -2147,7 +2130,8 @@ export default function App() {
                     activeTab === 'admin-pricing' ? 'pricing-settings' :
                     activeTab === 'admin-users' ? 'team-admin' :
                     activeTab === 'admin-logs' ? 'audit-log' :
-                    activeTab === 'admin-subscriptions' ? 'customers' : 'firebase-sync'
+                    activeTab === 'admin-instagram' ? 'instagram-studio' :
+                    activeTab === 'admin-subscriptions' ? 'customers' : 'customers'
                   }
                   onSaveDrug={handleAdminSaveDrug}
                   onDeleteDrug={handleAdminDeleteDrug}
@@ -2161,11 +2145,12 @@ export default function App() {
                   onDeleteDuplicationRule={handleDeleteDuplicationRule}
                   onSaveAdminUser={handleSaveAdminUser}
                   onDeleteAdminUser={handleDeleteAdminUser}
+                  onNavigateToDashboard={() => setActiveTab('dashboard')}
+                  onSimulateTrial={handleSimulateTrial}
+                  isTrialEnabled={trialSettings.isEnabled}
+                  trialDurationDays={trialSettings.durationDays}
+                  onToggleTrialStatus={handleToggleTrialStatus}
                 />
-              )}
-
-              {activeTab === 'admin-instagram' && (
-                <InstagramPostStudio />
               )}
 
               {activeTab === 'subscriptions' && (

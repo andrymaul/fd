@@ -41,7 +41,8 @@ import {
   Instagram,
   Wand2,
   Languages,
-  Users
+  Users,
+  ArrowLeft
 } from 'lucide-react';
 import { subscribeVisitorStats, VisitorStats, getVisitorStats } from '../services/visitorStatsService';
 
@@ -551,21 +552,15 @@ export const Header: React.FC<HeaderProps> = ({
       case 'admin-pricing':
       case 'admin-users':
       case 'admin-subscriptions':
+      case 'admin-drugs':
+      case 'admin-interactions':
+      case 'admin-editor':
+      case 'admin-logs':
       case 'subscriptions':
         return {
-          title: tab === 'subscriptions' || tab === 'admin-subscriptions' 
-            ? 'Manajemen Berlangganan Customer' 
-            : tab === 'admin-pricing' 
-            ? 'Pengaturan Tarif & Hak Akses'
-            : tab === 'admin-users'
-            ? 'Kelola Tim Administrator'
-            : tab === 'admin-firebase'
-            ? 'Sinkronisasi Database Firebase'
-            : 'Panel Administrasi',
-          desc: 'Pengelolaan basis data obat, hak akses subskripsi, akun tim & integrasi Cloud Firestore',
-          icon: tab === 'subscriptions' || tab === 'admin-subscriptions' 
-            ? UserCheck 
-            : Database,
+          title: 'Pusat Kontrol Administrator (Admin Hub)',
+          desc: 'Manajemen lisensi customer nakes, konfigurasi tarif QRIS, database obat & operasional sistem',
+          icon: ShieldCheck,
           iconColor: 'text-amber-500 dark:text-amber-300 bg-amber-500/15 border-amber-400/40 shadow-xs',
           headerBg: 'bg-gradient-to-r from-amber-50/85 via-orange-50/40 to-white/95 dark:from-[#120e03]/95 dark:via-[#1e1705]/90 dark:to-[#0a0701]/95 border-b border-amber-300/50 dark:border-amber-500/30',
           glowAccent: 'from-amber-500/15 via-yellow-500/5 to-transparent'
@@ -592,38 +587,51 @@ export const Header: React.FC<HeaderProps> = ({
 
       <div className="flex items-center justify-between gap-4 relative z-10">
         
-        {/* Mobile Sidebar Toggle & Title */}
-        <div className="flex items-center gap-3">
-          {onToggleMobileSidebar && (
-            <button
-              onClick={onToggleMobileSidebar}
-              className="md:hidden p-2 rounded-xl text-slate-700 dark:text-slate-300 hover:text-teal-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-              aria-label="Buka Menu Sidebar"
-            >
-              <Menu className="w-6 h-6" />
-            </button>
-          )}
+        {/* Left: Brand Logo & Navigation State (Permanently in corner) */}
+        <div className="flex items-center gap-2.5 sm:gap-4 min-w-0">
+          <button 
+            onClick={() => setActiveTab(currentUser ? 'dashboard' : 'landing')}
+            className="focus:outline-none flex items-center gap-1.5 sm:gap-2 group text-left cursor-pointer transition-transform hover:scale-[1.02] p-1 -ml-1 rounded-2xl hover:bg-slate-100/60 dark:hover:bg-slate-800/50 shrink-0"
+            title="FARMASIDRUGGIST - Klik untuk Kembali ke Dashboard Utama"
+          >
+            <Logo size="sm" variant="light" />
+          </button>
 
-          <div className="md:hidden">
-            <button onClick={() => setActiveTab(currentUser ? 'dashboard' : 'landing')}>
-              <Logo size="sm" variant="light" />
-            </button>
-          </div>
+          <div className="hidden sm:block w-px h-6 bg-slate-200/90 dark:bg-slate-800 shrink-0" />
 
-          {/* Desktop Tab Header Info */}
-          <div className="hidden md:flex items-center gap-3">
-            {TabIcon && (
-              <div className={`w-10 h-10 rounded-xl border flex items-center justify-center shrink-0 shadow-2xs ${iconColor}`}>
-                <TabIcon className="w-5 h-5 stroke-[2.2]" />
-              </div>
-            )}
-            <div>
-              <h1 className="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white tracking-tight flex items-center gap-2 font-outfit">
-                {title}
-              </h1>
-              <p className="text-xs text-slate-500 dark:text-slate-300/90 hidden lg:block font-medium">{desc}</p>
+          {activeTab === 'dashboard' ? (
+            <div className="hidden md:flex items-center gap-2">
+              <span className="text-xs font-black uppercase tracking-wider text-teal-800 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/60 px-2.5 py-1 rounded-xl border border-teal-200/80 dark:border-teal-800/60 font-outfit">
+                Dashboard Utama
+              </span>
+              <span className="text-xs text-slate-500 dark:text-slate-400 hidden xl:inline font-medium">
+                • Portal Akses Modul Klinis Terintegrasi
+              </span>
             </div>
-          </div>
+          ) : (
+            <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+              <button
+                onClick={() => setActiveTab('dashboard')}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/95 dark:bg-slate-900/95 hover:bg-teal-50 dark:hover:bg-teal-950/40 text-slate-700 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-300 border border-slate-200/90 dark:border-slate-800 text-xs font-extrabold font-outfit transition-all cursor-pointer hover:scale-105 shadow-2xs shrink-0"
+                title="Kembali ke Dashboard Utama"
+              >
+                <ArrowLeft className="w-3.5 h-3.5" />
+                <span>Dashboard</span>
+              </button>
+
+              {TabIcon && (
+                <div className={`hidden sm:flex w-8 h-8 rounded-xl border items-center justify-center shrink-0 shadow-2xs ${iconColor}`}>
+                  <TabIcon className="w-4 h-4 stroke-[2.2]" />
+                </div>
+              )}
+
+              <div className="min-w-0">
+                <h1 className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white tracking-tight truncate font-outfit">
+                  {title}
+                </h1>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Right Header Actions */}
@@ -662,6 +670,35 @@ export const Header: React.FC<HeaderProps> = ({
             <Send className="w-4 h-4 fill-[#229ED9] dark:fill-sky-300 -translate-x-0.5 translate-y-0.5" />
           </a>
 
+          {/* Paket & Tarif Button (Akses Permanen di Header) */}
+          <button
+            onClick={() => setActiveTab('pricing')}
+            title="Lihat Daftar Paket, Tarif Layanan & Lisensi (/pricing)"
+            className={`h-9 px-3 sm:px-3.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer font-outfit shrink-0 ${
+              activeTab === 'pricing'
+                ? 'bg-amber-500 text-slate-950 font-black shadow-xs ring-2 ring-amber-400'
+                : 'bg-white dark:bg-slate-900 hover:bg-amber-50 dark:hover:bg-amber-950/40 text-slate-700 dark:text-slate-200 hover:text-amber-800 dark:hover:text-amber-300 border border-slate-200 dark:border-slate-800 hover:border-amber-400 hover:scale-105'
+            }`}
+          >
+            <CreditCard className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
+            <span>Paket & Tarif</span>
+          </button>
+
+          {/* Admin Hub Dedicated Access Button */}
+          {currentUser?.role === 'admin' && (
+            <button
+              onClick={() => setActiveTab(activeTab.startsWith('admin') ? 'dashboard' : 'admin')}
+              title={activeTab.startsWith('admin') ? 'Kembali ke Dashboard Klinis' : 'Buka Pusat Kontrol Administrator'}
+              className={`h-9 px-3.5 rounded-full text-xs font-black transition-all flex items-center gap-1.5 shadow-xs cursor-pointer font-outfit shrink-0 ${
+                activeTab.startsWith('admin')
+                  ? 'bg-amber-500 text-slate-950 ring-2 ring-amber-300 shadow-amber-500/30 hover:scale-105'
+                  : 'bg-amber-500/15 hover:bg-amber-500/25 text-amber-800 dark:text-amber-300 border border-amber-400/40 hover:border-amber-400 hover:scale-105'
+              }`}
+            >
+              <ShieldCheck className="w-3.5 h-3.5" />
+              <span>{activeTab.startsWith('admin') ? 'Dashboard Medis' : 'Admin Hub'}</span>
+            </button>
+          )}
 
           {/* Trial Active Badge */}
           {isTrialActive && (
@@ -684,18 +721,6 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <Sparkles className="w-3.5 h-3.5 fill-white" />
               <span>Coba Pro</span>
-            </button>
-          )}
-
-          {/* Quick Pricing Badge */}
-          {currentUser && (currentUser.subscriptionPlan === 'Gratis' || currentUser.subscriptionPlan === 'Starter' || currentUser.subscriptionPlan === 'Pemula') && !isTrialActive && (
-            <button
-              onClick={onOpenPricingModal}
-              title="Upgrade ke Paket Pro Akses Penuh"
-              className="h-9 px-3.5 rounded-full text-xs font-black text-slate-950 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 transition-all shadow-xs cursor-pointer font-outfit flex items-center gap-1.5 shrink-0 hover:scale-105"
-            >
-              <Sparkles className="w-3.5 h-3.5 fill-slate-950" />
-              <span>Upgrade</span>
             </button>
           )}
 

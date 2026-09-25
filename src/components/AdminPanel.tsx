@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Drug, DrugInteraction, UserProfile, SeverityLevel, PricingPlan, DrugFoodInteraction, TherapeuticDuplication, SystemAuditLog, AdminUser, ClinicBrandingSettings, PaymentMethodSettings, TrialSettings } from '../types';
 import {
   Settings,
@@ -26,7 +26,8 @@ import {
   ShieldCheck,
   Layers,
   Building2,
-  Instagram
+  Instagram,
+  ArrowLeft
 } from 'lucide-react';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { resolveDrugFromDDInter } from '../utils/ddinterEngine';
@@ -71,6 +72,11 @@ interface AdminPanelProps {
   onDeleteDuplicationRule: (id: string) => Promise<void>;
   onSaveAdminUser: (admin: AdminUser) => void;
   onDeleteAdminUser: (adminId: string) => void;
+  onNavigateToDashboard?: () => void;
+  onSimulateTrial?: (mode: 'free-new' | 'start-trial' | 'trial-expired' | 'reset-admin') => void;
+  isTrialEnabled?: boolean;
+  trialDurationDays?: number;
+  onToggleTrialStatus?: () => void;
 }
 
 export const AdminPanel: React.FC<AdminPanelProps> = ({
@@ -101,7 +107,12 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
   onSaveDuplicationRule,
   onDeleteDuplicationRule,
   onSaveAdminUser,
-  onDeleteAdminUser
+  onDeleteAdminUser,
+  onNavigateToDashboard,
+  onSimulateTrial,
+  isTrialEnabled = true,
+  trialDurationDays = 3,
+  onToggleTrialStatus
 }) => {
   const [activeSubTab, setActiveSubTab] = useState<AdminSubTab>(initialSubTab);
 
@@ -457,74 +468,260 @@ DDInter-PAIR-00105,"Tacrolimus","Fluconazole","Major","Fluconazole menghambat CY
     }
   };
 
+  // Perhitungan metrik ringkas dashboard eksekutif
+  const pendingCount = useMemo(() => {
+    if (!customers) return 0;
+    return customers.filter((c: any) => 
+      c.subscriptionStatus === 'pending' || 
+      c.subscriptionStatus === 'menunggu_verifikasi' ||
+      Boolean(c.paymentProofUrl && c.subscriptionStatus !== 'active')
+    ).length;
+  }, [customers]);
+
+  const proCount = useMemo(() => {
+    if (!customers) return 0;
+    return customers.filter((c: any) => 
+      c.subscriptionPlan === 'Pro' || 
+      c.subscriptionPlan === 'Klinik' || 
+      c.subscriptionPlan === 'Elite'
+    ).length;
+  }, [customers]);
+
+  // Daftar Tab Segmentasi Admin Hub (10 Modul Manajemen)
+  const adminTabs: { id: AdminSubTab; label: string; icon: React.ComponentType<{ className?: string }>; badge?: string | number; badgeColor?: string }[] = useMemo(() => [
+    { id: 'customers', label: 'Pelanggan & Subskripsi', icon: UserCheck, badge: pendingCount > 0 ? `${pendingCount} Verifikasi` : undefined, badgeColor: 'bg-rose-500 text-white' },
+    { id: 'pricing-settings', label: 'Tarif & QRIS', icon: Tag },
+    { id: 'drugs', label: 'Katalog Obat Master', icon: Pill },
+    { id: 'interactions', label: 'Interaksi Obat DDInter', icon: ShieldAlert },
+    { id: 'firebase-sync', label: 'Cloud Firestore Sync', icon: Database },
+    { id: 'branding', label: 'Kop Surat Klinik', icon: Building2 },
+    { id: 'instagram-studio', label: 'Studio Media Sosial', icon: Instagram },
+    { id: 'team-admin', label: 'Tim Staf Admin', icon: Users },
+    { id: 'audit-log', label: 'Audit Trail & Log', icon: FileText },
+    { id: 'advanced-editor', label: 'Editor JSON Massal', icon: Settings }
+  ], [pendingCount]);
+
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 max-w-7xl mx-auto px-1 sm:px-2">
 
-      {/* HERO BANNER - DEEP ONYX & AMBER TITANIUM */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0e0905] via-[#1f140a] to-[#2e1d0f] p-6 sm:p-8 text-white shadow-2xl border border-amber-500/25">
-        <FloatingPillsBackground density="low" accentColor="#fbbf24" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-amber-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <Settings className="w-56 h-56 text-amber-400 -rotate-12" />
-        </div>
-
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-2xl">
-
+      {/* EXECUTIVE COMMAND CENTER HEADER */}
+      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-5 sm:p-7 shadow-xs relative overflow-hidden space-y-6">
+        
+        {/* Top Executive Bar */}
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5 border-b border-slate-100 dark:border-slate-800 pb-5">
+          <div className="space-y-1.5">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white flex items-center justify-center shadow-lg shadow-amber-950/50 shrink-0">
-                <Settings className="w-6 h-6" />
+              <div className="w-11 h-11 rounded-2xl bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-400/30 flex items-center justify-center font-bold shrink-0 shadow-2xs">
+                <ShieldCheck className="w-6 h-6 stroke-[2]" />
               </div>
               <div>
-                <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
-                  Admin Management Dashboard
-                </h1>
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h1 className="text-xl sm:text-2xl font-black font-outfit text-slate-900 dark:text-white tracking-tight">
+                    Pusat Kontrol Administrator
+                  </h1>
+                  <span className="text-[10px] font-black uppercase tracking-wider bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-700 px-2.5 py-0.5 rounded-full font-mono">
+                    Superadmin
+                  </span>
+                </div>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  Manajemen terpusat: lisensi customer nakes, konfigurasi tarif QRIS, database obat & tim sistem.
+                </p>
               </div>
             </div>
-
           </div>
 
-          {/* Right Hero Badge: Database Status */}
-          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-amber-500/40 space-y-2.5 shadow-xl">
-              <div className="flex items-center justify-between text-xs font-bold text-amber-300 border-b border-amber-800/60 pb-2">
-                <span className="flex items-center gap-1.5 font-black font-outfit">
-                  <Activity className="w-3.5 h-3.5 text-amber-400" />
-                  <span>Status Database Master</span>
-                </span>
-                <span className="bg-amber-950 text-amber-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-amber-600/40">
-                  {drugs.length} Obat Master
-                </span>
-              </div>
-              <div className="text-xs text-amber-100/80 space-y-1.5 font-medium">
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Total Pasangan Interaksi:</span>
-                  <span className="font-bold text-amber-200">{interactions.length} DDInter V2</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Database Engine:</span>
-                  <span className="font-bold text-emerald-400">Cloud Firestore</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Akses Manajemen:</span>
-                  <span className="font-bold text-amber-300">Hak Akses Superadmin</span>
-                </div>
-                <div className="flex justify-between items-center pt-1 border-t border-amber-900/40 text-[10px] text-amber-300/80">
-                  <span>Standar Acuan:</span>
-                  <span className="font-bold text-white">Firestore DB &amp; DDInter</span>
-                </div>
-              </div>
-            </div>
+          {/* Action buttons */}
+          <div className="flex items-center gap-2.5 flex-wrap shrink-0">
+            {onNavigateToDashboard && (
+              <button
+                onClick={onNavigateToDashboard}
+                className="px-4 py-2 rounded-2xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 text-xs font-bold font-outfit transition-all flex items-center gap-2 cursor-pointer shadow-2xs hover:scale-105 active:scale-95"
+              >
+                <ArrowLeft className="w-4 h-4 text-teal-600" />
+                <span>Ke Dashboard Klinis</span>
+              </button>
+            )}
 
             <button
               onClick={onSeedFirebase}
-              className="w-full bg-amber-600 hover:bg-amber-500 text-white px-4 py-2.5 rounded-xl flex items-center justify-center gap-2 text-xs font-bold transition-all shadow-md cursor-pointer hover:scale-[1.02] active:scale-95"
+              disabled={loading}
+              className="px-4 py-2 rounded-2xl bg-teal-600 hover:bg-teal-500 text-white text-xs font-black font-outfit transition-all flex items-center gap-2 cursor-pointer shadow-xs hover:scale-105 active:scale-95"
             >
-              <RefreshCw className="w-3.5 h-3.5" />
-              <span>Sinkronisasi Data Awal</span>
+              <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
+              <span>Sync Cloud Data</span>
             </button>
           </div>
         </div>
+
+        {/* 4 Quick Executive Metric Cards */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+          {/* Card 1: Customer */}
+          <button
+            onClick={() => setActiveSubTab('customers')}
+            className={`p-4 rounded-2xl border text-left transition-all cursor-pointer group shadow-2xs ${
+              activeSubTab === 'customers'
+                ? 'bg-amber-500/10 border-amber-400 dark:border-amber-500/60 ring-2 ring-amber-400/20'
+                : 'bg-slate-50/70 dark:bg-slate-800/40 border-slate-200/80 dark:border-slate-800 hover:border-amber-400/60 hover:bg-slate-100/60'
+            }`}
+          >
+            <div className="flex items-center justify-between text-slate-400 group-hover:text-amber-600">
+              <span className="text-[11px] font-bold uppercase tracking-wider font-outfit">Pelanggan Nakes</span>
+              <Users className="w-4 h-4 text-amber-500" />
+            </div>
+            <div className="text-xl sm:text-2xl font-black font-outfit text-slate-900 dark:text-white mt-1">
+              {customers?.length || 0}
+            </div>
+            <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 truncate">
+              {proCount} Akun Pro Aktif
+            </div>
+          </button>
+
+          {/* Card 2: Pending Verifikasi */}
+          <button
+            onClick={() => setActiveSubTab('customers')}
+            className={`p-4 rounded-2xl border text-left transition-all cursor-pointer group shadow-2xs ${
+              activeSubTab === 'customers'
+                ? 'bg-amber-500/10 border-amber-400 dark:border-amber-500/60 ring-2 ring-amber-400/20'
+                : 'bg-slate-50/70 dark:bg-slate-800/40 border-slate-200/80 dark:border-slate-800 hover:border-emerald-400/60 hover:bg-slate-100/60'
+            }`}
+          >
+            <div className="flex items-center justify-between text-slate-400 group-hover:text-emerald-600">
+              <span className="text-[11px] font-bold uppercase tracking-wider font-outfit">Subskripsi & Bayar</span>
+              <CreditCard className="w-4 h-4 text-emerald-500" />
+            </div>
+            <div className="text-xl sm:text-2xl font-black font-outfit text-slate-900 dark:text-white mt-1 flex items-center gap-1.5">
+              <span>{pendingCount > 0 ? `${pendingCount} Menunggu` : 'Semua Siap'}</span>
+              {pendingCount > 0 && (
+                <span className="w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>
+              )}
+            </div>
+            <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 truncate">
+              {pricingPlans?.length || 0} Paket Lisensi Aktif
+            </div>
+          </button>
+
+          {/* Card 3: Database Obat */}
+          <button
+            onClick={() => setActiveSubTab('drugs')}
+            className={`p-4 rounded-2xl border text-left transition-all cursor-pointer group shadow-2xs ${
+              activeSubTab === 'drugs' || activeSubTab === 'interactions'
+                ? 'bg-amber-500/10 border-amber-400 dark:border-amber-500/60 ring-2 ring-amber-400/20'
+                : 'bg-slate-50/70 dark:bg-slate-800/40 border-slate-200/80 dark:border-slate-800 hover:border-teal-400/60 hover:bg-slate-100/60'
+            }`}
+          >
+            <div className="flex items-center justify-between text-slate-400 group-hover:text-teal-600">
+              <span className="text-[11px] font-bold uppercase tracking-wider font-outfit">Data Master Obat</span>
+              <Pill className="w-4 h-4 text-teal-500" />
+            </div>
+            <div className="text-xl sm:text-2xl font-black font-outfit text-slate-900 dark:text-white mt-1">
+              {drugs.length}
+            </div>
+            <div className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 truncate">
+              {interactions.length} Pasangan DDInter V2
+            </div>
+          </button>
+
+          {/* Card 4: Staf & Cloud */}
+          <button
+            onClick={() => setActiveSubTab('team-admin')}
+            className={`p-4 rounded-2xl border text-left transition-all cursor-pointer group shadow-2xs ${
+              activeSubTab === 'team-admin'
+                ? 'bg-amber-500/10 border-amber-400 dark:border-amber-500/60 ring-2 ring-amber-400/20'
+                : 'bg-slate-50/70 dark:bg-slate-800/40 border-slate-200/80 dark:border-slate-800 hover:border-indigo-400/60 hover:bg-slate-100/60'
+            }`}
+          >
+            <div className="flex items-center justify-between text-slate-400 group-hover:text-indigo-600">
+              <span className="text-[11px] font-bold uppercase tracking-wider font-outfit">Tim Administrator</span>
+              <ShieldCheck className="w-4 h-4 text-indigo-500" />
+            </div>
+            <div className="text-xl sm:text-2xl font-black font-outfit text-slate-900 dark:text-white mt-1">
+              {adminUsers?.length || 0}
+            </div>
+            <div className="text-[11px] text-emerald-600 dark:text-emerald-400 mt-0.5 font-bold flex items-center gap-1 truncate">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              <span>Firestore Connected</span>
+            </div>
+          </button>
+        </div>
+
+        {/* Trial Simulator Bar (Terintegrasi Khusus di Admin Hub) */}
+        {onSimulateTrial && (
+          <div className="bg-amber-500/10 border border-amber-400/30 rounded-2xl p-3 sm:p-4 flex flex-col md:flex-row items-center justify-between gap-3 text-xs shadow-2xs">
+            <div className="flex items-center gap-2.5">
+              <span className="p-1.5 rounded-lg bg-amber-400/20 text-amber-700 dark:text-amber-300 font-black">🛠️</span>
+              <div>
+                <p className="font-bold text-slate-900 dark:text-white font-outfit">Simulasi Pengujian Akun Nakes:</p>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400">Uji langsung status Starter, aktivasi trial 3 hari, hingga expired tanpa mengubah database riil:</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2 flex-wrap">
+              {onToggleTrialStatus && (
+                <button
+                  onClick={onToggleTrialStatus}
+                  className={`px-3 py-1 rounded-xl font-bold text-[11px] transition-all cursor-pointer ${
+                    isTrialEnabled
+                      ? 'bg-emerald-600 hover:bg-emerald-500 text-white'
+                      : 'bg-slate-700 text-slate-200'
+                  }`}
+                >
+                  Trial: {isTrialEnabled ? 'ON' : 'OFF'}
+                </button>
+              )}
+              <button
+                onClick={() => onSimulateTrial('free-new')}
+                className="px-2.5 py-1 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 text-slate-700 dark:text-slate-200 font-bold text-[11px] cursor-pointer"
+              >
+                Akun Starter
+              </button>
+              <button
+                onClick={() => onSimulateTrial('start-trial')}
+                className="px-2.5 py-1 rounded-xl bg-teal-600 hover:bg-teal-500 text-white font-bold text-[11px] cursor-pointer"
+              >
+                Trial 3 Hari
+              </button>
+              <button
+                onClick={() => onSimulateTrial('trial-expired')}
+                className="px-2.5 py-1 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-300 dark:border-rose-800 text-rose-700 dark:text-rose-300 font-bold text-[11px] cursor-pointer"
+              >
+                Trial Habis
+              </button>
+              <button
+                onClick={() => onSimulateTrial('reset-admin')}
+                className="px-2.5 py-1 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-[11px] cursor-pointer"
+              >
+                Reset Admin
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* PILLAR NAVIGATION TAB SWITCHER (10 Pilar Manajemen Admin) */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 border-t border-slate-100 dark:border-slate-800 pt-4 scrollbar-none">
+          {adminTabs.map((tab) => {
+            const Icon = tab.icon;
+            const isActive = activeSubTab === tab.id;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveSubTab(tab.id)}
+                className={`flex items-center gap-2 px-3.5 py-2.5 rounded-2xl text-xs font-bold font-outfit whitespace-nowrap transition-all cursor-pointer shrink-0 ${
+                  isActive
+                    ? 'bg-amber-500 text-slate-950 font-black shadow-sm ring-2 ring-amber-400/40 scale-[1.02]'
+                    : 'bg-slate-100/80 dark:bg-slate-800/60 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white'
+                }`}
+              >
+                <Icon className={`w-4 h-4 ${isActive ? 'text-slate-950' : 'text-amber-500'}`} />
+                <span>{tab.label}</span>
+                {tab.badge && (
+                  <span className={`text-[10px] font-black px-1.5 py-0.2 rounded-full ${tab.badgeColor || 'bg-amber-600 text-white'}`}>
+                    {tab.badge}
+                  </span>
+                )}
+              </button>
+            );
+          })}
+        </div>
+
       </div>
 
       {message && (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { UserProfile, Drug, DrugInteraction, InteractionCheckRecord } from '../types';
 import { 
   ShieldAlert, 
@@ -6,12 +6,8 @@ import {
   History, 
   Sparkles, 
   Search, 
-  ArrowRight, 
-  CheckCircle2, 
   Clock, 
   CreditCard, 
-  AlertTriangle, 
-  ChevronRight, 
   ShieldCheck,
   Activity,
   HeartPulse,
@@ -19,7 +15,6 @@ import {
   Syringe,
   MessageSquare,
   Calculator, 
-  Zap, 
   Stethoscope,
   BookMarked,
   GraduationCap,
@@ -27,11 +22,20 @@ import {
   FlaskConical,
   CalendarClock,
   Leaf,
-  Layers,
   Instagram,
-  Wand2
+  Wand2,
+  BookOpen,
+  Languages,
+  AlertOctagon,
+  ClipboardList,
+  Scale,
+  RefreshCw,
+  Building2,
+  Users,
+  Tag,
+  UserCheck,
+  X
 } from 'lucide-react';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 
 interface DashboardProps {
   currentUser: UserProfile | null;
@@ -52,14 +56,21 @@ interface DashboardProps {
   onToggleTrialStatus?: () => void;
 }
 
+interface LauncherModule {
+  id: string;
+  title: string;
+  keywords?: string;
+  icon: React.ComponentType<{ className?: string }>;
+  iconColor: string;
+  iconBg: string;
+}
+
 export const Dashboard: React.FC<DashboardProps> = ({
   currentUser,
   drugs = [],
   interactions = [],
   historyRecords = [],
   onSelectTab,
-  onSearchDrug,
-  onCheckInteractionWith,
   onOpenPricingModal,
   onStartTrial,
   isTrialActive = false,
@@ -70,471 +81,371 @@ export const Dashboard: React.FC<DashboardProps> = ({
   trialDurationDays = 3,
   onToggleTrialStatus
 }) => {
-  const [quickSearch, setQuickSearch] = useState('');
+  const [moduleSearch, setModuleSearch] = useState('');
 
-  const handleQuickSearchSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (quickSearch.trim()) {
-      if (onSearchDrug) onSearchDrug(quickSearch);
-      onSelectTab('drugs');
-    }
-  };
+  // Standar Palet Warna Pilihan B: Deep Pine Teal (#005f5a) Dominan + Aksen Peringatan Bahaya Medis
+  const PINE_TEAL = 'text-[#005f5a] dark:text-teal-400';
 
-  const highRiskPairs = [
-    { drugA: 'Warfarin', drugB: 'Aspirin', severity: 'Major', outcome: 'Sinergis Antikoagulan & Risiko Pendarahan Masif' },
-    { drugA: 'Clopidogrel', drugB: 'Omeprazole', severity: 'Major', outcome: 'Penurunan Konversi Bioaktif Antiplatelet (CYP2C19)' },
-    { drugA: 'Simvastatin', drugB: 'Ketoconazole', severity: 'Major', outcome: 'Inhibisi CYP3A4 & Toksisitas Rhabdomyolysis' },
-    { drugA: 'Digoxin', drugB: 'Amiodarone', severity: 'Major', outcome: 'Peningkatan Kadar Digoxin Plasma (P-gp Inhibisi)' }
-  ];
+  // Seluruh 27 modul klinis dalam format Launcher Ringkas (Ikon + Nama Tanpa Pengotakan)
+  const allModules: LauncherModule[] = useMemo(() => {
+    const list: LauncherModule[] = [
+      // 1. Skrining & Keamanan Resep
+      {
+        id: 'interactions',
+        title: 'Interaksi Obat',
+        keywords: 'cek interaksi obat multi obat ddinter drugs.com major moderate',
+        icon: ShieldAlert,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'pregnancy',
+        title: 'Bumil & Busui',
+        keywords: 'keamanan ibu hamil menyusui fda pllr laktasi hale teratogenik',
+        icon: HeartHandshake,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'drug-lab',
+        title: 'Obat & Lab',
+        keywords: 'interaksi obat uji laboratorium analit troponin tiroid urine ginjal',
+        icon: FlaskConical,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'herb-drug',
+        title: 'Herbal & Jamu',
+        keywords: 'interaksi herbal jamu obat oht fitofarmaka fohi suplemen',
+        icon: Leaf,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'side-effects',
+        title: 'Efek Samping',
+        keywords: 'efek samping obat meso bpom naranjo hartwig toksisitas organ adr',
+        icon: Activity,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'iv-compatibility',
+        title: 'Injeksi IV',
+        keywords: 'kompatibilitas injeksi iv y-site infus icu pelarut ns d5w presipitasi',
+        icon: Syringe,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'toxicology',
+        title: 'Toksikologi',
+        keywords: 'toksikologi overdosis antidotum igd keracunan cito rumack matthew',
+        icon: AlertOctagon,
+        iconColor: 'text-rose-600 dark:text-rose-400', // Aksen Khusus Peringatan Gawat Darurat (Safety Alert)
+        iconBg: 'bg-rose-50 dark:bg-rose-950/60'
+      },
+      {
+        id: 'high-alert',
+        title: 'High-Alert & LASA',
+        keywords: 'label lasa norum high alert tall man lettering starkes skp 3 kars',
+        icon: ShieldAlert,
+        iconColor: 'text-amber-600 dark:text-amber-400', // Aksen Khusus Kewaspadaan Tinggi (Safety Alert)
+        iconBg: 'bg-amber-50 dark:bg-amber-950/60'
+      },
+      {
+        id: 'polypharmacy',
+        title: 'Polifarmasi',
+        keywords: 'evaluasi polifarmasi kriteria beers geriatri ags stopp start lansia',
+        icon: Stethoscope,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'guidelines',
+        title: 'Panduan PNPK',
+        keywords: 'panduan terapi klinis pnpk kemenkes ri konsensus spesialis',
+        icon: HeartPulse,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
 
-  const quickModules = [
-    { id: 'pregnancy', title: 'Keamanan Bumil & Busui', desc: 'Risiko Teratogenik FDA PLLR & Laktasi Hale’s L1-L5', icon: HeartHandshake, color: 'text-pink-600 dark:text-pink-400', bg: 'bg-pink-50 dark:bg-pink-950/40 border-pink-200 dark:border-pink-800/60' },
-    { id: 'drug-lab', title: 'Interaksi Obat & Uji Lab', desc: 'Deteksi Hasil Lab Palsu Troponin, Tiroid & Ginjal', icon: FlaskConical, color: 'text-cyan-700 dark:text-cyan-400', bg: 'bg-cyan-50 dark:bg-cyan-950/40 border-cyan-200 dark:border-cyan-800/60' },
-    { id: 'herb-drug', title: 'Interaksi Herbal & Obat', desc: 'Penapisan Jamu vs Obat Resep Sintetik FOHI', icon: Leaf, color: 'text-emerald-800 dark:text-emerald-400', bg: 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-200 dark:border-emerald-800/60' },
-    { id: 'bud', title: 'Stabilitas & BUD Racikan', desc: 'Kalkulator Kadaluarsa Puyer, Sirup & Salep USP <795>', icon: CalendarClock, color: 'text-emerald-700 dark:text-emerald-400', bg: 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-200 dark:border-emerald-800/60' },
-    { id: 'competency', title: 'UKMPPAI (Apoteker)', desc: '653 Soal CBT Kasus, 20 Stase OSCE & Blueprint KFN', icon: GraduationCap, color: 'text-emerald-600 dark:text-emerald-400', bg: 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-200 dark:border-emerald-800/60' },
-    { id: 'competency-vokasi', title: 'UKTVF (Vokasi D3)', desc: '480 Soal CBT APDFI, Alkes BMHP & Praktikum Mutu', icon: FlaskConical, color: 'text-teal-600 dark:text-teal-400', bg: 'bg-teal-50 dark:bg-teal-950/40 border-teal-200 dark:border-teal-800/60' },
-    { id: 'interactions', title: 'Cek Interaksi Obat', desc: 'Analisis DDI tervalidasi Drugs.com & DDInter', icon: ShieldAlert, color: 'text-rose-600 dark:text-rose-400', bg: 'bg-rose-50 dark:bg-rose-950/40 border-rose-200 dark:border-rose-800/60' },
-    { id: 'side-effects', title: 'Cek Efek Samping & Toksisitas', desc: 'Beban toksisitas organ, pelacak gejala & Naranjo', icon: Activity, color: 'text-amber-600 dark:text-amber-400', bg: 'bg-amber-50 dark:bg-amber-950/40 border-amber-200 dark:border-amber-800/60' },
-    { id: 'whatsapp-pio', title: 'Kartu PIO WhatsApp', desc: 'Kirim etiket & edukasi 1-klik ke pasien', icon: MessageSquare, color: 'text-teal-600 dark:text-teal-400', bg: 'bg-teal-50 dark:bg-teal-950/40 border-teal-200 dark:border-teal-800/60' },
-    { id: 'education-generator', title: 'Generator Edukasi AI', desc: 'Rancang master prompt edukasi poster, leaflet & medsos', icon: Wand2, color: 'text-pink-600 dark:text-pink-400', bg: 'bg-pink-50 dark:bg-pink-950/40 border-pink-200 dark:border-pink-800/60' },
-    { id: 'pediatric', title: 'Dosis Pediatrik & Puyer', desc: 'Kalkulator BB/BSA & racikan puyer anak', icon: Baby, color: 'text-blue-600 dark:text-blue-400', bg: 'bg-blue-50 dark:bg-blue-950/40 border-blue-200 dark:border-blue-800/60' },
-    { id: 'iv-compatibility', title: 'Kompatibilitas Injeksi IV', desc: 'Skrining Y-Site & kompatibilitas pelarut ICU', icon: Syringe, color: 'text-cyan-600 dark:text-cyan-400', bg: 'bg-cyan-50 dark:bg-cyan-950/40 border-cyan-200 dark:border-cyan-800/60' },
-    { id: 'literature', title: 'Literatur & Basis Ilmiah', desc: '78+ Sumber PNPK Kemenkes, ADA, ASHP & DDInter', icon: BookMarked, color: 'text-violet-600 dark:text-violet-400', bg: 'bg-violet-50 dark:bg-violet-950/40 border-violet-200 dark:border-violet-800/60' },
-    { id: 'antimicrobial-stewardship', title: 'Stewardship Antibiotik (PPRA)', desc: 'Peta antibiogram, AWaRe 2024, audit Gyssens & DDD', icon: ShieldCheck, color: 'text-emerald-700 dark:text-emerald-400', bg: 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-200 dark:border-emerald-800/60' },
-    ...(currentUser?.role === 'admin' ? [
-      { id: 'admin-instagram', title: 'Studio Konten & Instagram', desc: 'Download infografis edukasi & poster promosi HD 1-klik', icon: Instagram, color: 'text-rose-600 dark:text-rose-400', bg: 'bg-rose-50 dark:bg-rose-950/40 border-rose-200 dark:border-rose-800/60' }
-    ] : [])
-  ];
+      // 2. Kalkulator Medis & Racikan
+      {
+        id: 'pediatric',
+        title: 'Pediatrik & Puyer',
+        keywords: 'dosis pediatrik puyer anak racikan sirup bb bsa cangkang kapsul',
+        icon: Baby,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'bud',
+        title: 'BUD Racikan',
+        keywords: 'stabilitas beyond use date bud racikan puyer sirup salep krim usp 795',
+        icon: CalendarClock,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'renal-adjuster',
+        title: 'Klirens Ginjal',
+        keywords: 'kalkulator medis ginjal cockcroft gault egfr ckd-epi crcl hepar ibw',
+        icon: Calculator,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'antimicrobial-stewardship',
+        title: 'PPRA Antibiotik',
+        keywords: 'stewardship antibiotik ppra aware who 2024 antibiogram gyssens ddd',
+        icon: ShieldCheck,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+
+      // 3. Konseling & Edukasi Pasien
+      {
+        id: 'swamedikasi',
+        title: 'Swamedikasi',
+        keywords: 'swamedikasi triage apotek keluhan umum wwham obat bebas dotb rujukan',
+        icon: Sparkles,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'whatsapp-pio',
+        title: 'Kartu PIO',
+        keywords: 'kartu pio whatsapp pasien etiket digital konseling informasi obat',
+        icon: MessageSquare,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'education-generator',
+        title: 'Edukasi AI',
+        keywords: 'generator edukasi farmasi ai master prompt leaflet poster promkes',
+        icon: Wand2,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'usage',
+        title: 'Cara Pakai',
+        keywords: 'panduan tata cara pakai sediaan khusus inhaler mdi insulin pen suppositoria obat',
+        icon: BookOpen,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'latin-terms',
+        title: 'Singkatan Latin',
+        keywords: 'kamus singkatan latin resep signa aturan pakai dokter farmasi fi vi',
+        icon: Languages,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+
+      // 4. Belajar, SOP & Uji Kompetensi
+      {
+        id: 'competency',
+        title: 'UKMPPAI',
+        keywords: 'pusat belajar ukmppai apoteker uji kompetensi 653 soal cbt osce kfn iai',
+        icon: GraduationCap,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'competency-vokasi',
+        title: 'UKTVF D3',
+        keywords: 'pusat belajar uktvf vokasi d3 farmasi apdfi 480 soal cbt alkes bmhp',
+        icon: FlaskConical,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'drug-notes',
+        title: 'Hafalan Obat',
+        keywords: 'hafalan obat jembatan keledai rima klinis flashcard kelas terapi',
+        icon: BookOpen,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'literature',
+        title: 'Literatur EBM',
+        keywords: 'literatur klinis ebm pnpk jurnal ilmiah ashp ada kdigo esc',
+        icon: BookMarked,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'sop',
+        title: 'SOP Farmasi',
+        keywords: 'standar operasional prosedur sop pelayanan farmasi apotek permenkes 73',
+        icon: ClipboardList,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'regulations',
+        title: 'UU Kesehatan',
+        keywords: 'database regulasi uu kesehatan no 17 2023 hukum permenkes bpom',
+        icon: Scale,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+
+      // 5. Modul Inti & Data
+      {
+        id: 'drugs',
+        title: 'Katalog Obat',
+        keywords: 'monografi katalog informasi obat bpom mims indikasi dosis efek samping',
+        icon: Pill,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'history',
+        title: 'Riwayat Resep',
+        keywords: 'riwayat skrining resep log pemeriksaan resep pasien tersimpan arsip',
+        icon: History,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      }
+    ];
+
+    return list;
+  }, []);
+
+  // Modul yang tersaring berdasarkan input pencarian
+  const filteredModules = useMemo(() => {
+    if (!moduleSearch.trim()) return allModules;
+    const q = moduleSearch.toLowerCase().trim();
+    return allModules.filter((mod) => (
+      mod.title.toLowerCase().includes(q) ||
+      (mod.keywords && mod.keywords.toLowerCase().includes(q)) ||
+      mod.id.toLowerCase().includes(q)
+    ));
+  }, [allModules, moduleSearch]);
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 max-w-7xl mx-auto px-1 sm:px-2">
       
-      {/* Admin Testing & Simulation Toolbar */}
-      {currentUser?.role === 'admin' && onSimulateTrial && (
-        <div className="bg-gradient-to-r from-amber-500/15 via-teal-500/10 to-indigo-500/15 border-2 border-amber-400/40 dark:border-amber-500/30 rounded-2xl p-4 flex flex-col lg:flex-row items-center justify-between gap-3 shadow-md">
-          <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-amber-400 text-slate-950 flex items-center justify-center font-black">
-              🛠️
+      {/* Mode Administrator: Shortcut Langsung ke Admin Hub */}
+      {currentUser?.role === 'admin' && (
+        <div className="bg-gradient-to-r from-teal-500/10 via-[#005f5a]/10 to-teal-500/10 border border-[#005f5a]/30 rounded-2xl p-3.5 sm:p-4 flex flex-col md:flex-row items-center justify-between gap-3 text-xs shadow-xs">
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-xl bg-[#005f5a]/15 text-[#005f5a] dark:text-teal-300 flex items-center justify-center font-black text-base shrink-0">
+              ⚙️
             </div>
             <div>
-              <p className="text-xs font-black text-slate-900 dark:text-white font-outfit flex items-center gap-1.5">
-                <span>Panel Pengujian Fitur Uji Coba Pro (Admin Simulator)</span>
-                <span className="text-[10px] px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-900/60 text-amber-900 dark:text-amber-200 border border-amber-300 dark:border-amber-700 font-bold">Live Preview</span>
-              </p>
-              <p className="text-[11px] text-slate-600 dark:text-slate-300 font-medium">
-                Klik tombol di samping untuk menguji langsung alur user Starter, aktivasi trial 3 hari, hingga trial berakhir:
-              </p>
+              <p className="font-bold text-[#0f172a] dark:text-white font-jakarta text-sm">Mode Administrator Aktif</p>
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 font-jakarta">Dashboard kini 100% khusus modul klinis. Pengelolaan subskripsi, tarif QRIS, data obat & tim staf terpusat di Admin Hub.</p>
             </div>
           </div>
-          <div className="flex items-center gap-2 flex-wrap">
-            {/* Quick Global Trial ON/OFF Toggle Button for Admin */}
-            {onToggleTrialStatus && (
-              <button
-                onClick={onToggleTrialStatus}
-                title={isTrialEnabled ? "Klik untuk Menutup / Mematikan Fitur Trial secara Global" : "Klik untuk Mengaktifkan Fitur Trial secara Global"}
-                className={`px-3 py-1.5 rounded-xl font-black text-xs cursor-pointer shadow-xs transition-transform hover:scale-105 flex items-center gap-1.5 ${
-                  isTrialEnabled
-                    ? 'bg-emerald-600 hover:bg-emerald-500 text-white shadow-emerald-600/30'
-                    : 'bg-slate-700 hover:bg-slate-600 text-slate-200 border border-slate-500'
-                }`}
-              >
-                <span className={`w-2 h-2 rounded-full ${isTrialEnabled ? 'bg-white animate-pulse' : 'bg-rose-400'}`} />
-                <span>Sakelar Trial: {isTrialEnabled ? 'ON (Aktif)' : 'OFF (Mati)'}</span>
-              </button>
-            )}
-
+          <div className="flex items-center gap-2 shrink-0">
             <button
-              onClick={() => onSimulateTrial('free-new')}
-              title="Ubah akun menjadi Akun Starter baru yang belum pernah trial"
-              className="px-3 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-bold text-xs cursor-pointer shadow-xs transition-transform hover:scale-105"
+              onClick={() => onSelectTab('admin')}
+              className="px-4 py-2 bg-[#005f5a] hover:bg-[#004b47] text-white font-bold rounded-xl text-xs transition-all shadow-xs cursor-pointer font-jakarta hover:scale-105 active:scale-95 flex items-center gap-1.5"
             >
-              1. Jadi Akun Starter
-            </button>
-            <button
-              onClick={() => onSimulateTrial('start-trial')}
-              title="Aktifkan Uji Coba Pro 3 Hari"
-              className="px-3 py-1.5 rounded-xl bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-400 hover:to-cyan-500 text-white font-black text-xs cursor-pointer shadow-xs transition-transform hover:scale-105"
-            >
-              2. Aktifkan Trial 3 Hari
-            </button>
-            <button
-              onClick={() => onSimulateTrial('trial-expired')}
-              title="Simulasikan Waktu 72 Jam Habis (Downgrade ke Starter & Munculkan Modal Selesai)"
-              className="px-3 py-1.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-300 dark:border-rose-800 hover:bg-rose-100 text-rose-700 dark:text-rose-300 font-bold text-xs cursor-pointer shadow-xs transition-transform hover:scale-105"
-            >
-              3. Simulasikan Trial Selesai
-            </button>
-            <button
-              onClick={() => onSimulateTrial('reset-admin')}
-              title="Kembalikan akun ke Administrator Penuh (Pro Aktif)"
-              className="px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-black text-xs cursor-pointer shadow-xs transition-transform hover:scale-105"
-            >
-              Kembali ke Pro Admin
+              <span>Buka Admin Hub</span>
+              <span className="text-teal-200">→</span>
             </button>
           </div>
         </div>
       )}
 
-      {/* Welcome & User Status Banner - MIDNIGHT INDIGO & SAPPHIRE */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#050714] via-[#0d122e] to-[#141b45] p-6 sm:p-8 text-white shadow-2xl border border-indigo-500/25 flex flex-col md:flex-row md:items-center justify-between gap-6">
-        <FloatingPillsBackground density="low" accentColor="#818cf8" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <Stethoscope className="w-56 h-56 text-indigo-300 -rotate-12" />
-        </div>
-        <div className="space-y-3 max-w-2xl relative z-10">
-
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-cyan-600 text-white flex items-center justify-center shadow-lg shadow-indigo-950/50 shrink-0">
-              <Stethoscope className="w-6 h-6" />
-            </div>
-            <div>
-              <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white font-outfit">
-                Selamat Datang, <span className="text-indigo-300">{currentUser ? currentUser.name : 'Apoteker / Dokter'}</span>
-              </h1>
-            </div>
-          </div>
-
-        </div>
-
-        {/* User Badge & Subscription Quick Status */}
-        <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-          <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-indigo-500/40 space-y-2.5 shadow-xl">
-            <div className="flex items-center justify-between text-xs font-bold text-indigo-300 border-b border-indigo-800/60 pb-2">
-              <span className="flex items-center gap-1.5 font-black font-outfit">
-                <Activity className="w-3.5 h-3.5 text-indigo-400" />
-                <span>Status Akun &amp; CDSS</span>
-              </span>
-              {isTrialActive ? (
-                <span className="bg-amber-400/20 text-amber-300 text-[10px] font-black px-2 py-0.5 rounded-full border border-amber-500/40 flex items-center gap-1 font-outfit animate-pulse">
-                  <Clock className="w-3 h-3 text-amber-400" />
-                  Trial Aktif
-                </span>
-              ) : (
-                <span className="bg-indigo-950 text-indigo-300 text-[10px] font-black px-2 py-0.5 rounded-full border border-indigo-600/40 flex items-center gap-1 font-outfit">
-                  <ShieldCheck className="w-3 h-3 text-indigo-300" />
-                  {currentUser?.subscriptionStatus === 'active' ? 'Lisensi Aktif' : 'Lisensi Dasar'}
-                </span>
-              )}
-            </div>
-
-            <div className="text-xs text-indigo-100/80 space-y-1.5 font-medium">
-              <div className="flex justify-between items-center">
-                <span className="text-slate-400">Paket Layanan:</span>
-                {isTrialActive ? (
-                  <span className="text-xs font-black text-amber-300 font-outfit">
-                    Pro ({trialRemainingText || '3 Hari'})
-                  </span>
-                ) : (
-                  <span className="text-xs font-black text-teal-300 font-outfit">
-                    {currentUser?.subscriptionPlan || 'Starter'}
-                  </span>
-                )}
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-slate-400">Katalog CDSS:</span>
-                <span className="font-bold text-indigo-200">{drugs.length.toLocaleString('id-ID')} Obat Aktif</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-slate-400">Modul Klinis:</span>
-                <span className="font-bold text-emerald-400">22 Modul Lengkap</span>
-              </div>
-              <div className="flex justify-between items-center pt-1 border-t border-indigo-900/40 text-[10px] text-indigo-300/80">
-                <span>Standar Acuan:</span>
-                <span className="font-bold text-white">CDSS Kemenkes RI &amp; BPOM</span>
-              </div>
-            </div>
-          </div>
-
-          <button
-            onClick={onOpenPricingModal}
-            className="w-full py-2.5 px-3 bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-500 hover:to-cyan-500 text-white font-bold text-xs rounded-2xl transition-all flex items-center justify-center gap-1.5 shadow-md cursor-pointer hover:scale-[1.02] active:scale-95 border border-teal-400/30 font-outfit"
-          >
-            <CreditCard className="w-3.5 h-3.5" />
-            <span>{isTrialActive ? 'Ambil Promo Pro Permanen' : 'Kelola Paket Langganan'}</span>
-          </button>
-        </div>
-      </div>
-
-      {/* Trial Invitation Callout for Starter users and Admin Testing */}
+      {/* Trial Banner Callout (Jika user Starter) */}
       {isTrialEnabled && currentUser && !isTrialActive && (!hasClaimedTrial || currentUser.role === 'admin') && onStartTrial && (
-        <div className="bg-gradient-to-r from-teal-500/10 via-emerald-500/10 to-teal-500/10 dark:from-teal-950/40 dark:via-emerald-950/40 dark:to-teal-950/40 border-2 border-teal-500/30 rounded-3xl p-5 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm animate-in fade-in">
-          <div className="flex items-center gap-3.5">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-teal-500 to-emerald-500 text-white flex items-center justify-center shrink-0 shadow-md shadow-teal-500/20">
-              <Sparkles className="w-6 h-6 fill-white" />
+        <div className="bg-gradient-to-r from-teal-500/15 via-[#005f5a]/10 to-cyan-500/15 border border-[#005f5a]/30 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs shadow-xs animate-in fade-in">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-xl bg-[#005f5a] text-white flex items-center justify-center shrink-0">
+              <Sparkles className="w-4 h-4 fill-white" />
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <h4 className="text-sm sm:text-base font-black text-slate-900 dark:text-white font-outfit">
-                  Uji Coba Gratis {trialDurationDays} Hari Akses Penuh Paket Pro
-                </h4>
-                <span className="bg-teal-500/20 text-teal-800 dark:text-teal-300 text-[10px] font-black px-2 py-0.5 rounded-full border border-teal-500/30 font-outfit">
-                  {trialDurationDays * 24} Jam
-                </span>
-              </div>
-              <p className="text-xs text-slate-600 dark:text-slate-300 font-medium leading-relaxed">
-                Eksplorasi seluruh 15+ fitur Pro tanpa batas: Kalkulator Dosis Pediatrik &amp; Puyer, Kompatibilitas IV, Skrining Polifarmasi Beers, dan 1.130+ Soal CBT UKOM.
+              <span className="font-bold text-[#0f172a] dark:text-white font-jakarta">
+                Buka Uji Coba Gratis {trialDurationDays} Hari Akses Penuh Paket Pro
+              </span>
+              <p className="text-[11px] text-slate-600 dark:text-slate-300 font-jakarta">
+                Akses tanpa batas ke seluruh fitur CDSS lanjutan termasuk Dosis Pediatrik, Kompatibilitas IV, dan Bank Soal CBT.
               </p>
             </div>
           </div>
           <button
             onClick={onStartTrial}
-            className="w-full sm:w-auto px-6 py-3 bg-gradient-to-r from-teal-500 via-teal-600 to-cyan-600 hover:from-teal-400 hover:to-cyan-500 text-white font-black text-xs rounded-xl shadow-lg shadow-teal-500/25 transition-all flex items-center justify-center gap-2 shrink-0 cursor-pointer hover:scale-105"
+            className="w-full sm:w-auto px-4 py-2 bg-[#005f5a] hover:bg-[#004b47] text-white font-bold rounded-xl text-xs transition-all shadow-xs cursor-pointer shrink-0 font-jakarta"
           >
-            <Sparkles className="w-4 h-4 fill-white" />
-            <span>Aktifkan Coba {trialDurationDays} Hari Sekarang</span>
+            Aktifkan Sekarang
           </button>
         </div>
       )}
 
-      {/* Metrics Row - Vibrant Multi-Color Semantic Cards */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {/* Metric 1: Monografi Obat (Blue / Sapphire) */}
-        <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-1.5 hover:border-blue-400 dark:hover:border-blue-500 transition-all hover:shadow-md">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-slate-500 dark:text-slate-400">Monografi Obat</span>
-            <div className="p-2 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400">
-              <Pill className="w-4 h-4" />
-            </div>
-          </div>
-          <p className="text-2xl font-black text-slate-900 dark:text-white">{drugs.length}</p>
-          <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">Obat Unik Terdaftar (BPOM & MIMS)</p>
-        </div>
-
-        {/* Metric 2: Pasangan Interaksi (Amber / Gold) */}
-        <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-1.5 hover:border-amber-400 dark:hover:border-amber-500 transition-all hover:shadow-md">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-slate-500 dark:text-slate-400">Pasangan Interaksi</span>
-            <div className="p-2 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400">
-              <ShieldAlert className="w-4 h-4" />
-            </div>
-          </div>
-          <p className="text-2xl font-black text-slate-900 dark:text-white">{interactions.length}</p>
-          <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">Tervalidasi Drugs.com & DDInter</p>
-        </div>
-
-        {/* Metric 3: Riwayat Resep (Indigo / Purple) */}
-        <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-1.5 hover:border-purple-400 dark:hover:border-purple-500 transition-all hover:shadow-md">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-slate-500 dark:text-slate-400">Riwayat Resep</span>
-            <div className="p-2 rounded-xl bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400">
-              <History className="w-4 h-4" />
-            </div>
-          </div>
-          <p className="text-2xl font-black text-slate-900 dark:text-white">{historyRecords.length}</p>
-          <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">Pemeriksaan Tersimpan</p>
-        </div>
-
-        {/* Metric 4: Firebase Cloud (Emerald) */}
-        <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-1.5 hover:border-emerald-400 dark:hover:border-emerald-500 transition-all hover:shadow-md">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-slate-500 dark:text-slate-400">Database Engine</span>
-            <div className="p-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400">
-              <CheckCircle2 className="w-4 h-4" />
-            </div>
-          </div>
-          <p className="text-2xl font-black text-emerald-600 dark:text-emerald-400">Terhubung</p>
-          <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">Sinkronisasi Real-Time v12</p>
-        </div>
+      {/* SEARCH BAR (Bilah Pencarian Cepat Modul) */}
+      <div className="relative">
+        <Search className="w-4 h-4 text-slate-400 absolute left-4 top-3.5 pointer-events-none" />
+        <input
+          type="text"
+          value={moduleSearch}
+          onChange={(e) => setModuleSearch(e.target.value)}
+          placeholder="Cari modul klinis (contoh: Interaksi, Pediatrik, Uji Lab, BUD, Ginjal, High-Alert)..."
+          className="w-full pl-11 pr-10 py-3 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl text-xs sm:text-sm font-semibold font-jakarta text-[#0f172a] dark:text-white placeholder-slate-400 focus:outline-none focus:border-[#005f5a] dark:focus:border-teal-400 transition-all shadow-2xs"
+        />
+        {moduleSearch && (
+          <button
+            onClick={() => setModuleSearch('')}
+            className="absolute right-3.5 top-3.5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer"
+          >
+            <X className="w-4 h-4" />
+          </button>
+        )}
       </div>
 
-      {/* Quick Access Modules Grid */}
-      <div className="space-y-3">
-        <h2 className="text-sm font-extrabold text-slate-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
-          <Zap className="w-4 h-4 text-amber-500" />
-          Akses Cepat Modul Klinis
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {quickModules.map((mod) => {
+      {/* BORDERLESS APP LAUNCHER GRID (Ikon & Nama Singkat Tanpa Pengotakan) */}
+      {filteredModules.length === 0 ? (
+        <div className="bg-white dark:bg-slate-900 rounded-3xl border border-dashed border-slate-200 dark:border-slate-800 p-10 text-center space-y-3">
+          <div className="w-12 h-12 rounded-2xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 mx-auto">
+            <Search className="w-6 h-6" />
+          </div>
+          <h3 className="text-sm font-bold text-[#0f172a] dark:text-white font-jakarta">
+            Tidak ada modul yang cocok dengan "{moduleSearch}"
+          </h3>
+          <p className="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto font-jakarta">
+            Coba kata kunci lain untuk melihat seluruh instrumen klinis yang tersedia.
+          </p>
+          <button
+            onClick={() => setModuleSearch('')}
+            className="px-4 py-2 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-800 dark:text-slate-200 text-xs font-bold rounded-xl cursor-pointer transition-colors font-jakarta"
+          >
+            Reset Pencarian
+          </button>
+        </div>
+      ) : (
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-y-10 sm:gap-y-12 md:gap-y-14 gap-x-4 sm:gap-x-6 md:gap-x-8 py-6 sm:py-10">
+          {filteredModules.map((mod) => {
             const Icon = mod.icon;
             return (
               <button
                 key={mod.id}
                 onClick={() => onSelectTab(mod.id)}
-                className={`p-4 rounded-2xl border ${mod.bg} text-left transition-all hover:shadow-md hover:scale-[1.02] cursor-pointer space-y-2 group`}
+                className="group flex flex-col items-center text-center focus:outline-none cursor-pointer select-none py-2 px-1 transition-all duration-300 active:scale-95"
+                title={mod.title}
               >
-                <div className="flex items-center justify-between">
-                  <div className={`p-2 rounded-xl bg-white dark:bg-slate-900 shadow-2xs ${mod.color}`}>
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <ArrowRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
+                {/* Pure Large Standalone Icon - Tanpa Pengotakan/Border/Background Box */}
+                <div className="flex items-center justify-center transition-all duration-300 group-hover:scale-115 group-hover:-translate-y-2">
+                  <Icon className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 stroke-[1.75] transition-all duration-300 ${mod.iconColor} group-hover:drop-shadow-[0_8px_16px_rgba(0,95,90,0.22)]`} />
                 </div>
-                <div>
-                  <h3 className="text-xs font-bold text-slate-900 dark:text-white">{mod.title}</h3>
-                  <p className="text-[11px] text-slate-500 dark:text-slate-400 font-medium line-clamp-2 mt-0.5">{mod.desc}</p>
-                </div>
+
+                {/* Nama Modul Lebih Besar, Tegas & Padat (Font Plus Jakarta Sans) */}
+                <span className="mt-3.5 text-xs sm:text-sm md:text-[14.5px] font-bold font-jakarta text-[#0f172a] dark:text-slate-100 group-hover:text-[#005f5a] dark:group-hover:text-teal-300 leading-snug line-clamp-2 max-w-[110px] sm:max-w-[140px] transition-colors tracking-tight">
+                  {mod.title}
+                </span>
               </button>
             );
           })}
         </div>
-      </div>
-
-      {/* Main Workspace (Full Width) */}
-      <div className="space-y-6">
-        
-        {/* Main Action Block 1: Cek Interaksi Obat */}
-        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm space-y-5">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-4 gap-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-rose-50 dark:bg-rose-950/60 rounded-xl flex items-center justify-center text-rose-600 dark:text-rose-400 border border-rose-200 dark:border-rose-800 shrink-0">
-                <ShieldAlert className="w-5 h-5" />
-              </div>
-              <div>
-                <h2 className="text-base font-black text-slate-900 dark:text-white">Pemeriksa Interaksi Multi-Obat</h2>
-                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Mesin analisis klinis untuk skrining potensi interaksi berbahaya</p>
-              </div>
-            </div>
-
-            <button
-              onClick={() => onSelectTab('interactions')}
-              className="px-5 py-2.5 bg-gradient-to-r from-rose-600 to-rose-700 hover:from-rose-500 hover:to-rose-600 text-white font-bold text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 shadow-sm cursor-pointer hover:scale-[1.02] shrink-0"
-            >
-              <span>Buka Cek Interaksi</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
-
-          {/* Quick High Risk Test Pair Shortcut */}
-          <div className="space-y-3">
-            <p className="text-xs font-extrabold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
-              <AlertTriangle className="w-4 h-4 text-amber-500" />
-              <span>Pilihan Pasangan Interaksi Kritis (Uji Cepat 1-Klik):</span>
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
-              {highRiskPairs.map((pair, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => {
-                    if (onCheckInteractionWith) onCheckInteractionWith(`${pair.drugA}, ${pair.drugB}`);
-                  }}
-                  className="p-3.5 bg-slate-50 dark:bg-slate-950 hover:bg-rose-50/50 dark:hover:bg-rose-950/30 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-rose-400 dark:hover:border-rose-700 text-left transition-all group space-y-1.5 cursor-pointer hover:shadow-xs hover:scale-[1.01]"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-black text-slate-900 dark:text-white group-hover:text-rose-600 dark:group-hover:text-rose-400 truncate pr-1">
-                      {pair.drugA} + {pair.drugB}
-                    </span>
-                    <span className="text-[10px] font-black px-2 py-0.5 rounded bg-rose-600 text-white shrink-0">
-                      {pair.severity}
-                    </span>
-                  </div>
-                  <p className="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 font-medium">{pair.outcome}</p>
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Main Action Block 2: Quick Search Drug Directory */}
-        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm space-y-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-blue-50 dark:bg-blue-950/60 rounded-xl flex items-center justify-center text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800 shrink-0">
-                <Pill className="w-5 h-5" />
-              </div>
-              <div>
-                <h2 className="text-base font-black text-slate-900 dark:text-white">Informasi & Monografi Obat</h2>
-                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">Pencarian cepat farmakologi, indikasi, dan efek samping</p>
-              </div>
-            </div>
-
-            <button
-              onClick={() => onSelectTab('drugs')}
-              className="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1 cursor-pointer"
-            >
-              <span>Lihat Semua</span>
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-
-          <form onSubmit={handleQuickSearchSubmit} className="flex gap-2">
-            <div className="relative flex-1">
-              <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
-              <input
-                type="text"
-                value={quickSearch}
-                onChange={(e) => setQuickSearch(e.target.value)}
-                placeholder="Ketik nama obat (contoh: Atorvastatin, Ciprofloxacin, Metformin)..."
-                className="w-full pl-10 pr-3 py-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-xs font-bold font-outfit text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-indigo-500 transition-colors shadow-2xs"
-              />
-            </div>
-            <button
-              type="submit"
-              className="px-5 py-2.5 bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-bold font-outfit text-xs rounded-xl transition-all cursor-pointer shadow-md shadow-indigo-950/40 shrink-0"
-            >
-              Cari Monografi
-            </button>
-          </form>
-        </div>
-
-        {/* Recent History Table */}
-        <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm space-y-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <History className="w-4 h-4 text-purple-600 dark:text-purple-400" />
-              <h3 className="font-extrabold text-slate-900 dark:text-white text-sm">Riwayat Pemeriksaan Resep Terbaru</h3>
-            </div>
-            <button
-              onClick={() => onSelectTab('history')}
-              className="text-xs font-bold text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-1 cursor-pointer"
-            >
-              <span>Buka Riwayat Lengkap</span>
-              <ChevronRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
-
-          {historyRecords.length === 0 ? (
-            <div className="p-6 text-center bg-slate-50 dark:bg-slate-950 rounded-xl border border-dashed border-slate-200 dark:border-slate-800 space-y-2">
-              <Clock className="w-6 h-6 text-slate-400 mx-auto" />
-              <p className="text-xs font-medium text-slate-500 dark:text-slate-400">Belum ada riwayat pemeriksaan disimpan hari ini.</p>
-              <button
-                onClick={() => onSelectTab('interactions')}
-                className="px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold rounded-xl shadow-xs transition-colors cursor-pointer"
-              >
-                Mulai Cek Resep
-              </button>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {historyRecords.slice(0, 6).map((rec) => (
-                <div
-                  key={rec.id}
-                  className="p-3.5 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs hover:border-slate-300 dark:hover:border-slate-700 transition-colors"
-                >
-                  <div className="space-y-1 pr-2 min-w-0">
-                    <div className="flex items-center gap-2 font-black text-slate-900 dark:text-white truncate">
-                      <span>{rec.drugs.join(' + ')}</span>
-                    </div>
-                    <p className="text-[10px] text-slate-500 dark:text-slate-400 font-medium">
-                      {new Date(rec.timestamp).toLocaleDateString('id-ID', {
-                        day: 'numeric',
-                        month: 'short',
-                        year: 'numeric',
-                        hour: '2-digit',
-                        minute: '2-digit'
-                      })}
-                    </p>
-                  </div>
-
-                  <div className="text-right space-y-1 shrink-0">
-                    <span className={`inline-block text-[10px] font-black px-2.5 py-0.5 rounded-full ${
-                      rec.highestSeverity === 'Major'
-                        ? 'bg-rose-600 text-white'
-                        : rec.highestSeverity === 'Moderate'
-                        ? 'bg-amber-500 text-slate-950'
-                        : 'bg-emerald-600 text-white'
-                    }`}>
-                      {rec.highestSeverity} ({rec.interactionCount} Interaksi)
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-
-      </div>
+      )}
 
     </div>
   );
