@@ -60,7 +60,7 @@ export const PricingPage: React.FC<PricingPageProps> = ({
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight font-outfit">
-            Tarif &amp; Lisensi Layanan FARMASIDRUGGIST
+            Pilih paket kamu
           </h1>
 
           {/* Quick highlights row */}
@@ -159,11 +159,8 @@ export const PricingPage: React.FC<PricingPageProps> = ({
                         : 'bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-300 hover:scale-[1.01] active:scale-95'
                     }`}
                   >
-                    {plan.priceValue === 0 ? 'Mulai Akses Starter Gratis' : 'Ambil Promo Paket Pro Rp 199rb / Tahun'}
+                    {plan.priceValue === 0 ? 'Pilih Starter' : 'Ambil Promo Paket Pro Rp 199rb / Tahun'}
                   </button>
-                  <p className="text-[10px] text-center text-slate-400 mt-2 font-medium">
-                    {plan.priceValue === 0 ? 'Tanpa kartu kredit • Langsung pakai' : 'Konfirmasi instan via WhatsApp Admin'}
-                  </p>
                 </div>
               </div>
             );

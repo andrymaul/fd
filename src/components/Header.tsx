@@ -117,7 +117,7 @@ export const Header: React.FC<HeaderProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isLanding = activeTab === 'landing' || activeTab === 'pricing' || activeTab === 'faq';
+  const isLanding = activeTab === 'landing' || activeTab === 'pricing' || activeTab === 'faq' || activeTab === 'login';
 
   // Landing Header Rendering - Clean White Glassmorphism with Seamless Light Background
   if (isLanding) {
@@ -206,12 +206,25 @@ export const Header: React.FC<HeaderProps> = ({
               </a>
 
               {!currentUser ? (
-                <button
-                  onClick={onOpenAuthModal}
-                  className="h-8 px-4 sm:px-5 rounded-full text-xs font-black text-white bg-orange-500 hover:bg-orange-600 active:bg-orange-700 transition-all flex items-center justify-center whitespace-nowrap shadow-md shadow-orange-500/30 hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-95 cursor-pointer font-outfit tracking-wide"
+                <a
+                  href="/login"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (window.location.pathname !== '/login') {
+                      window.history.pushState(null, '', '/login');
+                    }
+                    setActiveTab('login');
+                    window.scrollTo({ top: 0, behavior: 'auto' });
+                  }}
+                  title="Masuk ke Akun Anda (/login)"
+                  className={`h-8 px-4 sm:px-5 rounded-full text-xs font-black transition-all flex items-center justify-center whitespace-nowrap shadow-md cursor-pointer font-outfit tracking-wide ${
+                    activeTab === 'login'
+                      ? 'text-white bg-orange-600 ring-2 ring-orange-400 shadow-orange-600/40'
+                      : 'text-white bg-orange-500 hover:bg-orange-600 active:bg-orange-700 shadow-orange-500/30 hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-95'
+                  }`}
                 >
                   LOG IN
-                </button>
+                </a>
               ) : (
                 <div className="flex items-center space-x-1.5">
                   {onOpenProfileModal && (
@@ -760,12 +773,24 @@ export const Header: React.FC<HeaderProps> = ({
           {/* User Account / Auth Actions */}
           {!currentUser ? (
             <div className="flex items-center gap-2 font-outfit">
-              <button
-                onClick={onOpenAuthModal}
-                className="h-9 px-3.5 text-xs font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors cursor-pointer shrink-0"
+              <a
+                href="/login"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (window.location.pathname !== '/login') {
+                    window.history.pushState(null, '', '/login');
+                  }
+                  setActiveTab('login');
+                  window.scrollTo({ top: 0, behavior: 'auto' });
+                }}
+                className={`h-9 px-3.5 text-xs font-bold rounded-full border transition-colors cursor-pointer shrink-0 flex items-center justify-center ${
+                  activeTab === 'login'
+                    ? 'text-teal-900 bg-teal-100 border-teal-400'
+                    : 'text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700'
+                }`}
               >
                 Masuk
-              </button>
+              </a>
               <button
                 onClick={onOpenPricingModal}
                 className="h-9 px-3.5 text-xs font-bold text-white bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 rounded-full shadow-xs transition-all cursor-pointer hover:scale-[1.02] shrink-0"

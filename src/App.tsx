@@ -11,6 +11,7 @@ import { InteractionChecker } from './components/InteractionChecker';
 import { HistoryList } from './components/HistoryList';
 import { ProFeatureGate } from './components/ProFeatureGate';
 import { AuthModal } from './components/AuthModal';
+import { LoginPage } from './components/LoginPage';
 import { ClinicalTabSkeleton } from './components/ClinicalTabSkeleton';
 
 // === RESILIENT DYNAMIC LAZY LOADER ===
@@ -195,6 +196,9 @@ export default function App() {
         if (path === '/faq' || path === '/faq/') {
           return 'faq';
         }
+        if (path === '/login' || path === '/login/' || path === '/masuk') {
+          return 'login';
+        }
         if (path === '/' || path === '') {
           return 'landing';
         }
@@ -211,8 +215,8 @@ export default function App() {
       } catch (e) {}
       const savedTab = localStorage.getItem('farmasi_active_tab');
       if (savedTab) {
-        // Jangan pernah me-restore tab 'pricing' atau 'faq' dari session lama agar tidak membuka otomatis
-        if (savedTab === 'pricing' || savedTab === 'faq') {
+        // Jangan pernah me-restore tab 'pricing', 'faq', atau 'login' dari session lama agar tidak membuka otomatis
+        if (savedTab === 'pricing' || savedTab === 'faq' || savedTab === 'login') {
           localStorage.setItem('farmasi_active_tab', 'landing');
           return 'landing';
         }
@@ -256,8 +260,10 @@ export default function App() {
         setActiveTab((prev) => (prev !== 'pricing' ? 'pricing' : prev));
       } else if (path === '/faq' || path === '/faq/') {
         setActiveTab((prev) => (prev !== 'faq' ? 'faq' : prev));
+      } else if (path === '/login' || path === '/login/' || path === '/masuk') {
+        setActiveTab((prev) => (prev !== 'login' ? 'login' : prev));
       } else if (path === '/' || path === '') {
-        setActiveTab((prev) => (prev === 'pricing' || prev === 'faq' ? 'landing' : prev));
+        setActiveTab((prev) => (prev === 'pricing' || prev === 'faq' || prev === 'login' ? 'landing' : prev));
       }
     };
 
@@ -265,6 +271,16 @@ export default function App() {
     window.addEventListener('popstate', handleUrlRouting);
     return () => window.removeEventListener('popstate', handleUrlRouting);
   }, []);
+
+  // Redirect pengguna yang sudah login dari halaman /login ke dashboard
+  useEffect(() => {
+    if (currentUser && activeTab === 'login') {
+      if (typeof window !== 'undefined' && (window.location.pathname === '/login' || window.location.pathname === '/login/' || window.location.pathname === '/masuk')) {
+        window.history.replaceState(null, '', '/');
+      }
+      setActiveTab('dashboard');
+    }
+  }, [currentUser, activeTab]);
 
   // Clinical Clean Light Mode - Locked permanently for highest contrast & professional medical clarity
   const theme = 'light';
@@ -707,7 +723,7 @@ export default function App() {
 
   const handleStartThreeDayTrial = () => {
     if (!currentUser) {
-      setShowAuthModal(true);
+      handleSelectTab('login');
       return;
     }
     if (!trialSettings.isEnabled) {
@@ -800,7 +816,7 @@ export default function App() {
       featureTitle={featureTitle}
       featureDescription={featureDescription}
       onOpenPricingModal={() => setShowPricingModal(true)}
-      onOpenAuthModal={() => setShowAuthModal(true)}
+      onOpenAuthModal={() => handleSelectTab('login')}
       isLoggedIn={Boolean(currentUser)}
       onStartTrial={handleStartThreeDayTrial}
       hasClaimedTrial={Boolean(currentUser?.hasClaimedTrial)}
@@ -1006,8 +1022,19 @@ export default function App() {
       return;
     }
 
+    if (targetTab === 'login') {
+      if (window.location.pathname !== '/login') {
+        window.history.pushState(null, '', '/login');
+      }
+      setActiveTab('login');
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      return;
+    }
+
     if (targetTab === 'landing') {
-      window.history.pushState(null, '', '/');
+      if (window.location.pathname !== '/') {
+        window.history.pushState(null, '', '/');
+      }
       setActiveTab('landing');
       localStorage.setItem('farmasi_active_tab', 'landing');
       window.scrollTo({ top: 0, behavior: 'auto' });
@@ -1015,15 +1042,23 @@ export default function App() {
     }
 
     // Enforce auth requirement for internal clinical workspace tools when user is not logged in (user must login first)
-    if (!currentUser && targetTab !== 'landing' && targetTab !== 'pricing' && targetTab !== 'faq') {
+    if (!currentUser && targetTab !== 'landing' && targetTab !== 'pricing' && targetTab !== 'faq' && targetTab !== 'login') {
       setPendingTargetTab(targetTab);
-      setShowAuthModal(true);
+      if (window.location.pathname !== '/login') {
+        window.history.pushState(null, '', '/login');
+      }
+      setActiveTab('login');
+      window.scrollTo({ top: 0, behavior: 'auto' });
       return;
     }
 
     if ((targetTab === 'admin' || targetTab.startsWith('admin-') || targetTab === 'instagram-studio') && currentUser?.role !== 'admin') {
       setPendingTargetTab('admin-instagram');
-      setShowAuthModal(true);
+      if (window.location.pathname !== '/login') {
+        window.history.pushState(null, '', '/login');
+      }
+      setActiveTab('login');
+      window.scrollTo({ top: 0, behavior: 'auto' });
       return;
     }
 
@@ -1060,7 +1095,7 @@ export default function App() {
 
   const handleHeroSearchDrug = (query: string) => {
     if (!currentUser) {
-      setShowAuthModal(true);
+      handleSelectTab('login');
       return;
     }
     setSearchQueryForDirectory(query);
@@ -1069,7 +1104,7 @@ export default function App() {
 
   const handleCheckInteractionWith = (targetDrugName: string | string[], secondDrugName?: string) => {
     if (!currentUser) {
-      setShowAuthModal(true);
+      handleSelectTab('login');
       return;
     }
     if (Array.isArray(targetDrugName)) {
@@ -1189,15 +1224,20 @@ export default function App() {
     setPendingTargetTab(null);
 
     // If no pending target tab, use role-based default
-    if (!targetTab || targetTab === 'landing') {
+    if (!targetTab || targetTab === 'landing' || targetTab === 'login') {
       targetTab = user.role === 'admin' ? 'admin' : 'dashboard';
     } else if (targetTab.startsWith('admin') && user.role !== 'admin') {
       targetTab = 'dashboard';
     }
 
+    if (window.location.pathname === '/login' || window.location.pathname === '/login/') {
+      window.history.replaceState(null, '', '/');
+    }
+
     setActiveTab(targetTab);
     localStorage.setItem('farmasi_current_user', JSON.stringify(user));
     localStorage.setItem('farmasi_active_tab', targetTab);
+    window.scrollTo({ top: 0, behavior: 'auto' });
   };
 
   const handleSaveUserProfile = async (updatedUser: UserProfile) => {
@@ -1300,7 +1340,9 @@ export default function App() {
     }
     setCurrentUser(null);
     setActiveTab('landing');
-    setShowAuthModal(true);
+    if (window.location.pathname !== '/') {
+      window.history.pushState(null, '', '/');
+    }
     localStorage.setItem('farmasi_current_user', 'null_session');
     localStorage.setItem('farmasi_active_tab', 'landing');
   };
@@ -1566,7 +1608,8 @@ export default function App() {
   const isLanding = activeTab === 'landing';
   const isPricing = activeTab === 'pricing';
   const isFaq = activeTab === 'faq';
-  const isPublicPage = isLanding || isPricing || isFaq;
+  const isLogin = activeTab === 'login';
+  const isPublicPage = isLanding || isPricing || isFaq || isLogin;
 
   return (
     <div className={`min-h-screen font-sans text-slate-800 flex flex-col md:flex-row selection:bg-teal-900 selection:text-teal-100 transition-colors duration-300 ${
@@ -1579,7 +1622,7 @@ export default function App() {
           activeTab={activeTab}
           setActiveTab={handleSelectTab}
           currentUser={currentUser}
-          onOpenAuthModal={() => setShowAuthModal(true)}
+          onOpenAuthModal={() => handleSelectTab('login')}
           onLogout={handleLogout}
           onOpenPricingModal={() => setShowPricingModal(true)}
           onOpenChangelogModal={() => handleSelectTab('changelog')}
@@ -1613,7 +1656,7 @@ export default function App() {
           activeTab={activeTab}
           setActiveTab={handleSelectTab}
           currentUser={currentUser}
-          onOpenAuthModal={() => setShowAuthModal(true)}
+          onOpenAuthModal={() => handleSelectTab('login')}
           onLogout={handleLogout}
           onOpenPricingModal={() => setShowPricingModal(true)}
           onOpenChangelogModal={() => handleSelectTab('changelog')}
@@ -1637,20 +1680,26 @@ export default function App() {
               onOpenSwamedikasiProtocol={handleOpenSwamedikasiWithProtocol}
               currentUser={currentUser}
               onOpenPricingModal={() => setShowPricingModal(true)}
-              onOpenAuthModal={() => setShowAuthModal(true)}
+              onOpenAuthModal={() => handleSelectTab('login')}
             />
           ) : activeTab === 'pricing' ? (
             <PricingPage
               currentUser={currentUser}
               pricingPlans={pricingPlans}
-              onOpenAuthModal={() => setShowAuthModal(true)}
+              onOpenAuthModal={() => handleSelectTab('login')}
               onSelectTab={handleSelectTab}
               onOpenPricingModal={() => setShowPricingModal(true)}
             />
           ) : activeTab === 'faq' ? (
             <FaqPage
               onSelectTab={handleSelectTab}
-              onOpenAuthModal={() => setShowAuthModal(true)}
+              onOpenAuthModal={() => handleSelectTab('login')}
+            />
+          ) : activeTab === 'login' ? (
+            <LoginPage
+              onLoginSuccess={handleLoginSuccess}
+              onNewAccountCreated={handleRegisterOrSyncCustomer}
+              onSelectTab={handleSelectTab}
             />
           ) : (
             <React.Suspense fallback={<ClinicalTabSkeleton />}>
@@ -1849,7 +1898,7 @@ export default function App() {
                   pricingPlans={pricingPlans}
                   onSaveHistory={handleSaveHistoryRecord}
                   onOpenPricingModal={() => setShowPricingModal(true)}
-                  onOpenAuthModal={() => setShowAuthModal(true)}
+                  onOpenAuthModal={() => handleSelectTab('login')}
                   onOpenReportModal={(selectedDrugs, matchedInteractions) =>
                     setReportModalData({ selectedDrugs, interactions: matchedInteractions })
                   }
@@ -2064,7 +2113,7 @@ export default function App() {
                   historyRecords={historyRecords}
                   currentUser={currentUser}
                   onOpenPricingModal={() => setShowPricingModal(true)}
-                  onOpenAuthModal={() => setShowAuthModal(true)}
+                  onOpenAuthModal={() => handleSelectTab('login')}
                   onRecheckRecord={(record) => {
                     setPreselectedDrugNames(record.drugs);
                     setPreselectedDrugName(record.drugs[0] || '');
@@ -2169,7 +2218,7 @@ export default function App() {
                     onSelectTab={handleSelectTab}
                     currentUser={currentUser}
                     onOpenPricingModal={() => setShowPricingModal(true)}
-                    onOpenAuthModal={() => setShowAuthModal(true)}
+                    onOpenAuthModal={() => handleSelectTab('login')}
                   />
                 )
               )}
@@ -2198,14 +2247,7 @@ export default function App() {
           />
         )}
 
-        {showAuthModal && (
-          <AuthModal
-            onClose={() => setShowAuthModal(false)}
-            onLoginSuccess={handleLoginSuccess}
-            onNewAccountCreated={handleRegisterOrSyncCustomer}
-          />
-        )}
-
+        {/* Dedicated /login page replaces popup window */}
         {showPricingModal && (
           <PricingModal
             onClose={() => setShowPricingModal(false)}
@@ -2213,7 +2255,10 @@ export default function App() {
             pricingPlans={pricingPlans}
             paymentSettings={paymentSettings}
             onSubscribeSuccess={handleSubscribeSuccess}
-            onOpenAuthModal={() => setShowAuthModal(true)}
+            onOpenAuthModal={() => {
+              setShowPricingModal(false);
+              handleSelectTab('login');
+            }}
             onStartTrial={handleStartThreeDayTrial}
             isTrialActive={isTrialActive}
             trialRemainingText={getTrialRemainingText(currentUser?.expiresAt)}
