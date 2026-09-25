@@ -148,14 +148,14 @@ export const Header: React.FC<HeaderProps> = ({
               <Logo size="sm" variant="light" />
             </a>
 
-            {/* Bagian Tengah: Tampilan Jumlah Kunjungan Platform (Ikon Users + 3 Angka + Visit) */}
+            {/* Bagian Tengah: Tampilan Jumlah Kunjungan Platform (Ikon Users + 3 Angka + Visitor) */}
             <div className="flex items-center gap-1.5 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-white/90 sm:bg-slate-100/90 border border-slate-200/80 shadow-2xs">
               <Users className="w-3.5 h-3.5 text-teal-600 shrink-0" />
               <span className="font-mono text-xs sm:text-sm font-black text-slate-900 whitespace-nowrap">
                 {formatCompactVisits(visitorStats.totalVisits)}
               </span>
               <span className="text-[11px] sm:text-xs font-semibold text-slate-500 font-outfit whitespace-nowrap">
-                Visit
+                Visitor
               </span>
             </div>
 
