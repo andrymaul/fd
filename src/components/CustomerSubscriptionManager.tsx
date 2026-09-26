@@ -6,6 +6,7 @@ import {
   deleteCustomerFromFirestore, 
   fetchCustomersFromFirestore
 } from '../firebase';
+import { PROFESSION_GROUPS } from '../data/professionData';
 import { 
   Users, 
   Search, 
@@ -114,6 +115,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
 
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedPlanFilter, setSelectedPlanFilter] = useState<string>('Semua');
+  const [selectedProfessionFilter, setSelectedProfessionFilter] = useState<string>('Semua');
   const [selectedStatusFilter, setSelectedStatusFilter] = useState<string>('Semua');
   const [selectedCardFilter, setSelectedCardFilter] = useState<'all' | 'pro' | 'free' | 'online'>('all');
   const [selectedExpiryFilter, setSelectedExpiryFilter] = useState<string>('Semua');
@@ -128,7 +130,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
   // Reset to page 1 whenever filters or search query change
   useEffect(() => {
     setCurrentPage(1);
-  }, [searchQuery, selectedPlanFilter, selectedStatusFilter, selectedExpiryFilter, selectedOnlineFilter, selectedContactFilter, sortBy]);
+  }, [searchQuery, selectedPlanFilter, selectedProfessionFilter, selectedStatusFilter, selectedExpiryFilter, selectedOnlineFilter, selectedContactFilter, sortBy]);
 
   // Bulk Selection State
   const [selectedCustomerUids, setSelectedCustomerUids] = useState<string[]>([]);
@@ -175,6 +177,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
               ...existing,
               ...rc,
               name: (rc.name && !rc.name.includes('@')) ? rc.name : (existing.name || rc.name),
+              profession: rc.profession || existing.profession || '',
               institution: rc.institution || existing.institution || '',
               phone: rc.phone || existing.phone || '',
               subscriptionPlan: rc.subscriptionPlan === 'Pemula' ? 'Starter' : (rc.subscriptionPlan || existing.subscriptionPlan || 'Starter')
@@ -296,6 +299,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
     email: '',
     password: '',
     phone: '',
+    profession: '',
     institution: '',
     licenseNumber: '',
     subscriptionPlan: 'Pro' as 'Starter' | 'Pemula' | 'Pro' | 'Gratis' | string,
@@ -430,6 +434,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       const matchesSearch = searchQuery === '' || 
         cust.name.toLowerCase().includes(q) || 
         cust.email.toLowerCase().includes(q) ||
+        (cust.profession && cust.profession.toLowerCase().includes(q)) ||
         (cust.institution && cust.institution.toLowerCase().includes(q)) ||
         (cust.phone && cust.phone.includes(q)) ||
         (cust.licenseNumber && cust.licenseNumber.toLowerCase().includes(q));
@@ -439,6 +444,9 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
         ((selectedPlanFilter === 'Starter' || selectedPlanFilter === 'Pemula') && (cust.subscriptionPlan === 'Starter' || cust.subscriptionPlan === 'Pemula' || cust.subscriptionPlan === 'Gratis')) ||
         (selectedPlanFilter === 'Pro' && (cust.subscriptionPlan === 'Pro' || cust.subscriptionPlan === 'Elite' || cust.subscriptionPlan === 'Klinik'));
       
+      const matchesProfession = selectedProfessionFilter === 'Semua' ||
+        (cust.profession && cust.profession.toLowerCase().includes(selectedProfessionFilter.toLowerCase()));
+
       const matchesStatus = selectedStatusFilter === 'Semua' || cust.subscriptionStatus === selectedStatusFilter;
 
       // Online status filter
@@ -472,7 +480,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
         matchesContact = !cust.isEmailVerified;
       }
 
-      return matchesSearch && matchesPlan && matchesStatus && matchesOnline && matchesExpiry && matchesContact;
+      return matchesSearch && matchesPlan && matchesProfession && matchesStatus && matchesOnline && matchesExpiry && matchesContact;
     });
 
     // Sorting
@@ -492,7 +500,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       }
       return 0;
     });
-  }, [customers, searchQuery, selectedPlanFilter, selectedStatusFilter, selectedOnlineFilter, selectedExpiryFilter, selectedContactFilter, sortBy, currentUser]);
+  }, [customers, searchQuery, selectedPlanFilter, selectedProfessionFilter, selectedStatusFilter, selectedOnlineFilter, selectedExpiryFilter, selectedContactFilter, sortBy, currentUser]);
 
   // Pagination Calculations
   const totalPages = Math.max(1, Math.ceil(filteredCustomers.length / pageSize));
@@ -515,6 +523,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       email: '',
       password: generateRandomPassword(),
       phone: '',
+      profession: '',
       institution: '',
       licenseNumber: '',
       subscriptionPlan: 'Pro',
@@ -570,6 +579,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       email: cust.email || '',
       password: cust.password || 'CustPass#' + cust.uid.slice(-4),
       phone: cust.phone || '',
+      profession: cust.profession || '',
       institution: cust.institution || '',
       licenseNumber: cust.licenseNumber || '',
       subscriptionPlan: cust.subscriptionPlan,
@@ -618,6 +628,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       email: formState.email,
       password: formState.password || generateRandomPassword(),
       phone: formState.phone,
+      profession: formState.profession,
       institution: formState.institution,
       licenseNumber: formState.licenseNumber,
       notes: formState.notes,
@@ -674,6 +685,7 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
       email: formState.email,
       password: formState.password,
       phone: formState.phone,
+      profession: formState.profession,
       institution: formState.institution,
       licenseNumber: formState.licenseNumber,
       subscriptionPlan: formState.subscriptionPlan,
@@ -1283,6 +1295,22 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
             <option value="Pro">Pro (199rb/thn)</option>
           </select>
 
+          {/* Filter Profesi */}
+          <select
+            value={selectedProfessionFilter}
+            onChange={(e) => setSelectedProfessionFilter(e.target.value)}
+            className="bg-slate-50 dark:bg-[#06191c] border border-slate-200 dark:border-[#184c53] rounded-xl text-xs px-2.5 py-2 font-bold text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-[#3dbfd1] cursor-pointer shrink-0 font-outfit"
+          >
+            <option value="Semua">🩺 Profesi: Semua</option>
+            <option value="Apoteker">Apoteker</option>
+            <option value="Tenaga Vokasi Farmasi">Tenaga Vokasi Farmasi (TTK)</option>
+            <option value="Dokter">Dokter</option>
+            <option value="Perawat">Perawat / Bidan</option>
+            <option value="Mahasiswa">Mahasiswa / Akademisi</option>
+            <option value="Industri / Distribusi Farmasi">Industri / PBF</option>
+            <option value="Pemerintahan / Regulasi">Dinkes / Kemenkes / BPOM</option>
+          </select>
+
           {/* Filter Sisa Masa Aktif */}
           <select
             value={selectedExpiryFilter}
@@ -1517,6 +1545,11 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                               <p className="font-bold text-[13px] text-slate-900 dark:text-slate-100 font-outfit tracking-tight group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                                 {cust.name}
                               </p>
+                              {cust.profession && (
+                                <span className="inline-flex items-center text-[9.5px] px-1.5 py-0.5 rounded font-semibold bg-teal-50 dark:bg-teal-950/40 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800">
+                                  {cust.profession}
+                                </span>
+                              )}
                               <span className={`inline-flex items-center gap-1 text-[9px] px-1.5 py-0.2 rounded-full font-bold ${
                                 isOnline 
                                   ? 'bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800' 
@@ -1937,14 +1970,21 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1 font-outfit">Instansi / Institusi</label>
-                  <input
-                    type="text"
-                    value={formState.institution}
-                    onChange={(e) => setFormState({ ...formState, institution: e.target.value })}
-                    placeholder="Contoh: RS Medika Sejahtera"
-                    className="w-full px-3.5 py-2 bg-slate-50 dark:bg-[#06191c] border border-slate-200 dark:border-[#184c53] rounded-xl text-xs focus:ring-2 focus:ring-[#3dbfd1] focus:outline-none"
-                  />
+                  <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1 font-outfit">Profesi / Peran Tenaga Kesehatan</label>
+                  <select
+                    value={formState.profession}
+                    onChange={(e) => setFormState({ ...formState, profession: e.target.value })}
+                    className="w-full px-3.5 py-2 bg-slate-50 dark:bg-[#06191c] border border-slate-200 dark:border-[#184c53] rounded-xl text-xs font-medium text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-[#3dbfd1] focus:outline-none"
+                  >
+                    <option value="">Pilih Profesi / Latar Belakang...</option>
+                    {PROFESSION_GROUPS.map((group) => (
+                      <optgroup key={group.group} label={`── ${group.group} ──`}>
+                        {group.options.map((opt) => (
+                          <option key={opt.id} value={opt.id}>{opt.label}</option>
+                        ))}
+                      </optgroup>
+                    ))}
+                  </select>
                 </div>
 
                 <div>
@@ -1957,6 +1997,17 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                     className="w-full px-3.5 py-2 bg-slate-50 dark:bg-[#06191c] border border-slate-200 dark:border-[#184c53] rounded-xl text-xs focus:ring-2 focus:ring-[#3dbfd1] focus:outline-none"
                   />
                 </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1 font-outfit">Instansi / Tempat Bertugas / Perusahaan</label>
+                <input
+                  type="text"
+                  value={formState.institution}
+                  onChange={(e) => setFormState({ ...formState, institution: e.target.value })}
+                  placeholder="Contoh: RS Farist / PT Farist / Dinkes / Apotek FD / Universitas Farist"
+                  className="w-full px-3.5 py-2 bg-slate-50 dark:bg-[#06191c] border border-slate-200 dark:border-[#184c53] rounded-xl text-xs focus:ring-2 focus:ring-[#3dbfd1] focus:outline-none"
+                />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -2176,14 +2227,21 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1 font-outfit">Instansi / Institusi</label>
-                      <input
-                        type="text"
-                        value={formState.institution}
-                        onChange={(e) => setFormState({ ...formState, institution: e.target.value })}
-                        placeholder="Contoh: RS Medika Sejahtera"
-                        className="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-[#06191c] border border-slate-200 dark:border-[#184c53] rounded-xl text-xs font-medium focus:ring-2 focus:ring-[#3dbfd1] focus:outline-none"
-                      />
+                      <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1 font-outfit">Profesi / Peran Tenaga Kesehatan</label>
+                      <select
+                        value={formState.profession}
+                        onChange={(e) => setFormState({ ...formState, profession: e.target.value })}
+                        className="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-[#06191c] border border-slate-200 dark:border-[#184c53] rounded-xl text-xs font-medium text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-[#3dbfd1] focus:outline-none"
+                      >
+                        <option value="">Pilih Profesi / Latar Belakang...</option>
+                        {PROFESSION_GROUPS.map((group) => (
+                          <optgroup key={group.group} label={`── ${group.group} ──`}>
+                            {group.options.map((opt) => (
+                              <option key={opt.id} value={opt.id}>{opt.label}</option>
+                            ))}
+                          </optgroup>
+                        ))}
+                      </select>
                     </div>
 
                     <div>
@@ -2196,6 +2254,17 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                         className="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-[#06191c] border border-slate-200 dark:border-[#184c53] rounded-xl text-xs font-medium focus:ring-2 focus:ring-[#3dbfd1] focus:outline-none"
                       />
                     </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1 font-outfit">Instansi / Tempat Bertugas / Perusahaan</label>
+                    <input
+                      type="text"
+                      value={formState.institution}
+                      onChange={(e) => setFormState({ ...formState, institution: e.target.value })}
+                      placeholder="Contoh: RS Farist / PT Farist / Dinkes / Apotek FD / Universitas Farist"
+                      className="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-[#06191c] border border-slate-200 dark:border-[#184c53] rounded-xl text-xs font-medium focus:ring-2 focus:ring-[#3dbfd1] focus:outline-none"
+                    />
                   </div>
 
                   <div>
@@ -3096,13 +3165,13 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
 
                 <div>
                   <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1 font-outfit">
-                    Instansi / Institusi (Opsional)
+                    Instansi / Tempat Bertugas / Perusahaan (Opsional)
                   </label>
                   <input
                     type="text"
                     value={importInstitution}
                     onChange={(e) => setImportInstitution(e.target.value)}
-                    placeholder="Contoh: RS Medika / Apotek"
+                    placeholder="Contoh: RS Farist / PT Farist / Dinkes / Apotek FD / Universitas Farist"
                     className="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-[#06191c] border border-slate-200 dark:border-[#184c53] rounded-xl text-xs font-medium focus:ring-2 focus:ring-[#3dbfd1] focus:outline-none"
                   />
                 </div>
