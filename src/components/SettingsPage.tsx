@@ -186,7 +186,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
               className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 text-orange-700 border border-orange-200 text-xs font-bold font-outfit shadow-2xs transition-all cursor-pointer"
             >
               <CreditCard className="w-3.5 h-3.5" />
-              <span>Kelola Paket / Upgrade</span>
+              <span>Upgrade</span>
             </a>
           </div>
         </div>
