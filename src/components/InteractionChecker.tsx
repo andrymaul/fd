@@ -16,7 +16,6 @@ import {
   AlertTriangle, 
   CheckCircle2, 
   Printer, 
-  BookmarkPlus, 
   Sparkles, 
   Search, 
   Info, 
@@ -94,7 +93,6 @@ interface InteractionCheckerProps {
   interactions: DrugInteraction[];
   currentUser: UserProfile | null;
   pricingPlans?: PricingPlan[];
-  onSaveHistory: (drugNames: string[], interactionCount: number, highestSeverity: SeverityLevel | 'None') => void;
   onOpenPricingModal: () => void;
   onOpenAuthModal: () => void;
   onOpenReportModal: (selectedDrugs: Drug[], matchedInteractions: DrugInteraction[]) => void;
@@ -107,7 +105,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
   interactions,
   currentUser,
   pricingPlans = [],
-  onSaveHistory,
   onOpenPricingModal,
   onOpenAuthModal,
   onOpenReportModal,
@@ -157,7 +154,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
   });
   const [selectedDiseases, setSelectedDiseases] = useState<string[]>([]);
   const [searchInput, setSearchInput] = useState('');
-  const [isSaved, setIsSaved] = useState(false);
   const [showDatasetDetails, setShowDatasetDetails] = useState(false);
   const [limitWarning, setLimitWarning] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<DDInterSubTab>('all');
@@ -313,7 +309,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
       });
       if (list.length > 0) {
         setSelectedDrugs(list);
-        setIsSaved(false);
       }
     }
   }, [preselectedDrugName, preselectedDrugNames, effectiveDrugs]);
@@ -351,7 +346,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
 
     if (!selectedDrugs.some((d) => d.id === drugToAdd.id || d.name.toLowerCase() === drugToAdd.name.toLowerCase())) {
       setSelectedDrugs([...selectedDrugs, drugToAdd]);
-      setIsSaved(false);
       setLimitWarning(null);
     }
     setSearchInput('');
@@ -370,7 +364,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
     if (resolved) {
       if (!selectedDrugs.some((d) => d.id === resolved.id || d.name.toLowerCase() === resolved.name.toLowerCase())) {
         setSelectedDrugs([...selectedDrugs, resolved]);
-        setIsSaved(false);
         setLimitWarning(null);
       }
     }
@@ -379,7 +372,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
 
   const handleRemoveDrug = (id: string) => {
     setSelectedDrugs(selectedDrugs.filter((d) => d.id !== id));
-    setIsSaved(false);
   };
 
   // Filter dynamic dropdown
@@ -397,12 +389,10 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
     setSelectedDiseases((prev) =>
       prev.includes(diseaseName) ? prev.filter((d) => d !== diseaseName) : [...prev, diseaseName]
     );
-    setIsSaved(false);
   };
 
   const handleClearDiseases = () => {
     setSelectedDiseases([]);
-    setIsSaved(false);
   };
 
   // Match Interactions: Tier 1 (Batch 1-16 / Benchmarks) -> Tier 2 (IndexedDB 195k) -> Heuristic Fallback
@@ -541,7 +531,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
       }
     }
     setSelectedDrugs(list);
-    setIsSaved(false);
   };
 
   const handleRandom195kPreset = (mode?: 'poly' | 'major' | 'any') => {
@@ -555,16 +544,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
     const randomIndex = Math.floor(Math.random() * pool.length);
     const picked = pool[randomIndex];
     applyPreset(picked.drugs);
-  };
-
-  const handleSaveCheck = () => {
-    if (!currentUser) {
-      onOpenAuthModal();
-      return;
-    }
-    const drugNames = selectedDrugs.map((d) => d.name);
-    onSaveHistory(drugNames, matchedInteractions.length, highestSeverity);
-    setIsSaved(true);
   };
 
   return (
@@ -845,7 +824,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
               </button>
             </div>
 
-            {/* Aksi Cetak PDF & Simpan Cloud di Header Panel */}
+            {/* Aksi Cetak PDF di Header Panel */}
             {selectedDrugs.length >= 2 && (
               <>
                 <div className="h-5 w-px bg-slate-200 dark:bg-slate-800 hidden sm:block mx-0.5" />
@@ -856,20 +835,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                 >
                   <Printer className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
                   <span>Cetak Laporan PDF</span>
-                </button>
-
-                <button
-                  onClick={handleSaveCheck}
-                  disabled={isSaved}
-                  className={`px-3.5 py-1.5 rounded-xl font-bold text-xs flex items-center gap-1.5 shadow-2xs transition-all ${
-                    isSaved 
-                      ? 'bg-emerald-600 text-white opacity-90 cursor-default' 
-                      : 'bg-rose-600 hover:bg-rose-700 text-white cursor-pointer hover:scale-[1.02]'
-                  }`}
-                  title="Simpan hasil penapisan ini ke riwayat cloud"
-                >
-                  <BookmarkPlus className="w-3.5 h-3.5" />
-                  <span>{isSaved ? 'Tersimpan' : 'Simpan Cloud'}</span>
                 </button>
               </>
             )}

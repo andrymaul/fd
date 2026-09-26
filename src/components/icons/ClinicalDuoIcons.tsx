@@ -525,23 +525,3 @@ export const DuoDrugCatalogIcon: React.FC<ClinicalIconProps> = ({ className = "w
   </svg>
 );
 
-/**
- * 27. RIWAYAT RESEP (Prescription History & Archives)
- * Lembar rekam medis pasien dengan jam jarum riwayat telaah obat aksen
- */
-export const DuoHistoryIcon: React.FC<ClinicalIconProps> = ({ className = "w-14 h-14", ...props }) => (
-  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} {...props}>
-    {/* Lembar Resep / Dokumen Arsip */}
-    <path d="M16 14H38L48 24V48C48 50.2 46.2 52 44 52H16C13.8 52 12 50.2 12 48V18C12 15.8 13.8 14 16 14Z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-95" />
-    <polyline points="38,14 38,24 48,24" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-70" />
-    <line x1="18" y1="32" x2="28" y2="32" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="opacity-40" />
-    <line x1="18" y1="38" x2="26" y2="38" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="opacity-40" />
-    {/* Objek Aksen: Jam Riwayat Berputar Timeline (Cyan / Sky) */}
-    <g className="text-[#0284c7] dark:text-[#38bdf8] transition-transform duration-300 group-hover:scale-115 origin-center">
-      <circle cx="38" cy="40" r="10" stroke="currentColor" strokeWidth="2.2" fill="currentColor" fillOpacity="0.15" />
-      <polyline points="38,34 38,40 43,40" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      {/* Panah putaran waktu riwayat */}
-      <path d="M47 35C48 37 48 39 47 41" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-    </g>
-  </svg>
-);

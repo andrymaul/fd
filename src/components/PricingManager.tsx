@@ -807,39 +807,6 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
                     </div>
                   </label>
 
-                  {/* Simpan & Riwayat Cloud */}
-                  <div className="p-3.5 bg-white rounded-2xl border border-slate-200 space-y-2.5 hover:border-teal-300 transition-colors shadow-2xs">
-                    <label className="flex items-start gap-3 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={Boolean(perms.canSaveCloudHistory)}
-                        onChange={() => togglePermission('canSaveCloudHistory')}
-                        className="mt-0.5 rounded text-teal-600 focus:ring-teal-500 w-4 h-4 cursor-pointer"
-                      />
-                      <div className="space-y-0.5">
-                        <p className="text-xs font-bold text-slate-900 font-outfit flex items-center gap-1.5">
-                          <RotateCcw className="w-3.5 h-3.5 text-teal-600" />
-                          Simpan &amp; Riwayat Pemeriksaan Cloud
-                        </p>
-                        <p className="text-[11px] text-slate-500 leading-snug">
-                          Pengguna dapat menyimpan catatan evaluasi resep ke riwayat akun cloud pribadi.
-                        </p>
-                      </div>
-                    </label>
-
-                    <div className="flex items-center gap-2 pt-2 border-t border-slate-100 pl-7">
-                      <span className="text-[11px] font-bold text-slate-600">Batas Riwayat Terbuka:</span>
-                      <input
-                        type="number"
-                        min={0}
-                        max={1000}
-                        value={perms.maxHistoryRecords ?? (currentPlan.id === 'free' ? 0 : 999)}
-                        onChange={(e) => togglePermission('maxHistoryRecords', Math.max(0, Number(e.target.value)))}
-                        className="w-20 px-2.5 py-1 bg-slate-50 border border-slate-200 rounded-lg text-xs font-black text-teal-700 text-center font-mono focus:bg-white focus:outline-none focus:ring-2 focus:ring-teal-500"
-                      />
-                      <span className="text-[11px] text-slate-500 font-medium">Catatan</span>
-                    </div>
-                  </div>
 
                   {/* Kop Surat & Stempel Digital (Clinic Branding) */}
                   <label className="p-3.5 bg-white rounded-2xl border border-slate-200 space-y-1 hover:border-teal-300 transition-colors shadow-2xs flex items-start gap-3 cursor-pointer">

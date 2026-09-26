@@ -19,7 +19,7 @@ export const TAB_TO_PATH: Record<string, string> = {
   'directory': '/obat',
   'fornas': '/obat',
   'usage': '/cara-pakai',
-  'history': '/riwayat',
+  'history': '/dashboard',
   'changelog': '/changelog',
 
   // Screening & Prescription Safety
@@ -111,9 +111,9 @@ export const PATH_TO_TAB: Record<string, string> = {
   '/usage': 'usage',
   '/aturan-pakai': 'usage',
 
-  '/riwayat': 'history',
-  '/riwayat/': 'history',
-  '/history': 'history',
+  '/riwayat': 'dashboard',
+  '/riwayat/': 'dashboard',
+  '/history': 'dashboard',
 
   '/changelog': 'changelog',
   '/changelog/': 'changelog',

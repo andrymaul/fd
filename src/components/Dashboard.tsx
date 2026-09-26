@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { UserProfile, Drug, DrugInteraction, InteractionCheckRecord } from '../types';
+import { UserProfile, Drug, DrugInteraction } from '../types';
 import { getPathFromTab } from '../utils/routes';
 import { 
   Sparkles, 
@@ -32,15 +32,13 @@ import {
   DuoLiteratureIcon,
   DuoSopIcon,
   DuoRegulationsIcon,
-  DuoDrugCatalogIcon,
-  DuoHistoryIcon
+  DuoDrugCatalogIcon
 } from './icons/ClinicalDuoIcons';
 
 interface DashboardProps {
   currentUser: UserProfile | null;
   drugs: Drug[];
   interactions: DrugInteraction[];
-  historyRecords?: InteractionCheckRecord[];
   onSelectTab: (tab: string) => void;
   onSearchDrug?: (query: string) => void;
   onCheckInteractionWith?: (drugName: string) => void;
@@ -68,7 +66,6 @@ export const Dashboard: React.FC<DashboardProps> = ({
   currentUser,
   drugs = [],
   interactions = [],
-  historyRecords = [],
   onSelectTab,
   onOpenPricingModal,
   onStartTrial,
@@ -289,8 +286,8 @@ export const Dashboard: React.FC<DashboardProps> = ({
       },
       {
         id: 'regulations',
-        title: 'UU Kesehatan',
-        keywords: 'database regulasi uu kesehatan no 17 2023 hukum permenkes bpom',
+        title: 'Regulasi',
+        keywords: 'database regulasi uu kesehatan no 17 2023 hukum permenkes bpom dowa peraturan pemerintah perpres',
         icon: DuoRegulationsIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
@@ -302,14 +299,6 @@ export const Dashboard: React.FC<DashboardProps> = ({
         title: 'Katalog Obat',
         keywords: 'monografi katalog informasi obat bpom mims indikasi dosis efek samping',
         icon: DuoDrugCatalogIcon,
-        iconColor: PINE_TEAL,
-        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
-      },
-      {
-        id: 'history',
-        title: 'Riwayat Resep',
-        keywords: 'riwayat skrining resep log pemeriksaan resep pasien tersimpan arsip',
-        icon: DuoHistoryIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       }

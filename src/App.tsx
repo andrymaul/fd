@@ -8,7 +8,6 @@ import { HelpSupportPage } from './components/HelpSupportPage';
 import { Dashboard } from './components/Dashboard';
 import { DrugDirectory } from './components/DrugDirectory';
 import { InteractionChecker } from './components/InteractionChecker';
-import { HistoryList } from './components/HistoryList';
 import { ProFeatureGate } from './components/ProFeatureGate';
 import { AuthModal } from './components/AuthModal';
 import { LoginPage } from './components/LoginPage';
@@ -125,11 +124,6 @@ import {
   saveDrugToFirestore,
   deleteDrugFromFirestore,
   saveInteractionToFirestore,
-  saveInteractionCheckHistory,
-  fetchUserHistory,
-  updateUserHistoryNotes,
-  deleteUserHistoryRecord,
-  clearAllUserHistory,
   saveClinicBrandingToFirestore,
   fetchClinicBrandingFromFirestore,
   savePaymentSettingsToFirestore,
@@ -632,14 +626,6 @@ export default function App() {
     });
   };
 
-  const [historyRecords, setHistoryRecords] = useState<InteractionCheckRecord[]>(() => {
-    try {
-      const saved = localStorage.getItem('farmasi_history_records');
-      if (saved) return JSON.parse(saved);
-    } catch (e) {}
-    return [];
-  });
-
   // Modals & Selections
   const [showAuthModal, setShowAuthModal] = useState<boolean>(false);
   const [showPricingModal, setShowPricingModal] = useState<boolean>(false);
@@ -955,39 +941,6 @@ export default function App() {
     }
     loadData();
   }, []);
-
-  // Fetch history when user changes
-  useEffect(() => {
-    if (currentUser?.uid) {
-      fetchUserHistory(currentUser.uid).then((records) => {
-        if (records && records.length > 0) {
-          setHistoryRecords(records);
-          try {
-            localStorage.setItem('farmasi_history_records', JSON.stringify(records));
-          } catch (e) {}
-        } else {
-          // Fallback ke localStorage jika Firestore belum memiliki riwayat, dan migrasikan ke cloud
-          try {
-            const saved = localStorage.getItem('farmasi_history_records');
-            if (saved) {
-              const localParsed: InteractionCheckRecord[] = JSON.parse(saved);
-              const userLocal = localParsed.filter(r => r.userId === currentUser.uid);
-              if (userLocal.length > 0) {
-                setHistoryRecords(userLocal);
-                userLocal.forEach(r => {
-                  saveInteractionCheckHistory(r).catch(() => {});
-                });
-                return;
-              }
-            }
-          } catch (e) {}
-          setHistoryRecords([]);
-        }
-      });
-    } else {
-      setHistoryRecords([]);
-    }
-  }, [currentUser]);
 
   // Protective guard: if not logged in or non-admin on restricted tab, redirect to login/landing
   useEffect(() => {
@@ -1345,112 +1298,6 @@ export default function App() {
     setShowPricingModal(false);
   };
 
-  const handleSaveHistoryRecord = async (
-    drugNames: string[],
-    interactionCount: number,
-    highestSeverity: SeverityLevel | 'None'
-  ) => {
-    if (!currentUser) return;
-
-    const newRecord: Omit<InteractionCheckRecord, 'id'> = {
-      userId: currentUser.uid,
-      userEmail: currentUser.email,
-      drugs: drugNames,
-      timestamp: new Date().toISOString(),
-      interactionCount,
-      highestSeverity
-    };
-
-    const docId = await saveInteractionCheckHistory(newRecord);
-    const fullRecord: InteractionCheckRecord = { id: docId, ...newRecord };
-
-    setHistoryRecords((prev) => {
-      const updated = [fullRecord, ...prev];
-      try {
-        localStorage.setItem('farmasi_history_records', JSON.stringify(updated));
-      } catch (e) {}
-      return updated;
-    });
-  };
-
-  const handlePrintHistoryReport = (record: InteractionCheckRecord) => {
-    const matchedDrugs: Drug[] = record.drugs.map((dName, idx) => {
-      const found = drugs.find(
-        (d) =>
-          d.name.toLowerCase() === dName.toLowerCase() ||
-          (d.genericName && d.genericName.toLowerCase() === dName.toLowerCase())
-      );
-      if (found) return found;
-      return {
-        id: 'hist-' + idx,
-        name: dName,
-        genericName: dName,
-        brandNames: [],
-        atcCode: '-',
-        category: 'Resep Pasien',
-        dosage: '-',
-        indication: '-',
-        mechanism: '-'
-      };
-    });
-
-    const matchedInteractions: DrugInteraction[] = [];
-    for (let i = 0; i < matchedDrugs.length; i++) {
-      for (let j = i + 1; j < matchedDrugs.length; j++) {
-        const pair = resolveInteractionPair(matchedDrugs[i], matchedDrugs[j], interactions);
-        if (pair) matchedInteractions.push(pair);
-      }
-    }
-
-    setReportModalData({
-      selectedDrugs: matchedDrugs,
-      interactions: matchedInteractions
-    });
-  };
-
-  const handleSendWhatsappHistory = (record: InteractionCheckRecord) => {
-    const firstDrug = drugs.find((d) =>
-      record.drugs.some((rd) => rd.toLowerCase() === d.name.toLowerCase())
-    );
-    if (firstDrug) {
-      setPreselectedPioDrug(firstDrug);
-    }
-    handleSelectTab('whatsapp-pio');
-  };
-
-  const handleUpdateHistoryNotes = async (recordId: string, notes: string) => {
-    setHistoryRecords((prev) => {
-      const updated = prev.map((r) => (r.id === recordId ? { ...r, notes } : r));
-      try {
-        localStorage.setItem('farmasi_history_records', JSON.stringify(updated));
-      } catch (e) {}
-      return updated;
-    });
-    await updateUserHistoryNotes(recordId, notes);
-  };
-
-  const handleDeleteHistoryRecord = async (recordId: string) => {
-    setHistoryRecords((prev) => {
-      const updated = prev.filter((r) => r.id !== recordId);
-      try {
-        localStorage.setItem('farmasi_history_records', JSON.stringify(updated));
-      } catch (e) {}
-      return updated;
-    });
-    await deleteUserHistoryRecord(recordId);
-  };
-
-  const handleClearAllHistoryRecords = async () => {
-    const uid = currentUser?.uid;
-    setHistoryRecords([]);
-    try {
-      localStorage.removeItem('farmasi_history_records');
-    } catch (e) {}
-    if (uid) {
-      await clearAllUserHistory(uid);
-    }
-  };
-
   const logAdminAction = (
     actionType: AuditActionType,
     targetEntity: 'Obat' | 'Interaksi DDInter' | 'Subskripsi Customer' | 'Tarif & Fitur' | 'Interaksi Makanan' | 'Duplikasi Terapi' | 'Sistem',
@@ -1677,7 +1524,6 @@ export default function App() {
                 <Dashboard
                   drugs={drugs}
                   interactions={interactions}
-                  historyRecords={historyRecords}
                   currentUser={currentUser}
                   onSelectTab={handleSelectTab}
                   onSearchDrug={handleHeroSearchDrug}
@@ -1877,7 +1723,6 @@ export default function App() {
                   interactions={interactions}
                   currentUser={currentUser}
                   pricingPlans={pricingPlans}
-                  onSaveHistory={handleSaveHistoryRecord}
                   onOpenPricingModal={() => setShowPricingModal(true)}
                   onOpenAuthModal={() => handleSelectTab('login')}
                   onOpenReportModal={(selectedDrugs, matchedInteractions) =>
@@ -2089,25 +1934,6 @@ export default function App() {
                 )
               )}
 
-              {activeTab === 'history' && (
-                <HistoryList
-                  historyRecords={historyRecords}
-                  currentUser={currentUser}
-                  onOpenPricingModal={() => setShowPricingModal(true)}
-                  onOpenAuthModal={() => handleSelectTab('login')}
-                  onRecheckRecord={(record) => {
-                    setPreselectedDrugNames(record.drugs);
-                    setPreselectedDrugName(record.drugs[0] || '');
-                    handleSelectTab('interactions');
-                  }}
-                  onPrintReport={handlePrintHistoryReport}
-                  onSendWhatsapp={handleSendWhatsappHistory}
-                  onUpdateRecordNotes={handleUpdateHistoryNotes}
-                  onDeleteRecord={handleDeleteHistoryRecord}
-                  onClearAllRecords={handleClearAllHistoryRecords}
-                />
-              )}
-
               {(activeTab === 'admin' || activeTab.startsWith('admin-')) && (
                 <AdminPanel
                   drugs={drugs}
@@ -2173,13 +1999,12 @@ export default function App() {
                 'landing', 'dashboard', 'drugs', 'directory', 'changelog', 'pregnancy', 'drug-lab', 'bud', 'herb-drug',
                 'drug-notes', 'latin-terms', 'competency', 'competency-vokasi', 'guidelines', 'polypharmacy', 'interactions', 'side-effects', 'usage',
                 'sop', 'regulations', 'literature', 'whatsapp-pio', 'iv-compatibility', 'toxicology', 'high-alert', 'pediatric',
-                'renal-adjuster', 'history', 'subscriptions', 'swamedikasi', 'instagram-studio', 'education-generator', 'antimicrobial-stewardship', 'settings', 'support'
+                'renal-adjuster', 'subscriptions', 'swamedikasi', 'instagram-studio', 'education-generator', 'antimicrobial-stewardship', 'settings', 'support'
               ].includes(activeTab) && !activeTab.startsWith('admin') && (
                 currentUser ? (
                   <Dashboard
                     drugs={drugs}
                     interactions={interactions}
-                    historyRecords={historyRecords}
                     currentUser={currentUser}
                     onSelectTab={handleSelectTab}
                     onSearchDrug={handleHeroSearchDrug}
