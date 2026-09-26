@@ -117,7 +117,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-6 animate-in fade-in duration-150">
       
       {/* Top Navigation & Breadcrumb */}
-      <div className="flex items-center justify-between gap-4">
+      <div>
         <a
           href="/dashboard"
           onClick={(e) => {
@@ -131,10 +131,6 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Kembali ke Dashboard</span>
         </a>
-
-        <span className="text-[11px] font-semibold text-slate-400 font-outfit">
-          Portal Akun Klinis
-        </span>
       </div>
 
       {/* Page Title */}
@@ -142,9 +138,6 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
         <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight font-outfit">
           Pengaturan Akun & Profil
         </h1>
-        <p className="text-xs sm:text-sm text-slate-500 mt-1 font-medium font-outfit">
-          Kelola informasi identitas klinis, fasilitas kesehatan, nomor izin praktik, dan status langganan Anda.
-        </p>
       </div>
 
       {/* Card 1: User Account & Subscription Status */}
