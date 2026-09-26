@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { UserProfile } from '../types';
-import { Mail, Phone, Lock, Eye, EyeOff, Building2, RefreshCw, CheckCircle2, Sparkles, ArrowLeft, Check } from 'lucide-react';
+import { Mail, Eye, EyeOff, RefreshCw, CheckCircle2, Sparkles, ArrowLeft, Check } from 'lucide-react';
 import { loginWithEmail, registerWithEmail, resendVerificationEmail } from '../firebase';
 
 const PROFESSION_GROUPS = [
@@ -53,16 +53,6 @@ const PROFESSION_GROUPS = [
   }
 ];
 
-const INSTITUTION_PRESETS = [
-  'Apotek',
-  'Rumah Sakit',
-  'Klinik / Puskesmas',
-  'Industri Farmasi',
-  'PBF / Distribusi',
-  'Dinkes / BPOM / Kemenkes',
-  'Kampus / Universitas',
-  'Praktik Mandiri'
-];
 
 interface LoginPageProps {
   onLoginSuccess: (user: UserProfile) => void;
@@ -432,21 +422,18 @@ export const LoginPage: React.FC<LoginPageProps> = ({
                   <label className="font-extrabold text-slate-700 block mb-1 font-outfit text-xs">
                     Email
                   </label>
-                  <div className="relative flex items-center">
-                    <Mail className="w-4 h-4 text-slate-400 absolute left-3 pointer-events-none" />
-                    <input
-                      type="email"
-                      required
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="nama@email.com"
-                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:outline-none focus:border-teal-600 focus:bg-white transition-colors"
-                    />
-                  </div>
+                  <input
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="nama@email.com"
+                    className="w-full px-3.5 py-2.5 bg-slate-50 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:outline-none focus:border-teal-600 focus:bg-white transition-colors"
+                  />
                 </div>
               </div>
 
-              {/* 3. Baris Penuh: Instansi / Tempat Bertugas / Perusahaan (Fleksibel & Cepat) */}
+              {/* 3. Baris Penuh: Instansi / Tempat Bertugas / Perusahaan */}
               <div>
                 <div className="flex items-center justify-between mb-1">
                   <label className="font-extrabold text-slate-700 font-outfit text-xs">
@@ -454,36 +441,13 @@ export const LoginPage: React.FC<LoginPageProps> = ({
                   </label>
                   <span className="text-[10px] text-slate-400 font-medium">(Opsional / Kampus / Mandiri)</span>
                 </div>
-                <div className="relative flex items-center">
-                  <Building2 className="w-4 h-4 text-slate-400 absolute left-3 pointer-events-none" />
-                  <input
-                    type="text"
-                    value={institution}
-                    onChange={(e) => setInstitution(e.target.value)}
-                    placeholder="Contoh: RS Medika / PT Kalbe Farma / Dinkes Kota / Apotek K-24 / Mandiri"
-                    className="w-full pl-9 pr-3 py-2.5 bg-slate-50 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:outline-none focus:border-teal-600 focus:bg-white transition-colors"
-                  />
-                </div>
-                {/* Preset saran cepat instansi */}
-                <div className="flex items-center gap-1.5 flex-wrap mt-1.5">
-                  <span className="text-[10px] text-slate-400 font-medium">Saran cepat:</span>
-                  {INSTITUTION_PRESETS.map((preset) => (
-                    <button
-                      key={preset}
-                      type="button"
-                      onClick={() => {
-                        if (!institution || institution === 'Praktik Mandiri / Non-Faskes') {
-                          setInstitution(preset);
-                        } else if (!institution.includes(preset)) {
-                          setInstitution(`${preset} ${institution}`);
-                        }
-                      }}
-                      className="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-slate-100 hover:bg-teal-50 hover:text-teal-700 text-slate-600 border border-slate-200/80 transition-colors cursor-pointer"
-                    >
-                      +{preset}
-                    </button>
-                  ))}
-                </div>
+                <input
+                  type="text"
+                  value={institution}
+                  onChange={(e) => setInstitution(e.target.value)}
+                  placeholder="Contoh: RS Medika / PT Kalbe Farma / Dinkes Kota / Apotek K-24 / Mandiri"
+                  className="w-full px-3.5 py-2.5 bg-slate-50 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:outline-none focus:border-teal-600 focus:bg-white transition-colors"
+                />
               </div>
 
               {/* 4. Grid 2 Kolom: Kata Sandi & Konfirmasi Kata Sandi */}
@@ -494,7 +458,6 @@ export const LoginPage: React.FC<LoginPageProps> = ({
                       Kata Sandi
                     </label>
                     <div className="relative flex items-center">
-                      <Lock className="w-4 h-4 text-slate-400 absolute left-3 pointer-events-none" />
                       <input
                         type={showPassword ? 'text' : 'password'}
                         required
@@ -502,7 +465,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="Minimal 6 karakter"
-                        className="w-full pl-9 pr-9 py-2.5 bg-slate-50 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:outline-none focus:border-teal-600 focus:bg-white transition-colors"
+                        className="w-full pl-3.5 pr-9 py-2.5 bg-slate-50 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:outline-none focus:border-teal-600 focus:bg-white transition-colors"
                       />
                       <button
                         type="button"
@@ -530,14 +493,13 @@ export const LoginPage: React.FC<LoginPageProps> = ({
                       )}
                     </label>
                     <div className="relative flex items-center">
-                      <Lock className="w-4 h-4 text-slate-400 absolute left-3 pointer-events-none" />
                       <input
                         type={showConfirmPassword ? 'text' : 'password'}
                         required
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         placeholder="Ulangi kata sandi"
-                        className={`w-full pl-9 pr-9 py-2.5 bg-slate-50 rounded-xl border text-slate-900 font-semibold focus:outline-none focus:bg-white transition-colors ${
+                        className={`w-full pl-3.5 pr-9 py-2.5 bg-slate-50 rounded-xl border text-slate-900 font-semibold focus:outline-none focus:bg-white transition-colors ${
                           confirmPassword && !isConfirmMatch
                             ? 'border-rose-400 focus:border-rose-500'
                             : confirmPassword && isConfirmMatch
@@ -595,17 +557,14 @@ export const LoginPage: React.FC<LoginPageProps> = ({
                 <label className="font-extrabold text-slate-700 block mb-1 font-outfit text-xs">
                   Email
                 </label>
-                <div className="relative flex items-center">
-                  <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 pointer-events-none" />
-                  <input
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="nama@email.com"
-                    className="w-full pl-10 pr-3 py-3 bg-slate-50 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:outline-none focus:border-teal-600 focus:bg-white transition-colors"
-                  />
-                </div>
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="nama@email.com"
+                  className="w-full px-3.5 py-3 bg-slate-50 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:outline-none focus:border-teal-600 focus:bg-white transition-colors"
+                />
               </div>
 
               <div>
@@ -613,7 +572,6 @@ export const LoginPage: React.FC<LoginPageProps> = ({
                   Kata Sandi
                 </label>
                 <div className="relative flex items-center">
-                  <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 pointer-events-none" />
                   <input
                     type={showPassword ? 'text' : 'password'}
                     required
@@ -621,7 +579,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Masukkan kata sandi"
-                    className="w-full pl-10 pr-10 py-3 bg-slate-50 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:outline-none focus:border-teal-600 focus:bg-white transition-colors"
+                    className="w-full pl-3.5 pr-10 py-3 bg-slate-50 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:outline-none focus:border-teal-600 focus:bg-white transition-colors"
                   />
                   <button
                     type="button"
