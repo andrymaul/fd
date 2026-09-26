@@ -327,95 +327,78 @@ ${guideline.keyClinicalAlert || '-'}`;
   return (
     <div className="space-y-6">
       
-      {/* HERO BANNER - DEEP MARINE & MIDNIGHT NAVY */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#030914] via-[#08182f] to-[#0e274a] p-6 sm:p-8 text-white shadow-2xl border border-blue-500/25 space-y-5 print:hidden">
-        <FloatingPillsBackground density="low" accentColor="#60a5fa" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-blue-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <HeartPulse className="w-56 h-56 text-blue-400 -rotate-12" />
-        </div>
-
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-2xl">
-
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-600 text-white flex items-center justify-center shadow-lg shadow-blue-950/50 shrink-0">
-                <HeartPulse className="w-6 h-6" />
-              </div>
-              <div>
-                <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
+      {/* CLEAN CLINICAL HEADER - PINE TEAL & CRISP SLATE */}
+      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-6 shadow-xs print:hidden">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div className="flex items-start sm:items-center gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-teal-50 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-800/60 text-[#005f5a] dark:text-teal-400 flex items-center justify-center shrink-0 shadow-2xs">
+              <HeartPulse className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2.5 flex-wrap">
+                <h1 className="text-xl sm:text-2xl font-black font-outfit text-slate-900 dark:text-white tracking-tight">
                   Panduan Terapi Penyakit Klinis Indonesia
                 </h1>
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800/60">
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal-600 animate-pulse" />
+                  Standar PNPK Kemenkes RI
+                </span>
               </div>
+              <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+                Kompilasi pedoman praktik klinis spesialis nasional (PAPDI, PERKI, IDAI, POGI) terintegrasi restriksi FORNAS BPJS.
+              </p>
             </div>
-
           </div>
 
-          {/* Right Hero Badge: Database Status */}
-          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-blue-500/40 space-y-2.5 shadow-xl">
-              <div className="flex items-center justify-between text-xs font-bold text-blue-300 border-b border-blue-800/60 pb-2">
-                <span className="flex items-center gap-1.5 font-black font-outfit">
-                  <Activity className="w-3.5 h-3.5 text-blue-400" />
-                  <span>Status Database</span>
-                </span>
-                <span className="bg-blue-950 text-blue-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-blue-600/40">
-                  {CLINICAL_GUIDELINES_DATABASE.length} Data Terverifikasi
-                </span>
-              </div>
-              <div className="text-xs text-blue-100/80 space-y-1.5 font-medium">
-                <div className="flex justify-between items-center">
-                  <span>Pedoman Terapi:</span>
-                  <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">{CLINICAL_GUIDELINES_DATABASE.length} PNPK</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Organisasi Medis:</span>
-                  <span className="font-mono font-bold text-blue-300 bg-blue-950/60 px-2 py-0.5 rounded-md text-[11px]">PAPDI, PERKI &amp; IDAI</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Integrasi Sistem:</span>
-                  <span className="font-mono font-bold text-cyan-300 bg-cyan-950/60 px-2 py-0.5 rounded-md text-[11px]">FORNAS &amp; Pathways</span>
-                </div>
-                <div className="flex justify-between items-center pt-1 border-t border-blue-900/40 text-[10px] text-blue-300/80">
-                  <span>Standar Acuan:</span>
-                  <span className="font-bold text-white">PNPK Kemenkes RI &amp; Spesialis</span>
-                </div>
-              </div>
+          {/* Quick Metrics & Actions Bar */}
+          <div className="flex items-center gap-3 self-start lg:self-auto flex-wrap">
+            <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-xs">
+              <span className="text-slate-500">Database:</span>
+              <span className="font-mono font-bold text-slate-900 dark:text-white">{CLINICAL_GUIDELINES_DATABASE.length} Protokol</span>
+              <span className="text-slate-300 dark:text-slate-700">•</span>
+              <span className="text-teal-700 dark:text-teal-400 font-semibold">12 Kolegium</span>
             </div>
+
+            <button
+              onClick={handlePrintGuideline}
+              className="px-3.5 py-2 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-750 transition-colors flex items-center gap-1.5 cursor-pointer shadow-2xs"
+            >
+              <Printer className="w-3.5 h-3.5 text-slate-500" />
+              <span>Cetak Ringkasan</span>
+            </button>
           </div>
         </div>
-
       </div>
 
-      {/* VIEW SWITCHER TAB BAR (STANDALONE PILLS) */}
-      <div className="flex items-center justify-between gap-2 overflow-x-auto pb-2 border-b border-blue-100 dark:border-blue-950/80 scrollbar-none print:hidden">
+      {/* VIEW SWITCHER TAB BAR */}
+      <div className="flex items-center justify-between gap-3 overflow-x-auto pb-1 border-b border-slate-200 dark:border-slate-800 scrollbar-none print:hidden">
         <div className="flex items-center gap-2 shrink-0">
           <button
             onClick={() => setViewMode('catalog')}
-            className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
+            className={`rounded-xl px-4 py-2 text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
               viewMode === 'catalog'
-                ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md shadow-blue-950/40 border border-blue-400/30'
-                : 'bg-white dark:bg-[#060c21] text-slate-600 dark:text-slate-300 hover:bg-blue-50/70 dark:hover:bg-blue-950/40 border border-slate-200 dark:border-blue-900/40 shadow-2xs'
+                ? 'bg-[#005f5a] text-white shadow-xs'
+                : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
             }`}
           >
-            <BookOpen className={`w-4 h-4 ${viewMode === 'catalog' ? 'text-white' : 'text-blue-600 dark:text-blue-400'}`} />
-            <span>Katalog Protokol PNPK ({CLINICAL_GUIDELINES_DATABASE.length}+ Pedoman)</span>
+            <BookOpen className="w-4 h-4" />
+            <span>Katalog Protokol ({CLINICAL_GUIDELINES_DATABASE.length})</span>
           </button>
 
           <button
             onClick={() => setViewMode('flowchart')}
-            className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
+            className={`rounded-xl px-4 py-2 text-xs font-bold transition-all flex items-center gap-2 cursor-pointer ${
               viewMode === 'flowchart'
-                ? 'bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 text-white shadow-md shadow-blue-950/40 border border-blue-400/30'
-                : 'bg-white dark:bg-[#060c21] text-slate-600 dark:text-slate-300 hover:bg-blue-50/70 dark:hover:bg-blue-950/40 border border-slate-200 dark:border-blue-900/40 shadow-2xs'
+                ? 'bg-[#005f5a] text-white shadow-xs'
+                : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
             }`}
           >
-            <GitBranch className={`w-4 h-4 ${viewMode === 'flowchart' ? 'text-cyan-300' : 'text-cyan-600 dark:text-cyan-400'}`} />
-            <span>Algoritma Interaktif</span>
-            <span className={`px-1.5 py-0.5 rounded-full text-[9px] font-black uppercase ${
-              viewMode === 'flowchart' ? 'bg-cyan-400 text-slate-950' : 'bg-cyan-100 dark:bg-cyan-950/60 text-cyan-800 dark:text-cyan-300 border border-cyan-300/60'
+            <GitBranch className="w-4 h-4" />
+            <span>Algoritma Alur Terapi</span>
+            <span className={`px-1.5 py-0.5 rounded-md text-[10px] font-semibold ${
+              viewMode === 'flowchart' ? 'bg-white/20 text-white' : 'bg-teal-50 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800/60'
             }`}>
-              EBM Poster
+              Interactive
             </span>
           </button>
 
@@ -424,22 +407,19 @@ ${guideline.keyClinicalAlert || '-'}`;
               setActiveCalculatorType('ascvd');
               setIsCalculatorModalOpen(true);
             }}
-            className="rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 bg-white dark:bg-[#060c21] text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50/80 dark:hover:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-900/50 shadow-2xs group"
+            className="rounded-xl px-4 py-2 text-xs font-bold bg-white dark:bg-slate-850 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 transition-colors flex items-center gap-2 cursor-pointer shadow-2xs"
           >
-            <Calculator className="w-4 h-4 text-indigo-600 dark:text-indigo-400 group-hover:scale-110 transition-transform" />
-            <span>Pusat Kalkulator Skor Medis</span>
-            <span className="px-1.5 py-0.5 rounded-full text-[9px] font-black uppercase bg-indigo-100 dark:bg-indigo-950/80 text-indigo-700 dark:text-indigo-300 border border-indigo-300/50">
-              Kalkulator
-            </span>
+            <Calculator className="w-4 h-4 text-teal-600 dark:text-teal-400" />
+            <span>Kalkulator Skor Medis</span>
           </button>
         </div>
 
         {viewMode === 'flowchart' && (
           <button
             onClick={() => setViewMode('catalog')}
-            className="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline px-3 py-1.5 rounded-xl hover:bg-blue-50 dark:hover:bg-blue-950/40 transition-colors cursor-pointer shrink-0"
+            className="text-xs font-bold text-teal-700 dark:text-teal-400 hover:underline px-3 py-1.5 rounded-lg hover:bg-teal-50 dark:hover:bg-teal-950/40 transition-colors cursor-pointer shrink-0"
           >
-            &larr; Kembali ke Katalog PNPK
+            &larr; Kembali ke Katalog
           </button>
         )}
       </div>
@@ -459,8 +439,8 @@ ${guideline.keyClinicalAlert || '-'}`;
         />
       ) : (
         <>
-          {/* Filter and Search Bar - Royal Blue Theme */}
-          <div className="bg-white dark:bg-[#060c21] rounded-3xl border border-blue-200/80 dark:border-blue-500/25 p-6 shadow-sm space-y-4">
+          {/* Filter and Search Bar */}
+          <div className="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-5 shadow-2xs space-y-4">
         
         {/* Search Input */}
         <div className="relative">
@@ -470,7 +450,7 @@ ${guideline.keyClinicalAlert || '-'}`;
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Cari penyakit (misal: TB Paru, Stroke, DBD, Tifoid, Kejang Demam, Asma, Preeklamsia, Hipertensi, ICD-10, atau nama obat)..."
-            className="w-full pl-10 pr-10 py-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-xs font-bold font-outfit text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+            className="w-full pl-10 pr-10 py-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-xs font-medium font-outfit text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#005f5a]/30 focus:border-[#005f5a] transition-all"
           />
           {searchTerm && (
             <button
@@ -485,7 +465,7 @@ ${guideline.keyClinicalAlert || '-'}`;
         {/* Organization / Sumber Pedoman Filter Pills */}
         <div className="flex items-center gap-1.5 flex-wrap pt-1">
           <span className="text-[11px] font-bold font-outfit text-slate-400 flex items-center gap-1 mr-1">
-            <Building2 className="w-3.5 h-3.5 text-blue-500" />
+            <Building2 className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
             <span>Sumber Pedoman:</span>
           </span>
           {organizations.map((org) => {
@@ -499,14 +479,14 @@ ${guideline.keyClinicalAlert || '-'}`;
               <button
                 key={org}
                 onClick={() => setSelectedOrg(org)}
-                className={`px-2.5 py-1 rounded-lg text-[11px] font-bold font-outfit transition-all flex items-center gap-1.5 cursor-pointer ${
+                className={`px-2.5 py-1 rounded-lg text-[11px] font-semibold font-outfit transition-all flex items-center gap-1.5 cursor-pointer ${
                   isSelected
-                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-2xs'
-                    : 'bg-slate-100 dark:bg-[#0a1538] text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-blue-950/40 hover:text-blue-600 dark:hover:text-blue-300 border border-slate-200 dark:border-blue-900/30'
+                    ? 'bg-[#005f5a] text-white shadow-2xs'
+                    : 'bg-slate-100/90 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/40 hover:text-[#005f5a] dark:hover:text-teal-300 border border-slate-200/80 dark:border-slate-700/60'
                 }`}
               >
                 <span>{org}</span>
-                <span className={`text-[9px] px-1.5 py-0.2 rounded-full ${isSelected ? 'bg-white/20 text-white' : 'bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400'}`}>
+                <span className={`text-[9px] px-1.5 py-0.2 rounded-full ${isSelected ? 'bg-white/20 text-white' : 'bg-slate-200/80 dark:bg-slate-700 text-slate-500 dark:text-slate-400'}`}>
                   {count}
                 </span>
               </button>
@@ -515,9 +495,9 @@ ${guideline.keyClinicalAlert || '-'}`;
         </div>
 
         {/* Category Pills */}
-        <div className="flex items-center gap-1.5 flex-wrap pt-2 border-t border-slate-100 dark:border-blue-950/80">
+        <div className="flex items-center gap-1.5 flex-wrap pt-2 border-t border-slate-100 dark:border-slate-800">
           <span className="text-[11px] font-bold font-outfit text-slate-400 flex items-center gap-1 mr-1">
-            <Filter className="w-3 h-3 text-blue-500" />
+            <Filter className="w-3 h-3 text-teal-600 dark:text-teal-400" />
             <span>Kategori:</span>
           </span>
           {categories.map((cat) => {
@@ -531,14 +511,14 @@ ${guideline.keyClinicalAlert || '-'}`;
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3 py-1.5 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-1.5 cursor-pointer ${
+                className={`px-3 py-1.5 rounded-xl text-xs font-semibold font-outfit transition-all flex items-center gap-1.5 cursor-pointer ${
                   isSelected
-                    ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-xs'
-                    : 'bg-slate-100 dark:bg-[#0a1538] text-slate-600 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-blue-950/40 hover:text-blue-600 dark:hover:text-blue-300 border border-slate-200 dark:border-blue-900/30'
+                    ? 'bg-[#005f5a] text-white shadow-2xs'
+                    : 'bg-slate-100/90 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/40 hover:text-[#005f5a] dark:hover:text-teal-300 border border-slate-200/80 dark:border-slate-700/60'
                 }`}
               >
                 <span>{cat}</span>
-                <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${isSelected ? 'bg-white/20 text-white' : 'bg-slate-200 dark:bg-slate-800 text-slate-500 dark:text-slate-400'}`}>
+                <span className={`text-[10px] px-1.5 py-0.2 rounded-full ${isSelected ? 'bg-white/20 text-white' : 'bg-slate-200/80 dark:bg-slate-700 text-slate-500 dark:text-slate-400'}`}>
                   {count}
                 </span>
               </button>
