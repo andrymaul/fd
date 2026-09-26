@@ -29,7 +29,6 @@ import {
   GitBranch,
   ShieldCheck
 } from 'lucide-react';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { 
   ClinicalGuideline, 
   GuidelineCategory, 

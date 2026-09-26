@@ -41,7 +41,6 @@ import {
   ChevronDown,
   Plus
 } from 'lucide-react';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { EvidenceSourceBadge, DualEvidenceBadge } from './EvidenceSourceBadge';
 import { PediatricDisplacementCalculator } from './PediatricDisplacementCalculator';
 import { PaginationControls } from './PaginationControls';
@@ -365,137 +364,116 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
 
   return (
     <div className="space-y-6 pb-12">
-      {/* HERO BANNER - COBALT ICE & DARK SAPPHIRE */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#040914] via-[#09172f] to-[#0d2347] p-6 sm:p-8 text-white shadow-2xl border border-blue-500/25">
-        <FloatingPillsBackground density="low" accentColor="#60a5fa" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-blue-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <Syringe className="w-56 h-56 text-blue-400 -rotate-12" />
-        </div>
-
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-2xl">
-
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white flex items-center justify-center shadow-lg shadow-blue-950/50 shrink-0">
-                <Syringe className="w-6 h-6" />
-              </div>
-              <div>
-                <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
-                  Uji Kompatibilitas Injeksi IV &amp; Y-Site
-                </h1>
-              </div>
+      {/* CLEAN CLINICAL COMMAND HEADER */}
+      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-teal-50 dark:bg-teal-950/60 text-[#005f5a] dark:text-teal-300 border border-teal-200/80 dark:border-teal-800/60">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#005f5a] dark:text-teal-400" />
+                Standar Trissel's Handbook on Injectable Drugs & Gray IDG 2024
+              </span>
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                Uji Fisikokimia, Presipitasi & pH
+              </span>
             </div>
 
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 flex items-center justify-center border border-teal-200/60 dark:border-teal-800/60 shrink-0">
+                <Syringe className="w-5 h-5 text-[#005f5a] dark:text-teal-400" />
+              </div>
+              <div>
+                <h1 className="text-xl sm:text-2xl font-bold font-outfit text-slate-900 dark:text-white tracking-tight">
+                  Kompatibilitas Injeksi IV &amp; Percabangan Y-Site
+                </h1>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  Uji inkompatibilitas percabangan Y-site multi-obat parenteral, pencampuran spuit (admixture), dan stabilitas cairan infus.
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Right Hero Badge: Database Status */}
-          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-blue-500/40 space-y-2.5 shadow-xl">
-              <div className="flex items-center justify-between text-xs font-bold text-blue-300 border-b border-blue-800/60 pb-2">
-                <span className="flex items-center gap-1.5 font-black font-outfit">
-                  <Activity className="w-3.5 h-3.5 text-blue-400" />
-                  <span>Status Database</span>
-                </span>
-                <span className="bg-blue-950 text-blue-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-blue-600/40">
-                  {IV_DRUGS_DATABASE.length + SYRINGE_ADMIXTURE_DATABASE.length} Data Terverifikasi
-                </span>
+          {/* Quick Badges */}
+          <div className="flex items-center gap-2 flex-wrap lg:justify-end">
+            <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+              <div className="text-[10px] text-slate-400 font-medium">Sediaan Injeksi</div>
+              <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                {IV_DRUGS_DATABASE.length} Obat IV
               </div>
-              <div className="text-xs text-blue-100/80 space-y-1.5 font-medium">
-                <div className="flex justify-between items-center">
-                  <span>Sediaan Injeksi IV:</span>
-                  <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">{IV_DRUGS_DATABASE.length} Obat</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Pencampuran Spuit:</span>
-                  <span className="font-mono font-bold text-blue-300 bg-blue-950/60 px-2 py-0.5 rounded-md text-[11px]">{SYRINGE_ADMIXTURE_DATABASE.length} Admixture</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Evaluasi Fisikokimia:</span>
-                  <span className="font-mono font-bold text-sky-300 bg-sky-950/60 px-2 py-0.5 rounded-md text-[11px]">pH &amp; Presipitasi</span>
-                </div>
-                <div className="flex justify-between items-center pt-1 border-t border-blue-900/40 text-[10px] text-blue-300/80">
-                  <span>Standar Acuan:</span>
-                  <span className="font-bold text-white">Trissel's 2024 &amp; Gray IDG</span>
-                </div>
+            </div>
+            <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+              <div className="text-[10px] text-slate-400 font-medium">Admixture Spuit</div>
+              <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                {SYRINGE_ADMIXTURE_DATABASE.length} Kombinasi
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* NAVIGATION SUBTABS - OCEAN SKY & BLUE */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-sky-100 dark:border-sky-950/80">
+      {/* NAVIGATION TABS */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-1 border-b border-slate-200 dark:border-slate-800 scrollbar-none">
         <button
           onClick={() => setActiveSubTab('ysite')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeSubTab === 'ysite'
-              ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-950/40 border border-sky-400/30'
-              : 'bg-white dark:bg-[#071726] text-slate-600 dark:text-slate-300 hover:bg-sky-50 dark:hover:bg-sky-950/40 border border-slate-200 dark:border-sky-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <Layers className="w-4 h-4" />
-          <span>Uji Kompatibilitas Percabangan Y-Site</span>
-          <span className={`px-2 py-0.5 text-[10px] font-bold font-outfit rounded-full ${activeSubTab === 'ysite' ? 'bg-white/20 text-white' : 'bg-sky-100 dark:bg-sky-950/60 text-sky-800 dark:text-sky-300 border border-sky-200 dark:border-sky-800'}`}>
+          <span>Kompatibilitas Y-Site</span>
+          <span className={`px-1.5 py-0.2 text-[10px] font-bold font-outfit rounded-full ${activeSubTab === 'ysite' ? 'bg-white/20 text-white' : 'bg-teal-100 text-[#005f5a]'}`}>
             Multi-Drug
           </span>
         </button>
 
         <button
           onClick={() => setActiveSubTab('admixture')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeSubTab === 'admixture'
-              ? 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-md shadow-teal-950/40 border border-teal-400/30'
-              : 'bg-white dark:bg-[#071726] text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/40 border border-slate-200 dark:border-teal-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <Syringe className="w-4 h-4" />
-          <span>Pencampuran 1 Spuit (Syringe Admixture)</span>
-          <span className={`px-2 py-0.5 text-[10px] font-bold font-outfit rounded-full ${activeSubTab === 'admixture' ? 'bg-white/20 text-white' : 'bg-teal-100 dark:bg-teal-950/60 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800'}`}>
-            PCA &amp; Paliatif
-          </span>
+          <span>Pencampuran 1 Spuit (Admixture)</span>
         </button>
 
         <button
           onClick={() => setActiveSubTab('directory')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeSubTab === 'directory'
-              ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-950/40 border border-sky-400/30'
-              : 'bg-white dark:bg-[#071726] text-slate-600 dark:text-slate-300 hover:bg-sky-50 dark:hover:bg-sky-950/40 border border-slate-200 dark:border-sky-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <FlaskConical className="w-4 h-4" />
-          <span>Direktori &amp; Monografi Gray (2021)</span>
-          <span className={`px-2 py-0.5 text-[10px] font-bold font-outfit rounded-full ${activeSubTab === 'directory' ? 'bg-white/20 text-white' : 'bg-purple-100 dark:bg-purple-950/60 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-800'}`}>
-            NPSA &amp; Ekstravasasi
-          </span>
+          <span>Direktori &amp; Monografi Gray</span>
         </button>
 
         <button
           onClick={() => setActiveSubTab('calculator')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeSubTab === 'calculator'
-              ? 'bg-gradient-to-r from-sky-600 to-blue-600 text-white shadow-md shadow-sky-950/40 border border-sky-400/30'
-              : 'bg-white dark:bg-[#071726] text-slate-600 dark:text-slate-300 hover:bg-sky-50 dark:hover:bg-sky-950/40 border border-slate-200 dark:border-sky-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <Calculator className="w-4 h-4" />
-          <span>Kalkulator Syringe Pump &amp; Drip</span>
+          <span>Kalkulator Syringe Pump</span>
         </button>
 
         <button
           onClick={() => setActiveSubTab('displacement')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeSubTab === 'displacement'
-              ? 'bg-gradient-to-r from-indigo-600 to-sky-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
-              : 'bg-white dark:bg-[#071726] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <Baby className="w-4 h-4" />
-          <span>Kalkulator Displacement Serbuk</span>
-          <span className={`px-2 py-0.5 text-[10px] font-bold font-outfit rounded-full ${activeSubTab === 'displacement' ? 'bg-white/20 text-white' : 'bg-indigo-100 dark:bg-indigo-950/60 text-indigo-800 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-800'}`}>
-            Pediatrik
-          </span>
+          <span>Displacement Serbuk Pediatrik</span>
         </button>
       </div>
 
@@ -504,9 +482,9 @@ export const IvCompatibilityChecker: React.FC<IvCompatibilityCheckerProps> = () 
       {/* ========================================================================= */}
       {activeSubTab === 'ysite' && (
         <div className="space-y-6">
-          {/* Drug Selection Card - Sky & Navy Thematic Suite */}
-          <div className="bg-white dark:bg-[#071726] border border-sky-200/80 dark:border-sky-500/25 rounded-3xl p-5 sm:p-6 shadow-sm space-y-4">
-            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-sky-100 dark:border-sky-950/80">
+          {/* Drug Selection Card */}
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-6 shadow-2xs space-y-4">
+            <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100 dark:border-slate-800">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-2xl bg-sky-500/15 text-sky-600 dark:text-sky-400 border border-sky-400/30 flex items-center justify-center font-bold shadow-2xs">
                   <Syringe className="w-5 h-5 stroke-[2.2]" />

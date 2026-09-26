@@ -1,7 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { MEDICATION_GUIDES, deduplicateMedicationGuides } from '../data/medicationGuides';
 import { MedicationGuide } from '../types';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { 
   Eye, 
   Ear, 
@@ -195,78 +194,76 @@ export const MedicationUsageGuide: React.FC<MedicationUsageGuideProps> = ({
       {/* SCREEN UI WRAPPER */}
       <div className="space-y-6 print:hidden">
         
-        {/* HERO BANNER - AQUA CYAN & DEEP NAVY */}
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#030e12] via-[#072029] to-[#0c313d] p-6 sm:p-8 text-white shadow-2xl border border-cyan-500/25">
-          <FloatingPillsBackground density="low" accentColor="#22d3ee" />
-          <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-            <BookOpen className="w-56 h-56 text-cyan-400 -rotate-12" />
-          </div>
-
-          <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div className="space-y-3 max-w-2xl">
+        {/* CLEAN CLINICAL COMMAND HEADER */}
+        <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-teal-50 dark:bg-teal-950/60 text-[#005f5a] dark:text-teal-300 border border-teal-200/80 dark:border-teal-800/60">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#005f5a] dark:text-teal-400" />
+                  Edukasi &amp; Standar Konseling Pasien
+                </span>
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                  Standar PIO Kemenkes RI &amp; WHO
+                </span>
+              </div>
 
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-cyan-500 to-teal-600 text-white flex items-center justify-center shadow-lg shadow-cyan-950/50 shrink-0">
-                  <BookOpen className="w-6 h-6" />
+                <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 flex items-center justify-center border border-teal-200/60 dark:border-teal-800/60 shrink-0">
+                  <BookOpen className="w-5 h-5 text-[#005f5a] dark:text-teal-400" />
                 </div>
                 <div>
-                  <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white font-outfit">
-                    Panduan Tata Cara Penggunaan Obat Khusus
+                  <h1 className="text-xl sm:text-2xl font-bold font-outfit text-slate-900 dark:text-white tracking-tight">
+                    Panduan Penggunaan Obat Khusus
                   </h1>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                    SOP dan tata cara penggunaan sediaan obat spesifik (Inhaler, Pen Insulin, Tetes Mata, Suppositoria, Patch).
+                  </p>
                 </div>
               </div>
-
             </div>
 
-            {/* Right Hero Badge: Database Status */}
-            <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-              <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-cyan-500/40 space-y-2.5 shadow-xl">
-                <div className="flex items-center justify-between text-xs font-bold text-cyan-300 border-b border-cyan-800/60 pb-2">
-                  <span className="flex items-center gap-1.5 font-black font-outfit">
-                    <Activity className="w-3.5 h-3.5 text-cyan-400" />
-                    <span>Status Database</span>
-                  </span>
-                  <span className="bg-cyan-950 text-cyan-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-cyan-600/40">
-                    {cleanGuides.length} Data Terverifikasi
-                  </span>
+            {/* Quick Badges & Actions */}
+            <div className="flex items-center gap-3 flex-wrap lg:justify-end">
+              <div className="flex items-center gap-2">
+                <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+                  <div className="text-[10px] text-slate-400 font-medium">Total Sediaan</div>
+                  <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                    {cleanGuides.length} Panduan
+                  </div>
                 </div>
-                <div className="text-xs text-cyan-100/80 space-y-1.5 font-medium">
-                  <div className="flex justify-between items-center">
-                    <span className="text-slate-400">Teknik Inhalasi:</span>
-                    <span className="font-bold text-cyan-200">{cleanGuides.filter(g => g.category.toLowerCase().includes('inhaler') || g.category.toLowerCase().includes('respirasi')).length} Sediaan Khusus</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-slate-400">Injeksi &amp; Subkutan:</span>
-                    <span className="font-bold text-cyan-200">{cleanGuides.filter(g => g.category.toLowerCase().includes('injeksi') || g.category.toLowerCase().includes('insulin')).length} Sediaan Khusus</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-slate-400">Mata, Telinga &amp; Rektal:</span>
-                    <span className="font-bold text-teal-300">{cleanGuides.filter(g => !g.category.toLowerCase().includes('inhaler') && !g.category.toLowerCase().includes('respirasi') && !g.category.toLowerCase().includes('injeksi') && !g.category.toLowerCase().includes('insulin')).length} Sediaan Khusus</span>
-                  </div>
-                  <div className="flex justify-between items-center pt-1 border-t border-cyan-900/40 text-[10px] text-cyan-300/80">
-                    <span>Standar Acuan:</span>
-                    <span className="font-bold text-white">PIO Kemenkes RI &amp; WHO</span>
+                <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+                  <div className="text-[10px] text-slate-400 font-medium">Respirasi / Inhaler</div>
+                  <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                    {cleanGuides.filter(g => g.category.toLowerCase().includes('inhaler') || g.category.toLowerCase().includes('respirasi')).length} Modul
                   </div>
                 </div>
               </div>
+
+              <button
+                onClick={handlePrint}
+                className="px-3.5 py-2 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 border border-teal-200 dark:border-teal-800 text-xs font-bold font-outfit flex items-center gap-1.5 hover:bg-teal-100 dark:hover:bg-teal-900/40 cursor-pointer transition shadow-2xs"
+              >
+                <Printer className="w-3.5 h-3.5" />
+                <span>Cetak Lembar Pasien</span>
+              </button>
             </div>
           </div>
         </div>
 
-        {/* Filter & Search Bar - Ocean Cyan & Cobalt Suite */}
-        <div className="bg-white dark:bg-[#061726] rounded-3xl p-5 sm:p-6 border border-cyan-200/80 dark:border-cyan-500/25 shadow-sm space-y-4">
+        {/* Filter & Search Bar */}
+        <div className="bg-white dark:bg-[#0c1427] rounded-2xl p-5 border border-slate-200 dark:border-slate-800 shadow-2xs space-y-4">
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
             
             {/* Search Bar */}
             <div className="relative flex-1">
-              <Search className="w-5 h-5 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+              <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Cari sediaan atau merk obat (misal: Symbicort, Ventolin, Ozempic, Lovenox, Spiriva, Microlax)..."
-                className="w-full pl-10 pr-4 py-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/40 transition-all font-bold font-outfit"
+                className="w-full pl-9 pr-4 py-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-xs sm:text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#005f5a] transition-all font-bold font-outfit"
               />
               {searchQuery && (
                 <button
@@ -279,8 +276,8 @@ export const MedicationUsageGuide: React.FC<MedicationUsageGuideProps> = ({
             </div>
 
             {/* Result Count Badge */}
-            <div className="text-xs font-bold font-outfit text-cyan-900 dark:text-cyan-200 bg-cyan-50/80 dark:bg-cyan-950/50 border border-cyan-200 dark:border-cyan-800 px-3 py-2 rounded-xl self-start sm:self-auto flex items-center gap-1.5 shrink-0">
-              <Info className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
+            <div className="text-xs font-bold font-outfit text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 px-3 py-2 rounded-xl self-start sm:self-auto flex items-center gap-1.5 shrink-0">
+              <Info className="w-3.5 h-3.5 text-[#005f5a] dark:text-teal-400" />
               <span>Menampilkan {filteredGuides.length} dari {cleanGuides.length} Panduan</span>
             </div>
           </div>
@@ -295,8 +292,8 @@ export const MedicationUsageGuide: React.FC<MedicationUsageGuideProps> = ({
                   onClick={() => setSelectedCategory(cat)}
                   className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer font-outfit ${
                     isActive
-                      ? 'bg-gradient-to-r from-cyan-600 to-blue-600 text-white shadow-md shadow-cyan-950/40 border border-cyan-400/30'
-                      : 'bg-slate-100 dark:bg-[#081f33] text-slate-600 dark:text-slate-300 hover:bg-cyan-50 dark:hover:bg-cyan-950/40 border border-slate-200 dark:border-cyan-900/30'
+                      ? 'bg-[#005f5a] text-white shadow-xs'
+                      : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/40'
                   }`}
                 >
                   {cat}

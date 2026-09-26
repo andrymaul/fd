@@ -34,7 +34,6 @@ import {
   ReconstitutionFormType,
   searchReconstitutionDrugs
 } from '../data/beyondUseDateData';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { PaginationControls } from './PaginationControls';
 
 interface BeyondUseDateCalculatorProps {
@@ -393,90 +392,76 @@ export const BeyondUseDateCalculator: React.FC<BeyondUseDateCalculatorProps> = (
 
   return (
     <div className="space-y-6">
-      {/* HERO BANNER - TEAL MINT & DEEP PINE */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#030d0c] via-[#07211e] to-[#0c332e] p-6 sm:p-8 text-white shadow-2xl border border-teal-500/25">
-        <FloatingPillsBackground density="low" accentColor="#2dd4bf" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-teal-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <CalendarClock className="w-56 h-56 text-teal-400 -rotate-12" />
-        </div>
-
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-2xl">
-
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-teal-500 to-emerald-600 text-white flex items-center justify-center shadow-lg shadow-teal-950/50 shrink-0">
-                <CalendarClock className="w-6 h-6" />
-              </div>
-              <div>
-                <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
-                  Kalkulator &amp; Stabilitas Beyond Use Date (BUD)
-                </h1>
-              </div>
+      {/* CLEAN CLINICAL COMMAND HEADER */}
+      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-teal-50 dark:bg-teal-950/60 text-[#005f5a] dark:text-teal-300 border border-teal-200/80 dark:border-teal-800/60">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#005f5a] dark:text-teal-400" />
+                Standar USP &lt;795&gt;, USP &lt;797&gt; &amp; Farmakope Indonesia VI
+              </span>
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                Racikan Non-Steril, Steril &amp; Rekonstitusi
+              </span>
             </div>
 
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 flex items-center justify-center border border-teal-200/60 dark:border-teal-800/60 shrink-0">
+                <CalendarClock className="w-5 h-5 text-[#005f5a] dark:text-teal-400" />
+              </div>
+              <div>
+                <h1 className="text-xl sm:text-2xl font-bold font-outfit text-slate-900 dark:text-white tracking-tight">
+                  Kalkulator &amp; Stabilitas Beyond Use Date (BUD)
+                </h1>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  Penetapan batas waktu kedaluwarsa racikan farmasi, masa simpan produk rekonstitusi antibiotik, dan etiket jatuh tempo.
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Right Hero Badge: Database Status */}
-          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-teal-500/40 space-y-2.5 shadow-xl">
-              <div className="flex items-center justify-between text-xs font-bold text-teal-300 border-b border-teal-800/60 pb-2">
-                <span className="flex items-center gap-1.5 font-black font-outfit">
-                  <Activity className="w-3.5 h-3.5 text-teal-400" />
-                  <span>Status Database</span>
-                </span>
-                <span className="bg-teal-950 text-teal-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-teal-600/40">
-                  {COMMERCIAL_DRUG_RECONSTITUTIONS.length} Data Terverifikasi
-                </span>
+          {/* Quick Badges */}
+          <div className="flex items-center gap-2 flex-wrap lg:justify-end">
+            <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+              <div className="text-[10px] text-slate-400 font-medium">Data Rekonstitusi</div>
+              <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                {COMMERCIAL_DRUG_RECONSTITUTIONS.length} Monografi
               </div>
-              <div className="text-xs text-teal-100/80 space-y-1.5 font-medium">
-                <div className="flex justify-between items-center">
-                  <span>Produk Rekonstitusi:</span>
-                  <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">{COMMERCIAL_DRUG_RECONSTITUTIONS.length} Monografi</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Racikan Non-Steril:</span>
-                  <span className="font-mono font-bold text-teal-300 bg-teal-950/60 px-2 py-0.5 rounded-md text-[11px]">USP &lt;795&gt; (Puyer &amp; Sirup)</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Sediaan Steril Dibuka:</span>
-                  <span className="font-mono font-bold text-emerald-300 bg-emerald-950/60 px-2 py-0.5 rounded-md text-[11px]">USP &lt;797&gt; (Tetes &amp; Injeksi)</span>
-                </div>
-                <div className="flex justify-between items-center pt-1 border-t border-teal-900/40 text-[10px] text-teal-300/80">
-                  <span>Standar Acuan:</span>
-                  <span className="font-bold text-white">USP &lt;795&gt;/&lt;797&gt; &amp; FI VI</span>
-                </div>
+            </div>
+            <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+              <div className="text-[10px] text-slate-400 font-medium">Standar USP</div>
+              <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                &lt;795&gt; &amp; &lt;797&gt;
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* ========================================================================= */}
-      {/* CLINICAL COMPLIANCE NOTICE: Package Insert / Brosur Kemasan Priority      */}
-      {/* ========================================================================= */}
-      <div className="p-4 sm:p-5 rounded-3xl bg-amber-500/10 dark:bg-amber-950/30 border border-amber-500/30 text-amber-950 dark:text-amber-200 flex flex-col sm:flex-row items-start sm:items-center gap-3.5 shadow-xs">
-        <div className="w-10 h-10 rounded-2xl bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/30">
-          <AlertTriangle className="w-5 h-5" />
+      {/* CLINICAL COMPLIANCE NOTICE */}
+      <div className="p-4 rounded-2xl bg-amber-500/10 dark:bg-amber-950/30 border border-amber-500/30 text-amber-950 dark:text-amber-200 flex flex-col sm:flex-row items-start sm:items-center gap-3.5 shadow-2xs">
+        <div className="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0 border border-amber-500/30">
+          <AlertTriangle className="w-4 h-4" />
         </div>
         <div className="space-y-1 text-xs">
-          <div className="font-extrabold font-outfit uppercase tracking-wider text-amber-900 dark:text-amber-300 flex items-center gap-2">
-            <span>Standar Klinis &amp; Regulasi Farmasi: Prioritaskan Brosur Resmi Kemasan Produk</span>
+          <div className="font-bold font-outfit uppercase tracking-wider text-amber-900 dark:text-amber-300">
+            Standar Klinis &amp; Regulasi Farmasi: Prioritaskan Brosur Resmi Kemasan Produk
           </div>
           <p className="text-slate-700 dark:text-slate-300 font-medium leading-relaxed">
-            Perhitungan dan panduan pada modul ini mengacu pada standar baku <strong>USP &lt;795&gt;, USP &lt;797&gt;, dan Farmakope Indonesia VI</strong>. Namun, apabila produsen sediaan obat paten mencantumkan batas waktu penggunaan (*Beyond Use Date*) atau kondisi penyimpanan spesifik pada <strong>brosur / kemasan resmi (*package insert*)</strong>, maka ketentuan dari produsen <strong>WAJIB dijadikan acuan prioritas utama</strong>.
+            Perhitungan dan panduan pada modul ini mengacu pada standar baku <strong>USP &lt;795&gt;, USP &lt;797&gt;, dan Farmakope Indonesia VI</strong>. Namun, apabila produsen sediaan obat paten mencantumkan batas waktu penggunaan (Beyond Use Date) atau kondisi penyimpanan spesifik pada <strong>brosur / kemasan resmi (package insert)</strong>, maka ketentuan dari produsen <strong>WAJIB dijadikan acuan prioritas utama</strong>.
           </p>
         </div>
       </div>
 
-      {/* NAVIGATION SUBTABS - TEAL MINT & DEEP PINE */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-teal-100 dark:border-teal-950/80">
+      {/* NAVIGATION TABS */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-1 border-b border-slate-200 dark:border-slate-800 scrollbar-none">
         <button
           onClick={() => setActiveTab('calculator')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
             activeTab === 'calculator'
-              ? 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-md shadow-teal-950/40 border border-teal-400/30'
-              : 'bg-white dark:bg-[#071d1a] text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/40 border border-slate-200 dark:border-teal-900/30'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <CalendarClock className="w-4 h-4" />
@@ -485,10 +470,10 @@ export const BeyondUseDateCalculator: React.FC<BeyondUseDateCalculatorProps> = (
 
         <button
           onClick={() => setActiveTab('directory')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
             activeTab === 'directory'
-              ? 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-md shadow-teal-950/40 border border-teal-400/30'
-              : 'bg-white dark:bg-[#071d1a] text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/40 border border-slate-200 dark:border-teal-900/30'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <TestTubes className="w-4 h-4" />
@@ -497,10 +482,10 @@ export const BeyondUseDateCalculator: React.FC<BeyondUseDateCalculatorProps> = (
 
         <button
           onClick={() => setActiveTab('matrix')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
             activeTab === 'matrix'
-              ? 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-md shadow-teal-950/40 border border-teal-400/30'
-              : 'bg-white dark:bg-[#071d1a] text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/40 border border-slate-200 dark:border-teal-900/30'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <BookOpen className="w-4 h-4" />

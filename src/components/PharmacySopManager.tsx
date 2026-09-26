@@ -21,7 +21,6 @@ import {
   Layers,
   Activity
 } from 'lucide-react';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { PHARMACY_SOP_LIST, PharmacySopItem } from '../data/pharmacySopData';
 import { ClinicBrandingSettings } from '../types';
 import { PaginationControls } from './PaginationControls';
@@ -89,68 +88,58 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
   return (
     <div className="space-y-6">
       
-      {/* HERO BANNER - TITANIUM SLATE & DARK STEEL */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#080a0e] via-[#12161f] to-[#1c2230] p-6 sm:p-8 text-white shadow-2xl border border-slate-500/25 print:hidden">
-        <FloatingPillsBackground density="low" accentColor="#cbd5e1" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-slate-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <ClipboardList className="w-56 h-56 text-slate-400 -rotate-12" />
-        </div>
-
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-2xl">
-
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-slate-600 to-zinc-600 text-white flex items-center justify-center shadow-lg shadow-slate-950/50 shrink-0">
-                <ClipboardList className="w-6 h-6" />
-              </div>
-              <div>
-                <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
-                  Standar Prosedur Operasional (SOP) Farmasi
-                </h1>
-              </div>
+      {/* CLEAN CLINICAL COMMAND HEADER */}
+      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs print:hidden">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-teal-50 dark:bg-teal-950/60 text-[#005f5a] dark:text-teal-300 border border-teal-200/80 dark:border-teal-800/60">
+                <CheckCircle2 className="w-3.5 h-3.5 text-[#005f5a] dark:text-teal-400" />
+                Standar Akreditasi Faskes &amp; Mutu Kefarmasian
+              </span>
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                PMK 73/2016, 72/2016 &amp; CDOB BPOM
+              </span>
             </div>
 
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 flex items-center justify-center border border-teal-200/60 dark:border-teal-800/60 shrink-0">
+                <ClipboardList className="w-5 h-5 text-[#005f5a] dark:text-teal-400" />
+              </div>
+              <div>
+                <h1 className="text-xl sm:text-2xl font-bold font-outfit text-slate-900 dark:text-white tracking-tight">
+                  Standar Prosedur Operasional (SOP) Farmasi
+                </h1>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  Koleksi baku dokumen tata kelola mutu pelayanan klinis, peracikan, pengelolaan rantai dingin (cold chain), dan logistik.
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Right Hero Badge: Database Status */}
-          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-slate-500/40 space-y-2.5 shadow-xl">
-              <div className="flex items-center justify-between text-xs font-bold text-slate-300 border-b border-slate-800/60 pb-2">
-                <span className="flex items-center gap-1.5 font-black font-outfit">
-                  <Activity className="w-3.5 h-3.5 text-slate-400" />
-                  <span>Status Database</span>
-                </span>
-                <span className="bg-slate-950 text-slate-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-slate-600/40">
-                  {PHARMACY_SOP_LIST.length} Dokumen Terverifikasi
-                </span>
+          {/* Quick Badges & Print Action */}
+          <div className="flex items-center gap-3 flex-wrap lg:justify-end">
+            <div className="flex items-center gap-2">
+              <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+                <div className="text-[10px] text-slate-400 font-medium">Total SOP</div>
+                <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                  {PHARMACY_SOP_LIST.length} Prosedur
+                </div>
               </div>
-              <div className="text-xs text-slate-100/80 space-y-1.5 font-medium">
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Pelayanan Klinis:</span>
-                  <span className="font-bold text-slate-200">{PHARMACY_SOP_LIST.filter(s => s.category === 'klinis').length} Prosedur</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Logistik &amp; Cold Chain:</span>
-                  <span className="font-bold text-slate-200">{PHARMACY_SOP_LIST.filter(s => s.category === 'logistik').length} Prosedur</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Regulasi &amp; Mutu:</span>
-                  <span className="font-bold text-slate-200">{PHARMACY_SOP_LIST.filter(s => s.category === 'khusus' || s.category === 'safety').length} Prosedur</span>
-                </div>
-                <div className="flex justify-between items-center pt-1 border-t border-slate-900/40 text-[10px] text-slate-300/80">
-                  <span>Standar Acuan:</span>
-                  <span className="font-bold text-white">PMK 73/2016 &amp; CDOB BPOM</span>
+              <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+                <div className="text-[10px] text-slate-400 font-medium">Pelayanan Klinis</div>
+                <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                  {PHARMACY_SOP_LIST.filter(s => s.category === 'klinis').length} Prosedur
                 </div>
               </div>
             </div>
 
             <button
               onClick={handlePrint}
-              className="w-full px-5 py-2.5 rounded-2xl bg-slate-700 hover:bg-slate-600 text-white text-xs font-black shadow-md flex items-center justify-center gap-2 transition-all cursor-pointer border border-slate-500/40 hover:scale-[1.02] active:scale-95"
+              className="px-3.5 py-2 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 border border-teal-200 dark:border-teal-800 text-xs font-bold font-outfit flex items-center gap-1.5 hover:bg-teal-100 dark:hover:bg-teal-900/40 cursor-pointer transition shadow-2xs"
             >
-              <Printer className="w-4 h-4" />
-              <span>Cetak Dokumen SOP (A4)</span>
+              <Printer className="w-3.5 h-3.5" />
+              <span>Cetak Dokumen SOP</span>
             </button>
           </div>
         </div>
@@ -162,8 +151,8 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
         {/* Left Column: SOP Navigation & Directory */}
         <div className="lg:col-span-4 space-y-4 print:hidden">
           
-          {/* Search Box - Titanium Slate Suite */}
-          <div className="bg-white dark:bg-[#0e1218] p-5 rounded-3xl border border-slate-200/80 dark:border-slate-700/50 shadow-sm space-y-3">
+          {/* Search Box */}
+          <div className="bg-white dark:bg-[#0c1427] p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xs space-y-3">
             <div className="relative">
               <Search className="w-4 h-4 absolute left-3.5 top-3 text-slate-400" />
               <input
@@ -171,7 +160,7 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Cari judul SOP / nomor / kata kunci..."
-                className="w-full pl-9 pr-4 py-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl text-xs font-bold font-outfit text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-500"
+                className="w-full pl-9 pr-4 py-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-xs font-bold font-outfit text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#005f5a]"
               />
             </div>
 
@@ -183,8 +172,8 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
                   onClick={() => setSelectedCategory(cat.id)}
                   className={`px-3 py-1.5 rounded-xl text-[11px] font-bold font-outfit transition-all cursor-pointer flex items-center gap-1.5 ${
                     selectedCategory === cat.id
-                      ? 'bg-gradient-to-r from-slate-700 to-zinc-700 text-white shadow-xs'
-                      : 'bg-slate-100 dark:bg-[#161c26] text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800'
+                      ? 'bg-[#005f5a] text-white shadow-xs'
+                      : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/40'
                   }`}
                 >
                   <span>{cat.label}</span>
@@ -202,7 +191,7 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
           <div className="space-y-3">
             <div className="space-y-2.5">
               {filteredSops.length === 0 ? (
-                <div className="bg-white dark:bg-[#071c21] p-6 rounded-3xl text-center border border-slate-200 dark:border-[#143d47] text-xs text-slate-500">
+                <div className="bg-white dark:bg-[#0c1427] p-6 rounded-2xl text-center border border-slate-200 dark:border-slate-800 text-xs text-slate-500">
                   <FileText className="w-8 h-8 mx-auto text-slate-300 mb-2" />
                   <p>Tidak ada dokumen SOP yang sesuai dengan pencarian.</p>
                 </div>
@@ -213,10 +202,10 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
                     <div
                       key={sop.id}
                       onClick={() => setSelectedSop(sop)}
-                      className={`p-4 rounded-3xl border transition-all cursor-pointer text-left space-y-2 ${
+                      className={`p-4 rounded-2xl border transition-all cursor-pointer text-left space-y-2 ${
                         isSelected
-                          ? 'bg-teal-50/80 dark:bg-[#0b353e] border-teal-500 shadow-md ring-1 ring-teal-500'
-                          : 'bg-white dark:bg-[#071c21] border-slate-200 dark:border-[#143d47] hover:border-teal-300 hover:shadow-xs'
+                          ? 'bg-teal-50/70 dark:bg-teal-950/40 border-[#005f5a] shadow-xs ring-1 ring-[#005f5a]'
+                          : 'bg-white dark:bg-[#0c1427] border-slate-200 dark:border-slate-800 hover:border-teal-300 hover:shadow-xs'
                       }`}
                     >
                       <div className="flex items-center justify-between gap-2">
@@ -228,7 +217,7 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
                         </span>
                       </div>
 
-                      <h3 className={`text-xs font-black leading-snug ${isSelected ? 'text-teal-950 dark:text-teal-200' : 'text-slate-900 dark:text-white'}`}>
+                      <h3 className={`text-xs font-black leading-snug ${isSelected ? 'text-[#005f5a] dark:text-teal-200' : 'text-slate-900 dark:text-white'}`}>
                         {sop.title}
                       </h3>
 
@@ -238,7 +227,7 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
 
                       <div className="flex items-center justify-between pt-1 border-t border-slate-100 dark:border-slate-800 text-[10px] text-slate-400 font-medium">
                         <span className="font-mono">{sop.docNumber}</span>
-                        <span className="flex items-center gap-1 text-teal-600 dark:text-teal-400 font-bold">
+                        <span className="flex items-center gap-1 text-[#005f5a] dark:text-teal-400 font-bold">
                           Buka SOP <ChevronRight className="w-3 h-3" />
                         </span>
                       </div>
@@ -262,21 +251,21 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
                 setCurrentPage(1);
               }}
               pageSizeOptions={[4, 6, 8, 12]}
-              colorTheme="teal"
+              colorTheme="emerald"
             />
           </div>
         </div>
 
         {/* Right Column: Complete Interactive SOP Document View */}
-        <div className="lg:col-span-8 bg-white dark:bg-[#071c21] rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-[#143d47] shadow-lg space-y-6">
+        <div className="lg:col-span-8 bg-white dark:bg-[#0c1427] rounded-2xl p-6 sm:p-7 border border-slate-200 dark:border-slate-800 shadow-2xs space-y-6">
           
           {/* Printable Official Letterhead (Kop Surat) */}
-          <div className="border-b-2 border-slate-800 dark:border-teal-600/80 pb-4 text-center space-y-1">
+          <div className="border-b-2 border-slate-200 dark:border-slate-800 pb-4 text-center space-y-1">
             <div className="flex items-center justify-center gap-3">
               {clinicBranding.logoUrl ? (
                 <img src={clinicBranding.logoUrl} alt="Logo" className="w-12 h-12 object-contain rounded-xl" />
               ) : (
-                <div className="w-10 h-10 rounded-xl bg-teal-600 flex items-center justify-center text-white font-black text-lg">
+                <div className="w-10 h-10 rounded-xl bg-[#005f5a] flex items-center justify-center text-white font-black text-lg">
                   {clinicBranding.clinicName.charAt(0) || 'F'}
                 </div>
               )}
@@ -296,14 +285,14 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
           </div>
 
           {/* SOP Header Document Control Box */}
-          <div className="border border-slate-300 dark:border-[#14424e] rounded-2xl overflow-hidden text-xs">
-            <div className="bg-slate-100 dark:bg-[#0b353e] p-3 text-center border-b border-slate-300 dark:border-[#14424e]">
+          <div className="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden text-xs">
+            <div className="bg-slate-50 dark:bg-slate-850 p-3 text-center border-b border-slate-200 dark:border-slate-800">
               <h2 className="text-sm sm:text-base font-black text-slate-900 dark:text-teal-200 uppercase tracking-wide">
                 {selectedSop.title}
               </h2>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-slate-300 dark:divide-[#14424e] bg-slate-50/50 dark:bg-[#06181c] text-[11px]">
+            <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-slate-200 dark:divide-slate-800 bg-white dark:bg-[#0c1427] text-[11px]">
               <div className="p-2.5 space-y-0.5">
                 <p className="text-[10px] font-bold text-slate-400 uppercase">Nomor Dokumen:</p>
                 <p className="font-mono font-bold text-slate-900 dark:text-white">{selectedSop.docNumber}</p>
@@ -318,16 +307,16 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
               </div>
               <div className="p-2.5 space-y-0.5">
                 <p className="text-[10px] font-bold text-slate-400 uppercase">Penanggung Jawab:</p>
-                <p className="font-bold text-teal-700 dark:text-teal-400">{clinicBranding.doctorName || 'Apoteker Penanggung Jawab'}</p>
+                <p className="font-bold text-[#005f5a] dark:text-teal-400">{clinicBranding.doctorName || 'Apoteker Penanggung Jawab'}</p>
               </div>
             </div>
           </div>
 
           {/* Section 1: Pengertian, Tujuan & Kebijakan */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
-            <div className="bg-slate-50 dark:bg-[#0b2830] p-4 rounded-2xl border border-slate-200 dark:border-[#14424e] space-y-1.5">
+            <div className="bg-slate-50 dark:bg-slate-850 p-4 rounded-xl border border-slate-200 dark:border-slate-800 space-y-1.5">
               <p className="font-black text-slate-900 dark:text-teal-300 flex items-center gap-1.5 text-xs">
-                <BookOpen className="w-4 h-4 text-teal-600" />
+                <BookOpen className="w-4 h-4 text-[#005f5a]" />
                 <span>1. TUJUAN:</span>
               </p>
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-[11px]">
@@ -335,9 +324,9 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
               </p>
             </div>
 
-            <div className="bg-slate-50 dark:bg-[#0b2830] p-4 rounded-2xl border border-slate-200 dark:border-[#14424e] space-y-1.5">
+            <div className="bg-slate-50 dark:bg-slate-850 p-4 rounded-xl border border-slate-200 dark:border-slate-800 space-y-1.5">
               <p className="font-black text-slate-900 dark:text-teal-300 flex items-center gap-1.5 text-xs">
-                <ShieldCheck className="w-4 h-4 text-teal-600" />
+                <ShieldCheck className="w-4 h-4 text-[#005f5a]" />
                 <span>2. RUANG LINGKUP:</span>
               </p>
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-[11px]">
@@ -345,9 +334,9 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
               </p>
             </div>
 
-            <div className="bg-slate-50 dark:bg-[#0b2830] p-4 rounded-2xl border border-slate-200 dark:border-[#14424e] space-y-1.5">
+            <div className="bg-slate-50 dark:bg-slate-850 p-4 rounded-xl border border-slate-200 dark:border-slate-800 space-y-1.5">
               <p className="font-black text-slate-900 dark:text-teal-300 flex items-center gap-1.5 text-xs">
-                <Lock className="w-4 h-4 text-teal-600" />
+                <Lock className="w-4 h-4 text-[#005f5a]" />
                 <span>3. KEBIJAKAN MUTU:</span>
               </p>
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-[11px]">
@@ -357,8 +346,8 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
           </div>
 
           {/* Section 2: Dasar Hukum */}
-          <div className="bg-teal-50/70 dark:bg-[#0b353e]/40 p-4 rounded-2xl border border-teal-200 dark:border-teal-800 text-xs space-y-1.5">
-            <p className="font-black text-teal-950 dark:text-teal-200 uppercase tracking-wider text-[11px]">
+          <div className="bg-teal-50/70 dark:bg-teal-950/30 p-4 rounded-xl border border-teal-200/80 dark:border-teal-800 text-xs space-y-1.5">
+            <p className="font-black text-[#005f5a] dark:text-teal-200 uppercase tracking-wider text-[11px]">
               ⚖️ Dasar Hukum & Pedoman Regulator:
             </p>
             <ul className="list-disc list-inside space-y-1 text-teal-900 dark:text-teal-200 text-[11px]">
@@ -371,7 +360,7 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
           {/* Section 3: Prosedur Langkah-demi-Langkah */}
           <div className="space-y-3">
             <div className="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2">
-              <ClipboardList className="w-5 h-5 text-teal-600" />
+              <ClipboardList className="w-5 h-5 text-[#005f5a]" />
               <h3 className="text-sm font-black text-slate-900 dark:text-white uppercase tracking-wider">
                 Langkah-Langkah Prosedur Kerja Baku
               </h3>
@@ -379,9 +368,9 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
 
             <div className="space-y-3">
               {selectedSop.procedureSteps.map((step) => (
-                <div key={step.stepNumber} className="bg-white dark:bg-[#06181c] p-4 rounded-2xl border border-slate-200 dark:border-[#14424e] shadow-xs space-y-2">
+                <div key={step.stepNumber} className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-2xs space-y-2">
                   <div className="flex items-start gap-3">
-                    <span className="w-6 h-6 rounded-full bg-teal-600 text-white flex items-center justify-center text-xs font-black shrink-0 mt-0.5">
+                    <span className="w-6 h-6 rounded-full bg-[#005f5a] text-white flex items-center justify-center text-xs font-black shrink-0 mt-0.5">
                       {step.stepNumber}
                     </span>
                     <div className="space-y-1 flex-1">
@@ -393,10 +382,10 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
                       </p>
 
                       {step.keyPoints && step.keyPoints.length > 0 && (
-                        <div className="bg-slate-50 dark:bg-[#0b2830] p-3 rounded-xl border border-slate-200 dark:border-[#14424e] mt-2 space-y-1">
+                        <div className="bg-slate-50 dark:bg-slate-850 p-3 rounded-xl border border-slate-200 dark:border-slate-800 mt-2 space-y-1">
                           {step.keyPoints.map((point, pIdx) => (
                             <p key={pIdx} className="text-[11px] text-slate-700 dark:text-slate-300 flex items-start gap-2">
-                              <span className="text-teal-500 font-bold">•</span>
+                              <span className="text-[#005f5a] font-bold">•</span>
                               <span className="leading-snug">{point}</span>
                             </p>
                           ))}
@@ -413,7 +402,7 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
             
             {/* Checklist Mutu */}
-            <div className="bg-emerald-50/70 dark:bg-emerald-950/30 p-4 rounded-2xl border border-emerald-200 dark:border-emerald-800 space-y-2">
+            <div className="bg-emerald-50/70 dark:bg-emerald-950/30 p-4 rounded-xl border border-emerald-200 dark:border-emerald-800 space-y-2">
               <p className="font-extrabold text-emerald-950 dark:text-emerald-200 flex items-center gap-1.5 text-xs">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                 <span>Titik Kendali Kritis (Quality Control Checklist):</span>
@@ -429,15 +418,15 @@ export const PharmacySopManager: React.FC<PharmacySopManagerProps> = ({
             </div>
 
             {/* Formulir Terkait */}
-            <div className="bg-slate-50 dark:bg-[#0b2830] p-4 rounded-2xl border border-slate-200 dark:border-[#14424e] space-y-2">
+            <div className="bg-slate-50 dark:bg-slate-850 p-4 rounded-xl border border-slate-200 dark:border-slate-800 space-y-2">
               <p className="font-extrabold text-slate-900 dark:text-teal-300 flex items-center gap-1.5 text-xs">
-                <FileText className="w-4 h-4 text-teal-600" />
+                <FileText className="w-4 h-4 text-[#005f5a]" />
                 <span>Formulir & Rekaman Terkait:</span>
               </p>
               <div className="space-y-1">
                 {selectedSop.relatedForms.map((frm, fIdx) => (
                   <div key={fIdx} className="flex items-center gap-2 text-[11px] text-slate-700 dark:text-slate-300">
-                    <span className="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#005f5a]"></span>
                     <span>{frm}</span>
                   </div>
                 ))}

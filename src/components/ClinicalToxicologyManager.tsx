@@ -36,7 +36,6 @@ import {
   ToxinCategory,
   searchToxicAgents
 } from '../data/toxicologyAntidotesData';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { PaginationControls } from './PaginationControls';
 
 interface ClinicalToxicologyManagerProps {
@@ -402,91 +401,82 @@ export const ClinicalToxicologyManager: React.FC<ClinicalToxicologyManagerProps>
 
   return (
     <div className="space-y-6 pb-12 font-outfit">
-      {/* 1. HERO BANNER GAWAT DARURAT TOKSIKOLOGI */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#1c0808] via-[#2a0c0c] to-[#1a0606] p-6 sm:p-8 text-white shadow-2xl border-2 border-rose-500/30">
-        <FloatingPillsBackground density="low" accentColor="#f43f5e" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-rose-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-red-600/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <AlertOctagon className="w-56 h-56 text-rose-400 -rotate-12" />
-        </div>
-
-        <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-          <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-rose-500 to-red-600 text-white flex items-center justify-center shadow-lg shadow-rose-950/50 shrink-0">
-              <AlertOctagon className="w-6 h-6" />
+      {/* CLEAN CLINICAL COMMAND HEADER */}
+      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-teal-50 dark:bg-teal-950/60 text-[#005f5a] dark:text-teal-300 border border-teal-200/80 dark:border-teal-800/60">
+                <ShieldAlert className="w-3.5 h-3.5 text-[#005f5a] dark:text-teal-400" />
+                Standar SIKer BPOM RI &amp; Penatalaksanaan Keracunan Kemenkes
+              </span>
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                Nomogram Rumack-Matthew, Toksidrom &amp; Protokol Antidot
+              </span>
             </div>
-            <div>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight">
-                Toksikologi, Overdosis &amp; Antidotum IGD
-              </h1>
+
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 flex items-center justify-center border border-teal-200/60 dark:border-teal-800/60 shrink-0">
+                <AlertOctagon className="w-5 h-5 text-[#005f5a] dark:text-teal-400" />
+              </div>
+              <div>
+                <h1 className="text-xl sm:text-2xl font-bold font-outfit text-slate-900 dark:text-white tracking-tight">
+                  Toksikologi Klinis, Overdosis &amp; Antidotum IGD
+                </h1>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  Penanganan kegawatdaruratan keracunan akut, protokol pemberian antidot, dan evaluasi nomogram toksisitas parasetamol.
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* Right Hero Badge: Database Status */}
-          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-rose-500/40 space-y-2.5 shadow-xl">
-              <div className="flex items-center justify-between text-xs font-bold text-rose-300 border-b border-rose-800/60 pb-2">
-                <span className="flex items-center gap-1.5 font-black font-outfit">
-                  <Activity className="w-3.5 h-3.5 text-rose-400" />
-                  <span>Status Database</span>
-                </span>
-                <span className="bg-rose-950 text-rose-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-rose-600/40">
-                  {TOXICOLOGY_ANTIDOTES_DATABASE.length} Data Terverifikasi
-                </span>
+          {/* Quick Badges */}
+          <div className="flex items-center gap-2 flex-wrap lg:justify-end">
+            <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+              <div className="text-[10px] text-slate-400 font-medium">Database Antidotum</div>
+              <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                {TOXICOLOGY_ANTIDOTES_DATABASE.length} Agen
               </div>
-              <div className="text-xs text-rose-100/80 space-y-1.5 font-medium">
-                <div className="flex justify-between items-center">
-                  <span>Total Racun Kritis:</span>
-                  <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">{TOXICOLOGY_ANTIDOTES_DATABASE.length} Agen</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Kalkulator Nomogram:</span>
-                  <span className="font-mono font-bold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded-md text-[11px]">Rumack-Matthew</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Tox-Syndrome:</span>
-                  <span className="font-mono font-bold text-rose-300 bg-rose-950/60 px-2 py-0.5 rounded-md text-[11px]">6 Toksidrom IGD</span>
-                </div>
-                <div className="flex justify-between items-center pt-1 border-t border-rose-900/40 text-[10px] text-rose-300/80">
-                  <span>Standar Acuan:</span>
-                  <span className="font-bold text-white">SIKer BPOM &amp; WHO</span>
-                </div>
+            </div>
+            <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+              <div className="text-[10px] text-slate-400 font-medium">Nomogram EBM</div>
+              <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                Rumack-Matthew
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* 2. NAVIGATION SUBTABS - CRIMSON ROSE & AMBER */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-rose-100 dark:border-rose-950/80">
+      {/* NAVIGATION TABS */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-1 border-b border-slate-200 dark:border-slate-800 scrollbar-none">
         <button
           onClick={() => setActiveTab('directory')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeTab === 'directory'
-              ? 'bg-gradient-to-r from-rose-600 to-red-600 text-white shadow-md shadow-rose-950/40 border border-rose-400/30'
-              : 'bg-white dark:bg-[#07152b] text-slate-600 dark:text-slate-300 hover:bg-rose-50 dark:hover:bg-rose-950/40 border border-slate-200 dark:border-rose-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <FileText className="w-4 h-4" />
           <span>Direktori &amp; Protokol Antidotum</span>
-          <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold font-outfit ${activeTab === 'directory' ? 'bg-white/20 text-white' : 'bg-rose-100 dark:bg-rose-950/60 text-rose-800 dark:text-rose-300 border border-rose-200 dark:border-rose-800'}`}>
-            {TOXICOLOGY_ANTIDOTES_DATABASE.length} Racun
+          <span className={`px-1.5 py-0.2 rounded-full text-[10px] font-bold font-outfit ${activeTab === 'directory' ? 'bg-white/20 text-white' : 'bg-teal-100 text-[#005f5a]'}`}>
+            {TOXICOLOGY_ANTIDOTES_DATABASE.length}
           </span>
         </button>
 
         <button
           onClick={() => setActiveTab('calculators')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeTab === 'calculators'
-              ? 'bg-gradient-to-r from-amber-600 to-rose-600 text-white shadow-md shadow-amber-950/40 border border-amber-400/30'
-              : 'bg-white dark:bg-[#07152b] text-slate-600 dark:text-slate-300 hover:bg-amber-50 dark:hover:bg-amber-950/40 border border-slate-200 dark:border-amber-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <Calculator className="w-4 h-4" />
           <span>Kalkulator Toksikologi &amp; Nomogram</span>
-          <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold font-outfit ${activeTab === 'calculators' ? 'bg-white/20 text-white' : 'bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800'}`}>
-            3 Tool EBM
+          <span className={`px-1.5 py-0.2 rounded-full text-[10px] font-bold font-outfit ${activeTab === 'calculators' ? 'bg-white/20 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-500'}`}>
+            3 Tools
           </span>
         </button>
       </div>

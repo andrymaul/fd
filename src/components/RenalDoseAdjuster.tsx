@@ -42,7 +42,6 @@ import {
   FileText,
   Percent
 } from 'lucide-react';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { PediatricCompoundingCalculator } from './PediatricCompoundingCalculator';
 import { ClinicalScoreCalculatorsModal, CalculatorType } from './ClinicalScoreCalculatorsModal';
 import { 
@@ -970,73 +969,61 @@ export const RenalDoseAdjuster: React.FC<RenalDoseAdjusterProps> = ({
   return (
     <div className="space-y-6">
       
-      {/* HEADER BANNER - ROYAL INDIGO & COSMIC NAVY */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#050614] via-[#0d102e] to-[#151947] p-6 sm:p-8 text-white shadow-2xl border border-indigo-500/25 space-y-6">
-        <FloatingPillsBackground density="low" accentColor="#818cf8" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <Calculator className="w-56 h-56 text-indigo-400 -rotate-12" />
-        </div>
-
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-2xl">
-
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white flex items-center justify-center shadow-lg shadow-indigo-950/50 shrink-0">
-                <Calculator className="w-6 h-6" />
-              </div>
-              <div>
-                <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
-                  Kalkulator Medis &amp; Penyesuaian Dosis
-                </h1>
-              </div>
+      {/* CLEAN CLINICAL COMMAND HEADER */}
+      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-teal-50 dark:bg-teal-950/60 text-[#005f5a] dark:text-teal-300 border border-teal-200/80 dark:border-teal-800/60">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#005f5a] dark:text-teal-400" />
+                Standar KDIGO, Cockcroft-Gault & CKD-EPI 2021
+              </span>
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                Dosis Ginjal, Hepar & Formula ICU
+              </span>
             </div>
 
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 flex items-center justify-center border border-teal-200/60 dark:border-teal-800/60 shrink-0">
+                <Calculator className="w-5 h-5 text-[#005f5a] dark:text-teal-400" />
+              </div>
+              <div>
+                <h1 className="text-xl sm:text-2xl font-bold font-outfit text-slate-900 dark:text-white tracking-tight">
+                  Kalkulator Medis &amp; Penyesuaian Dosis
+                </h1>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  Perhitungan klirens kreatinin (CrCl), penyesuaian dosis gangguan ginjal & hepar, konversi opioid, pediatrik, dan laju infus syringe pump.
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Right Hero Badge: Database Status */}
-          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-indigo-500/40 space-y-2.5 shadow-xl">
-              <div className="flex items-center justify-between text-xs font-bold text-indigo-300 border-b border-indigo-800/60 pb-2">
-                <span className="flex items-center gap-1.5 font-black font-outfit">
-                  <Activity className="w-3.5 h-3.5 text-indigo-400" />
-                  <span>Status Database</span>
-                </span>
-                <span className="bg-indigo-950 text-indigo-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-indigo-600/40">
-                  {HEPATIC_DRUG_RULES.length + OPIOID_DATABASE.length + 22} Data Terverifikasi
-                </span>
+          {/* Quick Badges */}
+          <div className="flex items-center gap-2 flex-wrap lg:justify-end">
+            <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+              <div className="text-[10px] text-slate-400 font-medium">Database Dosis</div>
+              <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                {HEPATIC_DRUG_RULES.length + OPIOID_DATABASE.length} Aturan
               </div>
-              <div className="text-xs text-indigo-100/80 space-y-1.5 font-medium">
-                <div className="flex justify-between items-center">
-                  <span>Penyesuaian Organ:</span>
-                  <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">{HEPATIC_DRUG_RULES.length + OPIOID_DATABASE.length} Aturan</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Fungsi Ginjal &amp; Hepar:</span>
-                  <span className="font-mono font-bold text-indigo-300 bg-indigo-950/60 px-2 py-0.5 rounded-md text-[11px]">CrCl, CKD-EPI &amp; MELD</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Skor Klinis Khusus:</span>
-                  <span className="font-mono font-bold text-cyan-300 bg-cyan-950/60 px-2 py-0.5 rounded-md text-[11px]">22+ Formula Medis</span>
-                </div>
-                <div className="flex justify-between items-center pt-1 border-t border-indigo-900/40 text-[10px] text-indigo-300/80">
-                  <span>Standar Acuan:</span>
-                  <span className="font-bold text-white">KDIGO &amp; CDC Opioid</span>
-                </div>
+            </div>
+            <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+              <div className="text-[10px] text-slate-400 font-medium">Formula Medis</div>
+              <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                22+ Kalkulator
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* NAVIGATION SUBTABS - ROYAL INDIGO & VIOLET */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-indigo-100 dark:border-indigo-950/80">
+      {/* NAVIGATION TABS */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-1 border-b border-slate-200 dark:border-slate-800 scrollbar-none">
         <button
           onClick={() => setActiveTab('renal')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeTab === 'renal'
-              ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
-              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <Activity className="w-4 h-4" />
@@ -1045,10 +1032,10 @@ export const RenalDoseAdjuster: React.FC<RenalDoseAdjusterProps> = ({
 
         <button
           onClick={() => setActiveTab('hepatic')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeTab === 'hepatic'
-              ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
-              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <HeartPulse className="w-4 h-4" />
@@ -1057,10 +1044,10 @@ export const RenalDoseAdjuster: React.FC<RenalDoseAdjusterProps> = ({
 
         <button
           onClick={() => setActiveTab('pediatric')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeTab === 'pediatric'
-              ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
-              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <Baby className="w-4 h-4" />
@@ -1069,10 +1056,10 @@ export const RenalDoseAdjuster: React.FC<RenalDoseAdjusterProps> = ({
 
         <button
           onClick={() => setActiveTab('compounding')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeTab === 'compounding'
-              ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
-              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <FlaskConical className="w-4 h-4" />
@@ -1081,10 +1068,10 @@ export const RenalDoseAdjuster: React.FC<RenalDoseAdjusterProps> = ({
 
         <button
           onClick={() => setActiveTab('syringe-pump')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeTab === 'syringe-pump'
-              ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
-              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <Syringe className="w-4 h-4" />
@@ -1093,10 +1080,10 @@ export const RenalDoseAdjuster: React.FC<RenalDoseAdjusterProps> = ({
 
         <button
           onClick={() => setActiveTab('opioid')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeTab === 'opioid'
-              ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
-              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <Pill className="w-4 h-4" />
@@ -1105,10 +1092,10 @@ export const RenalDoseAdjuster: React.FC<RenalDoseAdjusterProps> = ({
 
         <button
           onClick={() => setActiveTab('ibw-bmi')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeTab === 'ibw-bmi'
-              ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
-              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <Scale className="w-4 h-4" />
@@ -1117,10 +1104,10 @@ export const RenalDoseAdjuster: React.FC<RenalDoseAdjusterProps> = ({
 
         <button
           onClick={() => setActiveTab('oxygen')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeTab === 'oxygen'
-              ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
-              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <Wind className="w-4 h-4" />
@@ -1129,10 +1116,10 @@ export const RenalDoseAdjuster: React.FC<RenalDoseAdjusterProps> = ({
 
         <button
           onClick={() => setActiveTab('clinical-scores')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeTab === 'clinical-scores'
-              ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30'
-              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <Stethoscope className="w-4 h-4" />
@@ -1141,10 +1128,10 @@ export const RenalDoseAdjuster: React.FC<RenalDoseAdjusterProps> = ({
 
         <button
           onClick={() => setActiveTab('toxicology')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeTab === 'toxicology'
-              ? 'bg-gradient-to-r from-rose-600 to-pink-600 text-white shadow-md shadow-rose-950/40 border border-rose-400/30'
-              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-rose-50 dark:hover:bg-rose-950/40 border border-slate-200 dark:border-rose-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <AlertOctagon className="w-4 h-4 text-rose-500" />
@@ -1153,10 +1140,10 @@ export const RenalDoseAdjuster: React.FC<RenalDoseAdjusterProps> = ({
 
         <button
           onClick={() => setActiveTab('electrolyte')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer shrink-0 ${
             activeTab === 'electrolyte'
-              ? 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white shadow-md shadow-teal-950/40 border border-teal-400/30'
-              : 'bg-white dark:bg-[#0d102e] text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/40 border border-slate-200 dark:border-teal-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <Droplets className="w-4 h-4 text-teal-500" />

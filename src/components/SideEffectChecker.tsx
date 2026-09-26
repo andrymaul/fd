@@ -1,6 +1,5 @@
 import React, { useState, useMemo } from 'react';
 import { Drug, ClinicBrandingSettings } from '../types';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { 
   ORGAN_TOXICITY_CATEGORIES, 
   DRUG_TOXICITY_PROFILES, 
@@ -404,72 +403,54 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
   return (
     <div className="space-y-6 pb-16">
       
-      {/* HERO BANNER - AMBER GOLD & DEEP BRONZE */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0f0802] via-[#241405] to-[#382008] p-6 sm:p-8 text-white shadow-2xl border border-amber-500/25 print:hidden">
-        <FloatingPillsBackground density="low" accentColor="#fbbf24" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-amber-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <Activity className="w-56 h-56 text-amber-400 -rotate-12" />
-        </div>
-
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-2xl">
-
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white flex items-center justify-center shadow-lg shadow-amber-950/50 shrink-0">
-                <Activity className="w-6 h-6" />
-              </div>
-              <div>
-                <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
-                  Cek Efek Samping &amp; Evaluasi Kausalitas MESO
-                </h1>
-              </div>
+      {/* CLEAN CLINICAL COMMAND HEADER */}
+      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs print:hidden">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-teal-50 dark:bg-teal-950/60 text-[#005f5a] dark:text-teal-300 border border-teal-200/80 dark:border-teal-800/60">
+                <Activity className="w-3.5 h-3.5 text-[#005f5a] dark:text-teal-400" />
+                Standar BPOM MESO RI &amp; WHO-UMC Pharmacovigilance
+              </span>
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                Algoritma Naranjo, Hartwig &amp; Schumock
+              </span>
             </div>
 
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 flex items-center justify-center border border-teal-200/60 dark:border-teal-800/60 shrink-0">
+                <Activity className="w-5 h-5 text-[#005f5a] dark:text-teal-400" />
+              </div>
+              <div>
+                <h1 className="text-xl sm:text-2xl font-bold font-outfit text-slate-900 dark:text-white tracking-tight">
+                  Cek Efek Samping &amp; Evaluasi Kausalitas MESO
+                </h1>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  Analisis beban toksisitas organ kumulatif, pelacakan penyebab keluhan pasien (*Reverse ADR*), dan pelaporan farmakovigilans.
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Right Hero Badge: Database Status & Print Action */}
-          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-amber-500/40 space-y-2.5 shadow-xl">
-              <div className="flex items-center justify-between text-xs font-bold text-amber-300 border-b border-amber-800/60 pb-2">
-                <span className="flex items-center gap-1.5 font-black font-outfit">
-                  <Activity className="w-3.5 h-3.5 text-amber-400" />
-                  <span>Status Database</span>
-                </span>
-                <span className="bg-amber-950 text-amber-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-amber-600/40">
-                  {DRUG_TOXICITY_PROFILES.length} Data Terverifikasi
-                </span>
-              </div>
-              <div className="text-xs text-amber-100/80 space-y-1.5 font-medium">
-                <div className="flex justify-between items-center">
-                  <span>Profil Toksisitas:</span>
-                  <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">{DRUG_TOXICITY_PROFILES.length} Obat</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Algoritma Kausalitas:</span>
-                  <span className="font-mono font-bold text-amber-300 bg-amber-950/60 px-2 py-0.5 rounded-md text-[11px]">Naranjo &amp; WHO-UMC</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Tingkat Keparahan:</span>
-                  <span className="font-mono font-bold text-orange-300 bg-orange-950/60 px-2 py-0.5 rounded-md text-[11px]">Hartwig &amp; Schumock</span>
-                </div>
-                <div className="flex justify-between items-center pt-1 border-t border-amber-900/40 text-[10px] text-amber-300/80">
-                  <span>Standar Acuan:</span>
-                  <span className="font-bold text-white">BPOM MESO &amp; WHO UMC</span>
-                </div>
+          {/* Quick Badges & Print Action */}
+          <div className="flex items-center gap-3 flex-wrap lg:justify-end">
+            <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+              <div className="text-[10px] text-slate-400 font-medium">Profil Toksisitas</div>
+              <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                {DRUG_TOXICITY_PROFILES.length} Obat
               </div>
             </div>
 
             <button
               onClick={handlePrint}
               disabled={selectedDrugs.length === 0}
-              className={`w-full justify-center px-4 py-2.5 rounded-2xl text-white text-xs font-black font-outfit transition-all flex items-center gap-2 shadow-lg shadow-amber-950/50 ${
+              className={`px-3.5 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-1.5 shadow-2xs ${
                 selectedDrugs.length > 0
-                  ? 'bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 cursor-pointer active:scale-95'
-                  : 'bg-amber-600/50 cursor-not-allowed opacity-60'
+                  ? 'bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 border border-teal-200 dark:border-teal-800 hover:bg-teal-100 dark:hover:bg-teal-900/40 cursor-pointer'
+                  : 'bg-slate-100 dark:bg-slate-800 text-slate-400 border border-slate-200 dark:border-slate-700 cursor-not-allowed opacity-60'
               }`}
             >
-              <Printer className="w-4 h-4" />
+              <Printer className="w-3.5 h-3.5" />
               <span>Cetak Laporan MESO</span>
             </button>
           </div>
@@ -612,20 +593,20 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
         </div>
       </div>
 
-      {/* 3. Main Sub-Navigation Tabs - Golden Amber Pharmacovigilance */}
-      <div className="flex items-center gap-2 p-1.5 bg-slate-50 dark:bg-[#140f04] border border-amber-200/70 dark:border-amber-500/25 rounded-2xl shadow-2xs overflow-x-auto pb-1.5 print:hidden">
+      {/* 3. Main Sub-Navigation Tabs */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-1 border-b border-slate-200 dark:border-slate-800 scrollbar-none print:hidden">
         <button
           onClick={() => setActiveSubtab('overlap')}
-          className={`px-4 py-2.5 text-xs sm:text-sm font-bold font-outfit rounded-xl transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+          className={`px-4 py-2 text-xs font-bold font-outfit rounded-xl transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
             activeSubtab === 'overlap'
-              ? 'bg-gradient-to-r from-amber-600 to-amber-500 text-white shadow-md shadow-amber-950/40 border border-amber-400/30'
-              : 'text-slate-600 dark:text-slate-400 hover:text-amber-700 dark:hover:text-amber-300 hover:bg-amber-50/80 dark:hover:bg-amber-950/40'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <Activity className="w-4 h-4" />
-          <span>Analisis Toksisitas Organ Kumulatif</span>
+          <span>Toksisitas Organ Kumulatif</span>
           {overallRiskStats.elevatedCount > 0 && (
-            <span className="text-[10px] px-1.5 py-0.5 rounded-full bg-rose-500 text-white font-bold">
+            <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${activeSubtab === 'overlap' ? 'bg-white/20 text-white' : 'bg-rose-100 text-rose-700'}`}>
               {overallRiskStats.elevatedCount} Organ
             </span>
           )}
@@ -633,42 +614,41 @@ export const SideEffectChecker: React.FC<SideEffectCheckerProps> = ({
 
         <button
           onClick={() => setActiveSubtab('symptoms')}
-          className={`px-4 py-2.5 text-xs sm:text-sm font-bold font-outfit rounded-xl transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+          className={`px-4 py-2 text-xs font-bold font-outfit rounded-xl transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
             activeSubtab === 'symptoms'
-              ? 'bg-gradient-to-r from-amber-600 to-amber-500 text-white shadow-md shadow-amber-950/40 border border-amber-400/30'
-              : 'text-slate-600 dark:text-slate-400 hover:text-amber-700 dark:hover:text-amber-300 hover:bg-amber-50/80 dark:hover:bg-amber-950/40'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <Search className="w-4 h-4" />
-          <span>Pelacak Gejala Pasien (*Reverse ADR*)</span>
+          <span>Pelacak Gejala Pasien (Reverse ADR)</span>
         </button>
 
         <button
           onClick={() => setActiveSubtab('meso_suite')}
-          className={`px-4 py-2.5 text-xs sm:text-sm font-bold font-outfit rounded-xl transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+          className={`px-4 py-2 text-xs font-bold font-outfit rounded-xl transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
             activeSubtab === 'meso_suite'
-              ? 'bg-gradient-to-r from-amber-600 to-amber-500 text-white shadow-md shadow-amber-950/40 border border-amber-400/30'
-              : 'text-slate-600 dark:text-slate-400 hover:text-amber-700 dark:hover:text-amber-300 hover:bg-amber-50/80 dark:hover:bg-amber-950/40'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <BarChart3 className="w-4 h-4" />
           <span>Suite Evaluasi Kausalitas MESO</span>
-          <span className="text-[10px] px-1.5 py-0.5 rounded bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 font-extrabold">
+          <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${activeSubtab === 'meso_suite' ? 'bg-white/20 text-white' : 'bg-teal-100 text-[#005f5a]'}`}>
             4 Tools
           </span>
         </button>
 
-
         <button
           onClick={() => setActiveSubtab('mitigation')}
-          className={`px-4 py-2.5 text-xs sm:text-sm font-bold font-outfit rounded-xl transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+          className={`px-4 py-2 text-xs font-bold font-outfit rounded-xl transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
             activeSubtab === 'mitigation'
-              ? 'bg-gradient-to-r from-amber-600 to-amber-500 text-white shadow-md shadow-amber-950/40 border border-amber-400/30'
-              : 'text-slate-600 dark:text-slate-400 hover:text-amber-700 dark:hover:text-amber-300 hover:bg-amber-50/80 dark:hover:bg-amber-950/40'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <ShieldAlert className="w-4 h-4" />
-          <span>Panduan Mitigasi & Red Flags</span>
+          <span>Panduan Mitigasi &amp; Red Flags</span>
         </button>
       </div>
 

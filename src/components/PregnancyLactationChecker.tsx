@@ -33,7 +33,7 @@ import {
   FdaPregnancyCategory,
   HalesLactationRating
 } from '../data/pregnancyLactationData';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
+
 
 interface PregnancyLactationCheckerProps {
   onSelectTab?: (tabId: string) => void;
@@ -198,85 +198,92 @@ export const PregnancyLactationChecker: React.FC<PregnancyLactationCheckerProps>
 
   return (
     <div className="space-y-6">
-      {/* HERO BANNER - BLUSH ROSE & DARK PLUM */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0e040c] via-[#1e0919] to-[#2e0e27] p-6 sm:p-8 text-white shadow-2xl border border-pink-500/25">
-        <FloatingPillsBackground density="low" accentColor="#f472b6" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-pink-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <Baby className="w-56 h-56 text-pink-300 -rotate-12" />
-        </div>
-
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-2xl">
+      {/* CLEAN CLINICAL COMMAND HEADER */}
+      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-teal-50 dark:bg-teal-950/60 text-[#005f5a] dark:text-teal-300 border border-teal-200/80 dark:border-teal-800/60">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#005f5a] dark:text-teal-400" />
+                Standar FDA PLLR & Briggs Drugs in Pregnancy & Lactation
+              </span>
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                Hale's Lactation Risk (L1–L5) & RID %
+              </span>
+            </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 text-white flex items-center justify-center shadow-lg shadow-pink-950/50 shrink-0">
-                <HeartHandshake className="w-6 h-6" />
+              <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 flex items-center justify-center border border-teal-200/60 dark:border-teal-800/60 shrink-0">
+                <HeartHandshake className="w-5 h-5 text-[#005f5a] dark:text-teal-400" />
               </div>
               <div>
-                <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
+                <h1 className="text-xl sm:text-2xl font-bold font-outfit text-slate-900 dark:text-white tracking-tight">
                   Keamanan Obat Ibu Hamil &amp; Menyusui
                 </h1>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  Penapisan risiko teratogenisitas per trimester kehamilan dan ekskresi obat ke dalam Air Susu Ibu (ASI).
+                </p>
               </div>
             </div>
-
           </div>
 
-          {/* Right Hero Badge: Database Status */}
-          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-pink-500/40 space-y-2.5 shadow-xl">
-              <div className="flex items-center justify-between text-xs font-bold text-pink-300 border-b border-pink-800/60 pb-2">
-                <span className="flex items-center gap-1.5 font-black font-outfit">
-                  <Activity className="w-3.5 h-3.5 text-pink-400" />
-                  <span>Status Database</span>
-                </span>
-                <span className="bg-pink-950 text-pink-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-pink-600/40">
-                  {PREGNANCY_LACTATION_DATABASE.length} Data Terverifikasi
-                </span>
+          {/* Quick Badges & Action */}
+          <div className="flex items-center gap-3 flex-wrap lg:justify-end">
+            <div className="flex items-center gap-2">
+              <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+                <div className="text-[10px] text-slate-400 font-medium">Database Obat</div>
+                <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                  {PREGNANCY_LACTATION_DATABASE.length} Monografi
+                </div>
               </div>
-              <div className="text-xs text-pink-100/80 space-y-1.5 font-medium">
-                <div className="flex justify-between items-center">
-                  <span>Monografi Bumil:</span>
-                  <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">{PREGNANCY_LACTATION_DATABASE.length} Obat</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Klasifikasi Keamanan:</span>
-                  <span className="font-mono font-bold text-pink-300 bg-pink-950/60 px-2 py-0.5 rounded-md text-[11px]">FDA PLLR (A, B, C, D, X)</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Ekskresi ASI / Laktasi:</span>
-                  <span className="font-mono font-bold text-rose-300 bg-rose-950/60 px-2 py-0.5 rounded-md text-[11px]">Hale's (L1–L5) &amp; RID %</span>
-                </div>
-                <div className="flex justify-between items-center pt-1 border-t border-pink-900/40 text-[10px] text-pink-300/80">
-                  <span>Standar Acuan:</span>
-                  <span className="font-bold text-white">FDA PLLR &amp; Briggs</span>
+              <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+                <div className="text-[10px] text-slate-400 font-medium">Klasifikasi</div>
+                <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                  FDA A-X & L1-L5
                 </div>
               </div>
             </div>
+
+            {selectedDrugIds.length > 0 && (
+              <button
+                onClick={handleCopySummary}
+                className="px-3.5 py-2 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 border border-teal-200 dark:border-teal-800 text-xs font-bold font-outfit flex items-center gap-1.5 hover:bg-teal-100 dark:hover:bg-teal-900/40 cursor-pointer transition shadow-2xs"
+              >
+                {copiedSummary ? <Check className="w-3.5 h-3.5 text-teal-600" /> : <Copy className="w-3.5 h-3.5" />}
+                <span>{copiedSummary ? 'Tersalin!' : 'Salin Lembar Edukasi'}</span>
+              </button>
+            )}
           </div>
         </div>
       </div>
 
-      {/* NAVIGATION SUBTABS - VELVET PINK & MAGENTA */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-pink-100 dark:border-pink-950/80">
+      {/* NAVIGATION TABS */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-1 border-b border-slate-200 dark:border-slate-800 scrollbar-none">
         <button
           onClick={() => setActiveTab('screening')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
             activeTab === 'screening'
-              ? 'bg-gradient-to-r from-pink-600 to-rose-600 text-white shadow-md shadow-pink-950/40 border border-pink-400/30'
-              : 'bg-white dark:bg-[#150612] text-slate-600 dark:text-slate-300 hover:bg-pink-50 dark:hover:bg-pink-950/40 border border-slate-200 dark:border-pink-900/30'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <Sparkles className="w-4 h-4" />
           <span>Penapisan Multi-Obat Resep</span>
+          {selectedDrugIds.length > 0 && (
+            <span className={`px-1.5 py-0.2 rounded-full text-[10px] font-bold ${
+              activeTab === 'screening' ? 'bg-white/20 text-white' : 'bg-teal-100 text-[#005f5a]'
+            }`}>
+              {selectedDrugIds.length}
+            </span>
+          )}
         </button>
 
         <button
           onClick={() => setActiveTab('conditions')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
             activeTab === 'conditions'
-              ? 'bg-gradient-to-r from-pink-600 to-rose-600 text-white shadow-md shadow-pink-950/40 border border-pink-400/30'
-              : 'bg-white dark:bg-[#150612] text-slate-600 dark:text-slate-300 hover:bg-pink-50 dark:hover:bg-pink-950/40 border border-slate-200 dark:border-pink-900/30'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <ShieldCheck className="w-4 h-4" />
@@ -285,10 +292,10 @@ export const PregnancyLactationChecker: React.FC<PregnancyLactationCheckerProps>
 
         <button
           onClick={() => setActiveTab('teratogens')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
             activeTab === 'teratogens'
-              ? 'bg-gradient-to-r from-pink-600 to-rose-600 text-white shadow-md shadow-pink-950/40 border border-pink-400/30'
-              : 'bg-white dark:bg-[#150612] text-slate-600 dark:text-slate-300 hover:bg-pink-50 dark:hover:bg-pink-950/40 border border-slate-200 dark:border-pink-900/30'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <ShieldAlert className="w-4 h-4" />
@@ -297,10 +304,10 @@ export const PregnancyLactationChecker: React.FC<PregnancyLactationCheckerProps>
 
         <button
           onClick={() => setActiveTab('directory')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
             activeTab === 'directory'
-              ? 'bg-gradient-to-r from-pink-600 to-rose-600 text-white shadow-md shadow-pink-950/40 border border-pink-400/30'
-              : 'bg-white dark:bg-[#150612] text-slate-600 dark:text-slate-300 hover:bg-pink-50 dark:hover:bg-pink-950/40 border border-slate-200 dark:border-pink-900/30'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <BookOpen className="w-4 h-4" />
@@ -313,9 +320,9 @@ export const PregnancyLactationChecker: React.FC<PregnancyLactationCheckerProps>
       {/* ========================================================================= */}
       {activeTab === 'screening' && (
         <div className="space-y-6 animate-fade-in">
-          {/* Patient Profile & Trimester Selector - Velvet Pink Suite */}
-          <div className="p-6 rounded-3xl bg-white dark:bg-[#150612] border border-pink-200/80 dark:border-pink-500/25 shadow-sm space-y-4">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-pink-100 dark:border-pink-950/80 pb-3">
+          {/* Patient Profile & Trimester Selector */}
+          <div className="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xs space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-3">
               <div>
                 <h3 className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white font-outfit">
                   Pilih Status Fisiologis Kehamilan / Laktasi

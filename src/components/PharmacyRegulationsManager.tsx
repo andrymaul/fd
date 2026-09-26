@@ -20,7 +20,6 @@ import {
   Layers,
   Activity
 } from 'lucide-react';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { PHARMACY_REGULATIONS_DATA, RegulationItem } from '../data/pharmacyRegulationsData';
 import { ClinicBrandingSettings } from '../types';
 import { PaginationControls } from './PaginationControls';
@@ -114,67 +113,57 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
   return (
     <div className="space-y-6">
       
-      {/* HERO BANNER - GOLDEN BRONZE & DARK ESPRESSO */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0e0a04] via-[#211709] to-[#33240e] p-6 sm:p-8 text-white shadow-2xl border border-amber-500/25 print:hidden">
-        <FloatingPillsBackground density="low" accentColor="#f59e0b" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-amber-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <Scale className="w-56 h-56 text-amber-400 -rotate-12" />
-        </div>
-
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-2xl">
-
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500 to-yellow-600 text-white flex items-center justify-center shadow-lg shadow-amber-950/50 shrink-0">
-                <Scale className="w-6 h-6" />
-              </div>
-              <div>
-                <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
-                  Regulasi &amp; Kebijakan Farmasi Indonesia
-                </h1>
-              </div>
+      {/* CLEAN CLINICAL COMMAND HEADER */}
+      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs print:hidden">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-teal-50 dark:bg-teal-950/60 text-[#005f5a] dark:text-teal-300 border border-teal-200/80 dark:border-teal-800/60">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#005f5a] dark:text-teal-400" />
+                JDIH Kemenkes RI, BPOM &amp; Perundang-undangan RI
+              </span>
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                UU No. 17/2023, PP 28/2024 &amp; Standar Pelayanan
+              </span>
             </div>
 
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 flex items-center justify-center border border-teal-200/60 dark:border-teal-800/60 shrink-0">
+                <Scale className="w-5 h-5 text-[#005f5a] dark:text-teal-400" />
+              </div>
+              <div>
+                <h1 className="text-xl sm:text-2xl font-bold font-outfit text-slate-900 dark:text-white tracking-tight">
+                  Regulasi &amp; Kebijakan Farmasi Indonesia
+                </h1>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  Kompilasi peraturan hukum kefarmasian, perizinan praktek apoteker, standar pelayanan di apotek/RS, dan arsip DOWA.
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Right Hero Badge: Database Status */}
-          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-amber-500/40 space-y-2.5 shadow-xl">
-              <div className="flex items-center justify-between text-xs font-bold text-amber-300 border-b border-amber-800/60 pb-2">
-                <span className="flex items-center gap-1.5 font-black font-outfit">
-                  <Activity className="w-3.5 h-3.5 text-amber-400" />
-                  <span>Status Database</span>
-                </span>
-                <span className="bg-amber-950 text-amber-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-amber-600/40">
-                  {PHARMACY_REGULATIONS_DATA.length} Regulasi Hukum
-                </span>
+          {/* Quick Badges & Print Action */}
+          <div className="flex items-center gap-3 flex-wrap lg:justify-end">
+            <div className="flex items-center gap-2">
+              <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+                <div className="text-[10px] text-slate-400 font-medium">Total Regulasi</div>
+                <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                  {PHARMACY_REGULATIONS_DATA.length} Produk Hukum
+                </div>
               </div>
-              <div className="text-xs text-amber-100/80 space-y-1.5 font-medium">
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Undang-Undang &amp; PP:</span>
-                  <span className="font-bold text-amber-200">{PHARMACY_REGULATIONS_DATA.filter(r => r.type === 'uu' || r.type === 'pp').length} Produk Hukum</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Permenkes &amp; KMK Terkini:</span>
-                  <span className="font-bold text-amber-200">{PHARMACY_REGULATIONS_DATA.filter(r => r.type === 'permenkes' || r.type === 'kemenkes').length} Regulasi</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Arsip DOWA (Historis):</span>
-                  <span className="font-bold text-amber-400">{PHARMACY_REGULATIONS_DATA.filter(r => r.type === 'dowa').length} Kepmenkes</span>
-                </div>
-                <div className="flex justify-between items-center pt-1 border-t border-amber-900/40 text-[10px] text-amber-300/80">
-                  <span>Standar Acuan:</span>
-                  <span className="font-bold text-white">JDIH Kemenkes &amp; BPOM RI</span>
+              <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+                <div className="text-[10px] text-slate-400 font-medium">Permenkes &amp; KMK</div>
+                <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                  {PHARMACY_REGULATIONS_DATA.filter(r => r.type === 'permenkes' || r.type === 'kemenkes').length} Aturan
                 </div>
               </div>
             </div>
 
             <button
               onClick={handlePrint}
-              className="w-full px-5 py-2.5 rounded-2xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-black shadow-md flex items-center justify-center gap-2 transition-all cursor-pointer border border-amber-400/40 hover:scale-[1.02] active:scale-95"
+              className="px-3.5 py-2 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 border border-teal-200 dark:border-teal-800 text-xs font-bold font-outfit flex items-center gap-1.5 hover:bg-teal-100 dark:hover:bg-teal-900/40 cursor-pointer transition shadow-2xs"
             >
-              <Printer className="w-4 h-4" />
+              <Printer className="w-3.5 h-3.5" />
               <span>Cetak Intisari Regulasi</span>
             </button>
           </div>
@@ -187,8 +176,8 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
         {/* Left Column: Regulations Directory */}
         <div className="lg:col-span-4 space-y-4 print:hidden">
           
-          {/* Search Box - Amber Gold Suite */}
-          <div className="bg-white dark:bg-[#161005] p-5 rounded-3xl border border-amber-200/80 dark:border-amber-500/25 shadow-sm space-y-3">
+          {/* Search Box */}
+          <div className="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xs space-y-3">
             <div className="relative">
               <Search className="w-4 h-4 absolute left-3.5 top-3 text-slate-400" />
               <input
@@ -196,7 +185,7 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Cari regulasi / nomor / kata kunci..."
-                className="w-full pl-9 pr-4 py-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl text-xs font-bold font-outfit text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full pl-9 pr-4 py-2.5 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl text-xs font-bold font-outfit text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#005f5a]"
               />
             </div>
 
@@ -208,8 +197,8 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
                   onClick={() => setSelectedType(cat.id)}
                   className={`px-3 py-1.5 rounded-xl text-[11px] font-bold font-outfit transition-all cursor-pointer flex items-center gap-1.5 ${
                     selectedType === cat.id
-                      ? 'bg-gradient-to-r from-amber-600 to-yellow-600 text-white shadow-xs'
-                      : 'bg-slate-100 dark:bg-[#211707] text-slate-600 dark:text-slate-300 hover:bg-amber-50 dark:hover:bg-amber-950/40'
+                      ? 'bg-[#005f5a] text-white shadow-xs'
+                      : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/40'
                   }`}
                 >
                   <span>{cat.label}</span>
@@ -227,7 +216,7 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
           <div className="space-y-3">
             <div className="space-y-2.5">
               {filteredRegulations.length === 0 ? (
-                <div className="bg-white dark:bg-[#071c21] p-6 rounded-3xl text-center border border-slate-200 dark:border-[#143d47] text-xs text-slate-500">
+                <div className="bg-white dark:bg-[#0c1427] p-6 rounded-2xl text-center border border-slate-200 dark:border-slate-800 text-xs text-slate-500">
                   <Scale className="w-8 h-8 mx-auto text-slate-300 mb-2" />
                   <p>Tidak ada regulasi yang sesuai dengan pencarian.</p>
                 </div>
@@ -238,10 +227,10 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
                     <div
                       key={reg.id}
                       onClick={() => setSelectedReg(reg)}
-                      className={`p-4 rounded-3xl border transition-all cursor-pointer text-left space-y-2 ${
+                      className={`p-4 rounded-2xl border transition-all cursor-pointer text-left space-y-2 ${
                         isSelected
-                          ? 'bg-teal-50/80 dark:bg-[#0b353e] border-teal-500 shadow-md ring-1 ring-teal-500'
-                          : 'bg-white dark:bg-[#071c21] border-slate-200 dark:border-[#143d47] hover:border-teal-300 hover:shadow-xs'
+                          ? 'bg-teal-50/70 dark:bg-teal-950/40 border-[#005f5a] shadow-xs ring-1 ring-[#005f5a]'
+                          : 'bg-white dark:bg-[#0c1427] border-slate-200 dark:border-slate-800 hover:border-teal-300 hover:shadow-xs'
                       }`}
                     >
                       <div className="flex items-center justify-between gap-2">
@@ -251,7 +240,7 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
                         {renderStatusBadge(reg.status)}
                       </div>
 
-                      <h3 className={`text-xs font-black leading-snug ${isSelected ? 'text-teal-950 dark:text-teal-200' : 'text-slate-900 dark:text-white'}`}>
+                      <h3 className={`text-xs font-black leading-snug ${isSelected ? 'text-[#005f5a] dark:text-teal-200' : 'text-slate-900 dark:text-white'}`}>
                         {reg.title}
                       </h3>
 
@@ -261,7 +250,7 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
 
                       <div className="flex items-center justify-between pt-1 border-t border-slate-100 dark:border-slate-800 text-[10px] text-slate-400 font-medium">
                         <span className="font-mono font-bold text-slate-600 dark:text-slate-300">{reg.regNumber}</span>
-                        <span className="flex items-center gap-1 text-teal-600 dark:text-teal-400 font-bold">
+                        <span className="flex items-center gap-1 text-[#005f5a] dark:text-teal-400 font-bold">
                           Buka Detail <ChevronRight className="w-3 h-3" />
                         </span>
                       </div>
@@ -285,17 +274,17 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
                 setCurrentPage(1);
               }}
               pageSizeOptions={[4, 6, 8, 12]}
-              colorTheme="amber"
+              colorTheme="emerald"
             />
           </div>
         </div>
 
         {/* Right Column: Complete Interactive Regulation Document View */}
-        <div className="lg:col-span-8 bg-white dark:bg-[#071c21] rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-[#143d47] shadow-lg space-y-6">
+        <div className="lg:col-span-8 bg-white dark:bg-[#0c1427] rounded-2xl p-6 sm:p-7 border border-slate-200 dark:border-slate-800 shadow-2xs space-y-6">
           
           {/* Header Info Box */}
-          <div className="border border-slate-300 dark:border-[#14424e] rounded-2xl overflow-hidden text-xs">
-            <div className="bg-slate-100 dark:bg-[#0b353e] p-4 text-center border-b border-slate-300 dark:border-[#14424e] space-y-1">
+          <div className="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden text-xs">
+            <div className="bg-slate-50 dark:bg-slate-850 p-4 text-center border-b border-slate-200 dark:border-slate-800 space-y-1">
               <span className={`text-[10px] font-extrabold px-3 py-0.5 rounded-full border ${getTypeBadgeColor(selectedReg.type)}`}>
                 {selectedReg.typeLabel} • TAHUN {selectedReg.year}
               </span>
@@ -304,7 +293,7 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
               </h2>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 divide-x divide-y sm:divide-y-0 divide-slate-300 dark:divide-[#14424e] bg-slate-50/50 dark:bg-[#06181c] text-[11px]">
+            <div className="grid grid-cols-2 sm:grid-cols-3 divide-x divide-y sm:divide-y-0 divide-slate-200 dark:divide-slate-800 bg-white dark:bg-[#0c1427] text-[11px]">
               <div className="p-3 space-y-0.5">
                 <p className="text-[10px] font-bold text-slate-400 uppercase">Nomor Regulasi:</p>
                 <p className="font-mono font-bold text-slate-900 dark:text-white">{selectedReg.regNumber}</p>
@@ -322,9 +311,9 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
 
           {/* Section 1: Ringkasan Eksekutif & Ruang Lingkup */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-            <div className="bg-slate-50 dark:bg-[#0b2830] p-4 rounded-2xl border border-slate-200 dark:border-[#14424e] space-y-1.5">
+            <div className="bg-slate-50 dark:bg-slate-850 p-4 rounded-xl border border-slate-200 dark:border-slate-800 space-y-1.5">
               <p className="font-black text-slate-900 dark:text-teal-300 flex items-center gap-1.5 text-xs">
-                <BookOpen className="w-4 h-4 text-teal-600" />
+                <BookOpen className="w-4 h-4 text-[#005f5a]" />
                 <span>Ringkasan Eksekutif Regulasi:</span>
               </p>
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-[11px]">
@@ -332,9 +321,9 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
               </p>
             </div>
 
-            <div className="bg-slate-50 dark:bg-[#0b2830] p-4 rounded-2xl border border-slate-200 dark:border-[#14424e] space-y-1.5">
+            <div className="bg-slate-50 dark:bg-slate-850 p-4 rounded-xl border border-slate-200 dark:border-slate-800 space-y-1.5">
               <p className="font-black text-slate-900 dark:text-teal-300 flex items-center gap-1.5 text-xs">
-                <ShieldCheck className="w-4 h-4 text-teal-600" />
+                <ShieldCheck className="w-4 h-4 text-[#005f5a]" />
                 <span>Ruang Lingkup & Subjek Hukum:</span>
               </p>
               <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-[11px]">
@@ -346,7 +335,7 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
           {/* Section 2: Intisari Pasal-Pasal Kritis & Implikasi Klinis */}
           <div className="space-y-3">
             <div className="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2">
-              <Gavel className="w-5 h-5 text-teal-600" />
+              <Gavel className="w-5 h-5 text-[#005f5a]" />
               <h3 className="text-sm font-black text-slate-900 dark:text-white uppercase tracking-wider">
                 Intisari Pasal-Pasal Kunci & Implikasi Klinis Apoteker
               </h3>
@@ -354,9 +343,9 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
 
             <div className="space-y-3">
               {selectedReg.keyArticles.map((art, idx) => (
-                <div key={idx} className="bg-white dark:bg-[#06181c] p-4 rounded-2xl border border-slate-200 dark:border-[#14424e] shadow-xs space-y-2">
+                <div key={idx} className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-2xs space-y-2">
                   <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-1.5">
-                    <span className="font-mono text-xs font-black text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-[#0e3742] px-2.5 py-0.5 rounded-md">
+                    <span className="font-mono text-xs font-black text-teal-700 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/60 px-2.5 py-0.5 rounded-md">
                       {art.articleNumber}
                     </span>
                     <span className="text-xs font-extrabold text-slate-800 dark:text-white">
@@ -383,7 +372,7 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
           {selectedReg.drugListsOrSchedules && selectedReg.drugListsOrSchedules.length > 0 && (
             <div className="space-y-3 pt-2">
               <div className="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2">
-                <Pill className="w-5 h-5 text-teal-600" />
+                <Pill className="w-5 h-5 text-[#005f5a]" />
                 <h3 className="text-sm font-black text-slate-900 dark:text-white uppercase tracking-wider">
                   Lampiran Daftar Golongan & Batas Penyerahan Obat
                 </h3>
@@ -391,15 +380,15 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
                 {selectedReg.drugListsOrSchedules.map((schedule, sIdx) => (
-                  <div key={sIdx} className="bg-slate-50 dark:bg-[#0b2830] p-4 rounded-2xl border border-slate-200 dark:border-[#14424e] space-y-2">
-                    <p className="font-extrabold text-teal-900 dark:text-teal-200 text-xs">
+                  <div key={sIdx} className="bg-slate-50 dark:bg-slate-850 p-4 rounded-xl border border-slate-200 dark:border-slate-800 space-y-2">
+                    <p className="font-extrabold text-[#005f5a] dark:text-teal-200 text-xs">
                       {schedule.category}
                     </p>
 
                     <div className="space-y-1">
                       {schedule.items.map((item, iIdx) => (
                         <div key={iIdx} className="flex items-center gap-1.5 text-[11px] text-slate-700 dark:text-slate-300">
-                          <span className="w-1.5 h-1.5 rounded-full bg-teal-500 shrink-0"></span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#005f5a] shrink-0"></span>
                           <span className="font-medium">{item}</span>
                         </div>
                       ))}
@@ -415,7 +404,7 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
           )}
 
           {/* Section 4: Sanksi Hukum & Catatan Kritis */}
-          <div className="bg-rose-50/70 dark:bg-rose-950/30 p-4 rounded-2xl border border-rose-200 dark:border-rose-800 text-xs space-y-2">
+          <div className="bg-rose-50/70 dark:bg-rose-950/30 p-4 rounded-xl border border-rose-200 dark:border-rose-800 text-xs space-y-2">
             <p className="font-extrabold text-rose-950 dark:text-rose-200 flex items-center gap-1.5 text-xs">
               <ShieldAlert className="w-4 h-4 text-rose-600" />
               <span>Sanksi Administratif & Ancaman Pidana Pelanggaran:</span>
@@ -427,7 +416,7 @@ export const PharmacyRegulationsManager: React.FC<PharmacyRegulationsManagerProp
             </ul>
           </div>
 
-          <div className="p-3.5 bg-slate-50 dark:bg-[#0b2830] rounded-2xl border border-slate-200 dark:border-[#14424e] text-xs text-slate-600 dark:text-slate-400">
+          <div className="p-3.5 bg-slate-50 dark:bg-slate-850 rounded-xl border border-slate-200 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-400">
             <strong>Catatan Yuridis:</strong> {selectedReg.notes}
           </div>
 

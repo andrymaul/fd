@@ -31,7 +31,6 @@ import {
   checkPrescriptionDrugRisk,
   DrugRiskCheckResult
 } from '../data/highAlertLasaData';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { PaginationControls } from './PaginationControls';
 
 interface HighAlertSafetyManagerProps {
@@ -307,67 +306,57 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
 
   return (
     <div className="space-y-6">
-      {/* HERO BANNER - AMBER CRIMSON ACCENTS */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#120606] via-[#210c0a] to-[#38110e] p-6 sm:p-8 text-white shadow-2xl border border-amber-500/30">
-        <FloatingPillsBackground density="low" accentColor="#f59e0b" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-amber-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <ShieldAlert className="w-56 h-56 text-amber-400 -rotate-12" />
-        </div>
-
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-2xl">
-
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500 to-rose-600 text-white flex items-center justify-center shadow-lg shadow-amber-950/50 shrink-0">
-                <ShieldAlert className="w-6 h-6" />
-              </div>
-              <div>
-                <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
-                  Manajemen Obat Risiko Tinggi (High-Alert &amp; LASA)
-                </h1>
-              </div>
+      {/* CLEAN CLINICAL COMMAND HEADER */}
+      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-teal-50 dark:bg-teal-950/60 text-[#005f5a] dark:text-teal-300 border border-teal-200/80 dark:border-teal-800/60">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#005f5a] dark:text-teal-400" />
+                Standar STARKES Kemenkes RI, ISMP &amp; BPOM
+              </span>
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                Tall-Man Letters &amp; Double-Check Independen
+              </span>
             </div>
 
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 flex items-center justify-center border border-teal-200/60 dark:border-teal-800/60 shrink-0">
+                <ShieldAlert className="w-5 h-5 text-[#005f5a] dark:text-teal-400" />
+              </div>
+              <div>
+                <h1 className="text-xl sm:text-2xl font-bold font-outfit text-slate-900 dark:text-white tracking-tight">
+                  Manajemen Obat Risiko Tinggi (High-Alert &amp; LASA)
+                </h1>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  Penapisan risiko medication error sediaan mirip (LASA/NORUM), elektrolit konsentrat, dan regulasi OOT/Prekursor farmasi.
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Right Hero Badge: Database Status & Print Action */}
-          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-amber-500/40 space-y-2.5 shadow-xl">
-              <div className="flex items-center justify-between text-xs font-bold text-amber-300 border-b border-amber-800/60 pb-2">
-                <span className="flex items-center gap-1.5 font-black font-outfit">
-                  <Activity className="w-3.5 h-3.5 text-amber-400" />
-                  <span>Status Database</span>
-                </span>
-                <span className="bg-amber-950 text-amber-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-amber-600/40">
-                  {LASA_PAIRS.length + HIGH_ALERT_DRUGS.length + OOT_PRECURSOR_DRUGS.length} Data Terverifikasi
-                </span>
+          {/* Quick Badges & Action */}
+          <div className="flex items-center gap-3 flex-wrap lg:justify-end">
+            <div className="flex items-center gap-2">
+              <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+                <div className="text-[10px] text-slate-400 font-medium">Pasangan LASA</div>
+                <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                  {LASA_PAIRS.length} Pasang
+                </div>
               </div>
-              <div className="text-xs text-amber-100/80 space-y-1.5 font-medium">
-                <div className="flex justify-between items-center">
-                  <span>Pasangan Tall-Man:</span>
-                  <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">{LASA_PAIRS.length} Pasangan</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>High-Alert &amp; Elektrolit:</span>
-                  <span className="font-mono font-bold text-rose-300 bg-rose-950/60 px-2 py-0.5 rounded-md text-[11px]">{HIGH_ALERT_DRUGS.length} Obat</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Regulasi OOT &amp; Prekursor:</span>
-                  <span className="font-mono font-bold text-sky-300 bg-sky-950/60 px-2 py-0.5 rounded-md text-[11px]">{OOT_PRECURSOR_DRUGS.length} Regulasi</span>
-                </div>
-                <div className="flex justify-between items-center pt-1 border-t border-amber-900/40 text-[10px] text-amber-300/80">
-                  <span>Standar Acuan:</span>
-                  <span className="font-bold text-white">STARKES / ISMP / BPOM</span>
+              <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+                <div className="text-[10px] text-slate-400 font-medium">High-Alert &amp; OOT</div>
+                <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                  {HIGH_ALERT_DRUGS.length + OOT_PRECURSOR_DRUGS.length} Obat
                 </div>
               </div>
             </div>
 
             <button
               onClick={handlePrintStickerSheet}
-              className="w-full justify-center px-4 py-2.5 rounded-2xl bg-gradient-to-r from-amber-500 to-rose-600 hover:from-amber-400 hover:to-rose-500 text-white text-xs font-black font-outfit flex items-center gap-2 shadow-lg shadow-rose-950/50 transition-all cursor-pointer"
+              className="px-3.5 py-2 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 border border-teal-200 dark:border-teal-800 text-xs font-bold font-outfit flex items-center gap-1.5 hover:bg-teal-100 dark:hover:bg-teal-900/40 cursor-pointer transition shadow-2xs"
             >
-              <Printer className="w-4 h-4" />
+              <Printer className="w-3.5 h-3.5" />
               <span>Cetak Lembar Stiker A4</span>
             </button>
           </div>
@@ -375,13 +364,13 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
       </div>
 
       {/* NAVIGATION TABS */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-2 border-b border-amber-100 dark:border-amber-950/80">
+      <div className="flex items-center gap-2 overflow-x-auto pb-1 border-b border-slate-200 dark:border-slate-800 scrollbar-none">
         <button
           onClick={() => setActiveTab('screener')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
             activeTab === 'screener'
-              ? 'bg-gradient-to-r from-amber-600 to-rose-600 text-white shadow-md shadow-amber-950/40 border border-amber-400/30'
-              : 'bg-white dark:bg-[#140807] text-slate-600 dark:text-slate-300 hover:bg-amber-50 dark:hover:bg-amber-950/40 border border-slate-200 dark:border-amber-900/30'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <Zap className="w-4 h-4" />
@@ -390,10 +379,10 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
 
         <button
           onClick={() => setActiveTab('lasa')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
             activeTab === 'lasa'
-              ? 'bg-gradient-to-r from-amber-600 to-rose-600 text-white shadow-md shadow-amber-950/40 border border-amber-400/30'
-              : 'bg-white dark:bg-[#140807] text-slate-600 dark:text-slate-300 hover:bg-amber-50 dark:hover:bg-amber-950/40 border border-slate-200 dark:border-amber-900/30'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <AlertOctagon className="w-4 h-4" />
@@ -402,10 +391,10 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
 
         <button
           onClick={() => setActiveTab('high_alert')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
             activeTab === 'high_alert'
-              ? 'bg-gradient-to-r from-amber-600 to-rose-600 text-white shadow-md shadow-amber-950/40 border border-amber-400/30'
-              : 'bg-white dark:bg-[#140807] text-slate-600 dark:text-slate-300 hover:bg-amber-50 dark:hover:bg-amber-950/40 border border-slate-200 dark:border-amber-900/30'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <AlertTriangle className="w-4 h-4" />
@@ -414,10 +403,10 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
 
         <button
           onClick={() => setActiveTab('electrolyte')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
             activeTab === 'electrolyte'
-              ? 'bg-gradient-to-r from-amber-600 to-rose-600 text-white shadow-md shadow-amber-950/40 border border-amber-400/30'
-              : 'bg-white dark:bg-[#140807] text-slate-600 dark:text-slate-300 hover:bg-amber-50 dark:hover:bg-amber-950/40 border border-slate-200 dark:border-amber-900/30'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <Syringe className="w-4 h-4" />
@@ -426,10 +415,10 @@ export const HighAlertSafetyManager: React.FC<HighAlertSafetyManagerProps> = ({
 
         <button
           onClick={() => setActiveTab('oot_precursor')}
-          className={`px-4 py-2.5 rounded-2xl text-xs font-black font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold font-outfit transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer ${
             activeTab === 'oot_precursor'
-              ? 'bg-gradient-to-r from-amber-600 to-rose-600 text-white shadow-md shadow-amber-950/40 border border-amber-400/30'
-              : 'bg-white dark:bg-[#140807] text-slate-600 dark:text-slate-300 hover:bg-amber-50 dark:hover:bg-amber-950/40 border border-slate-200 dark:border-amber-900/30'
+              ? 'bg-[#005f5a] text-white shadow-2xs'
+              : 'bg-white dark:bg-slate-850 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <Lock className="w-4 h-4" />

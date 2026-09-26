@@ -31,7 +31,6 @@ import {
   searchLatinAbbreviations
 } from '../data/latinPrescriptionData';
 import { PaginationControls } from './PaginationControls';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { LatinAbbreviation, LatinCategoryKey, SignaTranslationResult, ClinicBrandingSettings } from '../types';
 
 interface LatinAbbreviationsDictionaryProps {
@@ -134,74 +133,61 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
 
   return (
     <div className="space-y-6 pb-20">
-      {/* ================= HEADER BANNER ================= */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0e0417] via-[#1d092f] to-[#2d0d48] p-6 sm:p-8 text-white shadow-2xl border border-purple-500/25">
-        <FloatingPillsBackground density="low" accentColor="#c084fc" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-purple-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <Languages className="w-56 h-56 text-purple-400 -rotate-12" />
-        </div>
-
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-2xl">
+      {/* CLEAN CLINICAL COMMAND HEADER */}
+      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs print:hidden">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-teal-50 dark:bg-teal-950/60 text-[#005f5a] dark:text-teal-300 border border-teal-200/80 dark:border-teal-800/60">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#005f5a] dark:text-teal-400" />
+                Standar Farmakope Indonesia &amp; Keselamatan ISMP
+              </span>
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                Verifikasi Resep &amp; Bedah Signa
+              </span>
+            </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-indigo-600 text-white flex items-center justify-center shadow-lg shadow-purple-950/50 shrink-0">
-                <Languages className="w-6 h-6" />
+              <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 flex items-center justify-center border border-teal-200/60 dark:border-teal-800/60 shrink-0">
+                <Languages className="w-5 h-5 text-[#005f5a] dark:text-teal-400" />
               </div>
               <div>
-                <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
+                <h1 className="text-xl sm:text-2xl font-bold font-outfit text-slate-900 dark:text-white tracking-tight">
                   Kamus &amp; Penerjemah Singkatan Latin Resep
                 </h1>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  Katalog singkatan resep dokter, penerjemah otomatis signa etiket, daftar singkatan berisiko tinggi (Do Not Use), dan flashcard.
+                </p>
               </div>
             </div>
-
           </div>
 
-          {/* Right Hero Badge: Database Status */}
-          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-purple-500/40 space-y-2.5 shadow-xl">
-              <div className="flex items-center justify-between text-xs font-bold text-purple-300 border-b border-purple-800/60 pb-2">
-                <span className="flex items-center gap-1.5 font-black font-outfit">
-                  <Activity className="w-3.5 h-3.5 text-purple-400" />
-                  <span>Status Database</span>
-                </span>
-                <span className="bg-purple-950 text-purple-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-purple-600/40">
-                  {LATIN_ABBREVIATIONS.length} Data Terverifikasi
-                </span>
+          {/* Quick Badges */}
+          <div className="flex items-center gap-2 flex-wrap lg:justify-end">
+            <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+              <div className="text-[10px] text-slate-400 font-medium">Kamus Singkatan</div>
+              <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                {LATIN_ABBREVIATIONS.length} Istilah
               </div>
-              <div className="text-xs text-purple-100/80 space-y-1.5 font-medium">
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Kamus Singkatan:</span>
-                  <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">{LATIN_ABBREVIATIONS.length} Istilah</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Kategori Klinis:</span>
-                  <span className="font-mono font-bold text-purple-300 bg-purple-950/60 px-2 py-0.5 rounded-md text-[11px]">{LATIN_CATEGORIES.length - 1} Kategori</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Do Not Use (ISMP):</span>
-                  <span className="font-mono font-bold text-rose-300 bg-rose-950/60 px-2 py-0.5 rounded-md text-[11px]">{highAlertItems.length} Singkatan</span>
-                </div>
-                <div className="flex justify-between items-center pt-1 border-t border-purple-900/40 text-[10px] text-purple-300/80">
-                  <span>Standar Acuan:</span>
-                  <span className="font-bold text-white">Farmakope Indonesia &amp; ISMP</span>
-                </div>
+            </div>
+            <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+              <div className="text-[10px] text-slate-400 font-medium">High Alert ISMP</div>
+              <div className="text-xs font-bold font-mono text-rose-600 dark:text-rose-400">
+                {highAlertItems.length} Rawan
               </div>
             </div>
           </div>
         </div>
-
       </div>
 
-      {/* ================= GOLD STANDARD NAVIGATION SUBTABS BAR ================= */}
+      {/* ================= SLEEK CLINICAL SUBTABS ================= */}
       <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
         <button
           onClick={() => setViewMode('dictionary')}
-          className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
+          className={`rounded-xl px-4 py-2 text-xs font-bold font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
             viewMode === 'dictionary'
-              ? 'bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-500 text-white shadow-md shadow-purple-950/40 border border-purple-400/30 ring-2 ring-purple-400/20'
-              : 'bg-white dark:bg-[#12081c] text-slate-600 dark:text-slate-300 hover:bg-purple-50 dark:hover:bg-purple-950/40 border border-slate-200 dark:border-purple-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-xs'
+              : 'bg-white dark:bg-[#0c1427] text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/40 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <BookOpen className="w-4 h-4" />
@@ -210,22 +196,22 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
 
         <button
           onClick={() => setViewMode('translator')}
-          className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
+          className={`rounded-xl px-4 py-2 text-xs font-bold font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
             viewMode === 'translator'
-              ? 'bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-500 text-white shadow-md shadow-purple-950/40 border border-purple-400/30 ring-2 ring-purple-400/20'
-              : 'bg-white dark:bg-[#12081c] text-slate-600 dark:text-slate-300 hover:bg-purple-50 dark:hover:bg-purple-950/40 border border-slate-200 dark:border-purple-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-xs'
+              : 'bg-white dark:bg-[#0c1427] text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/40 border border-slate-200 dark:border-slate-800'
           }`}
         >
-          <Sparkles className="w-4 h-4 text-amber-400" />
+          <Sparkles className="w-4 h-4" />
           <span>⚡ Penerjemah Signa Resep</span>
         </button>
 
         <button
           onClick={() => setViewMode('highalert')}
-          className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
+          className={`rounded-xl px-4 py-2 text-xs font-bold font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
             viewMode === 'highalert'
-              ? 'bg-gradient-to-r from-rose-600 via-amber-600 to-rose-600 text-white shadow-md shadow-rose-950/40 border border-rose-400/30 ring-2 ring-rose-400/20'
-              : 'bg-white dark:bg-[#12081c] text-slate-600 dark:text-slate-300 hover:bg-rose-50 dark:hover:bg-rose-950/40 border border-slate-200 dark:border-rose-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-xs'
+              : 'bg-white dark:bg-[#0c1427] text-slate-600 dark:text-slate-300 hover:bg-rose-50 dark:hover:bg-rose-950/40 border border-slate-200 dark:border-slate-800'
           }`}
         >
           <AlertOctagon className="w-4 h-4 text-rose-500" />
@@ -234,13 +220,13 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
 
         <button
           onClick={() => setViewMode('flashcards')}
-          className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
+          className={`rounded-xl px-4 py-2 text-xs font-bold font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
             viewMode === 'flashcards'
-              ? 'bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-500 text-white shadow-md shadow-indigo-950/40 border border-indigo-400/30 ring-2 ring-indigo-400/20'
-              : 'bg-white dark:bg-[#12081c] text-slate-600 dark:text-slate-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 border border-slate-200 dark:border-indigo-900/30 shadow-2xs'
+              ? 'bg-[#005f5a] text-white shadow-xs'
+              : 'bg-white dark:bg-[#0c1427] text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/40 border border-slate-200 dark:border-slate-800'
           }`}
         >
-          <RotateCw className="w-4 h-4 text-indigo-400" />
+          <RotateCw className="w-4 h-4" />
           <span>🃏 Flashcard Hafalan UKMPPAI</span>
         </button>
       </div>
@@ -257,7 +243,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Cari singkatan (cth: dtd, a.c., mfla), kepanjangan Latin (ante coenam), atau arti (sebelum makan, sendok makan)..."
-                className="w-full pl-11 pr-10 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 transition-all placeholder:text-slate-400"
+                className="w-full pl-11 pr-10 py-3 rounded-xl bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#005f5a] transition-all placeholder:text-slate-400"
               />
               {searchQuery && (
                 <button
@@ -279,8 +265,8 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                     onClick={() => setSelectedCategory(cat.key)}
                     className={`whitespace-nowrap px-3 py-1.5 rounded-xl text-xs font-medium transition-all duration-150 flex items-center gap-1.5 ${
                       isSelected
-                        ? 'bg-purple-600 text-white shadow-sm font-semibold'
-                        : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                        ? 'bg-[#005f5a] text-white shadow-xs font-semibold'
+                        : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/40'
                     }`}
                   >
                     <span>{cat.label}</span>
@@ -300,14 +286,14 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
               <div className="flex items-center gap-3">
                 <button
                   onClick={() => onSelectTab('pediatric')}
-                  className="inline-flex items-center gap-1 text-purple-600 dark:text-purple-400 hover:underline font-medium"
+                  className="inline-flex items-center gap-1 text-[#005f5a] dark:text-teal-400 hover:underline font-medium"
                 >
                   <Calculator className="w-3.5 h-3.5" />
                   <span>Kalkulator Puyer / D.T.D.</span>
                 </button>
                 <button
                   onClick={() => onSelectTab('drug-notes')}
-                  className="inline-flex items-center gap-1 text-purple-600 dark:text-purple-400 hover:underline font-medium"
+                  className="inline-flex items-center gap-1 text-[#005f5a] dark:text-teal-400 hover:underline font-medium"
                 >
                   <Bookmark className="w-3.5 h-3.5" />
                   <span>Hafalan Obat</span>
@@ -333,7 +319,7 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                   setSearchQuery('');
                   setSelectedCategory('all');
                 }}
-                className="px-4 py-2 rounded-xl bg-purple-600 text-white text-xs font-semibold hover:bg-purple-700"
+                className="px-4 py-2 rounded-xl bg-[#005f5a] text-white text-xs font-semibold hover:bg-teal-700"
               >
                 Reset Pencarian
               </button>
@@ -347,13 +333,13 @@ export const LatinAbbreviationsDictionary: React.FC<LatinAbbreviationsDictionary
                   <div
                     key={item.id}
                     onClick={() => setSelectedItemForModal(item)}
-                    className="group relative bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 hover:border-purple-500/50 dark:hover:border-purple-400/50 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer flex flex-col justify-between"
+                    className="group relative bg-white dark:bg-slate-900 rounded-2xl p-5 border border-slate-200 dark:border-slate-800 hover:border-[#005f5a]/50 dark:hover:border-teal-400/50 shadow-2xs hover:shadow-md transition-all duration-200 cursor-pointer flex flex-col justify-between"
                   >
                     <div>
                       {/* Top Badges */}
                       <div className="flex items-start justify-between gap-2 mb-2.5">
                         <div className="flex items-center gap-1.5 flex-wrap">
-                          <span className="text-xs px-2.5 py-0.5 rounded-md font-semibold bg-purple-50 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800/60">
+                          <span className="text-xs px-2.5 py-0.5 rounded-md font-semibold bg-teal-50 dark:bg-teal-950/60 text-[#005f5a] dark:text-teal-300 border border-teal-200 dark:border-teal-800/60">
                             {item.categoryLabel}
                           </span>
                           {item.isHighAlertWarning && (
