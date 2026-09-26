@@ -18,7 +18,7 @@ import {
   DuoGuidelinesIcon,
   DuoPediatricIcon,
   DuoBudIcon,
-  DuoRenalIcon,
+  DuoMedicalCalculatorIcon,
   DuoAntimicrobialIcon,
   DuoSwamedikasiIcon,
   DuoWhatsappPioIcon,
@@ -177,9 +177,9 @@ export const Dashboard: React.FC<DashboardProps> = ({
       },
       {
         id: 'renal-adjuster',
-        title: 'Klirens Ginjal',
-        keywords: 'kalkulator medis ginjal cockcroft gault egfr ckd-epi crcl hepar ibw',
-        icon: DuoRenalIcon,
+        title: 'Kalkulator Medis',
+        keywords: 'kalkulator medis dosis klinis ginjal cockcroft gault egfr ckd-epi crcl hepar opioid ibw oksigen',
+        icon: DuoMedicalCalculatorIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },

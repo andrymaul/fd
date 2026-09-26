@@ -181,6 +181,8 @@ export const PATH_TO_TAB: Record<string, string> = {
 
   '/kalkulator-ginjal': 'renal-adjuster',
   '/kalkulator-ginjal/': 'renal-adjuster',
+  '/kalkulator-medis': 'renal-adjuster',
+  '/kalkulator-medis/': 'renal-adjuster',
   '/renal': 'renal-adjuster',
   '/renal-adjuster': 'renal-adjuster',
   '/klirens-ginjal': 'renal-adjuster',

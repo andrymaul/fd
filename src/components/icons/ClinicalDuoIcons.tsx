@@ -226,20 +226,47 @@ export const DuoBudIcon: React.FC<ClinicalIconProps> = ({ className = "w-14 h-14
 );
 
 /**
- * 13. KLIRENS GINJAL (Renal Dose Adjuster & eGFR)
- * Organ ginjal klinis dengan tetesan laju filtrasi GFR dual-tone
+ * 13. KALKULATOR MEDIS & DOSIS (Medical & Clinical Calculator Suite)
+ * Kalkulator farmako-klinis presisi dengan layar LCD digital gelombang denyut EKG & tombol kalkulasi dual-tone
  */
-export const DuoRenalIcon: React.FC<ClinicalIconProps> = ({ className = "w-14 h-14", ...props }) => (
+export const DuoMedicalCalculatorIcon: React.FC<ClinicalIconProps> = ({ className = "w-14 h-14", ...props }) => (
   <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} {...props}>
-    <path d="M38 14C48 14 54 22 54 34C54 46 44 52 36 52C26 52 20 44 20 36C20 31 23 28 26 27C29 26 30 24 30 21C30 17 33 14 38 14Z" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-95" />
-    <path d="M24 32C18 32 14 30 14 30M24 36C18 36 14 40 14 40" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="opacity-60" />
-    {/* Objek Aksen: Tetesan Laju Filtrasi Glomerulus (Cyan / Sky) */}
-    <g className="text-[#0284c7] dark:text-[#38bdf8] transition-transform duration-300 group-hover:scale-115 origin-center">
-      <path d="M36 28C36 28 30 36 30 39C30 42.3 32.7 45 36 45C39.3 45 42 42.3 42 39C42 36 36 28 36 28Z" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" fillOpacity="0.16" />
-      <circle cx="36" cy="40" r="1.5" fill="currentColor" />
+    {/* Bodi Utama Kalkulator Medis */}
+    <rect x="15" y="10" width="34" height="46" rx="7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-95" />
+    
+    {/* Grid Tombol Keypad Farmasi (Pine Teal) */}
+    {/* Baris Tombol 1 */}
+    <circle cx="23" cy="35" r="2.5" stroke="currentColor" strokeWidth="1.8" className="opacity-70" />
+    <circle cx="32" cy="35" r="2.5" stroke="currentColor" strokeWidth="1.8" className="opacity-70" />
+    
+    {/* Baris Tombol 2 */}
+    <circle cx="23" cy="43" r="2.5" stroke="currentColor" strokeWidth="1.8" className="opacity-70" />
+    <circle cx="32" cy="43" r="2.5" stroke="currentColor" strokeWidth="1.8" className="opacity-70" />
+    
+    {/* Baris Tombol 3 */}
+    <circle cx="23" cy="50" r="2.5" stroke="currentColor" strokeWidth="1.8" className="opacity-70" />
+    <circle cx="32" cy="50" r="2.5" stroke="currentColor" strokeWidth="1.8" className="opacity-70" />
+
+    {/* Objek Aksen: Layar LCD EKG Medis & Tombol Operasi Klinis (Vibrant Cyan / Sky) */}
+    <g className="text-[#0284c7] dark:text-[#38bdf8] transition-transform duration-300 group-hover:scale-105 origin-center">
+      {/* Layar LCD Digital */}
+      <rect x="21" y="16" width="22" height="12" rx="3" stroke="currentColor" strokeWidth="2" fill="currentColor" fillOpacity="0.16" />
+      {/* Denyut Gelombang EKG / Formula Medis pada Layar */}
+      <path d="M24 22H26.5L28.5 19L31 25L33 22H39" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      
+      {/* Tombol Plus (+) di pojok kanan atas keypad */}
+      <circle cx="41" cy="35" r="2.5" stroke="currentColor" strokeWidth="1.8" fill="currentColor" fillOpacity="0.2" />
+      <path d="M39.5 35H42.5M41 33.5V36.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+
+      {/* Tombol Eksekusi / Sama Dengan (=) Aksen Ganda */}
+      <rect x="37.5" y="41" width="7" height="11" rx="3.5" stroke="currentColor" strokeWidth="2" fill="currentColor" fillOpacity="0.25" />
+      <line x1="39.5" y1="45" x2="42.5" y2="45" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <line x1="39.5" y1="48" x2="42.5" y2="48" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
     </g>
   </svg>
 );
+
+export const DuoRenalIcon = DuoMedicalCalculatorIcon;
 
 /**
  * 14. PPRA ANTIBIOTIK (Antimicrobial Stewardship)
