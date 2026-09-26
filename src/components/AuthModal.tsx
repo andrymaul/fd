@@ -14,7 +14,8 @@ const PROFESSION_GROUPS = [
       { id: 'Apoteker - Industri Farmasi (QA/QC/R&D/Produksi)', label: 'Apoteker - Industri Farmasi (Pabrik Obat)' },
       { id: 'Apoteker - Distribusi / PBF', label: 'Apoteker - PBF / Distribusi Obat' },
       { id: 'Apoteker - Regulasi & Pemerintahan (Dinkes/BPOM/Kemenkes)', label: 'Apoteker - Dinkes / BPOM / Kemenkes' },
-      { id: 'Tenaga Teknis Kefarmasian (TTK / D3 Farmasi)', label: 'Tenaga Teknis Kefarmasian (TTK / D3 Farmasi)' },
+      { id: 'Apoteker Spesialis', label: 'Apoteker Spesialis (Sp.FRS / Farmasi Klinis)' },
+      { id: 'Tenaga Vokasi Farmasi (D3/D4 Farmasi / TTK)', label: 'Tenaga Vokasi Farmasi (D3 / D4 Farmasi / TTK)' },
       { id: 'Asisten Tenaga Kefarmasian (SMK Farmasi)', label: 'Asisten Tenaga Kefarmasian (SMK Farmasi)' }
     ]
   },
@@ -72,7 +73,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ onClose, onLoginSuccess, o
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [institution, setInstitution] = useState('');
-  const [profession, setProfession] = useState('Apoteker');
+  const [profession, setProfession] = useState('Apoteker - Rumah Sakit / Klinik');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
