@@ -467,7 +467,8 @@ export async function registerWithEmail(
   pass: string, 
   name?: string, 
   phone?: string,
-  institution?: string
+  institution?: string,
+  profession?: string
 ): Promise<{ emailSent: string; userProfile?: UserProfile }> {
   const cleanEmail = (email || '').trim().toLowerCase();
   const cleanPass = (pass || '').trim();
@@ -501,7 +502,8 @@ export async function registerWithEmail(
       name: name?.trim() || cleanEmail.split('@')[0] || 'User',
       password: cleanPass,
       phone: phone?.trim() || '',
-      institution: institution?.trim() || '',
+      institution: institution?.trim() || 'Praktik Mandiri / Non-Faskes',
+      profession: profession?.trim() || 'Apoteker',
       licenseNumber: '',
       notes: 'Pendaftaran mandiri akun customer baru',
       role: 'free',

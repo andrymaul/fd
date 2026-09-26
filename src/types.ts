@@ -208,6 +208,7 @@ export interface UserProfile {
   password?: string;
   phone?: string;
   institution?: string;
+  profession?: string;
   licenseNumber?: string;
   notes?: string;
   role: UserRole;
