@@ -2,39 +2,8 @@ import React, { useState, useMemo } from 'react';
 import { UserProfile, Drug, DrugInteraction, InteractionCheckRecord } from '../types';
 import { getPathFromTab } from '../utils/routes';
 import { 
-  ShieldAlert, 
-  Pill, 
-  History, 
   Sparkles, 
   Search, 
-  Clock, 
-  CreditCard, 
-  ShieldCheck,
-  Activity,
-  HeartPulse,
-  Baby,
-  Syringe,
-  MessageSquare,
-  Calculator, 
-  Stethoscope,
-  BookMarked,
-  GraduationCap,
-  HeartHandshake,
-  FlaskConical,
-  CalendarClock,
-  Leaf,
-  Instagram,
-  Wand2,
-  BookOpen,
-  Languages,
-  AlertOctagon,
-  ClipboardList,
-  Scale,
-  RefreshCw,
-  Building2,
-  Users,
-  Tag,
-  UserCheck,
   X
 } from 'lucide-react';
 import {
@@ -44,8 +13,27 @@ import {
   DuoHerbalIcon,
   DuoSideEffectsIcon,
   DuoIvCompatibilityIcon,
+  DuoToxicologyIcon,
+  DuoHighAlertIcon,
+  DuoPolypharmacyIcon,
+  DuoGuidelinesIcon,
+  DuoPediatricIcon,
+  DuoBudIcon,
   DuoRenalIcon,
-  DuoBudIcon
+  DuoAntimicrobialIcon,
+  DuoSwamedikasiIcon,
+  DuoWhatsappPioIcon,
+  DuoEducationAiIcon,
+  DuoUsageGuideIcon,
+  DuoLatinTermsIcon,
+  DuoCompetencyApotekerIcon,
+  DuoCompetencyVokasiIcon,
+  DuoDrugNotesIcon,
+  DuoLiteratureIcon,
+  DuoSopIcon,
+  DuoRegulationsIcon,
+  DuoDrugCatalogIcon,
+  DuoHistoryIcon
 } from './icons/ClinicalDuoIcons';
 
 interface DashboardProps {
@@ -153,23 +141,23 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'toxicology',
         title: 'Toksikologi',
         keywords: 'toksikologi overdosis antidotum igd keracunan cito rumack matthew',
-        icon: AlertOctagon,
-        iconColor: 'text-rose-600 dark:text-rose-400', // Aksen Khusus Peringatan Gawat Darurat (Safety Alert)
+        icon: DuoToxicologyIcon,
+        iconColor: PINE_TEAL,
         iconBg: 'bg-rose-50 dark:bg-rose-950/60'
       },
       {
         id: 'high-alert',
         title: 'High-Alert & LASA',
         keywords: 'label lasa norum high alert tall man lettering starkes skp 3 kars',
-        icon: ShieldAlert,
-        iconColor: 'text-amber-600 dark:text-amber-400', // Aksen Khusus Kewaspadaan Tinggi (Safety Alert)
+        icon: DuoHighAlertIcon,
+        iconColor: PINE_TEAL,
         iconBg: 'bg-amber-50 dark:bg-amber-950/60'
       },
       {
         id: 'polypharmacy',
         title: 'Polifarmasi',
         keywords: 'evaluasi polifarmasi kriteria beers geriatri ags stopp start lansia',
-        icon: Stethoscope,
+        icon: DuoPolypharmacyIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -177,7 +165,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'guidelines',
         title: 'Panduan PNPK',
         keywords: 'panduan terapi klinis pnpk kemenkes ri konsensus spesialis',
-        icon: HeartPulse,
+        icon: DuoGuidelinesIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -187,7 +175,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'pediatric',
         title: 'Pediatrik & Puyer',
         keywords: 'dosis pediatrik puyer anak racikan sirup bb bsa cangkang kapsul',
-        icon: Baby,
+        icon: DuoPediatricIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -211,7 +199,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'antimicrobial-stewardship',
         title: 'PPRA Antibiotik',
         keywords: 'stewardship antibiotik ppra aware who 2024 antibiogram gyssens ddd',
-        icon: ShieldCheck,
+        icon: DuoAntimicrobialIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -221,7 +209,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'swamedikasi',
         title: 'Swamedikasi',
         keywords: 'swamedikasi triage apotek keluhan umum wwham obat bebas dotb rujukan',
-        icon: Sparkles,
+        icon: DuoSwamedikasiIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -229,7 +217,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'whatsapp-pio',
         title: 'Kartu PIO',
         keywords: 'kartu pio whatsapp pasien etiket digital konseling informasi obat',
-        icon: MessageSquare,
+        icon: DuoWhatsappPioIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -237,7 +225,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'education-generator',
         title: 'Edukasi AI',
         keywords: 'generator edukasi farmasi ai master prompt leaflet poster promkes',
-        icon: Wand2,
+        icon: DuoEducationAiIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -245,7 +233,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'usage',
         title: 'Cara Pakai',
         keywords: 'panduan tata cara pakai sediaan khusus inhaler mdi insulin pen suppositoria obat',
-        icon: BookOpen,
+        icon: DuoUsageGuideIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -253,7 +241,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'latin-terms',
         title: 'Singkatan Latin',
         keywords: 'kamus singkatan latin resep signa aturan pakai dokter farmasi fi vi',
-        icon: Languages,
+        icon: DuoLatinTermsIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -263,7 +251,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'competency',
         title: 'UKMPPAI',
         keywords: 'pusat belajar ukmppai apoteker uji kompetensi 653 soal cbt osce kfn iai',
-        icon: GraduationCap,
+        icon: DuoCompetencyApotekerIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -271,7 +259,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'competency-vokasi',
         title: 'UKTVF D3',
         keywords: 'pusat belajar uktvf vokasi d3 farmasi apdfi 480 soal cbt alkes bmhp',
-        icon: FlaskConical,
+        icon: DuoCompetencyVokasiIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -279,7 +267,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'drug-notes',
         title: 'Hafalan Obat',
         keywords: 'hafalan obat jembatan keledai rima klinis flashcard kelas terapi',
-        icon: BookOpen,
+        icon: DuoDrugNotesIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -287,7 +275,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'literature',
         title: 'Literatur EBM',
         keywords: 'literatur klinis ebm pnpk jurnal ilmiah ashp ada kdigo esc',
-        icon: BookMarked,
+        icon: DuoLiteratureIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -295,7 +283,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'sop',
         title: 'SOP Farmasi',
         keywords: 'standar operasional prosedur sop pelayanan farmasi apotek permenkes 73',
-        icon: ClipboardList,
+        icon: DuoSopIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -303,7 +291,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'regulations',
         title: 'UU Kesehatan',
         keywords: 'database regulasi uu kesehatan no 17 2023 hukum permenkes bpom',
-        icon: Scale,
+        icon: DuoRegulationsIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -313,7 +301,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'drugs',
         title: 'Katalog Obat',
         keywords: 'monografi katalog informasi obat bpom mims indikasi dosis efek samping',
-        icon: Pill,
+        icon: DuoDrugCatalogIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -321,7 +309,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'history',
         title: 'Riwayat Resep',
         keywords: 'riwayat skrining resep log pemeriksaan resep pasien tersimpan arsip',
-        icon: History,
+        icon: DuoHistoryIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       }
