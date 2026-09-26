@@ -35,7 +35,6 @@ import {
   ShieldCheck,
   Activity
 } from 'lucide-react';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 
 export interface PatientMedicationEntry {
   id: string;
@@ -2713,98 +2712,71 @@ export const WhatsAppPatientCardManager: React.FC<WhatsAppPatientCardManagerProp
 
   return (
     <div className="space-y-6 pb-12">
-      {/* HERO BANNER - WHATSAPP EMERALD & DEEP PINE */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#030f0a] via-[#072418] to-[#0b3624] p-6 sm:p-8 text-white shadow-2xl border border-emerald-500/25">
-        <FloatingPillsBackground density="low" accentColor="#34d399" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <MessageSquare className="w-56 h-56 text-emerald-400 -rotate-12" />
-        </div>
-
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-2xl">
-
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-500 to-green-600 text-white flex items-center justify-center shadow-lg shadow-emerald-950/50 shrink-0">
-                <MessageSquare className="w-6 h-6" />
-              </div>
-              <div>
-                <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
+      {/* CLEAN CLINICAL COMMAND HEADER */}
+      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-5">
+          <div className="flex items-center gap-3.5">
+            <div className="w-12 h-12 rounded-xl bg-[#005f5a]/10 text-[#005f5a] flex items-center justify-center border border-[#005f5a]/20 shadow-xs shrink-0">
+              <MessageSquare className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h1 className="text-xl sm:text-2xl font-bold font-outfit text-slate-900 dark:text-white tracking-tight">
                   Kartu PIO Pasien Siap Kirim WhatsApp
                 </h1>
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800 font-mono">
+                  Standar Permenkes 73/2016
+                </span>
               </div>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                Generator lembar informasi obat (PIO) instan ramah pasien via chat WhatsApp &amp; cetak nota etiket
+              </p>
             </div>
-
           </div>
 
-          {/* Right Hero Badge: Database Status */}
-          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-emerald-500/40 space-y-2.5 shadow-xl">
-              <div className="flex items-center justify-between text-xs font-bold text-emerald-300 border-b border-emerald-800/60 pb-2">
-                <span className="flex items-center gap-1.5 font-black font-outfit">
-                  <Activity className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Status Database</span>
-                </span>
-                <span className="bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-emerald-600/40">
-                  Standar PIO Permenkes
-                </span>
-              </div>
-              <div className="text-xs text-emerald-100/80 space-y-1.5 font-medium">
-                <div className="flex justify-between items-center">
-                  <span>Format Edukasi:</span>
-                  <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">WhatsApp &amp; Cetak</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Kop &amp; Branding:</span>
-                  <span className="font-mono font-bold text-emerald-300 bg-emerald-950/60 px-2 py-0.5 rounded-md text-[11px]">Identitas Fasilitas</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span>Konten Asuhan:</span>
-                  <span className="font-mono font-bold text-cyan-300 bg-cyan-950/60 px-2 py-0.5 rounded-md text-[11px]">Aturan &amp; Efek Samping</span>
-                </div>
-                <div className="flex justify-between items-center pt-1 border-t border-emerald-900/40 text-[10px] text-emerald-300/80">
-                  <span>Standar Acuan:</span>
-                  <span className="font-bold text-white">Permenkes No. 73/2016</span>
-                </div>
-              </div>
-            </div>
+          <div className="flex items-center gap-2 bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs">
+            <span className="text-slate-500 dark:text-slate-400">Format:</span>
+            <span className="font-bold text-slate-800 dark:text-slate-200">WhatsApp &amp; Cetak</span>
+            <span className="text-slate-300 dark:text-slate-700">|</span>
+            <span className="text-slate-500 dark:text-slate-400">Kop:</span>
+            <span className="font-bold text-[#005f5a]">Identitas Faskes</span>
           </div>
         </div>
       </div>
 
-      {/* QUICK TEMPLATES PRESETS - EMERALD GREEN SUITE */}
-      <div className="bg-white dark:bg-[#071c10] border border-emerald-200/80 dark:border-emerald-500/25 rounded-3xl p-5 shadow-sm flex flex-wrap items-center gap-2">
-        <span className="text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5 mr-1 font-outfit">
-          <Sparkles className="w-3.5 h-3.5 text-emerald-500" />
+      {/* QUICK TEMPLATES PRESETS */}
+      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-3.5 shadow-2xs flex flex-wrap items-center gap-2">
+        <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 flex items-center gap-1.5 mr-1 font-outfit">
+          <Sparkles className="w-3.5 h-3.5 text-[#005f5a]" />
           Template Resep Cepat:
         </span>
         <button
           onClick={() => handleLoadPreset('hipertensi')}
-          className="px-3 py-1.5 rounded-xl text-xs font-bold font-outfit bg-emerald-50/70 dark:bg-emerald-950/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 text-emerald-950 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-800/80 transition cursor-pointer"
+          className="px-3 py-1.5 rounded-lg text-xs font-medium font-outfit bg-slate-100 hover:bg-[#005f5a]/10 hover:text-[#005f5a] dark:bg-slate-800 dark:hover:bg-[#005f5a]/20 text-slate-700 dark:text-slate-300 transition-all cursor-pointer"
         >
           🫀 Paket Hipertensi
         </button>
         <button
           onClick={() => handleLoadPreset('diabetes')}
-          className="px-3 py-1.5 rounded-xl text-xs font-bold font-outfit bg-emerald-50/70 dark:bg-emerald-950/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 text-emerald-950 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-800/80 transition cursor-pointer"
+          className="px-3 py-1.5 rounded-lg text-xs font-medium font-outfit bg-slate-100 hover:bg-[#005f5a]/10 hover:text-[#005f5a] dark:bg-slate-800 dark:hover:bg-[#005f5a]/20 text-slate-700 dark:text-slate-300 transition-all cursor-pointer"
         >
           🩸 Paket Diabetes
         </button>
         <button
           onClick={() => handleLoadPreset('ispa')}
-          className="px-3 py-1.5 rounded-xl text-xs font-bold font-outfit bg-emerald-50/70 dark:bg-emerald-950/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 text-emerald-950 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-800/80 transition cursor-pointer"
+          className="px-3 py-1.5 rounded-lg text-xs font-medium font-outfit bg-slate-100 hover:bg-[#005f5a]/10 hover:text-[#005f5a] dark:bg-slate-800 dark:hover:bg-[#005f5a]/20 text-slate-700 dark:text-slate-300 transition-all cursor-pointer"
         >
           🤧 Paket Batuk Pilek / ISPA
         </button>
         <button
           onClick={() => handleLoadPreset('gerd')}
-          className="px-3 py-1.5 rounded-xl text-xs font-bold font-outfit bg-emerald-50/70 dark:bg-emerald-950/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 text-emerald-950 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-800/80 transition cursor-pointer"
+          className="px-3 py-1.5 rounded-lg text-xs font-medium font-outfit bg-slate-100 hover:bg-[#005f5a]/10 hover:text-[#005f5a] dark:bg-slate-800 dark:hover:bg-[#005f5a]/20 text-slate-700 dark:text-slate-300 transition-all cursor-pointer"
         >
           🔥 Paket Maag / GERD
         </button>
         <button
           onClick={() => handleLoadPreset('diare_anak')}
-          className="px-3 py-1.5 rounded-xl text-xs font-bold font-outfit bg-emerald-50/70 dark:bg-emerald-950/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 text-emerald-950 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-800/80 transition cursor-pointer"
+          className="px-3 py-1.5 rounded-lg text-xs font-medium font-outfit bg-slate-100 hover:bg-[#005f5a]/10 hover:text-[#005f5a] dark:bg-slate-800 dark:hover:bg-[#005f5a]/20 text-slate-700 dark:text-slate-300 transition-all cursor-pointer"
         >
           👶 Paket Diare Anak (Zinc + Oralit)
         </button>

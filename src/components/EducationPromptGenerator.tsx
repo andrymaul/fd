@@ -49,7 +49,6 @@ import {
   AlertTriangle,
   FileDown
 } from 'lucide-react';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 import {
   HEALTH_TOPIC_PRESETS,
   MEDIA_TYPE_OPTIONS,
@@ -354,65 +353,40 @@ ${masterPrompt}
   return (
     <div className="space-y-6">
 
-      {/* HERO BANNER - OBSIDIAN PINK & ROSE WITH FLOATING PILLS */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#1a0515] via-[#2d0a24] to-[#420f34] p-6 sm:p-8 text-white shadow-2xl border border-pink-500/25">
-        <FloatingPillsBackground density="low" accentColor="#ec4899" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-pink-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <Wand2 className="w-56 h-56 text-pink-400 -rotate-12" />
-        </div>
-
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-2xl">
-
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-pink-500 to-rose-600 text-white flex items-center justify-center shadow-lg shadow-pink-950/50 shrink-0">
-                <Wand2 className="w-6 h-6" />
-              </div>
-              <div>
-                <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
+      {/* CLEAN CLINICAL COMMAND HEADER */}
+      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-5">
+          <div className="flex items-center gap-3.5">
+            <div className="w-12 h-12 rounded-xl bg-[#005f5a]/10 text-[#005f5a] flex items-center justify-center border border-[#005f5a]/20 shadow-xs shrink-0">
+              <Wand2 className="w-6 h-6" />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h1 className="text-xl sm:text-2xl font-bold font-outfit text-slate-900 dark:text-white tracking-tight">
                   Generator Edukasi Farmasi AI
                 </h1>
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800 font-mono">
+                  Promkes Standard
+                </span>
               </div>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                Rancang prompt edukasi klinis multi-format berstandar Kemenkes &amp; WHO untuk pasien &amp; publik
+              </p>
             </div>
-
           </div>
 
-          {/* Right Hero Badge: Database Status */}
-          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-pink-500/40 space-y-2.5 shadow-xl">
-              <div className="flex items-center justify-between text-xs font-bold text-pink-300 border-b border-pink-800/60 pb-2">
-                <span className="flex items-center gap-1.5 font-black font-outfit">
-                  <Activity className="w-3.5 h-3.5 text-pink-400" />
-                  <span>Status Database</span>
-                </span>
-                <span className="bg-pink-950 text-pink-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-pink-600/40">
-                  {HEALTH_TOPIC_PRESETS.length} Preset Klinis
-                </span>
-              </div>
-              <div className="text-xs text-pink-100/80 space-y-1.5 font-medium">
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Pilihan Format Media:</span>
-                  <span className="font-bold text-pink-200">{MEDIA_TYPE_OPTIONS.length} Multi-Channel</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Target Audiens:</span>
-                  <span className="font-bold text-pink-200">{TARGET_AUDIENCE_OPTIONS.length} Segmentasi</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Format Aktif:</span>
-                  <span className="font-bold text-rose-400 truncate max-w-[120px]">{activeMediaType.name}</span>
-                </div>
-                <div className="flex justify-between items-center pt-1 border-t border-pink-900/40 text-[10px] text-pink-300/80">
-                  <span>Standar Acuan:</span>
-                  <span className="font-bold text-white">Promkes Kemenkes, WHO &amp; CDC</span>
-                </div>
-              </div>
+          <div className="flex flex-wrap items-center gap-3">
+            <div className="flex items-center gap-2 bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs">
+              <span className="text-slate-500 dark:text-slate-400">Preset:</span>
+              <span className="font-bold text-slate-800 dark:text-slate-200 font-mono">{HEALTH_TOPIC_PRESETS.length} Topik</span>
+              <span className="text-slate-300 dark:text-slate-700">|</span>
+              <span className="text-slate-500 dark:text-slate-400">Media:</span>
+              <span className="font-bold text-[#005f5a]">{activeMediaType.name}</span>
             </div>
 
             <button
               onClick={handleCopyPrompt}
-              className="w-full bg-pink-600 hover:bg-pink-500 text-white px-4 py-2.5 rounded-xl flex items-center justify-center gap-2 text-xs font-bold transition-all shadow-md cursor-pointer hover:scale-[1.02] active:scale-95 font-outfit"
+              className="bg-[#005f5a] hover:bg-[#004d49] text-white px-4 py-2.5 rounded-xl flex items-center justify-center gap-2 text-xs font-semibold transition-all shadow-xs cursor-pointer active:scale-95 font-outfit"
             >
               {copied ? <Check className="w-4 h-4 text-emerald-300" /> : <Copy className="w-4 h-4" />}
               <span>{copied ? 'Prompt Tersalin!' : 'Salin Master Prompt AI'}</span>

@@ -29,7 +29,6 @@ import {
   Instagram,
   ArrowLeft
 } from 'lucide-react';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { resolveDrugFromDDInter } from '../utils/ddinterEngine';
 import { CustomerSubscriptionManager } from './CustomerSubscriptionManager';
 import { PricingManager } from './PricingManager';

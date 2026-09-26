@@ -42,7 +42,6 @@ import {
   Award,
   Leaf
 } from 'lucide-react';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 import {
   TemplateCategory,
   TemplateType,
@@ -635,64 +634,34 @@ export const InstagramPostStudio: React.FC = () => {
 
   return (
     <div className="space-y-8 pb-16">
-      {/* HERO BANNER - INSTAGRAM SUNSET GRADIENT (ORANGE TO ROSE/PINK) */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-amber-500 via-orange-500 via-rose-500 to-pink-600 p-6 sm:p-8 text-white shadow-xl shadow-rose-500/20 border border-orange-300/40">
-        <FloatingPillsBackground density="low" accentColor="#ffffff" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-72 h-72 bg-white/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -left-12 -bottom-12 w-64 h-64 bg-amber-300/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-72 -bottom-10 opacity-20 pointer-events-none hidden lg:block text-white">
-          <Instagram className="w-56 h-56 -rotate-12" />
-        </div>
-
-        <div className="relative z-10">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6">
-            <div className="space-y-3 max-w-2xl">
-
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-white text-rose-600 flex items-center justify-center shadow-lg shadow-black/10 shrink-0 ring-2 ring-white/60">
-                  <Instagram className="w-6 h-6" />
-                </div>
-                <div>
-                  <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight text-white drop-shadow-sm">
-                    Studio Konten &amp; Promosi Instagram
-                  </h1>
-                </div>
-              </div>
-
+      {/* CLEAN CLINICAL COMMAND HEADER */}
+      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-5">
+          <div className="flex items-center gap-3.5">
+            <div className="w-12 h-12 rounded-xl bg-[#005f5a]/10 text-[#005f5a] flex items-center justify-center border border-[#005f5a]/20 shadow-xs shrink-0">
+              <Instagram className="w-6 h-6" />
             </div>
-
-            {/* Right Hero Badge: Database Status */}
-            <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-              <div className="bg-black/25 backdrop-blur-md p-4 rounded-2xl border border-white/25 space-y-2.5 shadow-xl text-white">
-                <div className="flex items-center justify-between text-xs font-bold text-white border-b border-white/20 pb-2">
-                  <span className="flex items-center gap-1.5 font-black font-outfit">
-                    <Activity className="w-3.5 h-3.5 text-amber-300" />
-                    <span>Studio Grafis Edukasi</span>
-                  </span>
-                  <span className="bg-white text-rose-600 px-2 py-0.5 rounded-full text-[10px] font-black shadow-xs">
-                    220+ Materi Siap Desain
-                  </span>
-                </div>
-                <div className="text-xs text-white/95 space-y-1.5 font-medium">
-                  <div className="flex justify-between items-center">
-                    <span className="text-white/80">Pilihan Template:</span>
-                    <span className="font-bold text-white">32 Desain Grafis</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-white/80">Kategori Materi:</span>
-                    <span className="font-bold text-white">6 Kategori Farmasi</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-white/80">Rasio Format:</span>
-                    <span className="font-bold text-white">Feed 4:5, 1:1 &amp; Story</span>
-                  </div>
-                  <div className="flex justify-between items-center pt-1 border-t border-white/20 text-[10px] text-white/80">
-                    <span>Standar Format:</span>
-                    <span className="font-bold text-white">Instagram Graphics 2x HD</span>
-                  </div>
-                </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <h1 className="text-xl sm:text-2xl font-bold font-outfit text-slate-900 dark:text-white tracking-tight">
+                  Studio Konten &amp; Promosi Instagram
+                </h1>
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800 font-mono">
+                  Instagram 2x HD
+                </span>
               </div>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                Generator konten grafis edukasi obat &amp; promosi farmasi klinis untuk feed dan story
+              </p>
             </div>
+          </div>
+
+          <div className="flex items-center gap-2 bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2 text-xs">
+            <span className="text-slate-500 dark:text-slate-400">Template:</span>
+            <span className="font-bold text-slate-800 dark:text-slate-200 font-mono">32 Desain</span>
+            <span className="text-slate-300 dark:text-slate-700">|</span>
+            <span className="text-slate-500 dark:text-slate-400">Materi:</span>
+            <span className="font-bold text-[#005f5a]">220+ Siap Desain</span>
           </div>
         </div>
       </div>

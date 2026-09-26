@@ -40,7 +40,6 @@ import {
   Target,
   Activity
 } from 'lucide-react';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 import {
   COMPETENCY_DOMAINS,
   HIGH_YIELD_TOPICS,
@@ -690,97 +689,47 @@ export const PharmacyCompetencyCenter: React.FC<PharmacyCompetencyCenterProps> =
 
   return (
     <div className="space-y-6 pb-16 animate-fade-in font-sans">
-      {/* Hero Header Section - DYNAMIC PER PORTAL */}
-      <div className={`relative overflow-hidden rounded-3xl p-6 sm:p-8 text-white border shadow-2xl transition-all ${
-        isUktvk
-          ? 'bg-gradient-to-br from-[#021817] via-[#052e2a] to-[#0a4740] border-teal-500/30'
-          : 'bg-gradient-to-br from-[#030e0a] via-[#082218] to-[#0d3626] border-emerald-500/25'
-      }`}>
-        <FloatingPillsBackground density="low" accentColor={isUktvk ? '#2dd4bf' : '#34d399'} />
-        <div className={`absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 rounded-full blur-3xl pointer-events-none ${
-          isUktvk ? 'bg-teal-500/15' : 'bg-emerald-500/15'
-        }`} />
-        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          {isUktvk ? (
-            <FlaskConical className="w-56 h-56 text-teal-400 -rotate-12" />
-          ) : (
-            <GraduationCap className="w-56 h-56 text-emerald-400 -rotate-12" />
-          )}
-        </div>
-
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-2xl">
-
-            <div className="flex items-center gap-3">
-              <div className={`w-12 h-12 rounded-2xl text-white flex items-center justify-center shadow-lg shrink-0 ${
-                isUktvk
-                  ? 'bg-gradient-to-br from-teal-500 to-cyan-600 shadow-teal-950/50'
-                  : 'bg-gradient-to-br from-emerald-500 to-amber-600 shadow-emerald-950/50'
-              }`}>
-                {isUktvk ? (
-                  <FlaskConical className="w-6 h-6" />
-                ) : (
-                  <GraduationCap className="w-6 h-6" />
-                )}
-              </div>
-              <div>
-                <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
-                  {isUktvk ? 'Pusat Belajar UKTVF (Vokasi Farmasi D3)' : 'Pusat Belajar UKMPPAI (Profesi Apoteker)'}
-                </h1>
-              </div>
+      {/* CLEAN CLINICAL COMMAND HEADER */}
+      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs print:hidden">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-teal-50 dark:bg-teal-950/60 text-[#005f5a] dark:text-teal-300 border border-teal-200/80 dark:border-teal-800/60">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#005f5a] dark:text-teal-400" />
+                {isUktvk ? 'Standar Blueprint Uji Kompetensi APDFI & PAFI' : 'Standar Blueprint Uji Kompetensi KFN & IAI'}
+              </span>
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                Simulasi CBT, OSCE, Rumus &amp; Flashcard
+              </span>
             </div>
 
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 flex items-center justify-center border border-teal-200/60 dark:border-teal-800/60 shrink-0">
+                {isUktvk ? <FlaskConical className="w-5 h-5 text-[#005f5a] dark:text-teal-400" /> : <GraduationCap className="w-5 h-5 text-[#005f5a] dark:text-teal-400" />}
+              </div>
+              <div>
+                <h1 className="text-xl sm:text-2xl font-bold font-outfit text-slate-900 dark:text-white tracking-tight">
+                  {isUktvk ? 'Pusat Uji Kompetensi Vokasi Farmasi (UKTVF / D3)' : 'Pusat Uji Kompetensi Apoteker Indonesia (UKMPPAI)'}
+                </h1>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  Bank soal komprehensif, pembahasan rasional klinis, ringkasan rumus farmasetika, dan simulasi OSCE objektif.
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Right Hero Badge: Database Status */}
-          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-            <div className={`bg-black/60 backdrop-blur-md p-4 rounded-2xl border space-y-2.5 shadow-xl ${
-              isUktvk ? 'border-teal-500/40' : 'border-emerald-500/40'
-            }`}>
-              <div className={`flex items-center justify-between text-xs font-bold border-b pb-2 ${
-                isUktvk ? 'text-teal-300 border-teal-800/60' : 'text-emerald-300 border-emerald-800/60'
-              }`}>
-                <span className="flex items-center gap-1.5 font-black font-outfit">
-                  <Activity className={`w-3.5 h-3.5 ${isUktvk ? 'text-teal-400' : 'text-emerald-400'}`} />
-                  <span>Status Database</span>
-                </span>
-                <span className={`px-2 py-0.5 rounded-full text-[10px] font-black border ${
-                  isUktvk 
-                    ? 'bg-teal-950 text-teal-300 border-teal-600/40' 
-                    : 'bg-emerald-950 text-emerald-300 border-emerald-600/40'
-                }`}>
-                  {filteredQuestions.length} Soal Terverifikasi
-                </span>
+          {/* Quick Badges */}
+          <div className="flex items-center gap-2 flex-wrap lg:justify-end">
+            <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+              <div className="text-[10px] text-slate-400 font-medium">Bank Soal CBT</div>
+              <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                {filteredQuestions.length} Soal
               </div>
-              <div className={`text-xs space-y-1.5 font-medium ${
-                isUktvk ? 'text-teal-100/80' : 'text-emerald-100/80'
-              }`}>
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Topik High-Yield:</span>
-                  <span className={`font-bold ${isUktvk ? 'text-teal-200' : 'text-emerald-200'}`}>
-                    {portalTopics.length} Modul Inti
-                  </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Stase Uji Praktik:</span>
-                  <span className={`font-bold ${isUktvk ? 'text-teal-200' : 'text-emerald-200'}`}>
-                    {portalOsceStations.length} Stase {isUktvk ? 'Vokasi' : 'OSCE'}
-                  </span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Flashcard &amp; Rumus:</span>
-                  <span className={`font-bold ${isUktvk ? 'text-cyan-300' : 'text-amber-300'}`}>
-                    {portalFlashcardsPool.length} Kartu / {FORMULA_GUIDES.length} Rumus
-                  </span>
-                </div>
-                <div className={`flex justify-between items-center pt-1 border-t text-[10px] ${
-                  isUktvk ? 'border-teal-900/40 text-teal-300/80' : 'border-emerald-900/40 text-emerald-300/80'
-                }`}>
-                  <span>Standar Acuan:</span>
-                  <span className="font-bold text-white">
-                    {isUktvk ? 'Blueprint APDFI & PAFI' : 'Blueprint KFN & IAI'}
-                  </span>
-                </div>
+            </div>
+            <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+              <div className="text-[10px] text-slate-400 font-medium">Topik Inti</div>
+              <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                {portalTopics.length} Modul High-Yield
               </div>
             </div>
           </div>

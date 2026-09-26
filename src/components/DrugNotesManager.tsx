@@ -21,9 +21,9 @@ import {
   Check,
   Layers,
   Shuffle,
-  Activity
+  Activity,
+  ShieldCheck
 } from 'lucide-react';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { 
   DRUG_NOTES_DATABASE, 
   DrugNoteItem, 
@@ -207,82 +207,63 @@ export const DrugNotesManager: React.FC<DrugNotesManagerProps> = ({
 
   return (
     <div className="space-y-6 pb-12">
-      {/* HERO BANNER - DEEP OBSIDIAN & WARM AMBER (Matches other core menus) */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0c0802] via-[#1b1104] to-[#261706] p-6 sm:p-8 text-white shadow-2xl border border-amber-500/25">
-        <FloatingPillsBackground density="low" accentColor="#f59e0b" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-amber-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <BookOpen className="w-56 h-56 text-amber-400 -rotate-12" />
-        </div>
-
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-2xl">
+      {/* CLEAN CLINICAL COMMAND HEADER */}
+      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs print:hidden">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-teal-50 dark:bg-teal-950/60 text-[#005f5a] dark:text-teal-300 border border-teal-200/80 dark:border-teal-800/60">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#005f5a] dark:text-teal-400" />
+                Mnemonik Klinis &amp; Farmakologi Cepat
+              </span>
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                UKMPPAI, OSCE &amp; Praktik Pelayanan
+              </span>
+            </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white flex items-center justify-center shadow-lg shadow-amber-950/50 shrink-0">
-                <BookOpen className="w-6 h-6" />
+              <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 flex items-center justify-center border border-teal-200/60 dark:border-teal-800/60 shrink-0">
+                <BookOpen className="w-5 h-5 text-[#005f5a] dark:text-teal-400" />
               </div>
               <div>
-                <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
-                  Hafalan Obat: Jembatan Keledai &amp; Rima Klinis
+                <h1 className="text-xl sm:text-2xl font-bold font-outfit text-slate-900 dark:text-white tracking-tight">
+                  Hafalan Obat &amp; Jembatan Keledai Klinis
                 </h1>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  Rima mnemonik, mekanisme kerja obat, efek samping khas, dan singkatan hafalan farmakoterapi praktis.
+                </p>
               </div>
             </div>
-
           </div>
 
-          {/* Right Hero Badge: Database Status */}
-          <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-            <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-amber-500/40 space-y-2.5 shadow-xl">
-              <div className="flex items-center justify-between text-xs font-bold text-amber-300 border-b border-amber-800/60 pb-2">
-                <span className="flex items-center gap-1.5 font-black font-outfit">
-                  <Activity className="w-3.5 h-3.5 text-amber-400" />
-                  <span>Status Database</span>
-                </span>
-                <span className="bg-amber-950 text-amber-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-amber-600/40">
-                  {totalNotesCount} Data Terverifikasi
-                </span>
+          {/* Quick Badges */}
+          <div className="flex items-center gap-2 flex-wrap lg:justify-end">
+            <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+              <div className="text-[10px] text-slate-400 font-medium">Total Mnemonik</div>
+              <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                {totalNotesCount} Catatan
               </div>
-              <div className="text-xs text-amber-100/80 space-y-1.5 font-medium">
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Total Bab Klinis:</span>
-                  <span className="font-bold text-amber-300">{DRUG_NOTES_DATABASE.length} Bab Materi</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Topik Dihafal:</span>
-                  <span className="font-bold text-emerald-400">{masteredCount} ({masteryPercentage}%)</span>
-                </div>
-                <div className="flex justify-between items-center">
-                  <span className="text-slate-400">Target Belajar:</span>
-                  <span className="font-bold text-amber-200">{totalNotesCount - masteredCount} Belum Dikuasai</span>
-                </div>
-                <div className="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden my-1">
-                  <div 
-                    className="bg-gradient-to-r from-amber-400 to-emerald-400 h-full rounded-full transition-all duration-500" 
-                    style={{ width: `${masteryPercentage}%` }} 
-                  />
-                </div>
-                <div className="flex justify-between items-center pt-1 border-t border-amber-900/40 text-[10px] text-amber-300/80">
-                  <span>Standar Acuan:</span>
-                  <span className="font-bold text-white">Farmakologi UI &amp; UKMPPAI</span>
-                </div>
+            </div>
+            <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+              <div className="text-[10px] text-slate-400 font-medium">Progres Dikuasai</div>
+              <div className="text-xs font-bold font-mono text-[#005f5a] dark:text-teal-400">
+                {masteredCount} ({masteryPercentage}%)
               </div>
             </div>
           </div>
         </div>
-
       </div>
 
       {/* Standalone Search Bar & Flashcard Control Toolbar */}
-      <div className="bg-white dark:bg-[#1a1105] p-4 sm:p-5 rounded-3xl border border-amber-200/80 dark:border-amber-500/25 shadow-xs flex flex-col sm:flex-row items-center gap-3">
+      <div className="bg-white dark:bg-[#0c1427] p-4 sm:p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xs flex flex-col sm:flex-row items-center gap-3">
         <div className="relative flex-1 w-full">
-          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 dark:text-amber-400" />
+          <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 dark:text-teal-400" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Cari jembatan keledai (contoh: Al-MaSi, R-I-P-E-S, FeKarValEto, AciValFam, MetroTini, Antidotum)..."
-            className="w-full pl-10 pr-10 py-2.5 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-400 rounded-2xl border border-slate-200 dark:border-slate-800 focus:border-amber-500 focus:outline-none focus:ring-2 focus:ring-amber-500/30 transition-all text-xs sm:text-sm font-bold font-outfit"
+            className="w-full pl-10 pr-10 py-2.5 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white placeholder-slate-400 rounded-xl border border-slate-200 dark:border-slate-800 focus:border-[#005f5a] focus:outline-none focus:ring-2 focus:ring-[#005f5a]/30 transition-all text-xs sm:text-sm font-bold font-outfit"
           />
           {searchQuery && (
             <button

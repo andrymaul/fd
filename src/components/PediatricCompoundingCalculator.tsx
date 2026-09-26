@@ -36,7 +36,6 @@ import {
   X,
   Activity
 } from 'lucide-react';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 
 export interface CompoundingItem {
   id: string;
@@ -679,60 +678,48 @@ export const PediatricCompoundingCalculator: React.FC<PediatricCompoundingCalcul
 
   return (
     <div className="space-y-6 pb-12">
-      {/* HERO BANNER - VIOLET ORCHID & DEEP MULBERRY */}
+      {/* CLEAN CLINICAL COMMAND HEADER */}
       {!hideHeader && (
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0d0414] via-[#1c0a2e] to-[#2c0f47] p-6 sm:p-8 text-white shadow-2xl border border-purple-500/25">
-          <FloatingPillsBackground density="low" accentColor="#c084fc" />
-          <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-purple-500/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-            <Baby className="w-56 h-56 text-purple-400 -rotate-12" />
-          </div>
-
-          <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div className="space-y-3 max-w-2xl">
-
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 text-white flex items-center justify-center shadow-lg shadow-purple-950/50 shrink-0">
-                  <Baby className="w-6 h-6" />
-                </div>
-                <div>
-                  <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
-                    Kalkulator Dosis Pediatrik &amp; Racikan Puyer
-                  </h1>
-                </div>
+        <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs print:hidden">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-teal-50 dark:bg-teal-950/60 text-[#005f5a] dark:text-teal-300 border border-teal-200/80 dark:border-teal-800/60">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#005f5a] dark:text-teal-400" />
+                  Pedoman IDAI, Nelson &amp; Farmakope Indonesia
+                </span>
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                  Dosis BB, BSA &amp; Kalkulasi Puyer
+                </span>
               </div>
 
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 flex items-center justify-center border border-teal-200/60 dark:border-teal-800/60 shrink-0">
+                  <Baby className="w-5 h-5 text-[#005f5a] dark:text-teal-400" />
+                </div>
+                <div>
+                  <h1 className="text-xl sm:text-2xl font-bold font-outfit text-slate-900 dark:text-white tracking-tight">
+                    Kalkulator Dosis Pediatrik &amp; Racikan Puyer
+                  </h1>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                    Penyesuaian dosis anak terverifikasi, perhitungan racikan puyer/kapsul, estimasi bobot badan, dan skrining kompatibilitas.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            {/* Right Hero Badge: Database Status */}
-            <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-              <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-purple-500/40 space-y-2.5 shadow-xl">
-                <div className="flex items-center justify-between text-xs font-bold text-purple-300 border-b border-purple-800/60 pb-2">
-                  <span className="flex items-center gap-1.5 font-black font-outfit">
-                    <Activity className="w-3.5 h-3.5 text-purple-400" />
-                    <span>Status Database</span>
-                  </span>
-                  <span className="bg-purple-950 text-purple-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-purple-600/40">
-                    {PEDIATRIC_DRUGS_DATABASE.length + COMPOUNDING_TABLET_PRESETS.length} Data Terverifikasi
-                  </span>
+            {/* Quick Badges */}
+            <div className="flex items-center gap-2 flex-wrap lg:justify-end">
+              <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+                <div className="text-[10px] text-slate-400 font-medium">Database Pediatrik</div>
+                <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                  {PEDIATRIC_DRUGS_DATABASE.length} Obat
                 </div>
-                <div className="text-xs text-purple-100/80 space-y-1.5 font-medium">
-                  <div className="flex justify-between items-center">
-                    <span>Formula Dosis Anak:</span>
-                    <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">{PEDIATRIC_DRUGS_DATABASE.length} Obat</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span>Preset Tablet Puyer:</span>
-                    <span className="font-mono font-bold text-purple-300 bg-purple-950/60 px-2 py-0.5 rounded-md text-[11px]">{COMPOUNDING_TABLET_PRESETS.length} Tablet</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span>Metode Perhitungan:</span>
-                    <span className="font-mono font-bold text-pink-300 bg-pink-950/60 px-2 py-0.5 rounded-md text-[11px]">BB, BSA &amp; Klasik</span>
-                  </div>
-                  <div className="flex justify-between items-center pt-1 border-t border-purple-900/40 text-[10px] text-purple-300/80">
-                    <span>Standar Acuan:</span>
-                    <span className="font-bold text-white">IDAI, Nelson &amp; FI</span>
-                  </div>
+              </div>
+              <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+                <div className="text-[10px] text-slate-400 font-medium">Preset Puyer</div>
+                <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                  {COMPOUNDING_TABLET_PRESETS.length} Sediaan
                 </div>
               </div>
             </div>

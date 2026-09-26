@@ -43,7 +43,6 @@ import {
   Layers,
   ChevronDown
 } from 'lucide-react';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { getDrugClinicalProfile, DrugClinicalProfile, CLINICAL_DRUG_PROFILES } from '../data/clinicalDrugDefaults';
 import { resolveInteractionPair, evaluateTherapeuticDuplications, evaluateFoodInteractions } from '../utils/ddinterEngine';
 import { getPregnancySafetyProfile } from '../utils/pregnancySyncHelper';
@@ -2010,75 +2009,65 @@ export const ClinicalPolypharmacyEvaluator: React.FC<ClinicalPolypharmacyEvaluat
       {/* TAMPILAN INTERAKTIF LAYAR MONITOR (PRINT HIDDEN) */}
       <div className="space-y-6 print:hidden">
         
-        {/* HERO BANNER - DEEP AMETHYST & OBSIDIAN */}
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0a0514] via-[#170b2b] to-[#251244] p-6 sm:p-8 text-white shadow-2xl border border-violet-500/25">
-          <FloatingPillsBackground density="low" accentColor="#a78bfa" />
-          <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-violet-500/15 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-            <Stethoscope className="w-56 h-56 text-violet-400 -rotate-12" />
-          </div>
-
-          <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div className="space-y-3 max-w-2xl">
-
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 text-white flex items-center justify-center shadow-lg shadow-violet-950/50 shrink-0">
-                  <Stethoscope className="w-6 h-6" />
-                </div>
-                <div>
-                  <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white font-outfit">
-                    Evaluasi Klinis &amp; Penapisan Polifarmasi
-                  </h1>
-                </div>
+        {/* CLEAN CLINICAL COMMAND HEADER */}
+        <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-teal-50 dark:bg-teal-950/60 text-[#005f5a] dark:text-teal-300 border border-teal-200/80 dark:border-teal-800/60">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#005f5a] dark:text-teal-400" />
+                  Kriteria Geriatri AGS Beers 2023 &amp; STOPP/START
+                </span>
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                  Skala Beban Antikolinergik (ACB) &amp; SOAP STARKES
+                </span>
               </div>
 
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 flex items-center justify-center border border-teal-200/60 dark:border-teal-800/60 shrink-0">
+                  <Stethoscope className="w-5 h-5 text-[#005f5a] dark:text-teal-400" />
+                </div>
+                <div>
+                  <h1 className="text-xl sm:text-2xl font-bold font-outfit text-slate-900 dark:text-white tracking-tight">
+                    Evaluasi Klinis &amp; Penapisan Polifarmasi
+                  </h1>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                    Penapisan komprehensif keselamatan terapi obat ganda, deprescribing cascade, dan rekomendasi intervensi farmasis terintegrasi.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            {/* Right Hero Badge: Database Status & Print Action */}
-            <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-              <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-violet-500/40 space-y-2.5 shadow-xl">
-                <div className="flex items-center justify-between text-xs font-bold text-violet-300 border-b border-violet-800/60 pb-2">
-                  <span className="flex items-center gap-1.5 font-black font-outfit">
-                    <Activity className="w-3.5 h-3.5 text-violet-400" />
-                    <span>Status Database</span>
-                  </span>
-                  <span className="bg-violet-950 text-violet-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-violet-600/40">
-                    Multi-Kriteria
-                  </span>
+            {/* Quick Badges & Print */}
+            <div className="flex items-center gap-3 flex-wrap lg:justify-end">
+              <div className="flex items-center gap-2">
+                <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+                  <div className="text-[10px] text-slate-400 font-medium">Metode Penapisan</div>
+                  <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                    Beers + ACB + STOPP
+                  </div>
                 </div>
-                <div className="text-xs text-violet-100/80 space-y-1.5 font-medium">
-                  <div className="flex justify-between items-center">
-                    <span>Kriteria Geriatri:</span>
-                    <span className="font-mono font-bold text-white bg-white/10 px-2 py-0.5 rounded-md text-[11px]">Beers 2023 &amp; STOPP</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span>Beban Kognitif (ACB):</span>
-                    <span className="font-mono font-bold text-violet-300 bg-violet-950/60 px-2 py-0.5 rounded-md text-[11px]">Skala ACB (0 - 3+)</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span>Dokumentasi Output:</span>
-                    <span className="font-mono font-bold text-emerald-300 bg-emerald-950/60 px-2 py-0.5 rounded-md text-[11px]">Format SOAP STARKES</span>
-                  </div>
-                  <div className="flex justify-between items-center pt-1 border-t border-violet-900/40 text-[10px] text-violet-300/80">
-                    <span>Standar Acuan:</span>
-                    <span className="font-bold text-white">AGS Beers 2023 &amp; PMK 72</span>
+                <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+                  <div className="text-[10px] text-slate-400 font-medium">Standar Acuan</div>
+                  <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                    PMK 72 &amp; STARKES
                   </div>
                 </div>
               </div>
 
               <button
                 onClick={handlePrintReport}
-                className="w-full justify-center px-4 py-2.5 rounded-2xl bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white font-black font-outfit text-xs shadow-lg shadow-violet-950/50 transition-all flex items-center gap-2 cursor-pointer active:scale-95"
+                className="px-3.5 py-2 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 border border-teal-200 dark:border-teal-800 text-xs font-bold font-outfit flex items-center gap-1.5 hover:bg-teal-100 dark:hover:bg-teal-900/40 cursor-pointer transition shadow-2xs"
               >
-                <Printer className="w-4 h-4" />
-                <span>Cetak Lembar Evaluasi (1 Halaman)</span>
+                <Printer className="w-3.5 h-3.5" />
+                <span>Cetak Lembar Evaluasi</span>
               </button>
             </div>
           </div>
         </div>
 
-        {/* Case Presets Quick-Load Bar - Deep Amethyst Suite */}
-        <div className="bg-white dark:bg-[#130924] p-4 rounded-3xl border border-violet-200/80 dark:border-violet-500/25 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        {/* Case Presets Quick-Load Bar */}
+        <div className="bg-white dark:bg-[#0c1427] p-4 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center gap-2">
             <Bookmark className="w-4 h-4 text-violet-600 dark:text-violet-400" />
             <span className="text-xs font-black font-outfit text-slate-800 dark:text-white">Muat Cepat Contoh Kasus Klinis:</span>

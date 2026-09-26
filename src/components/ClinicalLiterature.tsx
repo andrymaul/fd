@@ -26,7 +26,6 @@ import {
   FEATURE_EVIDENCE_MAPPING,
   LiteratureSource 
 } from '../data/clinicalLiteratureData';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { PaginationControls } from './PaginationControls';
 
 interface ClinicalLiteratureProps {
@@ -111,128 +110,94 @@ export const ClinicalLiterature: React.FC<ClinicalLiteratureProps> = ({ onSelect
 
   return (
     <div className="space-y-8 pb-16">
-      {/* HERO SECTION - DEEP TEAL & MIDNIGHT SAPPHIRE */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#030b0e] via-[#061922] to-[#092634] p-6 sm:p-8 text-white shadow-2xl border border-teal-500/25">
-        <FloatingPillsBackground density="low" accentColor="#2dd4bf" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-teal-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <BookMarked className="w-56 h-56 text-teal-400 -rotate-12" />
-        </div>
-
-        <div className="relative z-10">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6">
-            <div className="space-y-3 max-w-2xl">
-
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-teal-500 to-blue-600 text-white flex items-center justify-center shadow-lg shadow-teal-950/50 shrink-0">
-                  <BookMarked className="w-6 h-6" />
-                </div>
-                <div>
-                  <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
-                    Literatur &amp; Basis Ilmiah
-                  </h1>
-                </div>
-              </div>
-
+      {/* CLEAN CLINICAL COMMAND HEADER */}
+      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs print:hidden">
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-teal-50 dark:bg-teal-950/60 text-[#005f5a] dark:text-teal-300 border border-teal-200/80 dark:border-teal-800/60">
+                <ShieldCheck className="w-3.5 h-3.5 text-[#005f5a] dark:text-teal-400" />
+                Evidence-Based Medicine (EBM) &amp; Pedoman Resmi
+              </span>
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+                WHO, Kemenkes RI, FDA, Sanford &amp; Micromedex
+              </span>
             </div>
 
-            {/* Right Hero Badge: Database Status */}
-            <div className="flex flex-col gap-3 lg:w-72 shrink-0 relative z-10">
-              <div className="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-teal-500/40 space-y-2.5 shadow-xl">
-                <div className="flex items-center justify-between text-xs font-bold text-teal-300 border-b border-teal-800/60 pb-2">
-                  <span className="flex items-center gap-1.5 font-black font-outfit">
-                    <Activity className="w-3.5 h-3.5 text-teal-400" />
-                    <span>Status Database</span>
-                  </span>
-                  <span className="bg-teal-950 text-teal-300 px-2 py-0.5 rounded-full text-[10px] font-black border border-teal-600/40">
-                    {CLINICAL_LITERATURE_DATABASE.length} Sumber Terverifikasi
-                  </span>
-                </div>
-                <div className="text-xs text-teal-100/80 space-y-1.5 font-medium">
-                  <div className="flex justify-between items-center">
-                    <span className="text-slate-400">Pedoman PNPK &amp; Konsensus:</span>
-                    <span className="font-bold text-teal-200">{CLINICAL_LITERATURE_DATABASE.filter(s => s.category === 'guidelines').length} Pedoman</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-slate-400">Interaksi &amp; Sediaan Steril:</span>
-                    <span className="font-bold text-teal-200">{CLINICAL_LITERATURE_DATABASE.filter(s => s.category === 'interactions' || s.category === 'iv_sterile').length} Acuan</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-slate-400">Formularium &amp; Regulasi:</span>
-                    <span className="font-bold text-teal-200">{CLINICAL_LITERATURE_DATABASE.filter(s => s.category === 'formulary_bpom' || s.category === 'regulations').length} Kompendia</span>
-                  </div>
-                  <div className="flex justify-between items-center pt-1 border-t border-teal-900/40 text-[10px] text-teal-300/80">
-                    <span>Standar Acuan:</span>
-                    <span className="font-bold text-white">PNPK Kemenkes &amp; Baku Global</span>
-                  </div>
-                </div>
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 flex items-center justify-center border border-teal-200/60 dark:border-teal-800/60 shrink-0">
+                <BookMarked className="w-5 h-5 text-[#005f5a] dark:text-teal-400" />
+              </div>
+              <div>
+                <h1 className="text-xl sm:text-2xl font-bold font-outfit text-slate-900 dark:text-white tracking-tight">
+                  Literatur &amp; Basis Ilmiah Farmasi
+                </h1>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  Rujukan ilmiah, pedoman klinis PNPK, konsensus IDAI/PERKI/PAPDI, dan standar pedoman akreditasi.
+                </p>
               </div>
             </div>
           </div>
 
-          {/* Quick Metrics Bar */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 pt-6 border-t border-white/10">
-            <div className="bg-white/5 backdrop-blur-xs p-3.5 rounded-2xl border border-white/5">
-              <div className="text-xl sm:text-2xl font-black font-outfit text-teal-400">100% EBM</div>
-              <div className="text-xs text-slate-400 mt-0.5">Metodologi Berbasis Bukti</div>
+          {/* Quick Badges & Feedback Action */}
+          <div className="flex items-center gap-3 flex-wrap lg:justify-end">
+            <div className="flex items-center gap-2">
+              <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+                <div className="text-[10px] text-slate-400 font-medium">Total Literatur</div>
+                <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                  {CLINICAL_LITERATURE_DATABASE.length} Dokumen
+                </div>
+              </div>
+              <div className="px-3 py-1.5 rounded-xl bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 text-left">
+                <div className="text-[10px] text-slate-400 font-medium">Panduan Nasional</div>
+                <div className="text-xs font-bold font-mono text-slate-800 dark:text-slate-200">
+                  {CLINICAL_LITERATURE_DATABASE.filter(i => i.category === 'guidelines').length} PNPK/KMK
+                </div>
+              </div>
             </div>
-            <div className="bg-white/5 backdrop-blur-xs p-3.5 rounded-2xl border border-white/5">
-              <div className="text-xl sm:text-2xl font-black font-outfit text-emerald-400">{CLINICAL_LITERATURE_DATABASE.length} Sumber Primer</div>
-              <div className="text-xs text-slate-400 mt-0.5">Kemenkes, BPOM & Global</div>
-            </div>
-            <div className="bg-white/5 backdrop-blur-xs p-3.5 rounded-2xl border border-white/5">
-              <div className="text-xl sm:text-2xl font-black font-outfit text-amber-400">Grade A & B</div>
-              <div className="text-xs text-slate-400 mt-0.5">Level Evidens Tertinggi</div>
-            </div>
-            <div className="bg-white/5 backdrop-blur-xs p-3.5 rounded-2xl border border-white/5">
-              <div className="text-xl sm:text-2xl font-black font-outfit text-cyan-400">Verifikasi Resmi</div>
-              <div className="text-xs text-slate-400 mt-0.5">Tautan Portal Terbuka</div>
-            </div>
+
+            <button
+              onClick={() => setShowFeedbackModal(true)}
+              className="px-3.5 py-2 rounded-xl bg-teal-50 dark:bg-teal-950/50 text-[#005f5a] dark:text-teal-300 border border-teal-200 dark:border-teal-800 text-xs font-bold font-outfit flex items-center gap-1.5 hover:bg-teal-100 dark:hover:bg-teal-900/40 cursor-pointer transition shadow-2xs"
+            >
+              <HeartHandshake className="w-3.5 h-3.5" />
+              <span>Usulkan Pembaruan Referensi</span>
+            </button>
           </div>
         </div>
       </div>
 
-      {/* SUBTAB NAVIGATION (STANDALONE PILLS OUTSIDE HERO BANNER) */}
-      <div className="flex items-center justify-between gap-2 overflow-x-auto pb-2 border-b border-teal-100 dark:border-teal-950/80 scrollbar-none">
-        <div className="flex items-center gap-2 shrink-0">
-          <button
-            onClick={() => setActiveView('cards')}
-            className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
-              activeView === 'cards'
-                ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-md shadow-teal-950/40 border border-teal-400/30'
-                : 'bg-white dark:bg-[#061e2b] text-slate-600 dark:text-slate-300 hover:bg-teal-50/70 dark:hover:bg-teal-950/40 border border-slate-200 dark:border-teal-900/30 shadow-2xs'
-            }`}
-          >
-            <Layers className={`w-4 h-4 ${activeView === 'cards' ? 'text-white' : 'text-teal-600 dark:text-teal-400'}`} />
-            <span>Katalog Literatur Primer &amp; EBM</span>
-            <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-bold ${
-              activeView === 'cards'
-                ? 'bg-white/20 text-white'
-                : 'bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800/40'
-            }`}>
-              {CLINICAL_LITERATURE_DATABASE.length} Acuan
-            </span>
-          </button>
-
-          <button
-            onClick={() => setActiveView('matrix')}
-            className={`rounded-2xl px-4 py-2.5 text-xs font-black font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
-              activeView === 'matrix'
-                ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-md shadow-teal-950/40 border border-teal-400/30'
-                : 'bg-white dark:bg-[#061e2b] text-slate-600 dark:text-slate-300 hover:bg-teal-50/70 dark:hover:bg-teal-950/40 border border-slate-200 dark:border-teal-900/30 shadow-2xs'
-            }`}
-          >
-            <TableProperties className={`w-4 h-4 ${activeView === 'matrix' ? 'text-white' : 'text-teal-600 dark:text-teal-400'}`} />
-            <span>Matriks Fitur &amp; Analisis Komparasi</span>
-          </button>
-        </div>
+      {/* SUBTAB NAVIGATION */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+        <button
+          onClick={() => setActiveView('cards')}
+          className={`rounded-xl px-4 py-2 text-xs font-bold font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
+            activeView === 'cards'
+              ? 'bg-[#005f5a] text-white shadow-xs'
+              : 'bg-white dark:bg-[#0c1427] text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/40 border border-slate-200 dark:border-slate-800'
+          }`}
+        >
+          <Layers className="w-4 h-4" />
+          <span>Katalog Literatur Primer &amp; EBM</span>
+          <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${
+            activeView === 'cards'
+              ? 'bg-white/20 text-white'
+              : 'bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-300'
+          }`}>
+            {CLINICAL_LITERATURE_DATABASE.length}
+          </span>
+        </button>
 
         <button
-          onClick={() => setShowFeedbackModal(true)}
-          className="flex items-center gap-1.5 px-4 py-2.5 rounded-2xl text-xs font-black font-outfit bg-white dark:bg-[#061e2b] hover:bg-teal-50 dark:hover:bg-teal-950/40 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-teal-900/30 transition-all cursor-pointer shadow-2xs shrink-0"
+          onClick={() => setActiveView('matrix')}
+          className={`rounded-xl px-4 py-2 text-xs font-bold font-outfit whitespace-nowrap cursor-pointer transition-all flex items-center gap-2 shrink-0 ${
+            activeView === 'matrix'
+              ? 'bg-[#005f5a] text-white shadow-xs'
+              : 'bg-white dark:bg-[#0c1427] text-slate-600 dark:text-slate-300 hover:bg-teal-50 dark:hover:bg-teal-950/40 border border-slate-200 dark:border-slate-800'
+          }`}
         >
-          <HeartHandshake className="w-4 h-4 text-rose-500" />
-          <span>Usulkan Pembaruan</span>
+          <TableProperties className="w-4 h-4" />
+          <span>Matriks Fitur &amp; Analisis Komparasi</span>
         </button>
       </div>
 

@@ -26,7 +26,6 @@ import {
   ChangelogItem,
   getLatestChangelogEntry
 } from '../data/systemChangelogData';
-import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { PaginationControls } from './PaginationControls';
 
 interface DataUpdateHistoryViewProps {
@@ -112,97 +111,87 @@ export const DataUpdateHistoryView: React.FC<DataUpdateHistoryViewProps> = ({
 
   return (
     <div className="space-y-6 pb-20">
-      {/* ========================================================================= */}
-      {/* 1. HERO BANNER - COSMIC VIOLET & ELECTRIC PINK (Flagship Release Theme) */}
-      {/* ========================================================================= */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0c0818] via-[#170c2a] to-[#260e3a] p-6 sm:p-8 text-white shadow-2xl border border-purple-500/30">
-        <FloatingPillsBackground density="low" accentColor="#d946ef" />
-        <div className="absolute right-0 top-0 translate-x-8 -translate-y-8 w-64 h-64 bg-fuchsia-500/20 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute left-1/3 -top-12 w-56 h-56 bg-purple-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute right-72 -bottom-10 opacity-10 pointer-events-none hidden lg:block">
-          <Clock className="w-56 h-56 text-fuchsia-400 -rotate-12" />
-        </div>
-
-        <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div className="space-y-3 max-w-2xl">
-
-            <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-500 via-fuchsia-500 to-pink-500 text-white flex items-center justify-center shadow-lg shadow-purple-950/60 shrink-0">
-                <Clock className="w-6 h-6" />
-              </div>
-              <div>
-                <div className="flex items-center gap-2 flex-wrap">
-                  <h1 className="text-2xl sm:text-3xl font-black font-outfit tracking-tight">
-                    Riwayat Pembaruan Data Klinis
-                  </h1>
-                  <span className="px-2.5 py-0.5 rounded-full bg-fuchsia-500/25 border border-fuchsia-400/40 text-fuchsia-200 text-xs font-black shadow-sm">
-                    {formatVersion(latestUpdate.version)}
-                  </span>
-                </div>
-              </div>
+      {/* CLEAN CLINICAL COMMAND HEADER */}
+      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-2xs">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-5">
+          <div className="flex items-center gap-3.5">
+            <div className="w-12 h-12 rounded-xl bg-[#005f5a]/10 text-[#005f5a] flex items-center justify-center border border-[#005f5a]/20 shadow-xs shrink-0">
+              <Clock className="w-6 h-6" />
             </div>
-
+            <div>
+              <div className="flex items-center gap-2 flex-wrap">
+                <h1 className="text-xl sm:text-2xl font-bold font-outfit text-slate-900 dark:text-white tracking-tight">
+                  Riwayat Pembaruan Data Klinis
+                </h1>
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-[#005f5a]/10 text-[#005f5a] border border-[#005f5a]/20 font-mono">
+                  {formatVersion(latestUpdate.version)}
+                </span>
+                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800 font-mono flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  Live &amp; Terverifikasi
+                </span>
+              </div>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                Log pembaruan sistem dan database farmasi klinis FARMASIDRUGGIST berstandar Kemenkes RI
+              </p>
+            </div>
           </div>
 
-          {/* Action Button: Live Cloud Sync Button */}
-          <div className="relative z-10 flex flex-col sm:flex-row md:flex-col lg:flex-row items-stretch md:items-end gap-3 shrink-0">
+          <div className="flex items-center gap-3">
             <button
               onClick={handleSimulatedCloudSync}
               disabled={isSyncing}
-              className={`px-4 py-2.5 rounded-2xl text-xs font-bold border transition-all cursor-pointer flex items-center justify-center gap-2 shadow-md ${
+              className={`px-3.5 py-2 rounded-xl text-xs font-semibold border transition-all cursor-pointer flex items-center justify-center gap-2 shadow-xs active:scale-95 ${
                 syncSuccess
-                  ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white border-emerald-400'
-                  : 'bg-purple-500/20 hover:bg-purple-500/30 text-purple-200 border-purple-400/30 hover:border-fuchsia-400 hover:text-white'
+                  ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-800'
+                  : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-800 hover:border-[#005f5a] hover:text-[#005f5a]'
               }`}
             >
-              <RefreshCw className={`w-3.5 h-3.5 ${isSyncing ? 'animate-spin text-fuchsia-300' : ''}`} />
+              <RefreshCw className={`w-3.5 h-3.5 ${isSyncing ? 'animate-spin text-[#005f5a]' : ''}`} />
               <span>{isSyncing ? 'Memeriksa Cloud...' : syncSuccess ? 'Data Terkini Terverifikasi!' : 'Cek Status Cloud'}</span>
             </button>
           </div>
         </div>
 
-        {/* ========================================================================= */}
-        {/* KPI SUMMARY CARDS */}
-        {/* ========================================================================= */}
-        <div className="relative z-10 grid grid-cols-2 md:grid-cols-4 gap-3 mt-6 pt-5 border-t border-purple-500/20">
-          <div className="p-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xs">
-            <div className="text-[10px] uppercase font-bold text-purple-300 tracking-wider">Update Terkini:</div>
-            <div className="text-sm sm:text-base font-black text-white mt-0.5">
+        {/* Clinical Stat Pills */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4 pt-4 border-t border-slate-100 dark:border-slate-800/80">
+          <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800">
+            <div className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">Update Terkini:</div>
+            <div className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 mt-0.5 font-outfit">
               {latestUpdate.releaseDate}
             </div>
-            <div className="text-[11px] text-purple-200/70 font-mono mt-0.5">
+            <div className="text-[10px] text-slate-400 font-mono">
               {formatTime(latestUpdate.releaseTime)}
             </div>
           </div>
 
-          <div className="p-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xs">
-            <div className="text-[10px] uppercase font-bold text-purple-300 tracking-wider">Formularium Nasional:</div>
-            <div className="text-sm sm:text-base font-black text-white mt-0.5">
+          <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800">
+            <div className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">Formularium Nasional:</div>
+            <div className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 mt-0.5 font-outfit">
               415 Obat Terdaftar
             </div>
-            <div className="text-[11px] text-purple-200/70 mt-0.5">
+            <div className="text-[10px] text-slate-400 font-mono">
               KMK 2025 Terkini
             </div>
           </div>
 
-          <div className="p-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xs">
-            <div className="text-[10px] uppercase font-bold text-purple-300 tracking-wider">Kamus Resep Latin:</div>
-            <div className="text-sm sm:text-base font-black text-white mt-0.5">
+          <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800">
+            <div className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">Kamus Resep Latin:</div>
+            <div className="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 mt-0.5 font-outfit">
               200+ Singkatan
             </div>
-            <div className="text-[11px] text-purple-200/70 mt-0.5">
+            <div className="text-[10px] text-slate-400 font-mono">
               Audio &amp; Kuis Resep
             </div>
           </div>
 
-          <div className="p-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xs">
-            <div className="text-[10px] uppercase font-bold text-purple-300 tracking-wider">Status Basis Data:</div>
-            <div className="text-sm sm:text-base font-black text-emerald-400 mt-0.5 flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              Live &amp; Terverifikasi
+          <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800">
+            <div className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">Standar Acuan:</div>
+            <div className="text-xs sm:text-sm font-bold text-[#005f5a] mt-0.5 font-outfit">
+              Kemenkes RI
             </div>
-            <div className="text-[11px] text-purple-200/70 mt-0.5">
-              Kemenkes RI Standar
+            <div className="text-[10px] text-slate-400 font-mono">
+              Terakreditasi RS
             </div>
           </div>
         </div>
