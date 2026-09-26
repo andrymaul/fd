@@ -25,7 +25,7 @@ export const TAB_TO_PATH: Record<string, string> = {
   // Screening & Prescription Safety
   'interactions': '/interaksi',
   'pregnancy': '/kehamilan',
-  'drug-lab': '/interaksi-lab',
+  'drug-lab': '/dashboard',
   'herb-drug': '/herbal',
   'side-effects': '/efek-samping',
   'iv-compatibility': '/injeksi-iv',
@@ -134,10 +134,10 @@ export const PATH_TO_TAB: Record<string, string> = {
   '/bumil-busui': 'pregnancy',
   '/laktasi': 'pregnancy',
 
-  '/interaksi-lab': 'drug-lab',
-  '/interaksi-lab/': 'drug-lab',
-  '/drug-lab': 'drug-lab',
-  '/dli': 'drug-lab',
+  '/interaksi-lab': 'dashboard',
+  '/interaksi-lab/': 'dashboard',
+  '/drug-lab': 'dashboard',
+  '/dli': 'dashboard',
 
   '/herbal': 'herb-drug',
   '/herbal/': 'herb-drug',

@@ -14,7 +14,6 @@ import { DDINTER_OFFICIAL_INTERACTIONS } from '../src/data/ddinterOfficialIntera
 import { IV_DRUGS_DATABASE, SYRINGE_ADMIXTURE_DATABASE } from '../src/data/ivCompatibilityData';
 import { LATIN_ABBREVIATIONS } from '../src/data/latinPrescriptionData';
 import { HERB_DRUG_INTERACTIONS_DATABASE } from '../src/data/herbDrugInteractionsData';
-import { DRUG_LAB_INTERACTIONS_DATABASE } from '../src/data/drugLabInteractionsData';
 import { PREGNANCY_LACTATION_DATABASE } from '../src/data/pregnancyLactationData';
 import { TOXICOLOGY_ANTIDOTES_DATABASE } from '../src/data/toxicologyAntidotesData';
 import { HIGH_ALERT_DRUGS, LASA_PAIRS, OOT_PRECURSOR_DRUGS } from '../src/data/highAlertLasaData';
@@ -56,7 +55,6 @@ checkDups('IV_DRUGS_DATABASE', IV_DRUGS_DATABASE);
 checkDups('SYRINGE_ADMIXTURE_DATABASE', SYRINGE_ADMIXTURE_DATABASE);
 checkDups('LATIN_ABBREVIATIONS', LATIN_ABBREVIATIONS);
 checkDups('HERB_DRUG_INTERACTIONS_DATABASE', HERB_DRUG_INTERACTIONS_DATABASE);
-checkDups('DRUG_LAB_INTERACTIONS_DATABASE', DRUG_LAB_INTERACTIONS_DATABASE);
 checkDups('PREGNANCY_LACTATION_DATABASE', PREGNANCY_LACTATION_DATABASE);
 checkDups('TOXICOLOGY_ANTIDOTES_DATABASE', TOXICOLOGY_ANTIDOTES_DATABASE);
 checkDups('HIGH_ALERT_DRUGS', HIGH_ALERT_DRUGS);

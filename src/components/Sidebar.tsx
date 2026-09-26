@@ -131,7 +131,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
         items: [
           { id: 'interactions', label: 'Cek Interaksi Obat (DDInter)', icon: ShieldAlert, badge: 'DDI', badgeColor: 'text-rose-500 dark:text-rose-400' },
           { id: 'pregnancy', label: 'Keamanan Bumil & Busui', icon: HeartHandshake, badge: 'Bumil', badgeColor: 'text-pink-500 dark:text-pink-400' },
-          { id: 'drug-lab', label: 'Interaksi Obat & Uji Lab', icon: FlaskConical, badge: 'Lab', badgeColor: 'text-cyan-500 dark:text-cyan-400' },
           { id: 'herb-drug', label: 'Interaksi Herbal & Obat', icon: Leaf, badge: 'Jamu', badgeColor: 'text-emerald-500 dark:text-emerald-400' },
           { id: 'side-effects', label: 'Cek Efek Samping & Naranjo', icon: Activity, badge: 'ADR', badgeColor: 'text-amber-500 dark:text-amber-400' },
           { id: 'iv-compatibility', label: 'Kompatibilitas Injeksi IV', icon: Syringe, badge: 'IV/ICU', badgeColor: 'text-sky-500 dark:text-sky-400' },

@@ -46,25 +46,7 @@ export const DuoPregnancyIcon: React.FC<ClinicalIconProps> = ({ className = "w-1
 );
 
 /**
- * 3. OBAT & LAB (Drug-Lab Interactions)
- * Erlenmeyer flask analit laboratorium dengan kapsul obat aksen
- */
-export const DuoDrugLabIcon: React.FC<ClinicalIconProps> = ({ className = "w-14 h-14", ...props }) => (
-  <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} {...props}>
-    <path d="M26 12H38M30 12V24L16 48C14.5 50.5 16.5 54 19.5 54H44.5C47.5 54 49.5 50.5 48 48L34 24V12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="opacity-95" />
-    <path d="M20 42C23 41 27 43 30 42C33 41 37 43 40 42C42 41.5 43.5 41.8 44 42" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="opacity-60" />
-    {/* Objek Aksen: Kapsul Obat & Gelembung Analit (Cyan / Sky) */}
-    <g className="text-[#0284c7] dark:text-[#38bdf8] transition-transform duration-300 group-hover:scale-110 origin-center">
-      <rect x="36" y="16" width="18" height="9" rx="4.5" transform="rotate(45 36 16)" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="currentColor" fillOpacity="0.16" />
-      <line x1="36" y1="25.5" x2="42.5" y2="32" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-      <circle cx="28" cy="48" r="1.5" fill="currentColor" />
-      <circle cx="34" cy="46" r="2" fill="currentColor" fillOpacity="0.5" />
-    </g>
-  </svg>
-);
-
-/**
- * 4. HERBAL & JAMU (Herb-Drug Interaction & OHT)
+ * 3. HERBAL & JAMU (Herb-Drug Interaction & OHT)
  * Lumpang & alu tradisional dengan daun herbal fitofarmaka aksen hijau
  */
 export const DuoHerbalIcon: React.FC<ClinicalIconProps> = ({ className = "w-14 h-14", ...props }) => (

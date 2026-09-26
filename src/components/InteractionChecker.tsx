@@ -54,7 +54,6 @@ import {
   sortInteractionsByDDInterPriority,
   evaluateTripleWhammyTriad,
   evaluateHerbInteractionsForDrugs,
-  evaluateDrugLabInteractionsForDrugs,
   synthesizeDDInterOriginalText,
   synthesizeSafeAlternatives,
   synthesizeAlternativesForDrug,
@@ -73,7 +72,6 @@ import {
 } from '../data/ddinterData';
 import { DRUG_DISEASE_INTERACTIONS_DATABASE, COMMON_CLINICAL_DISEASES } from '../data/drugDiseaseInteractionsData';
 import { HERB_DRUG_INTERACTIONS_DATABASE } from '../data/herbDrugInteractionsData';
-import { DRUG_LAB_INTERACTIONS_DATABASE } from '../data/drugLabInteractionsData';
 import { FloatingPillsBackground } from './FloatingPillsBackground';
 import { EvidenceSourceBadge, DualEvidenceBadge } from './EvidenceSourceBadge';
 import { 
@@ -474,9 +472,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
   // Herb-Drug Interactions evaluation
   const matchedHerbInteractions = useMemo(() => evaluateHerbInteractionsForDrugs(selectedDrugs, HERB_DRUG_INTERACTIONS_DATABASE), [selectedDrugs]);
 
-  // Drug-Lab Test Interactions evaluation
-  const matchedLabInteractions = useMemo(() => evaluateDrugLabInteractionsForDrugs(selectedDrugs, DRUG_LAB_INTERACTIONS_DATABASE), [selectedDrugs]);
-
   // Filtered DDI interactions based on Severity and DDInter 2.0 Mechanism Category
   const filteredInteractions = matchedInteractions.filter((item) => {
     if (severityFilter !== 'all' && item.severity !== severityFilter) return false;
@@ -606,9 +601,9 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                 </div>
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-slate-400 flex items-center gap-1">
-                    <Leaf className="w-3 h-3 text-teal-400" /> Herbal &amp; Lab:
+                    <Leaf className="w-3 h-3 text-teal-400" /> Herbal:
                   </span>
-                  <span className="font-black text-teal-300">{HERB_DRUG_INTERACTIONS_DATABASE.length.toLocaleString('id-ID')} • {DRUG_LAB_INTERACTIONS_DATABASE.length.toLocaleString('id-ID')}</span>
+                  <span className="font-black text-teal-300">{HERB_DRUG_INTERACTIONS_DATABASE.length.toLocaleString('id-ID')} Jamu</span>
                 </div>
 
                 {/* COMBINED UNIFIED DDINTER 2.0 TOTAL (TIER 1 + TIER 2 INTEGRATED) */}
@@ -1027,7 +1022,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
               <Layers className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
               <span>Semua Analisis</span>
               <span className="text-[10px] px-1.5 py-0.2 rounded-full bg-slate-200 dark:bg-slate-700 font-mono font-bold">
-                {matchedInteractions.length + matchedDiseaseInteractions.length + matchedDuplications.length + matchedFoodInteractions.length + matchedHerbInteractions.length + matchedLabInteractions.length}
+                {matchedInteractions.length + matchedDiseaseInteractions.length + matchedDuplications.length + matchedFoodInteractions.length + matchedHerbInteractions.length}
               </span>
             </button>
 
@@ -1120,31 +1115,13 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                 {matchedHerbInteractions.length}
               </span>
             </button>
-
-            <button
-              id="ddinter-tab-btn-lab"
-              onClick={() => setActiveTab('lab')}
-              className={`px-3.5 py-2.5 rounded-xl text-xs font-black font-outfit transition-all shrink-0 flex items-center gap-1.5 cursor-pointer ${
-                activeTab === 'lab'
-                  ? 'bg-white dark:bg-slate-800 text-cyan-800 dark:text-cyan-300 shadow-sm border border-cyan-300/80 dark:border-cyan-700/80 scale-[1.01]'
-                  : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-              }`}
-            >
-              <FlaskConical className="w-3.5 h-3.5 text-cyan-600 dark:text-cyan-400" />
-              <span>Interferensi Lab</span>
-              <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono font-bold ${
-                matchedLabInteractions.length > 0 ? 'bg-cyan-100 dark:bg-cyan-950 text-cyan-800 dark:text-cyan-200 border border-cyan-300 dark:border-cyan-800' : 'bg-slate-200 dark:bg-slate-700'
-              }`}>
-                {matchedLabInteractions.length}
-              </span>
-            </button>
           </div>
 
           {/* TAB 1: SEMUA ANALISIS (OVERVIEW) */}
           {activeTab === 'all' && (
             <div className="space-y-4">
-              {/* 6-BENTO KPI SUMMARY CARDS */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-3">
+              {/* 5-BENTO KPI SUMMARY CARDS */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3">
                 {/* DDI Card */}
                 <div 
                   onClick={() => setActiveTab('ddi')}
@@ -1266,31 +1243,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                     <p className="text-xs font-bold text-slate-700 dark:text-slate-300 font-outfit">Interaksi Herbal</p>
                     <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-snug pt-0.5">
                       Kunyit, Meniran, Jamu
-                    </p>
-                  </div>
-                </div>
-
-                {/* Lab Card */}
-                <div 
-                  onClick={() => setActiveTab('lab')}
-                  className="bg-white dark:bg-[#0c1322] p-4 rounded-2xl border border-cyan-200/80 dark:border-cyan-900/60 shadow-xs hover:shadow-md transition-all cursor-pointer group hover:scale-[1.02]"
-                >
-                  <div className="flex items-center justify-between pb-2 border-b border-slate-100 dark:border-slate-800/80">
-                    <span className="p-2 rounded-xl bg-cyan-50 dark:bg-cyan-950/70 text-cyan-600 dark:text-cyan-400 group-hover:bg-cyan-600 group-hover:text-white transition-all">
-                      <FlaskConical className="w-4 h-4" />
-                    </span>
-                    <span className="text-xs font-black font-mono text-cyan-700 dark:text-cyan-400 flex items-center gap-0.5">
-                      <span>Buka Tab</span>
-                      <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
-                    </span>
-                  </div>
-                  <div className="pt-3">
-                    <span className="text-2xl font-black text-slate-900 dark:text-white font-outfit">
-                      {matchedLabInteractions.length}
-                    </span>
-                    <p className="text-xs font-bold text-slate-700 dark:text-slate-300 font-outfit">Interferensi Lab</p>
-                    <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-snug pt-0.5">
-                      Troponin, Narkoba, Glukosa
                     </p>
                   </div>
                 </div>
@@ -1533,36 +1485,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                           <span className="text-[10px] px-2 py-0.5 rounded-md bg-emerald-600 text-white font-bold">{hdi.severity}</span>
                         </div>
                         <p className="text-slate-600 dark:text-slate-300 font-medium leading-relaxed">{hdi.clinicalEffect}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Drug-Lab Preview in Overview */}
-              {matchedLabInteractions.length > 0 && (
-                <div className="space-y-3 pt-2">
-                  <div className="flex items-center justify-between">
-                    <h4 className="text-sm font-black text-slate-900 dark:text-white flex items-center gap-1.5 font-outfit">
-                      <FlaskConical className="w-4 h-4 text-cyan-500" />
-                      <span>Potensi Interferensi Hasil Uji Laboratorium ({matchedLabInteractions.length})</span>
-                    </h4>
-                    <button 
-                      onClick={() => setActiveTab('lab')} 
-                      className="text-xs font-bold text-cyan-600 dark:text-cyan-400 hover:underline flex items-center gap-1 cursor-pointer"
-                    >
-                      <span>Lihat Detail Interferensi Lab</span>
-                      <ArrowRight className="w-3 h-3" />
-                    </button>
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    {matchedLabInteractions.slice(0, 2).map((dli: any) => (
-                      <div key={dli.id} className="p-3.5 rounded-xl border border-cyan-200 dark:border-cyan-900/60 bg-cyan-50/50 dark:bg-cyan-950/20 text-xs space-y-1">
-                        <div className="flex items-center justify-between gap-1 flex-wrap font-bold">
-                          <span className="text-cyan-950 dark:text-cyan-200 font-black">🧪 {dli.labTestName} ⚡ 💊 {dli.matchedDrugName || dli.drugName}</span>
-                          <span className="text-[10px] px-2 py-0.5 rounded-md bg-cyan-600 text-white font-bold">{dli.severity}</span>
-                        </div>
-                        <p className="text-slate-600 dark:text-slate-300 font-medium leading-relaxed">{dli.distortionDescription}</p>
                       </div>
                     ))}
                   </div>
@@ -2692,99 +2614,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
             </div>
           )}
 
-          {/* TAB 7: INTERFERENSI HASIL UJI LABORATORIUM (DRUG-LAB) */}
-          {activeTab === 'lab' && (
-            <div className="space-y-4 animate-fade-in">
-              <div className="bg-gradient-to-r from-cyan-500/10 via-cyan-500/5 to-transparent border border-cyan-300/70 dark:border-cyan-700/60 rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-xs">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <span className="text-[10px] font-black px-2.5 py-0.5 rounded-full bg-cyan-600 text-white font-outfit uppercase tracking-wider">
-                      Clinical Pathology • Drug-Lab Interference
-                    </span>
-                    <span className="text-xs font-bold text-cyan-900 dark:text-cyan-300 font-outfit">
-                      Tietz &amp; Mayo Clinic Laboratory Standards
-                    </span>
-                  </div>
-                  <h4 className="text-sm sm:text-base font-black text-slate-900 dark:text-white font-outfit">
-                    Interferensi Obat terhadap Parameter Uji Laboratorium Klinis
-                  </h4>
-                  <p className="text-xs text-slate-600 dark:text-slate-300 font-medium max-w-2xl leading-relaxed">
-                    Mendeteksi hasil laboratorium positif palsu (False Positive), negatif palsu (False Negative), atau distorsi fisiologis yang diakibatkan oleh konsumsi obat pada resep pasien (misal Biotin pada Troponin, Ceftriaxone pada glukosa urin, Levofloxacin pada skrining narkoba opiat).
-                  </p>
-                </div>
-              </div>
-
-              {matchedLabInteractions.length > 0 ? (
-                <div className="space-y-4">
-                  {matchedLabInteractions.map((dli: any) => {
-                    const isCritical = dli.severity?.includes('Kritis') || dli.severity?.includes('Critical');
-                    return (
-                      <div
-                        key={dli.id}
-                        className={`rounded-2xl p-5 sm:p-6 border shadow-xs space-y-4 ${
-                          isCritical ? 'clinical-card-major' : 'clinical-card-moderate'
-                        }`}
-                      >
-                        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-black/5 dark:border-white/10 pb-3">
-                          <div className="flex items-center gap-2 flex-wrap">
-                            <span className="text-base sm:text-lg font-black text-cyan-950 dark:text-cyan-200">🧪 {dli.labTestName}</span>
-                            <span className="text-amber-500 font-black">⚡</span>
-                            <span className="text-base sm:text-lg font-black text-slate-900 dark:text-white">💊 {dli.matchedDrugName || dli.drugName}</span>
-                          </div>
-                          <div className="flex items-center gap-2 flex-wrap">
-                            <span className="px-2.5 py-1 rounded-lg text-xs font-bold bg-cyan-100 dark:bg-cyan-950 text-cyan-800 dark:text-cyan-300 border border-cyan-300 dark:border-cyan-800">
-                              {dli.effectType}
-                            </span>
-                            <span className={isCritical ? 'clinical-badge-major' : 'clinical-badge-moderate'}>
-                              {dli.severity}
-                            </span>
-                          </div>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-                          <div className="bg-white/90 dark:bg-slate-900/70 p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-800 space-y-1">
-                            <p className="font-black text-slate-900 dark:text-white flex items-center gap-1.5">
-                              <span>Mekanisme Biokimia / Interferensi Reagen:</span>
-                            </p>
-                            <p className="text-slate-600 dark:text-slate-300 leading-relaxed font-medium">{dli.biochemicalMechanism}</p>
-                          </div>
-
-                          <div className="bg-white/90 dark:bg-slate-900/70 p-3.5 rounded-xl border border-slate-200/80 dark:border-slate-800 space-y-1">
-                            <p className="font-black text-slate-900 dark:text-white flex items-center gap-1.5">
-                              <span>Distorsi Hasil &amp; Dampak Klinis:</span>
-                            </p>
-                            <p className="text-slate-600 dark:text-slate-300 leading-relaxed font-medium">{dli.distortionDescription} - {dli.clinicalImpact}</p>
-                          </div>
-                        </div>
-
-                        <div className="bg-teal-50/90 dark:bg-teal-950/60 p-4 rounded-xl border border-teal-300/60 dark:border-teal-800/80 space-y-1 shadow-2xs">
-                          <div className="flex items-center gap-1.5 text-teal-900 dark:text-teal-200 font-bold text-xs">
-                            <CheckCircle2 className="w-4 h-4 text-teal-700 dark:text-teal-400" />
-                            <span>Solusi Pengambilan Sampel &amp; Manajemen:</span>
-                          </div>
-                          <p className="text-xs text-slate-700 dark:text-slate-200 leading-relaxed font-medium">
-                            {dli.managementRecommendation}
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              ) : (
-                <div className="clinical-card-safe p-8 rounded-2xl border text-center space-y-2.5 shadow-xs">
-                  <ShieldCheck className="w-10 h-10 text-emerald-600 dark:text-emerald-400 mx-auto" />
-                  <div className="space-y-1">
-                    <h3 className="text-base font-black text-emerald-950 dark:text-emerald-200">
-                      Tidak Ada Interferensi Uji Laboratorium yang Signifikan
-                    </h3>
-                    <p className="text-xs text-emerald-900/80 dark:text-emerald-300/80 max-w-md mx-auto font-medium leading-relaxed">
-                      Kombinasi obat yang dipilih tidak memiliki laporan interferensi reagen atau distorsi palsu pada parameter uji lab klinis.
-                    </p>
-                  </div>
-                </div>
-              )}
-            </div>
-          )}
 
           {/* Clinical Decision Support Disclaimer */}
           <p className="text-[10px] text-slate-400 dark:text-slate-500 italic text-center py-2">

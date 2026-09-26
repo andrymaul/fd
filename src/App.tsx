@@ -90,7 +90,6 @@ const SideEffectChecker = safeLazy(() => import('./components/SideEffectChecker'
 const PharmacyCompetencyCenter = safeLazy(() => import('./components/PharmacyCompetencyCenter'), 'PharmacyCompetencyCenter');
 const DrugNotesManager = safeLazy(() => import('./components/DrugNotesManager'), 'DrugNotesManager');
 const PregnancyLactationChecker = safeLazy(() => import('./components/PregnancyLactationChecker'), 'PregnancyLactationChecker');
-const DrugLabInteractionChecker = safeLazy(() => import('./components/DrugLabInteractionChecker'), 'DrugLabInteractionChecker');
 const BeyondUseDateCalculator = safeLazy(() => import('./components/BeyondUseDateCalculator'), 'BeyondUseDateCalculator');
 const ClinicalToxicologyManager = safeLazy(() => import('./components/ClinicalToxicologyManager'), 'ClinicalToxicologyManager');
 const HighAlertSafetyManager = safeLazy(() => import('./components/HighAlertSafetyManager'), 'HighAlertSafetyManager');
@@ -1579,20 +1578,6 @@ export default function App() {
                 )
               )}
 
-              {activeTab === 'drug-lab' && (
-                !(isProUser || currentUser?.canAccessDrugLab) ? (
-                  renderProFeatureGate(
-                    "Interaksi Obat dengan Uji Laboratorium (Drug-Lab Interactions)",
-                    "Akses lengkap deteksi gangguan analit in vitro, pencegahan hasil positif/negatif palsu pemeriksaan biomarker kardiologi (Troponin), tiroid (TSH/FT4), fungsi ginjal (Kreatinin), glukosa strip & toksikologi narkoba urin."
-                  )
-                ) : (
-                  <DrugLabInteractionChecker
-                    onSelectTab={handleSelectTab}
-                    onOpenPricingModal={() => setShowPricingModal(true)}
-                  />
-                )
-              )}
-
               {activeTab === 'bud' && (
                 !(isProUser || currentUser?.canAccessBud) ? (
                   renderProFeatureGate(
@@ -1996,7 +1981,7 @@ export default function App() {
 
               {/* Safe Fallback for unrecognized tab or stale localStorage */}
               {![
-                'landing', 'dashboard', 'drugs', 'directory', 'changelog', 'pregnancy', 'drug-lab', 'bud', 'herb-drug',
+                'landing', 'dashboard', 'drugs', 'directory', 'changelog', 'pregnancy', 'bud', 'herb-drug',
                 'drug-notes', 'latin-terms', 'competency', 'competency-vokasi', 'guidelines', 'polypharmacy', 'interactions', 'side-effects', 'usage',
                 'sop', 'regulations', 'literature', 'whatsapp-pio', 'iv-compatibility', 'toxicology', 'high-alert', 'pediatric',
                 'renal-adjuster', 'subscriptions', 'swamedikasi', 'instagram-studio', 'education-generator', 'antimicrobial-stewardship', 'settings', 'support'

@@ -9,7 +9,6 @@ import {
 import {
   DuoInteractionIcon,
   DuoPregnancyIcon,
-  DuoDrugLabIcon,
   DuoHerbalIcon,
   DuoSideEffectsIcon,
   DuoIvCompatibilityIcon,
@@ -99,14 +98,6 @@ export const Dashboard: React.FC<DashboardProps> = ({
         title: 'Bumil & Busui',
         keywords: 'keamanan ibu hamil menyusui fda pllr laktasi hale teratogenik',
         icon: DuoPregnancyIcon,
-        iconColor: PINE_TEAL,
-        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
-      },
-      {
-        id: 'drug-lab',
-        title: 'Obat & Lab',
-        keywords: 'interaksi obat uji laboratorium analit troponin tiroid urine ginjal',
-        icon: DuoDrugLabIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },

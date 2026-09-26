@@ -5052,48 +5052,6 @@ export function evaluateHerbInteractionsForDrugs(
   return results;
 }
 
-/**
- * Helper to match selected drugs with Drug-Lab interactions
- */
-export function evaluateDrugLabInteractionsForDrugs(
-  drugs: Drug[],
-  labDatabase: any[] = []
-): any[] {
-  if (!drugs || drugs.length === 0) return [];
-  const results: any[] = [];
-  const seenIds = new Set<string>();
-
-  for (const drug of drugs) {
-    const dName = (drug.name || '').toLowerCase().trim();
-    const dGen = (drug.genericName || '').toLowerCase().trim();
-    const dCat = (drug.category || '').toLowerCase().trim();
-
-    for (const item of labDatabase) {
-      const ruleDrug = (item.drugName || '').toLowerCase();
-      const ruleGen = (item.genericName || '').toLowerCase();
-      const ruleClass = (item.drugClass || '').toLowerCase();
-
-      const isMatch =
-        (dName.length >= 3 && (ruleDrug.includes(dName) || ruleGen.includes(dName))) ||
-        (dGen.length >= 3 && (ruleDrug.includes(dGen) || ruleGen.includes(dGen))) ||
-        (ruleDrug.length >= 3 && (dName.includes(ruleDrug) || dGen.includes(ruleDrug))) ||
-        (ruleClass.includes('statin') && (dCat.includes('statin') || dName.includes('statin'))) ||
-        (ruleClass.includes('nsaid') && (dCat.includes('nsaid') || ['ibuprofen', 'mefenamat', 'meloxicam'].some(s => dName.includes(s)))) ||
-        (ruleClass.includes('florokuinolon') && (dCat.includes('quinolone') || ['levofloxacin', 'ciprofloxacin'].some(s => dName.includes(s)))) ||
-        (ruleClass.includes('dekongestan') && ['pseudoephedrine', 'pseudoefedrin', 'ephedrine'].some(s => dName.includes(s) || dGen.includes(s)));
-
-      if (isMatch && !seenIds.has(`${item.id}__${drug.id}`)) {
-        seenIds.add(`${item.id}__${drug.id}`);
-        results.push({
-          ...item,
-          matchedDrugName: drug.name
-        });
-      }
-    }
-  }
-
-  return results;
-}
 
 /**
  * Evaluates potential Drug-Disease Interactions (Contraindications) based on selected drugs and patient comorbidities

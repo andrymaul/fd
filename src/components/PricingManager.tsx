@@ -175,7 +175,6 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
       canExportExcelCsv: plan.id !== 'free',
       canAccessIvCompatibility: plan.id !== 'free',
       canAccessPregnancy: plan.id !== 'free',
-      canAccessDrugLab: plan.id !== 'free',
       canAccessHerbDrug: plan.id !== 'free',
       canAccessSideEffects: plan.id !== 'free',
       canAccessBud: plan.id !== 'free',
@@ -228,7 +227,6 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
           canAccessToxicology: true,
           canAccessHighAlert: true,
           canAccessPregnancy: true,
-          canAccessDrugLab: true,
           canAccessHerbDrug: true,
           canAccessSideEffects: true,
           canAccessBud: true,
@@ -273,7 +271,6 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
           canAccessToxicology: false,
           canAccessHighAlert: false,
           canAccessPregnancy: false,
-          canAccessDrugLab: false,
           canAccessHerbDrug: false,
           canAccessSideEffects: false,
           canAccessBud: false,
@@ -890,25 +887,6 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
                       </p>
                       <p className="text-[11px] text-slate-500 leading-snug">
                         Penapisan risiko teratogenik FDA PLLR per trimester &amp; profil ekskresi ASI (Hale's L1–L5).
-                      </p>
-                    </div>
-                  </label>
-
-                  {/* Uji Lab */}
-                  <label className="p-3.5 bg-white rounded-2xl border border-slate-200 hover:border-cyan-300 transition-colors shadow-2xs flex items-start gap-3 cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked={Boolean(perms.canAccessDrugLab)}
-                      onChange={() => togglePermission('canAccessDrugLab')}
-                      className="mt-0.5 rounded text-teal-600 focus:ring-teal-500 w-4 h-4 cursor-pointer"
-                    />
-                    <div className="space-y-0.5">
-                      <p className="text-xs font-bold text-slate-900 font-outfit flex items-center gap-1.5">
-                        <FlaskConical className="w-3.5 h-3.5 text-cyan-600" />
-                        Interaksi Obat &amp; Hasil Uji Laboratorium
-                      </p>
-                      <p className="text-[11px] text-slate-500 leading-snug">
-                        Deteksi positif/negatif palsu biomarker lab (Troponin, Kreatinin, TSH, Glukosa, Elektrolit).
                       </p>
                     </div>
                   </label>
