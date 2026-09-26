@@ -162,6 +162,40 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
 
+  // Perhitungan metrik ringkas dashboard eksekutif (Hooks harus selalu di atas sebelum return)
+  const pendingCount = useMemo(() => {
+    if (!customers) return 0;
+    return customers.filter((c: any) => 
+      c.subscriptionStatus === 'pending' || 
+      c.subscriptionStatus === 'menunggu_verifikasi' ||
+      Boolean(c.paymentProofUrl && c.subscriptionStatus !== 'active')
+    ).length;
+  }, [customers]);
+
+  const proCount = useMemo(() => {
+    if (!customers) return 0;
+    return customers.filter((c: any) => 
+      c.subscriptionPlan === 'Pro' || 
+      c.subscriptionPlan === 'Klinik' || 
+      c.subscriptionPlan === 'Elite'
+    ).length;
+  }, [customers]);
+
+  // Daftar Tab Segmentasi Admin Hub (10 Modul Manajemen)
+  const adminTabs: { id: AdminSubTab; label: string; icon: React.ComponentType<{ className?: string }>; badge?: string | number; badgeColor?: string }[] = useMemo(() => [
+    { id: 'customers', label: 'Pelanggan & Subskripsi', icon: UserCheck, badge: pendingCount > 0 ? `${pendingCount} Verifikasi` : undefined, badgeColor: 'bg-rose-500 text-white' },
+    { id: 'pricing-settings', label: 'Tarif & QRIS', icon: Tag },
+    { id: 'drugs', label: 'Katalog Obat Master', icon: Pill },
+    { id: 'interactions', label: 'Interaksi Obat DDInter', icon: ShieldAlert },
+    { id: 'firebase-sync', label: 'Cloud Firestore Sync', icon: Database },
+    { id: 'branding', label: 'Kop Surat Klinik', icon: Building2 },
+    { id: 'instagram-studio', label: 'Studio Media Sosial', icon: Instagram },
+    { id: 'team-admin', label: 'Tim Staf Admin', icon: Users },
+    { id: 'audit-log', label: 'Audit Trail & Log', icon: FileText },
+    { id: 'advanced-editor', label: 'Editor JSON Massal', icon: Settings }
+  ], [pendingCount]);
+
+
   // CSV Parsing Client Logic
   const handleCsvFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -301,13 +335,110 @@ DDInter-PAIR-00105,"Tacrolimus","Fluconazole","Major","Fluconazole menghambat CY
   };
 
   if (currentUser?.role !== 'admin') {
+    const isSimulating = onSimulateTrial && (currentUser?.role === 'free' || currentUser?.role === 'customer' || currentUser?.subscriptionStatus === 'trial');
     return (
-      <div className="max-w-md mx-auto py-16 px-4 text-center space-y-3">
-        <Settings className="w-10 h-10 text-slate-300 mx-auto" />
-        <h2 className="text-lg font-bold text-slate-900">Akses Terbatas Administrator</h2>
-        <p className="text-xs text-slate-500">
-          Gunakan akun Administrator (`admin@farmasidruggist.com`) untuk mengakses panel pengelolaan ini.
-        </p>
+      <div className="space-y-6 max-w-4xl mx-auto px-4 py-8">
+        {/* Trial Simulator Bar jika simulasi aktif */}
+        {onSimulateTrial && (
+          <div className="bg-amber-500/10 border border-amber-400/40 rounded-3xl p-5 shadow-xs space-y-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="flex items-center gap-2.5">
+                <span className="p-2 rounded-xl bg-amber-400/20 text-amber-700 dark:text-amber-300 font-black text-base">🛠️</span>
+                <div>
+                  <p className="font-black text-slate-900 dark:text-white font-outfit text-sm">
+                    Simulasi Pengujian Akun Nakes:
+                  </p>
+                  <p className="text-xs text-slate-600 dark:text-slate-400">
+                    Status saat ini: <strong className="text-amber-600 dark:text-amber-400">{currentUser?.subscriptionPlan || 'Starter'}</strong> ({currentUser?.subscriptionStatus || 'active'})
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 flex-wrap">
+                {onToggleTrialStatus && (
+                  <button
+                    onClick={onToggleTrialStatus}
+                    className={`px-3 py-1.5 rounded-xl font-bold text-xs transition-all cursor-pointer ${
+                      isTrialEnabled
+                        ? 'bg-emerald-600 hover:bg-emerald-500 text-white'
+                        : 'bg-slate-700 text-slate-200'
+                    }`}
+                  >
+                    Trial: {isTrialEnabled ? 'ON' : 'OFF'}
+                  </button>
+                )}
+                <button
+                  onClick={() => onSimulateTrial('free-new')}
+                  className={`px-3 py-1.5 rounded-xl border font-bold text-xs cursor-pointer transition-all ${
+                    currentUser?.subscriptionPlan === 'Starter' && !currentUser?.hasClaimedTrial
+                      ? 'bg-slate-800 text-white border-slate-700 shadow-xs'
+                      : 'bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-100'
+                  }`}
+                >
+                  Akun Starter
+                </button>
+                <button
+                  onClick={() => onSimulateTrial('start-trial')}
+                  className={`px-3 py-1.5 rounded-xl font-bold text-xs cursor-pointer transition-all ${
+                    currentUser?.subscriptionStatus === 'trial'
+                      ? 'bg-teal-700 text-white ring-2 ring-teal-400 shadow-xs'
+                      : 'bg-teal-600 hover:bg-teal-500 text-white'
+                  }`}
+                >
+                  Trial 3 Hari
+                </button>
+                <button
+                  onClick={() => onSimulateTrial('trial-expired')}
+                  className="px-3 py-1.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-300 dark:border-rose-800 text-rose-700 dark:text-rose-300 font-bold text-xs cursor-pointer hover:bg-rose-100"
+                >
+                  Trial Habis
+                </button>
+                <button
+                  onClick={() => onSimulateTrial('reset-admin')}
+                  className="px-3.5 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs cursor-pointer shadow-xs hover:scale-105 active:scale-95 transition-all"
+                >
+                  Reset Admin
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 text-center space-y-4 shadow-sm">
+          <div className="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-400/20 flex items-center justify-center mx-auto">
+            <ShieldCheck className="w-7 h-7 stroke-[2]" />
+          </div>
+          <div className="space-y-2 max-w-lg mx-auto">
+            <h2 className="text-xl font-black font-outfit text-slate-900 dark:text-white">
+              {isSimulating ? 'Sedang Mode Simulasi Akun Nakes' : 'Akses Terbatas Administrator'}
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed font-jakarta">
+              {isSimulating
+                ? `Anda sedang mensimulasikan profil Nakes ${currentUser?.subscriptionPlan || 'Starter'} (${currentUser?.subscriptionStatus === 'trial' ? 'Masa Percobaan Aktif' : 'Status Aktif'}). Fitur Administrator Hub dinonaktifkan untuk role ini. Buka Dashboard Klinis untuk menguji batasan dan fitur klinis pengguna, atau klik Reset Admin untuk kembali mengelola sistem.`
+                : 'Halaman ini merupakan Pusat Kontrol Administrator Farmasi Druggist. Gunakan akun Administrator (admin@farmasidruggist.com) untuk mengakses panel pengelolaan ini.'}
+            </p>
+          </div>
+
+          <div className="flex items-center justify-center gap-3 pt-3 flex-wrap">
+            {onNavigateToDashboard && (
+              <button
+                onClick={onNavigateToDashboard}
+                className="px-5 py-2.5 rounded-2xl bg-teal-600 hover:bg-teal-500 text-white text-xs sm:text-sm font-bold font-outfit transition-all flex items-center gap-2 cursor-pointer shadow-sm hover:scale-105 active:scale-95"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                <span>Buka Dashboard Klinis</span>
+              </button>
+            )}
+            {onSimulateTrial && (
+              <button
+                onClick={() => onSimulateTrial('reset-admin')}
+                className="px-5 py-2.5 rounded-2xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-black font-outfit transition-all flex items-center gap-2 cursor-pointer shadow-sm hover:scale-105 active:scale-95"
+              >
+                <RotateCcw className="w-4 h-4" />
+                <span>Reset Kembali ke Superadmin</span>
+              </button>
+            )}
+          </div>
+        </div>
       </div>
     );
   }
@@ -468,38 +599,7 @@ DDInter-PAIR-00105,"Tacrolimus","Fluconazole","Major","Fluconazole menghambat CY
     }
   };
 
-  // Perhitungan metrik ringkas dashboard eksekutif
-  const pendingCount = useMemo(() => {
-    if (!customers) return 0;
-    return customers.filter((c: any) => 
-      c.subscriptionStatus === 'pending' || 
-      c.subscriptionStatus === 'menunggu_verifikasi' ||
-      Boolean(c.paymentProofUrl && c.subscriptionStatus !== 'active')
-    ).length;
-  }, [customers]);
 
-  const proCount = useMemo(() => {
-    if (!customers) return 0;
-    return customers.filter((c: any) => 
-      c.subscriptionPlan === 'Pro' || 
-      c.subscriptionPlan === 'Klinik' || 
-      c.subscriptionPlan === 'Elite'
-    ).length;
-  }, [customers]);
-
-  // Daftar Tab Segmentasi Admin Hub (10 Modul Manajemen)
-  const adminTabs: { id: AdminSubTab; label: string; icon: React.ComponentType<{ className?: string }>; badge?: string | number; badgeColor?: string }[] = useMemo(() => [
-    { id: 'customers', label: 'Pelanggan & Subskripsi', icon: UserCheck, badge: pendingCount > 0 ? `${pendingCount} Verifikasi` : undefined, badgeColor: 'bg-rose-500 text-white' },
-    { id: 'pricing-settings', label: 'Tarif & QRIS', icon: Tag },
-    { id: 'drugs', label: 'Katalog Obat Master', icon: Pill },
-    { id: 'interactions', label: 'Interaksi Obat DDInter', icon: ShieldAlert },
-    { id: 'firebase-sync', label: 'Cloud Firestore Sync', icon: Database },
-    { id: 'branding', label: 'Kop Surat Klinik', icon: Building2 },
-    { id: 'instagram-studio', label: 'Studio Media Sosial', icon: Instagram },
-    { id: 'team-admin', label: 'Tim Staf Admin', icon: Users },
-    { id: 'audit-log', label: 'Audit Trail & Log', icon: FileText },
-    { id: 'advanced-editor', label: 'Editor JSON Massal', icon: Settings }
-  ], [pendingCount]);
 
   return (
     <div className="space-y-6 max-w-7xl mx-auto px-1 sm:px-2">
