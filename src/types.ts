@@ -204,6 +204,7 @@ export interface UserProfile {
   uid: string;
   email: string;
   name: string;
+  photoURL?: string;
   password?: string;
   phone?: string;
   institution?: string;

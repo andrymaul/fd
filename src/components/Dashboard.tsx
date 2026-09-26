@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { UserProfile, Drug, DrugInteraction, InteractionCheckRecord } from '../types';
+import { getPathFromTab } from '../utils/routes';
 import { 
   ShieldAlert, 
   Pill, 
@@ -425,10 +426,17 @@ export const Dashboard: React.FC<DashboardProps> = ({
         <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-y-10 sm:gap-y-12 md:gap-y-14 gap-x-4 sm:gap-x-6 md:gap-x-8 py-6 sm:py-10">
           {filteredModules.map((mod) => {
             const Icon = mod.icon;
+            const itemHref = getPathFromTab(mod.id);
             return (
-              <button
+              <a
                 key={mod.id}
-                onClick={() => onSelectTab(mod.id)}
+                href={itemHref}
+                onClick={(e) => {
+                  if (!e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) {
+                    e.preventDefault();
+                    onSelectTab(mod.id);
+                  }
+                }}
                 className="group flex flex-col items-center text-center focus:outline-none cursor-pointer select-none py-2 px-1 transition-all duration-300 active:scale-95"
                 title={mod.title}
               >
@@ -441,7 +449,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 <span className="mt-3.5 text-xs sm:text-sm md:text-[14.5px] font-bold font-jakarta text-[#0f172a] dark:text-slate-100 group-hover:text-[#005f5a] dark:group-hover:text-teal-300 leading-snug line-clamp-2 max-w-[110px] sm:max-w-[140px] transition-colors tracking-tight">
                   {mod.title}
                 </span>
-              </button>
+              </a>
             );
           })}
         </div>

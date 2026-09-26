@@ -79,7 +79,7 @@ export const Footer: React.FC<FooterProps> = ({ customerCount: propCustomerCount
     : totalSubscriptions;
 
   return (
-    <footer className="bg-white border-t border-slate-200/80 py-4 sm:py-5 text-slate-600 transition-colors duration-200">
+    <footer className="bg-transparent py-2.5 sm:py-3 text-slate-600 transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
         {/* Pojok Kiri: Ikon + Angka Subskripsi Realtime + Tulisan User */}
         <div className="w-full sm:w-auto sm:flex-1 flex items-center justify-center sm:justify-start gap-1.5 text-slate-700">
@@ -99,7 +99,7 @@ export const Footer: React.FC<FooterProps> = ({ customerCount: propCustomerCount
             target="_blank"
             rel="noopener noreferrer"
             title="Kunjungi Channel YouTube Resmi @FarmasiDruggist"
-            className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white hover:bg-slate-50 border border-slate-200/90 hover:border-slate-300 shadow-2xs hover:shadow-xs transition-all cursor-pointer font-outfit text-xs"
+            className="group inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/70 hover:bg-white border border-teal-200/60 shadow-2xs hover:shadow-xs transition-all cursor-pointer font-outfit text-xs"
           >
             <span className="text-slate-500 font-medium">Created by</span>
             <div className="flex items-center gap-1.5">

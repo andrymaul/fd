@@ -1,8 +1,7 @@
-import React, { useState, useEffect, memo } from 'react';
+import React, { useState, memo } from 'react';
 import { UserProfile } from '../types';
-import { Search, ArrowRight, Users } from 'lucide-react';
+import { Search, ArrowRight, Flame } from 'lucide-react';
 import { SingleColumnFeatureSpotlight } from './SingleColumnFeatureSpotlight';
-import { subscribeVisitorStats, VisitorStats, getVisitorStats } from '../services/visitorStatsService';
 
 interface LandingPageProps {
   currentUser?: UserProfile | null;
@@ -11,19 +10,6 @@ interface LandingPageProps {
   onSearchDrug?: (query: string) => void;
 }
 
-const formatCompactVisits = (num: number): string => {
-  if (!num || num <= 0) return '0';
-  if (num >= 1000000) {
-    return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
-  }
-  if (num >= 1000) {
-    const inK = num / 1000;
-    if (inK >= 100) return Math.round(inK) + 'K';
-    return inK.toFixed(1) + 'K';
-  }
-  return num.toString();
-};
-
 export const LandingPage: React.FC<LandingPageProps> = memo(({
   currentUser,
   onSelectTab,
@@ -31,15 +17,6 @@ export const LandingPage: React.FC<LandingPageProps> = memo(({
   onSearchDrug
 }) => {
   const [heroSearch, setHeroSearch] = useState('');
-  const [visitorStats, setVisitorStats] = useState<VisitorStats>(() => getVisitorStats());
-
-  useEffect(() => {
-    const unsubscribe = subscribeVisitorStats((newStats) => {
-      setVisitorStats(newStats);
-    });
-    return () => unsubscribe();
-  }, []);
-
 
   const handleHeroSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,75 +37,69 @@ export const LandingPage: React.FC<LandingPageProps> = memo(({
     }
   };
 
-
-
   return (
-    <div className="space-y-12 sm:space-y-16 pb-20 bg-transparent text-slate-900 transition-colors duration-300">
-      
-      {/* =========================================================================
-          HERO EXPLORATION SECTION: Lightweight, Fast & Intuitive ("Eksplorasi apa hari ini?")
-          ========================================================================= */}
-      <section id="hero-section" className="relative bg-transparent text-slate-900 pt-6 sm:pt-10 pb-4 sm:pb-6">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-5">
-          
-          {/* Mobile Visitor Chip */}
-          <div className="md:hidden flex justify-center pb-0.5">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100/90 border border-slate-200/90 shadow-2xs">
-              <Users className="w-3.5 h-3.5 text-teal-600 shrink-0" />
-              <span className="font-mono text-xs font-black text-slate-900">
-                {formatCompactVisits(visitorStats.totalVisits)}
-              </span>
-              <span className="text-[11px] font-semibold text-slate-500 font-outfit">
-                Visitor
-              </span>
-            </div>
-          </div>
-
-          {/* Main Title */}
-          <div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight font-outfit">
-              Eksplorasi apa hari ini?
-            </h1>
-          </div>
-
-          {/* Clean & Fast Search Box */}
-          <form onSubmit={handleHeroSearchSubmit} className="max-w-2xl mx-auto pt-1">
-            <div className="relative flex items-center bg-white rounded-2xl p-1.5 sm:p-2 border border-slate-200 shadow-md hover:border-teal-400 focus-within:border-teal-500 focus-within:ring-4 focus-within:ring-teal-500/10 transition-all">
-              <Search className="w-5 h-5 text-teal-600 ml-2.5 sm:ml-3 shrink-0" />
-              <input
-                type="text"
-                value={heroSearch}
-                onChange={(e) => setHeroSearch(e.target.value)}
-                placeholder="Cari obat, interaksi klinis, atau keluhan (misal: Paracetamol, Maag, Diare)..."
-                className="w-full px-3 py-2 text-slate-900 placeholder-slate-400 font-medium text-xs sm:text-sm focus:outline-none bg-transparent"
-              />
-              <button
-                type="submit"
-                className="px-4 sm:px-6 py-2 sm:py-2.5 bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs sm:text-sm rounded-xl transition-all shrink-0 flex items-center gap-1.5 cursor-pointer shadow-xs active:scale-95 font-outfit"
-              >
-                <span>Cari</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </form>
-
-        </div>
-      </section>
-
-      {/* =========================================================================
-          STAGE 3: MODERN BENTO GRID ARCHITECTURE - 26 MODUL KLINIS (NEO-CLINICAL TECH)
-          ========================================================================= */}
-      <section id="bento-features" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 sm:-mt-10">
-
-        {/* Single-Column Spotlight Showcase */}
+    <div className="pb-1 sm:pb-2 bg-transparent text-slate-900 transition-colors duration-300">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 sm:pt-4">
         <SingleColumnFeatureSpotlight
           onSelectTab={onSelectTab}
           onOpenSwamedikasiProtocol={onOpenSwamedikasiProtocol}
           currentUser={currentUser}
+          heroContent={
+            <div className="space-y-3 sm:space-y-3.5 text-left">
+              
+              {/* Badge: Promo Diskon Mencolok dengan Warna Solid Orange */}
+              <div>
+                <a
+                  href="/pricing"
+                  onClick={(e) => {
+                    if (!e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) {
+                      e.preventDefault();
+                      onSelectTab('pricing');
+                    }
+                  }}
+                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-600 hover:bg-orange-700 text-white text-xs font-black font-outfit shadow-md shadow-orange-600/30 hover:scale-105 active:scale-95 transition-all cursor-pointer group"
+                  title="Lihat Promo Paket Berlangganan (Hemat hingga 80%)"
+                >
+                  <Flame className="w-3.5 h-3.5 fill-white text-white shrink-0" />
+                  <span className="tracking-wide uppercase font-black text-xs">
+                    PROMO HINGGA 80%
+                  </span>
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                </a>
+              </div>
+
+              {/* Main Title: Eksplorasi apa hari ini? (Diperbesar) */}
+              <div>
+                <h1 className="text-3xl sm:text-4xl xl:text-5xl font-black text-slate-900 tracking-tight font-outfit leading-[1.12]">
+                  Eksplorasi apa hari ini?
+                </h1>
+              </div>
+
+              {/* Clean & Fast Search Box */}
+              <form onSubmit={handleHeroSearchSubmit} className="w-full pt-0.5">
+                <div className="relative flex items-center bg-white rounded-xl p-1 sm:p-1.5 border border-slate-200 shadow-sm hover:border-teal-400 focus-within:border-teal-500 focus-within:ring-2 focus-within:ring-teal-500/10 transition-all">
+                  <Search className="w-4 h-4 text-teal-600 ml-2.5 shrink-0" />
+                  <input
+                    type="text"
+                    value={heroSearch}
+                    onChange={(e) => setHeroSearch(e.target.value)}
+                    placeholder="Cari obat, interaksi klinis, keluhan (misal: Paracetamol)..."
+                    className="w-full px-2 py-1 text-slate-900 placeholder-slate-400 font-medium text-xs sm:text-sm focus:outline-none bg-transparent"
+                  />
+                  <button
+                    type="submit"
+                    className="px-3.5 sm:px-4 py-1.5 bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs rounded-lg transition-all shrink-0 flex items-center gap-1 cursor-pointer shadow-xs active:scale-95 font-outfit"
+                  >
+                    <span>Cari</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </button>
+                </div>
+              </form>
+
+            </div>
+          }
         />
-
       </section>
-
     </div>
   );
 });

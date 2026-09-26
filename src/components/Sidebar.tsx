@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { Logo } from './Logo';
 import { UserProfile } from '../types';
 import { getLatestChangelogEntry } from '../data/systemChangelogData';
+import { getPathFromTab } from '../utils/routes';
 import { 
   Pill, 
   ShieldAlert, 
@@ -333,24 +334,35 @@ export const Sidebar: React.FC<SidebarProps> = ({
     <div className="flex flex-col h-full bg-white dark:bg-[#0b0f19] text-slate-800 dark:text-slate-200 border-r border-slate-200 dark:border-slate-800/90 shadow-sm transition-all duration-300">
       
       {/* Sidebar Header / Logo */}
-      {/* Sidebar Header / Logo */}
       <div className={`p-3.5 sm:p-4 flex items-center justify-between border-b border-slate-200/80 dark:border-slate-800/80 bg-white/95 dark:bg-[#090e1a] ${collapsed ? 'px-3 justify-center' : 'px-4 sm:px-5'}`}>
         {!collapsed && (
-          <button 
-            onClick={() => handleTabClick(currentUser ? 'dashboard' : 'landing')}
+          <a 
+            href={currentUser ? '/dashboard' : '/'}
+            onClick={(e) => {
+              if (!e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) {
+                e.preventDefault();
+                handleTabClick(currentUser ? 'dashboard' : 'landing');
+              }
+            }}
             className="focus:outline-none flex items-center gap-2 group text-left cursor-pointer transition-transform hover:scale-[1.02] p-1 -ml-1 rounded-2xl hover:bg-slate-100/60 dark:hover:bg-slate-800/50"
           >
             <Logo size="sm" />
-          </button>
+          </a>
         )}
         {collapsed && (
-          <button 
-            onClick={() => handleTabClick(currentUser ? 'dashboard' : 'landing')}
+          <a 
+            href={currentUser ? '/dashboard' : '/'}
+            onClick={(e) => {
+              if (!e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) {
+                e.preventDefault();
+                handleTabClick(currentUser ? 'dashboard' : 'landing');
+              }
+            }}
             className="p-1 rounded-2xl focus:outline-none transition-transform hover:scale-110 cursor-pointer"
             title="FARMASIDRUGGIST"
           >
             <Logo size="sm" showText={false} />
-          </button>
+          </a>
         )}
 
         {/* Desktop Collapse Toggle Button */}
@@ -442,11 +454,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     {category.items.map((item) => {
                       const Icon = item.icon;
                       const isActive = activeTab === item.id || (activeTab === 'admin' && item.id === 'admin-firebase');
+                      const itemHref = getPathFromTab(item.id);
 
                       return (
-                        <button
+                        <a
                           key={item.id}
-                          onClick={() => handleTabClick(item.id)}
+                          href={itemHref}
+                          onClick={(e) => {
+                            if (!e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) {
+                              e.preventDefault();
+                              handleTabClick(item.id);
+                            }
+                          }}
                           title={collapsed ? `${category.title}: ${item.label}` : undefined}
                           className={`w-full flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-bold transition-all duration-150 group relative cursor-pointer font-outfit ${
                             isActive
@@ -481,7 +500,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                               <p className="font-bold">{item.label}</p>
                             </div>
                           )}
-                        </button>
+                        </a>
                       );
                     })}
                   </div>
@@ -547,22 +566,30 @@ export const Sidebar: React.FC<SidebarProps> = ({
           </div>
         ) : (
           <div className="space-y-2">
-            <button
-              onClick={onOpenAuthModal}
+            <a
+              href="/login"
+              onClick={(e) => {
+                e.preventDefault();
+                onOpenAuthModal();
+              }}
               className={`w-full flex items-center gap-2 px-3 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white shadow-md transition cursor-pointer font-outfit ${collapsed ? 'justify-center px-2' : ''}`}
             >
               <LogIn className="w-4 h-4" />
               {!collapsed && <span>Masuk / Login</span>}
-            </button>
+            </a>
             
             {!collapsed && (
-              <button
-                onClick={onOpenPricingModal}
+              <a
+                href="/pricing"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onOpenPricingModal();
+                }}
                 className="w-full flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-amber-50 dark:bg-amber-950/30 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800 hover:bg-amber-100 transition cursor-pointer font-outfit"
               >
                 <Sparkles className="w-3.5 h-3.5 text-amber-500" />
                 <span>Langganan Pro</span>
-              </button>
+              </a>
             )}
           </div>
         )}

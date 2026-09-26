@@ -41,6 +41,7 @@ interface SingleColumnFeatureSpotlightProps {
   onSelectTab: (tab: string) => void;
   onOpenSwamedikasiProtocol?: (protocolId: string) => void;
   currentUser?: UserProfile | null;
+  heroContent?: React.ReactNode;
 }
 
 interface SpotlightModule {
@@ -73,7 +74,8 @@ interface SpotlightModule {
 export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlightProps> = memo(({
   onSelectTab,
   onOpenSwamedikasiProtocol,
-  currentUser
+  currentUser,
+  heroContent
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
@@ -107,28 +109,24 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         btnText: 'text-slate-950'
       },
       renderMicroPreview: () => (
-        <div className="space-y-3">
-          <div className="flex items-center justify-between text-xs font-bold text-slate-500 dark:text-teal-300/80">
-            <span>Matriks Derajat Keparahan:</span>
-            <span className="text-teal-600 dark:text-teal-400 font-mono text-[11px]">Real-time Calculation</span>
-          </div>
-          <div className="grid grid-cols-3 gap-2 text-center text-xs font-black">
-            <div className="p-3 rounded-2xl bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-rose-500/30">
-              <span className="block text-sm sm:text-base font-outfit font-black">Major</span>
-              <span className="text-[10px] font-medium opacity-80 mt-0.5 block">Kontraindikasi Relatif</span>
+        <div className="space-y-1.5">
+          <div className="grid grid-cols-3 gap-1.5 text-center text-xs font-black">
+            <div className="p-1.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-300 border border-rose-200 dark:border-rose-500/30">
+              <span className="block text-xs sm:text-sm font-outfit font-black">Major</span>
+              <span className="text-[9px] font-medium opacity-80 block truncate">Kontraindikasi</span>
             </div>
-            <div className="p-3 rounded-2xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-300 border border-amber-200 dark:border-amber-500/30">
-              <span className="block text-sm sm:text-base font-outfit font-black">Moderate</span>
-              <span className="text-[10px] font-medium opacity-80 mt-0.5 block">Monitoring Ketat</span>
+            <div className="p-1.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-300 border border-amber-200 dark:border-amber-500/30">
+              <span className="block text-xs sm:text-sm font-outfit font-black">Moderate</span>
+              <span className="text-[9px] font-medium opacity-80 block truncate">Monitoring</span>
             </div>
-            <div className="p-3 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-500/30">
-              <span className="block text-sm sm:text-base font-outfit font-black">Minor</span>
-              <span className="text-[10px] font-medium opacity-80 mt-0.5 block">Signifikansi Ringan</span>
+            <div className="p-1.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-500/30">
+              <span className="block text-xs sm:text-sm font-outfit font-black">Minor</span>
+              <span className="text-[9px] font-medium opacity-80 block truncate">Signifikansi Ringan</span>
             </div>
           </div>
-          <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-[#062026] border border-slate-200/80 dark:border-teal-500/20 text-[11px] text-slate-600 dark:text-teal-100/70 flex items-center justify-between">
-            <span className="font-semibold">Konsensus Basis Data:</span>
-            <span className="font-mono font-bold text-teal-700 dark:text-teal-300">Nature npj • ASHP • CekBPOM</span>
+          <div className="p-1.5 rounded-lg bg-slate-50 dark:bg-[#062026] border border-slate-200/80 dark:border-teal-500/20 text-[10px] text-slate-600 dark:text-teal-100/70 flex items-center justify-between">
+            <span className="font-semibold text-[9.5px]">Basis Data:</span>
+            <span className="font-bold font-sans text-teal-700 dark:text-teal-300 text-[9.5px]">Nature npj • ASHP • CekBPOM</span>
           </div>
         </div>
       )
@@ -157,22 +155,22 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         btnText: 'text-white dark:text-slate-950'
       },
       renderMicroPreview: () => (
-        <div className="space-y-2.5 text-xs font-bold">
-          <div className="flex items-center justify-between p-3 rounded-2xl bg-rose-50/80 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900/40">
+        <div className="space-y-1.5 text-xs font-bold">
+          <div className="flex items-center justify-between p-1.5 sm:p-2 rounded-xl bg-rose-50/80 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900/40">
             <div>
-              <div className="font-outfit text-rose-800 dark:text-rose-200 text-sm font-black">Trimester 1 (Organogenesis)</div>
-              <p className="text-[10px] text-rose-600/90 dark:text-rose-300/80 font-medium">Periode paling rentan terhadap efek teratogenik obat</p>
+              <div className="font-outfit text-rose-800 dark:text-rose-200 text-xs font-black">Trimester 1 (Organogenesis)</div>
+              <p className="text-[9px] text-rose-600/90 dark:text-rose-300/80 font-medium">Periode paling rentan terhadap efek teratogenik obat</p>
             </div>
-            <span className="px-3 py-1 rounded-full bg-rose-200 dark:bg-rose-900 text-rose-900 dark:text-rose-200 text-[10px] font-mono font-black">
+            <span className="px-2 py-0.5 rounded-full bg-rose-200 dark:bg-rose-900 text-rose-900 dark:text-rose-200 text-[9px] font-bold font-outfit font-black shrink-0">
               Skrining Ketat
             </span>
           </div>
-          <div className="flex items-center justify-between p-3 rounded-2xl bg-pink-50/80 dark:bg-pink-950/30 border border-pink-200 dark:border-pink-900/40">
+          <div className="flex items-center justify-between p-1.5 sm:p-2 rounded-xl bg-pink-50/80 dark:bg-pink-950/30 border border-pink-200 dark:border-pink-900/40">
             <div>
-              <div className="font-outfit text-pink-800 dark:text-pink-200 text-sm font-black">Laktasi &amp; Busui (Hale's L1 - L5)</div>
-              <p className="text-[10px] text-pink-600/90 dark:text-pink-300/80 font-medium">Evaluasi Relative Infant Dose (RID &lt; 10% aman)</p>
+              <div className="font-outfit text-pink-800 dark:text-pink-200 text-xs font-black">Laktasi &amp; Busui (Hale's L1 - L5)</div>
+              <p className="text-[9px] text-pink-600/90 dark:text-pink-300/80 font-medium">Evaluasi Relative Infant Dose (RID &lt; 10% aman)</p>
             </div>
-            <span className="px-3 py-1 rounded-full bg-pink-200 dark:bg-pink-900 text-pink-900 dark:text-pink-200 text-[10px] font-mono font-black">
+            <span className="px-2 py-0.5 rounded-full bg-pink-200 dark:bg-pink-900 text-pink-900 dark:text-pink-200 text-[9px] font-bold font-outfit font-black shrink-0">
               Rasio RID &amp; M/P
             </span>
           </div>
@@ -203,18 +201,18 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         btnText: 'text-slate-950'
       },
       renderMicroPreview: () => (
-        <div className="space-y-2 p-3.5 rounded-2xl bg-teal-50/60 dark:bg-[#062026] border border-teal-200/80 dark:border-teal-500/30 text-xs">
-          <div className="flex items-center justify-between pb-2 border-b border-teal-200/50 dark:border-teal-500/20">
-            <span className="font-bold text-teal-900 dark:text-teal-200">Sediaan Cair Tanpa Air (Non-Aqueous):</span>
-            <span className="px-2 py-0.5 rounded-md bg-teal-200 dark:bg-teal-900 text-teal-900 dark:text-teal-200 font-mono font-black text-[11px]">Maks. 90 Hari</span>
+        <div className="space-y-1 p-2 rounded-xl bg-teal-50/60 dark:bg-[#062026] border border-teal-200/80 dark:border-teal-500/30 text-[10.5px]">
+          <div className="flex items-center justify-between pb-1 border-b border-teal-200/50 dark:border-teal-500/20">
+            <span className="font-bold text-teal-900 dark:text-teal-200 text-[10px]">Sediaan Cair Tanpa Air:</span>
+            <span className="px-1.5 py-0.5 rounded bg-teal-200 dark:bg-teal-900 text-teal-900 dark:text-teal-200 font-bold font-outfit text-[9.5px]">Maks. 90 Hari</span>
           </div>
-          <div className="flex items-center justify-between py-1 border-b border-teal-200/50 dark:border-teal-500/20">
-            <span className="font-bold text-teal-900 dark:text-teal-200">Sediaan Berair Dingin (2°C - 8°C):</span>
-            <span className="px-2 py-0.5 rounded-md bg-teal-200 dark:bg-teal-900 text-teal-900 dark:text-teal-200 font-mono font-black text-[11px]">Maks. 14 Hari</span>
+          <div className="flex items-center justify-between py-0.5 border-b border-teal-200/50 dark:border-teal-500/20">
+            <span className="font-bold text-teal-900 dark:text-teal-200 text-[10px]">Sediaan Berair Dingin (2°C - 8°C):</span>
+            <span className="px-1.5 py-0.5 rounded bg-teal-200 dark:bg-teal-900 text-teal-900 dark:text-teal-200 font-bold font-outfit text-[9.5px]">Maks. 14 Hari</span>
           </div>
-          <div className="flex items-center justify-between pt-1">
-            <span className="font-bold text-teal-900 dark:text-teal-200">Sirup Kering Antibiotik Rekonstitusi:</span>
-            <span className="px-2 py-0.5 rounded-md bg-emerald-200 dark:bg-emerald-900 text-emerald-900 dark:text-emerald-200 font-mono font-black text-[11px]">7 - 14 Hari</span>
+          <div className="flex items-center justify-between pt-0.5">
+            <span className="font-bold text-teal-900 dark:text-teal-200 text-[10px]">Sirup Kering Antibiotik Rekonstitusi:</span>
+            <span className="px-1.5 py-0.5 rounded bg-emerald-200 dark:bg-emerald-900 text-emerald-900 dark:text-emerald-200 font-bold font-outfit text-[9.5px]">7 - 14 Hari</span>
           </div>
         </div>
       )
@@ -256,7 +254,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
           </div>
           <div className="p-2.5 rounded-xl bg-sky-50 dark:bg-[#062026] border border-sky-200 dark:border-sky-500/30 flex items-center justify-between text-xs text-sky-800 dark:text-sky-200">
             <span className="font-semibold">Pelarut Teruji:</span>
-            <span className="font-mono font-bold">Dextrose 5% • NaCl 0.9% • Ringer Laktat</span>
+            <span className="font-bold font-sans">Dextrose 5% • NaCl 0.9% • Ringer Laktat</span>
           </div>
         </div>
       )
@@ -293,7 +291,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
           <p className="text-[11px] text-slate-600 dark:text-teal-100/75 leading-relaxed">
             Dilengkapi kop faskes/apotek, nama pasien, rincian obat, aturan pagi/malam, tanda peringatan efek samping, dan tombol langsung kirim ke chat WA tanpa simpan nomor.
           </p>
-          <div className="flex gap-1.5 text-[10px] font-mono pt-1">
+          <div className="flex gap-1.5 text-[10px] font-medium font-sans pt-1">
             <span className="px-2 py-0.5 rounded bg-emerald-200 dark:bg-emerald-900 text-emerald-900 dark:text-emerald-200 font-bold">1-Klik Salin</span>
             <span className="px-2 py-0.5 rounded bg-emerald-200 dark:bg-emerald-900 text-emerald-900 dark:text-emerald-200 font-bold">Langsung Kirim WA</span>
           </div>
@@ -341,7 +339,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
           </div>
           <div className="p-2 rounded-xl bg-indigo-50 dark:bg-[#0a1829] border border-indigo-200 dark:border-indigo-900/40 text-[11px] text-indigo-900 dark:text-indigo-200 flex items-center justify-between font-medium">
             <span>Target Pasien:</span>
-            <span className="font-mono font-bold">Lansia Usia $\ge 65$ Tahun</span>
+            <span className="font-bold font-sans">Lansia Usia $\ge 65$ Tahun</span>
           </div>
         </div>
       )
@@ -387,7 +385,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
           </div>
           <div className="p-2.5 rounded-xl bg-amber-50 dark:bg-[#211604] border border-amber-200 dark:border-amber-900/40 text-[11px] text-amber-900 dark:text-amber-200 flex justify-between items-center font-medium">
             <span>Kelulusan Uji Kompetensi:</span>
-            <span className="font-mono font-bold text-amber-700 dark:text-amber-300">Target First-Taker 100%</span>
+            <span className="font-bold font-sans text-amber-700 dark:text-amber-300">Target First-Taker 100%</span>
           </div>
         </div>
       )
@@ -426,11 +424,11 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         <div className="space-y-2 text-xs">
           <div className="flex items-center justify-between p-2.5 rounded-xl bg-amber-50/80 dark:bg-[#261406] border border-amber-200 dark:border-amber-500/20 font-bold">
             <span className="text-slate-800 dark:text-amber-100">8 Kategori Keluhan Terstandar</span>
-            <span className="text-amber-600 dark:text-amber-400 font-mono text-[11px]">BPOM &amp; OWA 1-3</span>
+            <span className="text-amber-600 dark:text-amber-400 font-medium font-sans text-[11px]">BPOM &amp; OWA 1-3</span>
           </div>
           <div className="flex items-center justify-between p-2.5 rounded-xl bg-rose-50/80 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900/30 font-bold">
             <span className="text-slate-800 dark:text-amber-100">Penapisan Tanda Bahaya (Red Flags)</span>
-            <span className="text-rose-600 dark:text-rose-400 font-mono text-[11px]">Kapan Rujuk Dokter</span>
+            <span className="text-rose-600 dark:text-rose-400 font-medium font-sans text-[11px]">Kapan Rujuk Dokter</span>
           </div>
           <div className="p-2 rounded-xl bg-slate-50 dark:bg-[#261406] border border-slate-200 dark:border-amber-500/20 text-[10.5px] text-slate-600 dark:text-amber-200/75">
             Edukasi terapi non-farmakologis, pencegahan resistensi antibiotik, dan takaran sirup anak.
@@ -465,11 +463,11 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         <div className="space-y-2 text-xs">
           <div className="p-2.5 rounded-xl bg-cyan-50/80 dark:bg-[#042028] border border-cyan-200 dark:border-cyan-500/30 flex justify-between items-center font-bold">
             <span className="text-cyan-900 dark:text-cyan-100">Klirens Ginjal (CrCl / eGFR):</span>
-            <span className="font-mono text-cyan-700 dark:text-cyan-300">Stage 1 - 5 CKD</span>
+            <span className="font-medium font-sans text-cyan-700 dark:text-cyan-300">Stage 1 - 5 CKD</span>
           </div>
           <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-[#062026] border border-slate-200 dark:border-teal-500/20 flex justify-between items-center font-medium text-slate-700 dark:text-teal-200">
             <span>Evaluasi Sirosis Hepar:</span>
-            <span className="font-mono font-bold text-amber-600 dark:text-amber-400">Child-Pugh A, B, C &amp; MELD</span>
+            <span className="font-bold font-sans text-amber-600 dark:text-amber-400">Child-Pugh A, B, C &amp; MELD</span>
           </div>
           <div className="p-2 rounded-xl bg-teal-50 dark:bg-[#062026] text-[10.5px] text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-500/20">
             Dilengkapi penyesuaian interval hemodialisa (HD/CRRT) &amp; berat badan ideal (IBW).
@@ -545,11 +543,11 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         <div className="space-y-2 text-xs">
           <div className="p-2.5 rounded-xl bg-rose-50 dark:bg-rose-950/30 border border-rose-200 dark:border-rose-900/30 flex justify-between items-center font-bold">
             <span className="text-rose-900 dark:text-rose-200">Biotin x Tes Troponin / Tiroid:</span>
-            <span className="font-mono text-rose-600 dark:text-rose-400 text-[10.5px]">Negatif Palsu Fatal</span>
+            <span className="font-medium font-sans text-rose-600 dark:text-rose-400 text-[10.5px]">Negatif Palsu Fatal</span>
           </div>
           <div className="p-2.5 rounded-xl bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/30 flex justify-between items-center font-bold">
             <span className="text-amber-900 dark:text-amber-200">Kuinolon x Rapid Urine Narkoba:</span>
-            <span className="font-mono text-amber-600 dark:text-amber-400 text-[10.5px]">Opiat Positif Palsu</span>
+            <span className="font-medium font-sans text-amber-600 dark:text-amber-400 text-[10.5px]">Opiat Positif Palsu</span>
           </div>
         </div>
       )
@@ -581,7 +579,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         <div className="space-y-2 text-xs">
           <div className="p-2.5 rounded-xl bg-emerald-50 dark:bg-[#062026] border border-emerald-200 dark:border-teal-500/20 flex justify-between items-center font-bold">
             <span className="text-emerald-900 dark:text-emerald-200">Kunyit / Bawang Putih x Antiplatelet:</span>
-            <span className="text-rose-600 dark:text-rose-400 font-mono text-[10.5px]">Risiko Pendarahan</span>
+            <span className="text-rose-600 dark:text-rose-400 font-medium font-sans text-[10.5px]">Risiko Pendarahan</span>
           </div>
           <div className="p-2 rounded-xl bg-slate-50 dark:bg-[#062026] text-[10.5px] text-slate-600 dark:text-teal-200/70 border border-slate-200 dark:border-teal-500/20">
             Panduan lengkap waktu penghentian sediaan herbal 7 - 14 hari sebelum tindakan operasi bedah.
@@ -661,11 +659,11 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         <div className="space-y-2 text-xs">
           <div className="p-2.5 rounded-xl bg-amber-50 dark:bg-[#201504] border border-amber-200 dark:border-amber-900/40 flex justify-between items-center font-bold">
             <span className="text-amber-900 dark:text-amber-200">Overdosis Parasetamol:</span>
-            <span className="font-mono text-emerald-600 dark:text-emerald-400 text-[10.5px]">N-Asetilsistein IV/Oral</span>
+            <span className="font-medium font-sans text-emerald-600 dark:text-emerald-400 text-[10.5px]">N-Asetilsistein IV/Oral</span>
           </div>
           <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-[#062026] border border-slate-200 dark:border-teal-500/20 flex justify-between items-center font-medium">
             <span className="text-slate-700 dark:text-teal-200">Depresi Nafas Opioid:</span>
-            <span className="font-mono font-bold text-rose-600 dark:text-rose-400 text-[10.5px]">Nalokson Titrasi 0.4mg</span>
+            <span className="font-bold font-sans text-rose-600 dark:text-rose-400 text-[10.5px]">Nalokson Titrasi 0.4mg</span>
           </div>
         </div>
       )
@@ -697,7 +695,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         <div className="space-y-2 text-xs">
           <div className="p-2.5 rounded-xl bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900/40 flex justify-between items-center font-bold">
             <span className="text-rose-900 dark:text-rose-200">Tall Man Lettering:</span>
-            <span className="font-mono text-rose-600 dark:text-rose-400 text-[11px]">DOPAmine vs DOBUTamine</span>
+            <span className="font-medium font-sans text-rose-600 dark:text-rose-400 text-[11px]">DOPAmine vs DOBUTamine</span>
           </div>
           <div className="p-2 rounded-xl bg-slate-50 dark:bg-[#062026] text-[10.5px] text-slate-600 dark:text-teal-200/70 border border-slate-200 dark:border-teal-500/20">
             Regulasi penyimpanan ketat elektrolit konsentrat di luar instalasi farmasi.
@@ -732,7 +730,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         <div className="space-y-2 text-xs">
           <div className="p-2.5 rounded-xl bg-teal-50 dark:bg-[#062026] border border-teal-200 dark:border-teal-500/20 flex justify-between items-center font-bold text-teal-900 dark:text-teal-200">
             <span>Koleksi Protokol PNPK Kemenkes:</span>
-            <span className="font-mono text-teal-600 dark:text-teal-400">Terintegrasi EBM</span>
+            <span className="font-medium font-sans text-teal-600 dark:text-teal-400">Terintegrasi EBM</span>
           </div>
           <div className="p-2 rounded-xl bg-slate-50 dark:bg-[#062026] text-[10.5px] text-slate-600 dark:text-teal-200/70 border border-slate-200 dark:border-teal-500/20">
             Lengkap dengan algoritma lini terapi, diagnosis banding, dan target keberhasilan klinis.
@@ -767,7 +765,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         <div className="space-y-2 text-xs">
           <div className="p-2.5 rounded-xl bg-indigo-50 dark:bg-[#0d1633] border border-indigo-200 dark:border-indigo-900/40 flex justify-between items-center font-bold">
             <span className="text-indigo-900 dark:text-indigo-200">Level of Evidence Oxford:</span>
-            <span className="font-mono text-indigo-600 dark:text-indigo-400">Grade A / B / C</span>
+            <span className="font-medium font-sans text-indigo-600 dark:text-indigo-400">Grade A / B / C</span>
           </div>
           <div className="p-2 rounded-xl bg-slate-50 dark:bg-[#062026] text-[10.5px] text-slate-600 dark:text-teal-200/70 border border-slate-200 dark:border-teal-500/20">
             Kompilasi artikel jurnal ber-DOI dan meta-analisis uji acak terkontrol (RCT).
@@ -802,7 +800,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         <div className="space-y-2 text-xs">
           <div className="p-2.5 rounded-xl bg-teal-50 dark:bg-[#062026] border border-teal-200 dark:border-teal-500/20 flex justify-between items-center font-bold">
             <span className="text-teal-900 dark:text-teal-200">Katalog Monografi Resmi:</span>
-            <span className="font-mono text-teal-600 dark:text-teal-400">&gt;10.000 Molekul</span>
+            <span className="font-medium font-sans text-teal-600 dark:text-teal-400">&gt;10.000 Molekul</span>
           </div>
           <div className="p-2 rounded-xl bg-slate-50 dark:bg-[#062026] text-[10.5px] text-slate-600 dark:text-teal-200/70 border border-slate-200 dark:border-teal-500/20">
             Dilengkapi pencarian nama generik, nama dagang, indikasi, dan status NIE BPOM.
@@ -875,7 +873,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         <div className="space-y-2 text-xs">
           <div className="p-2.5 rounded-xl bg-teal-50 dark:bg-[#062026] border border-teal-200 dark:border-teal-500/20 flex justify-between items-center font-bold text-teal-900 dark:text-teal-200">
             <span>Format SOP Resmi:</span>
-            <span className="font-mono text-teal-600 dark:text-teal-400">Siap Cetak &amp; Akreditasi</span>
+            <span className="font-medium font-sans text-teal-600 dark:text-teal-400">Siap Cetak &amp; Akreditasi</span>
           </div>
           <div className="p-2 rounded-xl bg-slate-50 dark:bg-[#062026] text-[10.5px] text-slate-600 dark:text-teal-200/70 border border-slate-200 dark:border-teal-500/20">
             Meliputi alur skrining resep, penyimpanan obat bersuhu dingin, dan konseling PIO.
@@ -910,7 +908,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         <div className="space-y-2 text-xs">
           <div className="p-2.5 rounded-xl bg-sky-50 dark:bg-[#062026] border border-sky-200 dark:border-sky-500/20 flex justify-between items-center font-bold text-sky-900 dark:text-sky-200">
             <span>Koleksi Hukum Terpadu:</span>
-            <span className="font-mono text-sky-600 dark:text-sky-400">UU 17/2023 &amp; Permenkes</span>
+            <span className="font-medium font-sans text-sky-600 dark:text-sky-400">UU 17/2023 &amp; Permenkes</span>
           </div>
           <div className="p-2 rounded-xl bg-slate-50 dark:bg-[#062026] text-[10.5px] text-slate-600 dark:text-teal-200/70 border border-slate-200 dark:border-teal-500/20">
             Panduan hukum komprehensif terkait sanksi, perizinan, dan batas wewenang klinis.
@@ -945,7 +943,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         <div className="space-y-2 text-xs">
           <div className="p-2.5 rounded-xl bg-emerald-50 dark:bg-[#062026] border border-emerald-200 dark:border-teal-500/20 flex justify-between items-center font-bold text-emerald-900 dark:text-emerald-200">
             <span>Teknik Inhaler &amp; Pen Insulin:</span>
-            <span className="font-mono text-emerald-600 dark:text-emerald-400">Step-by-Step Rinci</span>
+            <span className="font-medium font-sans text-emerald-600 dark:text-emerald-400">Step-by-Step Rinci</span>
           </div>
           <div className="p-2 rounded-xl bg-slate-50 dark:bg-[#062026] text-[10.5px] text-slate-600 dark:text-teal-200/70 border border-slate-200 dark:border-teal-500/20">
             Lengkap dengan instruksi penanganan jika lupa dosis dan penyimpanan suhu dingin.
@@ -980,7 +978,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         <div className="space-y-2 text-xs">
           <div className="p-2.5 rounded-xl bg-amber-50 dark:bg-[#201504] border border-amber-200 dark:border-amber-900/40 flex justify-between items-center font-bold text-amber-900 dark:text-amber-300">
             <span>Metode Suku Kata Emas:</span>
-            <span className="font-mono text-amber-600 dark:text-amber-400">Al-MaSi • R-I-P-E-S</span>
+            <span className="font-medium font-sans text-amber-600 dark:text-amber-400">Al-MaSi • R-I-P-E-S</span>
           </div>
           <div className="p-2 rounded-xl bg-slate-50 dark:bg-[#062026] text-[10.5px] text-slate-600 dark:text-teal-200/70 border border-slate-200 dark:border-teal-500/20">
             Disertai rasionalitas formulasi, peringatan interaksi kelasi, dan kuis uji hafalan interaktif.
@@ -1029,7 +1027,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
           </div>
           <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-[#200618] text-[10.5px] text-slate-600 dark:text-pink-100/70 border border-slate-200 dark:border-pink-500/20 flex items-center justify-between">
             <span className="font-semibold">Format Siap Pakai:</span>
-            <span className="font-mono font-bold text-pink-600 dark:text-pink-400">1-Klik Salin Prompt ke ChatGPT / Gemini</span>
+            <span className="font-bold font-sans text-pink-600 dark:text-pink-400">1-Klik Salin Prompt ke ChatGPT / Gemini</span>
           </div>
         </div>
       )
@@ -1075,7 +1073,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
           </div>
           <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-[#062026] text-[10.5px] text-slate-600 dark:text-emerald-100/70 border border-slate-200 dark:border-emerald-500/20 flex items-center justify-between">
             <span className="font-semibold">Standar Penilaian Mutu:</span>
-            <span className="font-mono font-bold text-emerald-600 dark:text-emerald-400">Gyssens Kategori 0 (Tepat &amp; Rasional)</span>
+            <span className="font-bold font-sans text-emerald-600 dark:text-emerald-400">Gyssens Kategori 0 (Tepat &amp; Rasional)</span>
           </div>
         </div>
       )
@@ -1106,7 +1104,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
       renderMicroPreview: () => (
         <div className="space-y-2.5 text-xs">
           <div className="p-2.5 rounded-xl bg-purple-50/80 dark:bg-purple-950/30 border border-purple-200 dark:border-purple-800/40">
-            <div className="flex justify-between items-center text-[10.5px] font-mono text-purple-800 dark:text-purple-200 pb-1 border-b border-purple-200/50 dark:border-purple-800/30">
+            <div className="flex justify-between items-center text-[10.5px] font-medium font-sans text-purple-800 dark:text-purple-200 pb-1 border-b border-purple-200/50 dark:border-purple-800/30">
               <span className="font-bold">Input Resep:</span>
               <span className="font-bold">s. 3 d.d. pulv I d.t.d. p.c. p.r.n.</span>
             </div>
@@ -1184,7 +1182,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
             transform: translateY(0px);
           }
           50% {
-            transform: translateY(-8px);
+            transform: translateY(-3px);
           }
         }
         .animate-floating-card {
@@ -1192,7 +1190,7 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         }
         .animate-floating-card:hover {
           animation-play-state: paused;
-          transform: translateY(-12px);
+          transform: translateY(-3px);
         }
 
         @keyframes floatingShadow {
@@ -1219,19 +1217,186 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         }
       `}</style>
 
-      {/* 1. Quick Pill Selector Tabs (BAGIAN YANG BERGERAK / RUNNING MARQUEE TRACK) */}
+      {/* 1. TOP SPLIT HERO: Left (Search & Title) + Right (Compact Spotlight Card) */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-3.5 lg:gap-5 items-center">
+        
+        {/* Left Column: Hero Action & Search */}
+        {heroContent && (
+          <div className="md:col-span-5 xl:col-span-5 w-full">
+            {heroContent}
+          </div>
+        )}
+
+        {/* Right Column: Compact Spotlight Card */}
+        <div className={`${heroContent ? 'md:col-span-7 xl:col-span-7' : 'col-span-12'} w-full relative group/card`}>
+          
+          {/* Soft Ambient Floating Ground Shadow */}
+          <div className="absolute -bottom-1.5 inset-x-8 h-6 bg-teal-950/20 dark:bg-black/60 blur-lg rounded-full pointer-events-none -z-10 animate-floating-shadow" />
+
+          {/* Floating Card Body - Compact SaaS Tech Style */}
+          <div 
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+            className="animate-floating-card relative bg-white/95 dark:bg-[#04151a]/95 backdrop-blur-xl rounded-2xl border border-teal-100/90 dark:border-teal-500/30 ring-1 ring-slate-900/5 dark:ring-teal-500/20 shadow-[0_12px_30px_-8px_rgba(13,69,65,0.16)] dark:shadow-[0_16px_40px_rgba(0,0,0,0.8)] overflow-hidden transition-all duration-300 hover:shadow-[0_18px_40px_-10px_rgba(13,69,65,0.22)] cursor-default"
+          >
+            {/* Dynamic Ambient Background Glow */}
+            <div className={`absolute -top-24 -right-24 w-60 h-60 bg-gradient-to-br ${currentModule.theme.glow} rounded-full blur-3xl pointer-events-none transition-all duration-700`} />
+            <div className="absolute -bottom-20 -left-20 w-52 h-52 bg-teal-500/10 dark:bg-teal-500/15 rounded-full blur-3xl pointer-events-none" />
+
+            {/* Top Control Bar: Module counter, Badges, & Navigation */}
+            <div className="px-3.5 sm:px-4 py-1.5 sm:py-2 border-b border-slate-100 dark:border-teal-500/20 flex items-center justify-between gap-2 relative z-10 bg-slate-50/80 dark:bg-[#062026]/70">
+              <div className="flex items-center gap-2 min-w-0">
+                <span className="px-2 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/70 text-teal-800 dark:text-teal-300 text-[10px] font-bold font-outfit border border-teal-200/80 dark:border-teal-500/30 flex items-center gap-1 shrink-0">
+                  <span className="w-1.5 h-1.5 rounded-full bg-teal-500 animate-pulse" />
+                  <span>Modul {currentModule.moduleNumber} / {modules.length}</span>
+                </span>
+                <span className={`hidden sm:inline-block px-2 py-0.5 rounded-full ${currentModule.theme.badgeBg} ${currentModule.theme.badgeText} text-[9px] font-black uppercase tracking-wider font-outfit shadow-2xs truncate`}>
+                  {currentModule.badgeTop}
+                </span>
+              </div>
+
+              {/* Navigation Controls */}
+              <div className="flex items-center gap-1 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => setIsPlaying(!isPlaying)}
+                  title={isPlaying ? 'Jeda otomatis' : 'Jalankan otomatis'}
+                  className="p-1 rounded-md bg-white hover:bg-slate-100 dark:bg-[#082a34] dark:hover:bg-[#0d3b48] text-slate-600 dark:text-teal-300 border border-slate-200/80 dark:border-teal-500/30 transition-colors cursor-pointer shadow-2xs"
+                >
+                  {isPlaying ? <Pause className="w-3 h-3" /> : <Play className="w-3 h-3" />}
+                </button>
+                <button
+                  type="button"
+                  onClick={handlePrev}
+                  title="Modul sebelumnya (Panah Kiri)"
+                  className="p-1 rounded-md bg-white hover:bg-slate-100 dark:bg-[#082a34] dark:hover:bg-[#0d3b48] text-slate-600 dark:text-teal-300 border border-slate-200/80 dark:border-teal-500/30 transition-colors cursor-pointer shadow-2xs"
+                >
+                  <ChevronLeft className="w-3 h-3" />
+                </button>
+                <button
+                  type="button"
+                  onClick={handleNext}
+                  title="Modul berikutnya (Panah Kanan)"
+                  className="p-1 rounded-md bg-white hover:bg-slate-100 dark:bg-[#082a34] dark:hover:bg-[#0d3b48] text-slate-600 dark:text-teal-300 border border-slate-200/80 dark:border-teal-500/30 transition-colors cursor-pointer shadow-2xs"
+                >
+                  <ChevronRight className="w-3 h-3" />
+                </button>
+              </div>
+            </div>
+
+            {/* Progress Bar Timer */}
+            <div className="w-full bg-slate-100 dark:bg-slate-800/50 h-0.5 relative overflow-hidden">
+              <div 
+                key={`${currentIndex}-${isPlaying && !isHovered && !isMarqueeHovered}`}
+                className={`h-full bg-gradient-to-r from-teal-500 to-emerald-400 ${
+                  isPlaying && !isHovered && !isMarqueeHovered ? 'animate-spotlight-progress' : 'w-0'
+                }`}
+              />
+            </div>
+
+            {/* Card Content: Compact & Clean Layout */}
+            <div className="p-3 sm:p-3.5 space-y-2 relative z-10">
+              
+              {/* Header: Title & Engine Subtext */}
+              <div>
+                <div className="flex items-center gap-1.5 mb-0.5">
+                  <div className={`p-1 rounded-md ${currentModule.theme.iconBg} ${currentModule.theme.iconColor}`}>
+                    <currentModule.icon className="w-3 h-3" />
+                  </div>
+                  <span className="text-[10px] font-semibold text-teal-700 dark:text-teal-300 font-sans tracking-wide truncate">
+                    {currentModule.badgeEngine}
+                  </span>
+                </div>
+                <h3 className="text-base sm:text-lg font-black text-[#082a24] dark:text-white font-outfit tracking-tight leading-tight">
+                  {currentModule.title}
+                </h3>
+                <p className="text-[11px] text-slate-600 dark:text-teal-100/80 mt-0.5 leading-snug line-clamp-1">
+                  {currentModule.description}
+                </p>
+              </div>
+
+              {/* Live Micro-Preview Box */}
+              <div className="p-2 sm:p-2.5 rounded-xl bg-slate-50/90 dark:bg-[#020d11]/90 border border-slate-200/90 dark:border-teal-500/30 shadow-inner">
+                <div className="flex items-center justify-between pb-1 mb-1.5 border-b border-slate-200/80 dark:border-teal-500/20">
+                  <div className="flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="text-[10px] font-extrabold text-[#082a24] dark:text-white font-outfit">
+                      Live Micro-Preview
+                    </span>
+                  </div>
+                  <span className="text-[9.5px] font-bold font-outfit px-2 py-0.5 rounded bg-teal-100 dark:bg-teal-950 text-teal-800 dark:text-teal-300 border border-teal-200 dark:border-teal-800">
+                    Sistem Klinis
+                  </span>
+                </div>
+
+                {/* Render the specific preview widget */}
+                <div className="min-h-[64px] flex flex-col justify-center">
+                  {currentModule.renderMicroPreview()}
+                </div>
+              </div>
+
+              {/* Card Footer: Target User & CTA Button */}
+              <div className="flex items-center justify-between gap-2 pt-0.5">
+                <div className="flex items-center gap-1 text-[10px] font-bold text-slate-500 dark:text-teal-300/80 truncate">
+                  <Building2 className="w-3 h-3 text-teal-600 dark:text-teal-400 shrink-0" />
+                  <span className="truncate">{currentModule.forTarget}</span>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    if (currentModule.onAction) {
+                      currentModule.onAction();
+                    } else {
+                      onSelectTab(currentModule.tabKey);
+                    }
+                  }}
+                  className={`px-3 py-1.5 rounded-lg bg-gradient-to-r ${currentModule.theme.btnGradient} ${currentModule.theme.btnText} font-bold text-xs shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-1 cursor-pointer font-outfit shrink-0`}
+                >
+                  {currentModule.id === 'swamedikasi' && !currentUser && <Lock className="w-3 h-3 mr-0.5 opacity-80" />}
+                  <span>{currentModule.ctaText}</span>
+                  <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
+                </button>
+              </div>
+
+            </div>
+
+            {/* Bottom Pagination Dots */}
+            <div className="px-3 py-1 bg-slate-50/70 dark:bg-[#03151b]/80 border-t border-slate-100 dark:border-teal-500/20 flex items-center justify-center relative z-10">
+              <div className="flex items-center gap-1 overflow-x-auto max-w-full py-0.5">
+                {modules.map((_, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => handleSelectModule(idx)}
+                    className={`transition-all duration-300 cursor-pointer ${
+                      idx === currentIndex
+                        ? 'w-3.5 h-1 rounded-full bg-teal-500'
+                        : 'w-1 h-1 rounded-full bg-slate-300 dark:bg-teal-900/80 hover:bg-slate-400 dark:hover:bg-teal-700'
+                    }`}
+                    aria-label={`Pilih modul ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      {/* 2. RUNNING MARQUEE TRACK (Strip Ticker 26 Modul di Bawah Hero Grid) */}
       <div 
-        className="relative group/marquee"
+        className="mt-2 sm:mt-2.5 pt-1 relative group/marquee"
         onMouseEnter={() => setIsMarqueeHovered(true)}
         onMouseLeave={() => setIsMarqueeHovered(false)}
       >
-
         {/* Marquee Viewport dengan Fade Mask Kiri & Kanan */}
         <div 
-          className="overflow-hidden py-1 relative [mask-image:linear-gradient(to_right,transparent,black_4%,black_96%,transparent)]"
+          className="overflow-hidden py-0.5 relative [mask-image:linear-gradient(to_right,transparent,black_3%,black_97%,transparent)]"
         >
           {/* Double array untuk seamless infinite loop tanpa jeda */}
-          <div className="animate-running-marquee flex gap-2.5 items-center">
+          <div className="animate-running-marquee flex gap-2 items-center">
             {[...modules, ...modules].map((mod, idx) => {
               const Icon = mod.icon;
               const realIndex = idx % modules.length;
@@ -1241,24 +1406,24 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
                   key={`${mod.id}-${idx}`}
                   type="button"
                   onClick={() => handleSelectModule(realIndex)}
-                  className={`group px-3.5 py-2.5 rounded-2xl border text-xs font-bold transition-all duration-300 flex items-center gap-2.5 shrink-0 cursor-pointer ${
+                  className={`group px-2.5 py-1.5 rounded-lg border text-xs font-bold transition-all duration-300 flex items-center gap-1.5 shrink-0 cursor-pointer ${
                     isActive
-                      ? 'bg-white dark:bg-[#072a34] border-teal-500 dark:border-teal-400 text-teal-900 dark:text-white shadow-lg ring-2 ring-teal-500/30 scale-[1.04]'
-                      : 'bg-white/80 dark:bg-[#03151b]/80 border-slate-200/90 dark:border-teal-500/25 text-slate-600 dark:text-teal-200/75 hover:bg-white dark:hover:bg-[#06242c] hover:border-teal-400/50 hover:scale-[1.02]'
+                      ? 'bg-white dark:bg-[#072a34] border-teal-500 dark:border-teal-400 text-teal-900 dark:text-white shadow-xs ring-1 ring-teal-500/30 scale-[1.02]'
+                      : 'bg-white/80 dark:bg-[#03151b]/80 border-slate-200/90 dark:border-teal-500/25 text-slate-600 dark:text-teal-200/75 hover:bg-white dark:hover:bg-[#06242c] hover:border-teal-400/50 hover:scale-[1.01]'
                   }`}
                 >
-                  <div className={`p-1.5 rounded-xl transition-all ${
+                  <div className={`p-1 rounded-md transition-all ${
                     isActive 
                       ? 'bg-teal-500 text-white dark:text-slate-950 shadow-xs' 
                       : 'bg-slate-100 dark:bg-teal-950/60 text-slate-500 dark:text-teal-400 group-hover:text-teal-600'
                   }`}>
-                    <Icon className="w-3.5 h-3.5" />
+                    <Icon className="w-3 h-3" />
                   </div>
                   <div className="text-left">
-                    <div className="text-[9.5px] font-mono font-black text-slate-400 dark:text-teal-400/70 leading-none">
+                    <div className="text-[8.5px] font-bold font-outfit text-slate-400 dark:text-teal-400/70 leading-none">
                       #{mod.moduleNumber}
                     </div>
-                    <div className="truncate max-w-[130px] font-outfit text-xs font-extrabold mt-0.5">
+                    <div className="truncate max-w-[110px] font-outfit text-[11px] font-extrabold mt-0.5">
                       {mod.shortLabel}
                     </div>
                   </div>
@@ -1269,175 +1434,8 @@ export const SingleColumnFeatureSpotlight: React.FC<SingleColumnFeatureSpotlight
         </div>
       </div>
 
-      {/* 2. Main Spotlight Card (Fokus 1 Kolom Penuh) with Floating / Melayang Effect */}
-      <div className="relative group/card pt-2 pb-6">
-        
-        {/* Soft Ambient Floating Ground Shadow (Detached Underglow) */}
-        <div className="absolute bottom-1 inset-x-8 sm:inset-x-16 h-10 sm:h-12 bg-teal-950/25 dark:bg-black/70 blur-2xl rounded-full pointer-events-none -z-10 animate-floating-shadow" />
-        
-        {/* Floating Card Body */}
-        <div 
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          className="animate-floating-card relative bg-white/95 dark:bg-[#04151a]/95 backdrop-blur-xl rounded-3xl border border-teal-100/90 dark:border-teal-500/30 ring-1 ring-slate-900/5 dark:ring-teal-500/20 shadow-[0_22px_55px_-12px_rgba(13,69,65,0.2),0_10px_25px_-6px_rgba(0,0,0,0.06)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.8)] overflow-hidden transition-all duration-500 hover:shadow-[0_35px_75px_-15px_rgba(13,69,65,0.28),0_14px_35px_-8px_rgba(0,0,0,0.1)] cursor-default"
-        >
-        {/* Dynamic Ambient Background Glow */}
-        <div className={`absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-br ${currentModule.theme.glow} rounded-full blur-3xl pointer-events-none transition-all duration-700`} />
-        <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-teal-500/10 dark:bg-teal-500/15 rounded-full blur-3xl pointer-events-none" />
-
-        {/* Top Control Bar: Progress, Counter & Play/Pause */}
-        <div className="px-6 pt-5 pb-3 border-b border-slate-100 dark:border-teal-500/20 flex flex-wrap items-center justify-between gap-3 relative z-10">
-          <div className="flex items-center gap-2">
-            <span className="px-2.5 py-1 rounded-full bg-slate-100 dark:bg-[#062026] text-slate-700 dark:text-teal-300 text-xs font-mono font-black border border-slate-200 dark:border-teal-500/30 flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
-              <span>Modul {currentModule.moduleNumber} dari {modules.length}</span>
-            </span>
-          </div>
-
-          {/* Navigation Controls */}
-          <div className="flex items-center gap-1.5">
-            <button
-              type="button"
-              onClick={() => setIsPlaying(!isPlaying)}
-              title={isPlaying ? 'Jeda otomatis' : 'Jalankan otomatis'}
-              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-[#062026] dark:hover:bg-[#0a2f38] text-slate-600 dark:text-teal-300 transition-colors cursor-pointer"
-            >
-              {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
-            </button>
-            <div className="h-4 w-px bg-slate-200 dark:bg-teal-500/30 mx-0.5" />
-            <button
-              type="button"
-              onClick={handlePrev}
-              title="Modul sebelumnya (Panah Kiri)"
-              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-[#062026] dark:hover:bg-[#0a2f38] text-slate-600 dark:text-teal-300 transition-colors cursor-pointer"
-            >
-              <ChevronLeft className="w-4 h-4" />
-            </button>
-            <button
-              type="button"
-              onClick={handleNext}
-              title="Modul berikutnya (Panah Kanan)"
-              className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-[#062026] dark:hover:bg-[#0a2f38] text-slate-600 dark:text-teal-300 transition-colors cursor-pointer"
-            >
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-
-        {/* Progress Bar Timer - Pure CSS GPU Thread (Zero React re-renders) */}
-        <div className="w-full bg-slate-100 dark:bg-slate-800/50 h-1 relative overflow-hidden">
-          <div 
-            key={`${currentIndex}-${isPlaying && !isHovered && !isMarqueeHovered}`}
-            className={`h-full bg-gradient-to-r from-teal-500 to-emerald-400 ${
-              isPlaying && !isHovered && !isMarqueeHovered ? 'animate-spotlight-progress' : 'w-0'
-            }`}
-          />
-        </div>
-
-        {/* Card Content (2-Column Desktop Grid or Stacked Mobile) */}
-        <div className="p-6 sm:p-8 lg:p-10 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
-            {/* Left Col (Span 7): Module Identity & Info */}
-            <div className="lg:col-span-7 space-y-4 text-left">
-              
-              {/* Badges */}
-              <div className="flex flex-wrap items-center gap-2">
-                <span className={`px-3 py-1 rounded-full ${currentModule.theme.badgeBg} ${currentModule.theme.badgeText} text-[10px] font-black uppercase tracking-wider font-outfit shadow-xs`}>
-                  {currentModule.badgeTop}
-                </span>
-                <span className="text-[11px] font-mono font-bold text-teal-700 dark:text-teal-300 flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                  <span>{currentModule.badgeEngine}</span>
-                </span>
-              </div>
-
-              {/* Title & Subtitle */}
-              <div>
-                <h3 className="text-2xl sm:text-3xl font-black text-[#082a24] dark:text-white font-outfit tracking-tight leading-tight">
-                  {currentModule.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-teal-100/80 mt-2.5 leading-relaxed">
-                  {currentModule.description}
-                </p>
-              </div>
-
-              {/* Target Users */}
-              <div className="flex items-center gap-2 pt-2 text-xs font-bold text-slate-500 dark:text-teal-300/80">
-                <Building2 className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0" />
-                <span>{currentModule.forTarget}</span>
-              </div>
-
-              {/* CTA Action Button */}
-              <div className="pt-3">
-                <button
-                  type="button"
-                  onClick={() => {
-                    if (currentModule.onAction) {
-                      currentModule.onAction();
-                    } else {
-                      onSelectTab(currentModule.tabKey);
-                    }
-                  }}
-                  className={`w-full sm:w-auto px-7 py-3.5 rounded-full bg-gradient-to-r ${currentModule.theme.btnGradient} ${currentModule.theme.btnText} font-black text-sm shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 cursor-pointer font-outfit`}
-                >
-                  {currentModule.id === 'swamedikasi' && !currentUser && <Lock className="w-4 h-4 mr-0.5 opacity-80" />}
-                  <span>{currentModule.ctaText}</span>
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </button>
-              </div>
-            </div>
-
-            {/* Right Col (Span 5): Micro-Preview Widget Card */}
-            <div className="lg:col-span-5">
-              <div className="p-5 sm:p-6 rounded-3xl bg-slate-50/90 dark:bg-[#020d11]/90 border border-slate-200/90 dark:border-teal-500/30 shadow-inner space-y-4">
-                <div className="flex items-center justify-between pb-3 border-b border-slate-200/80 dark:border-teal-500/20">
-                  <div className="flex items-center gap-2">
-                    <div className={`p-2 rounded-xl ${currentModule.theme.iconBg} ${currentModule.theme.iconColor}`}>
-                      <currentModule.icon className="w-4 h-4" />
-                    </div>
-                    <span className="text-xs font-extrabold text-[#082a24] dark:text-white font-outfit">
-                      Live Micro-Preview
-                    </span>
-                  </div>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-teal-100 dark:bg-teal-950 text-teal-800 dark:text-teal-300 font-bold border border-teal-200 dark:border-teal-800">
-                    Sistem Klinis
-                  </span>
-                </div>
-
-                {/* Render the specific preview widget */}
-                {currentModule.renderMicroPreview()}
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        {/* Bottom Pagination Dots */}
-        <div className="px-6 py-4 bg-slate-50/70 dark:bg-[#03151b]/80 border-t border-slate-100 dark:border-teal-500/20 flex items-center justify-center relative z-10">
-          <div className="flex items-center gap-1 overflow-x-auto max-w-full py-0.5">
-            {modules.map((_, idx) => (
-              <button
-                key={idx}
-                type="button"
-                onClick={() => handleSelectModule(idx)}
-                className={`transition-all duration-300 cursor-pointer ${
-                  idx === currentIndex
-                    ? 'w-5 h-2 rounded-full bg-teal-500'
-                    : 'w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-teal-900/80 hover:bg-slate-400 dark:hover:bg-teal-700'
-                }`}
-                aria-label={`Pilih modul ${idx + 1}`}
-              />
-            ))}
-          </div>
-        </div>
-
-      </div>
-
     </div>
-
-  </div>
-);
+  );
 });
 
 SingleColumnFeatureSpotlight.displayName = 'SingleColumnFeatureSpotlight';

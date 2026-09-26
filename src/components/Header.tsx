@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Logo } from './Logo';
 import { UserProfile } from '../types';
 import { getLatestChangelogEntry } from '../data/systemChangelogData';
@@ -42,7 +42,9 @@ import {
   Wand2,
   Languages,
   Users,
-  ArrowLeft
+  ArrowLeft,
+  Settings,
+  ExternalLink
 } from 'lucide-react';
 import { subscribeVisitorStats, VisitorStats, getVisitorStats } from '../services/visitorStatsService';
 
@@ -97,6 +99,30 @@ export const Header: React.FC<HeaderProps> = ({
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [visitorStats, setVisitorStats] = useState<VisitorStats>(() => getVisitorStats());
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const profileDropdownRef = useRef<HTMLDivElement>(null);
+
+  // Close profile dropdown on outside click or escape
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (profileDropdownRef.current && !profileDropdownRef.current.contains(event.target as Node)) {
+        setIsProfileOpen(false);
+      }
+    };
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsProfileOpen(false);
+      }
+    };
+    if (isProfileOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('keydown', handleKeyDown);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isProfileOpen]);
 
   useEffect(() => {
     const unsubscribe = subscribeVisitorStats((newStats) => {
@@ -117,17 +143,202 @@ export const Header: React.FC<HeaderProps> = ({
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isLanding = activeTab === 'landing' || activeTab === 'pricing' || activeTab === 'faq' || activeTab === 'login';
+  const isLanding = activeTab === 'landing' || activeTab === 'pricing' || activeTab === 'faq' || activeTab === 'login' || activeTab === 'support';
 
-  // Landing Header Rendering - Clean White Glassmorphism with Seamless Light Background
+  // Shared Profile Dropdown Component (NgodingPakeAI Style)
+  const renderProfileDropdown = () => {
+    if (!currentUser) return null;
+    const latest = getLatestChangelogEntry();
+
+    const planLabel = isTrialActive 
+      ? 'Trial' 
+      : (currentUser.role === 'admin' 
+          ? 'Admin' 
+          : (currentUser.subscriptionPlan || 'Free'));
+
+    return (
+      <div className="relative" ref={profileDropdownRef}>
+        {/* Avatar Trigger Button */}
+        <button
+          type="button"
+          onClick={() => setIsProfileOpen(prev => !prev)}
+          className={`relative p-0.5 rounded-full transition-all cursor-pointer focus:outline-none flex items-center justify-center shrink-0 ${
+            isProfileOpen 
+              ? 'ring-2 ring-teal-500 dark:ring-teal-400 shadow-md' 
+              : 'hover:ring-2 hover:ring-slate-300 dark:hover:ring-slate-600'
+          }`}
+          aria-expanded={isProfileOpen}
+          aria-haspopup="true"
+          title={`Akun: ${currentUser.name} (${planLabel})`}
+        >
+          <div className="w-8.5 h-8.5 rounded-full bg-gradient-to-tr from-teal-700 via-teal-600 to-emerald-500 text-white font-black text-xs flex items-center justify-center shadow-xs border border-white/50 dark:border-slate-700 overflow-hidden font-outfit select-none">
+            {currentUser.photoURL ? (
+              <img 
+                src={currentUser.photoURL} 
+                alt={currentUser.name} 
+                className="w-full h-full object-cover" 
+              />
+            ) : (
+              <span>
+                {currentUser.name ? currentUser.name.charAt(0).toUpperCase() : 'U'}
+              </span>
+            )}
+          </div>
+        </button>
+
+        {/* Dropdown Menu Modal/Card (NgodingPakeAI Style) */}
+        {isProfileOpen && (
+          <div 
+            className="absolute right-0 top-full mt-2 w-72 sm:w-80 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-2xl shadow-xl shadow-slate-900/10 dark:shadow-black/60 p-2 z-50 text-left font-sans animate-in fade-in zoom-in-95 duration-150 max-w-[calc(100vw-1.5rem)]"
+            role="menu"
+            aria-orientation="vertical"
+          >
+            {/* User Identity Header */}
+            <div className="px-3 py-2.5 bg-slate-50 dark:bg-slate-800/60 rounded-xl mb-1.5 border border-slate-100 dark:border-slate-800/80">
+              <div className="flex items-center justify-between gap-2">
+                <p className="font-bold text-sm text-slate-900 dark:text-white truncate font-outfit">
+                  {currentUser.name || 'Andry Maulana'}
+                </p>
+                <span className={`text-[10px] font-black uppercase px-2 py-0.5 rounded-full border shrink-0 font-outfit ${
+                  currentUser.role === 'admin'
+                    ? 'bg-amber-100 dark:bg-amber-950/80 text-amber-900 dark:text-amber-300 border-amber-300 dark:border-amber-700'
+                    : isTrialActive
+                      ? 'bg-cyan-100 dark:bg-cyan-950/80 text-cyan-900 dark:text-cyan-300 border-cyan-300 dark:border-cyan-700'
+                      : 'bg-teal-100 dark:bg-teal-950/80 text-teal-800 dark:text-teal-300 border-teal-200 dark:border-teal-800'
+                }`}>
+                  {planLabel}
+                </span>
+              </div>
+              <p className="text-xs text-slate-500 dark:text-slate-400 truncate mt-0.5 font-sans">
+                {currentUser.email || 'andrymaul.aem@gmail.com'}
+              </p>
+            </div>
+
+            <div className="space-y-0.5 text-xs font-semibold text-slate-700 dark:text-slate-200">
+              {/* Admin Hub (Only if admin) */}
+              {currentUser.role === 'admin' && (
+                <a
+                  href={activeTab.startsWith('admin') ? '/dashboard' : '/admin'}
+                  onClick={(e) => {
+                    if (!e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) {
+                      e.preventDefault();
+                      setIsProfileOpen(false);
+                      setActiveTab(activeTab.startsWith('admin') ? 'dashboard' : 'admin');
+                    }
+                  }}
+                  className="w-full flex items-center justify-between px-3 py-2 hover:bg-amber-50 dark:hover:bg-amber-950/40 rounded-xl transition-colors cursor-pointer text-amber-900 dark:text-amber-200 group"
+                  role="menuitem"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-7 h-7 rounded-lg bg-amber-500/15 flex items-center justify-center text-amber-600 dark:text-amber-400 group-hover:scale-110 transition-transform">
+                      <ShieldCheck className="w-4 h-4" />
+                    </div>
+                    <span className="font-bold font-outfit">
+                      {activeTab.startsWith('admin') ? 'Dashboard Medis' : 'Admin Hub'}
+                    </span>
+                  </div>
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-800 dark:text-amber-300 font-outfit">
+                    Pusat Kontrol
+                  </span>
+                </a>
+              )}
+
+              {/* Pengaturan Profil */}
+              <a
+                href="/pengaturan"
+                onClick={(e) => {
+                  if (!e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) {
+                    e.preventDefault();
+                    setIsProfileOpen(false);
+                    setActiveTab('settings');
+                  }
+                }}
+                className="w-full flex items-center gap-2.5 px-3 py-2 hover:bg-slate-100/80 dark:hover:bg-slate-800/70 rounded-xl transition-colors cursor-pointer text-slate-700 dark:text-slate-200"
+                role="menuitem"
+              >
+                <div className="w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400">
+                  <Settings className="w-4 h-4" />
+                </div>
+                <span>Pengaturan</span>
+              </a>
+
+              {/* Bantuan & Support */}
+              <a
+                href="/bantuan"
+                onClick={(e) => {
+                  if (!e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) {
+                    e.preventDefault();
+                    setIsProfileOpen(false);
+                    setActiveTab('support');
+                  }
+                }}
+                className="w-full flex items-center gap-2.5 px-3 py-2 hover:bg-slate-100/80 dark:hover:bg-slate-800/70 rounded-xl transition-colors cursor-pointer text-slate-700 dark:text-slate-200"
+                role="menuitem"
+              >
+                <div className="w-7 h-7 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400">
+                  <HelpCircle className="w-4 h-4" />
+                </div>
+                <span>Bantuan</span>
+              </a>
+
+              {/* Riwayat Update / Changelog */}
+              <a
+                href="/changelog"
+                onClick={(e) => {
+                  if (!e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) {
+                    e.preventDefault();
+                    setIsProfileOpen(false);
+                    setActiveTab('changelog');
+                  }
+                }}
+                className="w-full flex items-center justify-between px-3 py-2 hover:bg-purple-50/70 dark:hover:bg-purple-950/30 rounded-xl transition-colors cursor-pointer text-slate-700 dark:text-slate-300"
+                role="menuitem"
+              >
+                <div className="flex items-center gap-2.5">
+                  <div className="w-7 h-7 rounded-lg bg-purple-100/70 dark:bg-purple-950/50 flex items-center justify-center text-purple-600 dark:text-purple-400">
+                    <Clock className="w-4 h-4" />
+                  </div>
+                  <span>Riwayat Update</span>
+                </div>
+                <span className="font-mono text-[10px] px-1.5 py-0.5 rounded bg-purple-100 dark:bg-purple-900/40 text-purple-800 dark:text-purple-300 font-bold">
+                  {latest.version}
+                </span>
+              </a>
+            </div>
+
+            {/* Separator */}
+            <div className="my-1.5 border-t border-slate-100 dark:border-slate-800" />
+
+            {/* Sign Out Action */}
+            <button
+              type="button"
+              onClick={() => {
+                setIsProfileOpen(false);
+                onLogout();
+              }}
+              className="w-full flex items-center gap-2.5 px-3 py-2 text-xs font-semibold text-slate-600 dark:text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/30 rounded-xl transition-colors cursor-pointer"
+              role="menuitem"
+            >
+              <div className="w-7 h-7 rounded-lg bg-rose-50 dark:bg-rose-950/40 flex items-center justify-center text-rose-500">
+                <LogOut className="w-4 h-4" />
+              </div>
+              <span className="font-outfit">Sign out</span>
+            </button>
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  // Landing Header Rendering - Clean Seamless Background Integration
   if (isLanding) {
     return (
       <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-xs' 
-          : 'bg-white/70 backdrop-blur-md border-b border-teal-100/60 shadow-2xs'
+          ? 'bg-[#daf6f2]/85 backdrop-blur-md border-b border-teal-900/10 shadow-xs' 
+          : 'bg-transparent border-b border-transparent shadow-none'
       }`}>
-        <div className="w-full px-2.5 sm:px-6 lg:px-12 py-2 sm:py-3 flex items-center justify-between gap-1.5 sm:gap-4">
+        <div className="w-full px-3 sm:px-6 lg:px-12 py-2.5 sm:py-3 flex items-center justify-between gap-2 sm:gap-4">
           
           {/* Brand Logo */}
           <a 
@@ -143,20 +354,20 @@ export const Header: React.FC<HeaderProps> = ({
             <Logo size="sm" variant="light" />
           </a>
 
-          {/* Bagian Tengah: Tampilan Jumlah Kunjungan Platform (Hanya tampil di tablet/desktop agar tombol di HP tetap muat leluasa) */}
-          <div className="hidden md:flex items-center gap-1.5 px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-white/90 sm:bg-slate-100/90 border border-slate-200/80 shadow-2xs shrink-0">
-            <Users className="w-3.5 h-3.5 text-teal-600 shrink-0" />
-            <span className="font-mono text-xs sm:text-sm font-black text-slate-900 whitespace-nowrap">
+          {/* Center: Live Visitor Counter Badge */}
+          <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/60 dark:bg-slate-800/60 border border-teal-200/60 dark:border-teal-700/60 shadow-2xs backdrop-blur-xs">
+            <Users className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 shrink-0" />
+            <span className="font-mono text-xs font-black text-slate-900 dark:text-white">
               {formatCompactVisits(visitorStats.totalVisits)}
             </span>
-            <span className="text-[11px] sm:text-xs font-semibold text-slate-500 font-outfit whitespace-nowrap">
+            <span className="text-[11px] font-semibold text-slate-600 dark:text-slate-300 font-outfit">
               Visitor
             </span>
           </div>
 
-          {/* Right Action Buttons: Selalu tampil penuh dan responsif di HP & Desktop */}
-          <div className="flex items-center space-x-1 sm:space-x-2 shrink-0">
-            {/* FAQ Button (Terhubung ke URL /faq) */}
+          {/* Right Action Buttons */}
+          <div className="flex items-center space-x-2 shrink-0">
+            {/* FAQ Button */}
             <a
               href="/faq"
               onClick={(e) => {
@@ -168,17 +379,17 @@ export const Header: React.FC<HeaderProps> = ({
                 window.scrollTo({ top: 0, behavior: 'auto' });
               }}
               title="Pertanyaan Sering Diajukan (/faq)"
-              className={`h-7.5 sm:h-8 px-2 sm:px-3.5 rounded-full text-[11px] sm:text-xs font-bold transition-all flex items-center justify-center gap-1 whitespace-nowrap cursor-pointer font-outfit ${
+              className={`h-8 px-3 rounded-full text-xs font-bold transition-all flex items-center justify-center gap-1 whitespace-nowrap cursor-pointer font-outfit ${
                 activeTab === 'faq'
-                  ? 'text-teal-900 bg-teal-50 border border-teal-300 shadow-xs'
-                  : 'text-slate-700 hover:text-teal-900 bg-white hover:bg-teal-50/80 border border-slate-200/90 hover:border-teal-300 shadow-2xs hover:scale-[1.02] active:scale-95'
+                  ? 'text-teal-900 dark:text-teal-200 bg-teal-50 dark:bg-teal-950/60 border border-teal-300 dark:border-teal-700 shadow-xs'
+                  : 'text-slate-700 dark:text-slate-300 hover:text-teal-900 dark:hover:text-teal-300 bg-white/70 hover:bg-white border border-teal-200/60 shadow-2xs hover:scale-[1.02] active:scale-95'
               }`}
             >
-              <HelpCircle className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-teal-600 shrink-0" />
+              <HelpCircle className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 shrink-0" />
               <span>FAQ</span>
             </a>
 
-            {/* Pricing Button (Terhubung ke URL /pricing) */}
+            {/* Pricing Button */}
             <a
               href="/pricing"
               onClick={(e) => {
@@ -190,13 +401,13 @@ export const Header: React.FC<HeaderProps> = ({
                 window.scrollTo({ top: 0, behavior: 'auto' });
               }}
               title="Lihat Tarif & Lisensi Layanan (/pricing)"
-              className={`h-7.5 sm:h-8 px-2 sm:px-3.5 rounded-full text-[11px] sm:text-xs font-bold transition-all flex items-center justify-center gap-1 whitespace-nowrap cursor-pointer font-outfit ${
+              className={`h-8 px-3 rounded-full text-xs font-bold transition-all flex items-center justify-center gap-1 whitespace-nowrap cursor-pointer font-outfit ${
                 activeTab === 'pricing'
-                  ? 'text-teal-900 bg-teal-50 border border-teal-300 shadow-xs'
-                  : 'text-slate-700 hover:text-teal-900 bg-white hover:bg-teal-50/80 border border-slate-200/90 hover:border-teal-300 shadow-2xs hover:scale-[1.02] active:scale-95'
+                  ? 'text-teal-900 dark:text-teal-200 bg-teal-50 dark:bg-teal-950/60 border border-teal-300 dark:border-teal-700 shadow-xs'
+                  : 'text-slate-700 dark:text-slate-300 hover:text-teal-900 dark:hover:text-teal-300 bg-white/70 hover:bg-white border border-teal-200/60 shadow-2xs hover:scale-[1.02] active:scale-95'
               }`}
             >
-              <CreditCard className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-teal-600 shrink-0" />
+              <CreditCard className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400 shrink-0" />
               <span>Pricing</span>
             </a>
 
@@ -212,41 +423,26 @@ export const Header: React.FC<HeaderProps> = ({
                   window.scrollTo({ top: 0, behavior: 'auto' });
                 }}
                 title="Masuk ke Akun Anda (/login)"
-                className={`h-7.5 sm:h-8 px-2.5 sm:px-4 rounded-full text-[11px] sm:text-xs font-black transition-all flex items-center justify-center whitespace-nowrap shadow-md cursor-pointer font-outfit tracking-wide ${
-                  activeTab === 'login'
-                    ? 'text-white bg-orange-600 ring-2 ring-orange-400 shadow-orange-600/40'
-                    : 'text-white bg-orange-500 hover:bg-orange-600 active:bg-orange-700 shadow-orange-500/30 hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-95'
-                }`}
+                className="h-8 px-4 rounded-full text-xs font-black text-white bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 active:scale-95 shadow-xs hover:shadow-orange-500/25 transition-all flex items-center justify-center whitespace-nowrap cursor-pointer font-outfit tracking-wide"
               >
                 LOG IN
               </a>
             ) : (
-              <div className="flex items-center space-x-1 sm:space-x-1.5">
-                {onOpenProfileModal && (
-                  <button
-                    type="button"
-                    onClick={onOpenProfileModal}
-                    title="Lihat & Edit Profil Akun"
-                    className="text-[11px] sm:text-xs font-bold text-slate-700 hover:text-slate-900 bg-white hover:bg-slate-100 border border-slate-200 px-2 sm:px-3 py-1 sm:py-1.5 rounded-full transition-all flex items-center gap-1 cursor-pointer shadow-2xs"
-                  >
-                    <User className="w-3 h-3 text-teal-600" />
-                    <span className="max-w-[70px] sm:max-w-[100px] truncate">{currentUser.name}</span>
-                  </button>
-                )}
-                <button
-                  onClick={() => setActiveTab('dashboard')}
-                  className="text-[11px] sm:text-xs font-bold text-slate-950 bg-teal-400 hover:bg-teal-300 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full shadow-xs transition-all flex items-center gap-1 cursor-pointer"
+              <div className="flex items-center gap-2">
+                <a
+                  href="/dashboard"
+                  onClick={(e) => {
+                    if (!e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) {
+                      e.preventDefault();
+                      setActiveTab('dashboard');
+                    }
+                  }}
+                  className="text-xs font-bold text-slate-950 bg-teal-400 hover:bg-teal-300 px-3 py-1.5 rounded-full shadow-xs transition-all flex items-center gap-1 cursor-pointer font-outfit"
                 >
                   <Sparkles className="w-3 h-3" />
                   <span className="hidden xs:inline sm:inline">Dashboard</span>
-                </button>
-                <button
-                  onClick={onLogout}
-                  title="Keluar"
-                  className="p-1 sm:p-1.5 text-slate-400 hover:text-rose-500 rounded-full hover:bg-rose-50 transition-all cursor-pointer"
-                >
-                  <LogOut className="w-3.5 h-3.5" />
-                </button>
+                </a>
+                {renderProfileDropdown()}
               </div>
             )}
           </div>
@@ -266,6 +462,24 @@ export const Header: React.FC<HeaderProps> = ({
           iconColor: 'text-amber-500 bg-amber-500/10 border-amber-400/30',
           headerBg: 'bg-gradient-to-r from-amber-50/85 via-teal-50/40 to-white/95 dark:from-[#110c03]/95 dark:via-[#161205]/90 dark:to-[#090702]/95 border-b border-amber-200/60 dark:border-amber-500/25',
           glowAccent: 'from-amber-500/10 via-teal-500/5 to-transparent'
+        };
+      case 'settings':
+        return {
+          title: 'Pengaturan Akun & Profil',
+          desc: 'Kelola informasi identitas, instansi faskes, kontak dan izin praktik klinis Anda',
+          icon: Settings,
+          iconColor: 'text-teal-700 bg-teal-50 border-teal-200/80',
+          headerBg: 'bg-white/95 border-b border-slate-200/80 shadow-xs',
+          glowAccent: 'from-teal-500/10 via-emerald-500/5 to-transparent'
+        };
+      case 'support':
+        return {
+          title: 'Bantuan & Support',
+          desc: 'Hubungi tim bantuan FarmasiDruggist via Email dan Telegram',
+          icon: HelpCircle,
+          iconColor: 'text-orange-600 bg-orange-50 border-orange-200/80',
+          headerBg: 'bg-white/95 border-b border-slate-200/80 shadow-xs',
+          glowAccent: 'from-orange-500/10 via-amber-500/5 to-transparent'
         };
       case 'drugs':
         return {
@@ -578,46 +792,54 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   const currentTabMeta = getTabTitle(activeTab);
-  const { title, desc, icon: TabIcon, iconColor, headerBg, glowAccent } = currentTabMeta;
+  const { title, desc, icon: TabIcon, iconColor } = currentTabMeta;
 
   return (
-    <header className={`sticky top-0 z-40 transition-all duration-300 px-4 sm:px-6 lg:px-8 py-3 print:hidden backdrop-blur-2xl shadow-xs relative overflow-hidden ${headerBg}`}>
-      {/* Subtle Dynamic Ambient Glow Accent */}
-      <div className={`absolute -top-12 left-1/4 w-96 h-24 bg-gradient-to-b ${glowAccent} blur-3xl pointer-events-none -z-10`} />
-
-      <div className="flex items-center justify-between gap-4 relative z-10">
+    <header className="sticky top-0 z-40 transition-all duration-300 px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3 print:hidden bg-white/95 backdrop-blur-xl border-b border-slate-200/80 shadow-xs relative overflow-visible">
+      <div className="flex items-center justify-between gap-3 relative z-10">
         
-        {/* Left: Brand Logo & Navigation State (Permanently in corner) */}
+        {/* Left: Brand Logo & Navigation State */}
         <div className="flex items-center gap-2.5 sm:gap-4 min-w-0">
-          <button 
-            onClick={() => setActiveTab(currentUser ? 'dashboard' : 'landing')}
-            className="focus:outline-none flex items-center gap-1.5 sm:gap-2 group text-left cursor-pointer transition-transform hover:scale-[1.02] p-1 -ml-1 rounded-2xl hover:bg-slate-100/60 dark:hover:bg-slate-800/50 shrink-0"
+          <a 
+            href={currentUser ? '/dashboard' : '/'}
+            onClick={(e) => {
+              if (!e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) {
+                e.preventDefault();
+                setActiveTab(currentUser ? 'dashboard' : 'landing');
+              }
+            }}
+            className="focus:outline-none flex items-center gap-1.5 sm:gap-2 group text-left cursor-pointer transition-transform hover:scale-[1.02] p-1 -ml-1 rounded-2xl hover:bg-slate-100/60 shrink-0"
             title="FARMASIDRUGGIST - Klik untuk Kembali ke Dashboard Utama"
           >
             <Logo size="sm" variant="light" />
-          </button>
+          </a>
 
-          <div className="hidden sm:block w-px h-6 bg-slate-200/90 dark:bg-slate-800 shrink-0" />
+          {activeTab !== 'dashboard' && (
+            <div className="hidden sm:block w-px h-6 bg-slate-200/90 shrink-0" />
+          )}
 
           {activeTab === 'dashboard' ? (
             <div className="hidden md:flex items-center gap-2">
-              <span className="text-xs font-black uppercase tracking-wider text-teal-800 dark:text-teal-300 bg-teal-50 dark:bg-teal-950/60 px-2.5 py-1 rounded-xl border border-teal-200/80 dark:border-teal-800/60 font-outfit">
+              <span className="text-xs font-black uppercase tracking-wider text-teal-800 bg-teal-50 px-2.5 py-1 rounded-xl border border-teal-200/80 font-outfit">
                 Dashboard Utama
-              </span>
-              <span className="text-xs text-slate-500 dark:text-slate-400 hidden xl:inline font-medium">
-                • Portal Akses Modul Klinis Terintegrasi
               </span>
             </div>
           ) : (
             <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-              <button
-                onClick={() => setActiveTab('dashboard')}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/95 dark:bg-slate-900/95 hover:bg-teal-50 dark:hover:bg-teal-950/40 text-slate-700 dark:text-slate-200 hover:text-teal-700 dark:hover:text-teal-300 border border-slate-200/90 dark:border-slate-800 text-xs font-extrabold font-outfit transition-all cursor-pointer hover:scale-105 shadow-2xs shrink-0"
-                title="Kembali ke Dashboard Utama"
+              <a
+                href="/dashboard"
+                onClick={(e) => {
+                  if (!e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) {
+                    e.preventDefault();
+                    setActiveTab('dashboard');
+                  }
+                }}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white hover:bg-teal-50 text-slate-700 hover:text-teal-700 border border-slate-200/90 text-xs font-extrabold font-outfit transition-all cursor-pointer hover:scale-105 shadow-2xs shrink-0"
+                title="Kembali ke Dashboard Utama (/dashboard)"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
                 <span>Dashboard</span>
-              </button>
+              </a>
 
               {TabIcon && (
                 <div className={`hidden sm:flex w-8 h-8 rounded-xl border items-center justify-center shrink-0 shadow-2xs ${iconColor}`}>
@@ -626,7 +848,7 @@ export const Header: React.FC<HeaderProps> = ({
               )}
 
               <div className="min-w-0">
-                <h1 className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white tracking-tight truncate font-outfit">
+                <h1 className="text-sm sm:text-base font-extrabold text-slate-900 tracking-tight truncate font-outfit">
                   {title}
                 </h1>
               </div>
@@ -634,163 +856,45 @@ export const Header: React.FC<HeaderProps> = ({
           )}
         </div>
 
-        {/* Right Header Actions */}
-        <div className="flex items-center gap-2.5 sm:gap-3">
+        {/* Right Header Actions: Clean NgodingPakeAI Style */}
+        <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+          
+          {/* Plan Status Pill */}
+          <span className="text-[11px] sm:text-xs font-semibold text-slate-500 dark:text-slate-400 px-2 sm:px-2.5 py-1 rounded-full bg-slate-100/90 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 font-outfit shrink-0">
+            {isTrialActive ? 'Trial' : (currentUser?.subscriptionPlan === 'pro' || currentUser?.subscriptionPlan === 'Pro' || currentUser?.role === 'admin' ? 'Pro' : 'Free')}
+          </span>
 
-          {/* Clinical Database Live Version Pill */}
-          {(() => {
-            const latest = getLatestChangelogEntry();
-            const dateShort = latest.releaseDate.split(' ')[0] + ' ' + (latest.releaseDate.split(' ')[1] || '').slice(0, 3);
-            const timeShort = latest.releaseTime.replace(' WIB', '');
-            return (
-              <button
-                onClick={() => setActiveTab('changelog')}
-                title={`Audit Trail: Riwayat Pembaruan Data Medis & FORNAS (${latest.releaseDate}, ${latest.releaseTime}) - Buka Halaman Riwayat Update Data`}
-                className="h-9 px-3 rounded-full text-xs font-bold text-purple-900 dark:text-purple-200 bg-purple-500/15 hover:bg-purple-500/25 border border-purple-500/30 hover:border-fuchsia-500/60 shadow-2xs cursor-pointer font-outfit hover:scale-105 transition-all flex items-center gap-1.5 shrink-0"
-              >
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-fuchsia-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-fuchsia-500"></span>
-                </span>
-                <span className="font-mono">{latest.version}</span>
-                <span className="hidden sm:inline text-[11px] text-purple-700 dark:text-purple-300 font-semibold">• {dateShort} {timeShort}</span>
-              </button>
-            );
-          })()}
-
-          {/* Telegram Community Join Button (Icon-only circle) */}
+          {/* Upgrade CTA Button (Identical to NgodingPakeAI Orange Button) */}
           <a
-            href="https://t.me/+lHiIMC_TdoM2NTk1"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Gabung Komunitas Telegram Apoteker & Tenaga Kesehatan FarmasiDruggist"
-            className="w-9 h-9 rounded-full bg-[#229ED9]/15 hover:bg-[#229ED9]/25 text-[#1b8bc2] dark:text-sky-300 border border-[#229ED9]/40 hover:border-[#229ED9]/70 flex items-center justify-center transition-all shadow-2xs hover:scale-105 shrink-0"
-            aria-label="Gabung Komunitas Telegram"
+            href="/pricing"
+            onClick={(e) => {
+              if (!e.ctrlKey && !e.metaKey && !e.shiftKey && e.button === 0) {
+                e.preventDefault();
+                setActiveTab('pricing');
+              }
+            }}
+            title="Lihat Daftar Paket, Tarif Layanan & Lisensi (/pricing)"
+            className="h-8 sm:h-8.5 px-3 sm:px-4 rounded-full text-xs font-black text-white bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 active:scale-95 shadow-xs hover:shadow-orange-500/25 transition-all cursor-pointer font-outfit tracking-wide flex items-center gap-1 shrink-0"
           >
-            <Send className="w-4 h-4 fill-[#229ED9] dark:fill-sky-300 -translate-x-0.5 translate-y-0.5" />
+            <span>Upgrade</span>
           </a>
 
-          {/* Paket & Tarif Button (Akses Permanen di Header) */}
-          <button
-            onClick={() => setActiveTab('pricing')}
-            title="Lihat Daftar Paket, Tarif Layanan & Lisensi (/pricing)"
-            className={`h-9 px-3 sm:px-3.5 rounded-full text-xs font-bold transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer font-outfit shrink-0 ${
-              activeTab === 'pricing'
-                ? 'bg-amber-500 text-slate-950 font-black shadow-xs ring-2 ring-amber-400'
-                : 'bg-white dark:bg-slate-900 hover:bg-amber-50 dark:hover:bg-amber-950/40 text-slate-700 dark:text-slate-200 hover:text-amber-800 dark:hover:text-amber-300 border border-slate-200 dark:border-slate-800 hover:border-amber-400 hover:scale-105'
-            }`}
-          >
-            <CreditCard className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
-            <span>Paket & Tarif</span>
-          </button>
-
-          {/* Admin Hub Dedicated Access Button */}
-          {currentUser?.role === 'admin' && (
-            <button
-              onClick={() => setActiveTab(activeTab.startsWith('admin') ? 'dashboard' : 'admin')}
-              title={activeTab.startsWith('admin') ? 'Kembali ke Dashboard Klinis' : 'Buka Pusat Kontrol Administrator'}
-              className={`h-9 px-3.5 rounded-full text-xs font-black transition-all flex items-center gap-1.5 shadow-xs cursor-pointer font-outfit shrink-0 ${
-                activeTab.startsWith('admin')
-                  ? 'bg-amber-500 text-slate-950 ring-2 ring-amber-300 shadow-amber-500/30 hover:scale-105'
-                  : 'bg-amber-500/15 hover:bg-amber-500/25 text-amber-800 dark:text-amber-300 border border-amber-400/40 hover:border-amber-400 hover:scale-105'
-              }`}
-            >
-              <ShieldCheck className="w-3.5 h-3.5" />
-              <span>{activeTab.startsWith('admin') ? 'Dashboard Medis' : 'Admin Hub'}</span>
-            </button>
-          )}
-
-          {/* Trial Active Badge */}
-          {isTrialActive && (
-            <button
-              onClick={onOpenPricingModal}
-              title={`Masa Uji Coba Pro Sedang Aktif: ${trialRemainingText || 'Aktif'} - Klik untuk Ambil Promo Permanen`}
-              className="h-9 px-3 rounded-full text-xs font-black text-amber-950 dark:text-amber-200 bg-amber-400/90 dark:bg-amber-950/80 border border-amber-500/50 shadow-xs cursor-pointer font-outfit hover:scale-105 transition-all flex items-center gap-1.5 shrink-0"
-            >
-              <Clock className="w-3.5 h-3.5 text-amber-950 dark:text-amber-300 animate-pulse" />
-              <span>Trial: {trialRemainingText || 'Aktif'}</span>
-            </button>
-          )}
-
-          {/* Quick Trial Start Button for Starter Users and Admin Testing */}
-          {isTrialEnabled && currentUser && !isTrialActive && (!hasClaimedTrial || currentUser.role === 'admin') && onStartTrial && (
-            <button
-              onClick={onStartTrial}
-              title="Coba Gratis Paket Pro Selama 3 Hari"
-              className="h-9 px-3.5 rounded-full text-xs font-black text-white bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-400 hover:to-cyan-500 transition-all shadow-xs cursor-pointer font-outfit hover:scale-105 flex items-center gap-1.5 shrink-0"
-            >
-              <Sparkles className="w-3.5 h-3.5 fill-white" />
-              <span>Coba Pro</span>
-            </button>
-          )}
-
-          {/* User Account / Auth Actions */}
-          {!currentUser ? (
-            <div className="flex items-center gap-2 font-outfit">
-              <a
-                href="/login"
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (window.location.pathname !== '/login') {
-                    window.history.pushState(null, '', '/login');
-                  }
-                  setActiveTab('login');
-                  window.scrollTo({ top: 0, behavior: 'auto' });
-                }}
-                className={`h-9 px-3.5 text-xs font-bold rounded-full border transition-colors cursor-pointer shrink-0 flex items-center justify-center ${
-                  activeTab === 'login'
-                    ? 'text-teal-900 bg-teal-100 border-teal-400'
-                    : 'text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700'
-                }`}
-              >
-                Masuk
-              </a>
-              <button
-                onClick={onOpenPricingModal}
-                className="h-9 px-3.5 text-xs font-bold text-white bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 rounded-full shadow-xs transition-all cursor-pointer hover:scale-[1.02] shrink-0"
-              >
-                Berlangganan
-              </button>
-            </div>
+          {/* User Profile Avatar with Popover Dropdown Menu */}
+          {currentUser ? (
+            renderProfileDropdown()
           ) : (
-            <div className="flex items-center gap-2">
-              {/* Header profile chip on desktop (clickable to edit profile) */}
-              <button
-                type="button"
-                onClick={onOpenProfileModal}
-                title={`Profil: ${currentUser.name} (${currentUser.subscriptionPlan}) - Klik untuk Edit Profil`}
-                className="hidden sm:flex items-center gap-2 h-9 pl-2 pr-2.5 bg-slate-50 dark:bg-slate-900 hover:bg-teal-50 dark:hover:bg-teal-950/40 rounded-full border border-slate-200 dark:border-slate-800 hover:border-teal-400 dark:hover:border-teal-700 shadow-2xs transition-all cursor-pointer group shrink-0"
-              >
-                <div className="w-6 h-6 rounded-full bg-teal-500/20 text-teal-700 dark:text-teal-300 font-black text-[11px] flex items-center justify-center font-outfit shrink-0">
-                  {currentUser.name ? currentUser.name.charAt(0).toUpperCase() : 'U'}
-                </div>
-                <span className="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover:text-teal-700 dark:group-hover:text-teal-300 font-outfit max-w-[120px] truncate">
-                  {currentUser.name.split(' ')[0]}
-                </span>
-                {isTrialActive ? (
-                  <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-amber-100 dark:bg-amber-950/70 text-amber-900 dark:text-amber-200 border border-amber-300 dark:border-amber-700 flex items-center gap-0.5 font-outfit shrink-0">
-                    <Sparkles className="w-2.5 h-2.5 text-amber-500" />
-                    Trial
-                  </span>
-                ) : (
-                  <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-teal-50 dark:bg-teal-950/60 text-teal-700 dark:text-teal-300 border border-teal-200 dark:border-teal-800 flex items-center gap-0.5 font-outfit shrink-0">
-                    <ShieldCheck className="w-2.5 h-2.5 text-teal-600 dark:text-teal-400" />
-                    {currentUser.subscriptionPlan}
-                  </span>
-                )}
-              </button>
-
-              {/* Logout Button (Icon-only circle) */}
-              <button
-                onClick={onLogout}
-                title="Keluar / Logout dari Akun"
-                className="w-9 h-9 rounded-full text-rose-700 dark:text-rose-300 bg-rose-50 dark:bg-rose-950/40 hover:bg-rose-100 dark:hover:bg-rose-900/60 border border-rose-200 dark:border-rose-800/60 transition-all flex items-center justify-center cursor-pointer hover:scale-105 shadow-2xs shrink-0"
-                aria-label="Keluar / Logout"
-              >
-                <LogOut className="w-4 h-4" />
-              </button>
-            </div>
+            <a
+              href="/login"
+              onClick={(e) => {
+                e.preventDefault();
+                setActiveTab('login');
+              }}
+              className="h-8.5 px-4 text-xs font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-full transition-colors cursor-pointer font-outfit"
+            >
+              Masuk
+            </a>
           )}
+
         </div>
 
       </div>

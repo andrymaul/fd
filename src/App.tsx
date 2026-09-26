@@ -4,6 +4,7 @@ import { Footer } from './components/Footer';
 import { LandingPage } from './components/LandingPage';
 import { PricingPage } from './components/PricingPage';
 import { FaqPage } from './components/FaqPage';
+import { HelpSupportPage } from './components/HelpSupportPage';
 import { Dashboard } from './components/Dashboard';
 import { DrugDirectory } from './components/DrugDirectory';
 import { InteractionChecker } from './components/InteractionChecker';
@@ -12,6 +13,7 @@ import { ProFeatureGate } from './components/ProFeatureGate';
 import { AuthModal } from './components/AuthModal';
 import { LoginPage } from './components/LoginPage';
 import { ClinicalTabSkeleton } from './components/ClinicalTabSkeleton';
+import { getTabFromPath, getPathFromTab } from './utils/routes';
 
 // === RESILIENT DYNAMIC LAZY LOADER ===
 // Prevents React crash: "Element type is invalid. Received a promise that resolves to: undefined"
@@ -106,6 +108,7 @@ const EducationPromptGenerator = safeLazy(() => import('./components/EducationPr
 const AntimicrobialStewardshipManager = safeLazy(() => import('./components/AntimicrobialStewardshipManager'), 'AntimicrobialStewardshipManager');
 const LatinAbbreviationsDictionary = safeLazy(() => import('./components/LatinAbbreviationsDictionary'), 'LatinAbbreviationsDictionary');
 const DataUpdateHistoryView = safeLazy(() => import('./components/DataUpdateHistoryView'), 'DataUpdateHistoryView');
+const SettingsPage = safeLazy(() => import('./components/SettingsPage'), 'SettingsPage');
 
 import { Drug, DrugInteraction, UserProfile, InteractionCheckRecord, SeverityLevel, PricingPlan, DrugFoodInteraction, TherapeuticDuplication, SystemAuditLog, AuditActionType, AdminUser, ClinicBrandingSettings, PaymentMethodSettings, TrialSettings, DEFAULT_TRIAL_SETTINGS } from './types';
 import { INITIAL_DRUGS, INITIAL_INTERACTIONS, PRICING_PLANS, SAMPLE_FOOD_INTERACTIONS, SAMPLE_THERAPEUTIC_DUPLICATIONS } from './data/ddinterData';
@@ -181,7 +184,7 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<string>(() => {
     try {
       if (typeof window !== 'undefined') {
-        const path = window.location.pathname.toLowerCase();
+        const path = window.location.pathname;
         const hash = window.location.hash.toLowerCase();
         // Bersihkan hash legacy #pricing atau #pricing-section jika ada di URL browser
         if (hash === '#pricing' || hash === '#pricing-section') {
@@ -189,17 +192,10 @@ export default function App() {
             window.history.replaceState(null, '', path === '/pricing' ? '/pricing' : '/');
           } catch (e) {}
         }
-        if (path === '/pricing' || path === '/pricing/') {
-          return 'pricing';
-        }
-        if (path === '/faq' || path === '/faq/') {
-          return 'faq';
-        }
-        if (path === '/login' || path === '/login/' || path === '/masuk') {
-          return 'login';
-        }
-        if (path === '/' || path === '') {
-          return 'landing';
+        
+        const matchedTab = getTabFromPath(path);
+        if (matchedTab) {
+          return matchedTab;
         }
       }
       const savedUser = localStorage.getItem('farmasi_current_user');
@@ -215,7 +211,7 @@ export default function App() {
       const savedTab = localStorage.getItem('farmasi_active_tab');
       if (savedTab) {
         // Jangan pernah me-restore tab 'pricing', 'faq', atau 'login' dari session lama agar tidak membuka otomatis
-        if (savedTab === 'pricing' || savedTab === 'faq' || savedTab === 'login') {
+        if (savedTab === 'pricing' || savedTab === 'faq' || savedTab === 'login' || savedTab === 'support') {
           localStorage.setItem('farmasi_active_tab', 'landing');
           return 'landing';
         }
@@ -241,11 +237,11 @@ export default function App() {
   const [pendingTargetTab, setPendingTargetTab] = useState<string | null>(null);
   const [preselectedSwamedikasiProtocolId, setPreselectedSwamedikasiProtocolId] = useState<string | null>(null);
 
-  // Dedicated route listener for /pricing, /faq, and URL synchronization
+  // Dedicated route listener for URL synchronization and popstate
   useEffect(() => {
     const handleUrlRouting = () => {
       if (typeof window === 'undefined') return;
-      const path = window.location.pathname.toLowerCase();
+      const path = window.location.pathname;
       const hash = window.location.hash.toLowerCase();
 
       // Bersihkan hash otomatis
@@ -255,31 +251,52 @@ export default function App() {
         } catch (e) {}
       }
 
-      if (path === '/pricing' || path === '/pricing/') {
-        setActiveTab((prev) => (prev !== 'pricing' ? 'pricing' : prev));
-      } else if (path === '/faq' || path === '/faq/') {
-        setActiveTab((prev) => (prev !== 'faq' ? 'faq' : prev));
-      } else if (path === '/login' || path === '/login/' || path === '/masuk') {
-        setActiveTab((prev) => (prev !== 'login' ? 'login' : prev));
+      const matchedTab = getTabFromPath(path);
+      if (matchedTab) {
+        // Guard internal tabs if not logged in
+        if (!currentUser && matchedTab !== 'landing' && matchedTab !== 'pricing' && matchedTab !== 'faq' && matchedTab !== 'login' && matchedTab !== 'support') {
+          setPendingTargetTab(matchedTab);
+          if (window.location.pathname !== '/login') {
+            window.history.replaceState(null, '', '/login');
+          }
+          setActiveTab('login');
+          return;
+        }
+
+        // Guard admin tabs if not admin
+        if (matchedTab.startsWith('admin') && currentUser?.role !== 'admin') {
+          setActiveTab('dashboard');
+          window.history.replaceState(null, '', '/dashboard');
+          return;
+        }
+
+        setActiveTab((prev) => (prev !== matchedTab ? matchedTab : prev));
       } else if (path === '/' || path === '') {
-        setActiveTab((prev) => (prev === 'pricing' || prev === 'faq' || prev === 'login' ? 'landing' : prev));
+        setActiveTab((prev) => (prev === 'pricing' || prev === 'faq' || prev === 'login' || prev === 'support' ? 'landing' : prev));
       }
     };
 
     handleUrlRouting();
     window.addEventListener('popstate', handleUrlRouting);
     return () => window.removeEventListener('popstate', handleUrlRouting);
-  }, []);
+  }, [currentUser]);
 
-  // Redirect pengguna yang sudah login dari halaman /login ke dashboard
+  // Redirect pengguna yang sudah login dari halaman /login ke tab tujuan atau dashboard
   useEffect(() => {
     if (currentUser && activeTab === 'login') {
-      if (typeof window !== 'undefined' && (window.location.pathname === '/login' || window.location.pathname === '/login/' || window.location.pathname === '/masuk')) {
-        window.history.replaceState(null, '', '/');
+      const isLoginPath = typeof window !== 'undefined' && 
+        (window.location.pathname === '/login' || window.location.pathname === '/login/' || window.location.pathname === '/masuk');
+      
+      const targetTab = pendingTargetTab || 'dashboard';
+      const targetPath = getPathFromTab(targetTab);
+
+      if (isLoginPath) {
+        window.history.replaceState(null, '', targetPath);
       }
-      setActiveTab('dashboard');
+      setActiveTab(targetTab);
+      setPendingTargetTab(null);
     }
-  }, [currentUser, activeTab]);
+  }, [currentUser, activeTab, pendingTargetTab]);
 
   // Clinical Clean Light Mode - Locked permanently for highest contrast & professional medical clarity
   const theme = 'light';
@@ -835,7 +852,7 @@ export default function App() {
   }, [currentUser]);
 
   useEffect(() => {
-    if (activeTab && activeTab !== 'pricing' && activeTab !== 'faq' && activeTab !== 'login') {
+    if (activeTab && activeTab !== 'pricing' && activeTab !== 'faq' && activeTab !== 'login' && activeTab !== 'support') {
       localStorage.setItem('farmasi_active_tab', activeTab);
     }
   }, [activeTab]);
@@ -972,18 +989,21 @@ export default function App() {
     }
   }, [currentUser]);
 
-  // Protective guard: if not logged in or non-admin on restricted tab, redirect to landing (allow pricing, faq & login)
+  // Protective guard: if not logged in or non-admin on restricted tab, redirect to login/landing
   useEffect(() => {
     if (!currentUser) {
       const savedUser = localStorage.getItem('farmasi_current_user');
       if (!savedUser || savedUser === 'null_session') {
-        if (activeTab !== 'landing' && activeTab !== 'pricing' && activeTab !== 'faq' && activeTab !== 'login') {
-          setActiveTab('landing');
-          localStorage.setItem('farmasi_active_tab', 'landing');
+        if (activeTab !== 'landing' && activeTab !== 'pricing' && activeTab !== 'faq' && activeTab !== 'login' && activeTab !== 'support') {
+          setPendingTargetTab(activeTab);
+          setActiveTab('login');
+          window.history.replaceState(null, '', '/login');
+          localStorage.setItem('farmasi_active_tab', 'login');
         }
       }
     } else if (currentUser && currentUser.role !== 'admin' && (activeTab === 'admin' || activeTab.startsWith('admin-'))) {
       setActiveTab('dashboard');
+      window.history.replaceState(null, '', '/dashboard');
       localStorage.setItem('farmasi_active_tab', 'dashboard');
     }
   }, [currentUser, activeTab]);
@@ -1002,46 +1022,10 @@ export default function App() {
     if (targetTab === 'competency-center' || targetTab === 'ukmppai') targetTab = 'competency';
     if (targetTab === 'uktvk' || targetTab === 'uktvf') targetTab = 'competency-vokasi';
     if (targetTab === 'drug-notes' || targetTab === 'hafalan' || targetTab === 'jembatan-keledai') targetTab = 'drug-notes';
-
-    if (targetTab === 'pricing') {
-      if (window.location.pathname !== '/pricing') {
-        window.history.pushState(null, '', '/pricing');
-      }
-      setActiveTab('pricing');
-      window.scrollTo({ top: 0, behavior: 'auto' });
-      return;
-    }
-
-    if (targetTab === 'faq') {
-      if (window.location.pathname !== '/faq') {
-        window.history.pushState(null, '', '/faq');
-      }
-      setActiveTab('faq');
-      window.scrollTo({ top: 0, behavior: 'auto' });
-      return;
-    }
-
-    if (targetTab === 'login') {
-      if (window.location.pathname !== '/login') {
-        window.history.pushState(null, '', '/login');
-      }
-      setActiveTab('login');
-      window.scrollTo({ top: 0, behavior: 'auto' });
-      return;
-    }
-
-    if (targetTab === 'landing') {
-      if (window.location.pathname !== '/') {
-        window.history.pushState(null, '', '/');
-      }
-      setActiveTab('landing');
-      localStorage.setItem('farmasi_active_tab', 'landing');
-      window.scrollTo({ top: 0, behavior: 'auto' });
-      return;
-    }
+    if (targetTab === 'instagram-studio') targetTab = 'admin-instagram';
 
     // Enforce auth requirement for internal clinical workspace tools when user is not logged in (user must login first)
-    if (!currentUser && targetTab !== 'landing' && targetTab !== 'pricing' && targetTab !== 'faq' && targetTab !== 'login') {
+    if (!currentUser && targetTab !== 'landing' && targetTab !== 'pricing' && targetTab !== 'faq' && targetTab !== 'login' && targetTab !== 'support') {
       setPendingTargetTab(targetTab);
       if (window.location.pathname !== '/login') {
         window.history.pushState(null, '', '/login');
@@ -1051,7 +1035,7 @@ export default function App() {
       return;
     }
 
-    if ((targetTab === 'admin' || targetTab.startsWith('admin-') || targetTab === 'instagram-studio') && currentUser?.role !== 'admin') {
+    if ((targetTab === 'admin' || targetTab.startsWith('admin-')) && currentUser?.role !== 'admin') {
       setPendingTargetTab('admin-instagram');
       if (window.location.pathname !== '/login') {
         window.history.pushState(null, '', '/login');
@@ -1061,13 +1045,15 @@ export default function App() {
       return;
     }
 
-    if (targetTab === 'instagram-studio') {
-      targetTab = 'admin-instagram';
+    // Sync browser URL cleanly for all routes
+    const targetPath = getPathFromTab(targetTab);
+    if (window.location.pathname.toLowerCase() !== targetPath.toLowerCase()) {
+      window.history.pushState(null, '', targetPath);
     }
 
     setActiveTab(targetTab);
     localStorage.setItem('farmasi_active_tab', targetTab);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: targetTab === 'landing' ? 'auto' : 'smooth' });
   };
 
   const handleOpenSwamedikasiWithProtocol = (protocolId?: string) => {
@@ -1098,7 +1084,7 @@ export default function App() {
       return;
     }
     setSearchQueryForDirectory(query);
-    setActiveTab('drugs');
+    handleSelectTab('drugs');
   };
 
   const handleCheckInteractionWith = (targetDrugName: string | string[], secondDrugName?: string) => {
@@ -1120,7 +1106,7 @@ export default function App() {
       setPreselectedDrugNames([targetDrugName]);
       setPreselectedDrugName(targetDrugName);
     }
-    setActiveTab('interactions');
+    handleSelectTab('interactions');
   };
 
   // Listen to Firebase Auth state changes
@@ -1608,7 +1594,8 @@ export default function App() {
   const isPricing = activeTab === 'pricing';
   const isFaq = activeTab === 'faq';
   const isLogin = activeTab === 'login';
-  const isPublicPage = isLanding || isPricing || isFaq || isLogin;
+  const isSupport = activeTab === 'support';
+  const isPublicPage = isLanding || isPricing || isFaq || isLogin || isSupport;
 
   return (
     <div className={`min-h-screen font-sans text-slate-800 flex flex-col selection:bg-teal-900 selection:text-teal-100 transition-colors duration-300 ${
@@ -1641,7 +1628,7 @@ export default function App() {
           currentUser={currentUser}
           onOpenAuthModal={() => handleSelectTab('login')}
           onLogout={handleLogout}
-          onOpenPricingModal={() => setShowPricingModal(true)}
+          onOpenPricingModal={() => handleSelectTab('pricing')}
           onOpenChangelogModal={() => handleSelectTab('changelog')}
           onToggleMobileSidebar={() => setMobileSidebarOpen(!mobileSidebarOpen)}
           onOpenProfileModal={() => setShowProfileModal(true)}
@@ -1679,6 +1666,11 @@ export default function App() {
               onNewAccountCreated={handleRegisterOrSyncCustomer}
               onSelectTab={handleSelectTab}
             />
+          ) : activeTab === 'support' ? (
+            <HelpSupportPage
+              currentUser={currentUser}
+              onSelectTab={handleSelectTab}
+            />
           ) : (
             <React.Suspense fallback={<ClinicalTabSkeleton />}>
               {activeTab === 'dashboard' && (
@@ -1699,6 +1691,17 @@ export default function App() {
                   isTrialEnabled={trialSettings.isEnabled}
                   trialDurationDays={trialSettings.durationDays}
                   onToggleTrialStatus={handleToggleTrialStatus}
+                />
+              )}
+
+              {activeTab === 'settings' && (
+                <SettingsPage
+                  currentUser={currentUser}
+                  onSave={handleSaveUserProfile}
+                  onSelectTab={handleSelectTab}
+                  onLogout={handleLogout}
+                  isTrialActive={isTrialActive}
+                  trialRemainingText={getTrialRemainingText(currentUser?.expiresAt)}
                 />
               )}
 
@@ -2145,7 +2148,7 @@ export default function App() {
                   onDeleteDuplicationRule={handleDeleteDuplicationRule}
                   onSaveAdminUser={handleSaveAdminUser}
                   onDeleteAdminUser={handleDeleteAdminUser}
-                  onNavigateToDashboard={() => setActiveTab('dashboard')}
+                  onNavigateToDashboard={() => handleSelectTab('dashboard')}
                   onSimulateTrial={handleSimulateTrial}
                   isTrialEnabled={trialSettings.isEnabled}
                   trialDurationDays={trialSettings.durationDays}
@@ -2170,7 +2173,7 @@ export default function App() {
                 'landing', 'dashboard', 'drugs', 'directory', 'changelog', 'pregnancy', 'drug-lab', 'bud', 'herb-drug',
                 'drug-notes', 'latin-terms', 'competency', 'competency-vokasi', 'guidelines', 'polypharmacy', 'interactions', 'side-effects', 'usage',
                 'sop', 'regulations', 'literature', 'whatsapp-pio', 'iv-compatibility', 'toxicology', 'high-alert', 'pediatric',
-                'renal-adjuster', 'history', 'subscriptions', 'swamedikasi', 'instagram-studio', 'education-generator', 'antimicrobial-stewardship'
+                'renal-adjuster', 'history', 'subscriptions', 'swamedikasi', 'instagram-studio', 'education-generator', 'antimicrobial-stewardship', 'settings', 'support'
               ].includes(activeTab) && !activeTab.startsWith('admin') && (
                 currentUser ? (
                   <Dashboard
