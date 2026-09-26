@@ -13,6 +13,7 @@ import {
   Save, 
   Loader2 
 } from 'lucide-react';
+import { PROFESSION_GROUPS, getLicenseFieldConfig } from '../data/professionData';
 
 interface CompleteProfileModalProps {
   currentUser: UserProfile;
@@ -34,6 +35,7 @@ export const CompleteProfileModal: React.FC<CompleteProfileModalProps> = ({
     : '';
 
   const [name, setName] = useState(defaultName || currentUser.name || '');
+  const [profession, setProfession] = useState(currentUser.profession || 'Apoteker - Rumah Sakit / Klinik');
   const [institution, setInstitution] = useState(currentUser.institution || '');
   const [phone, setPhone] = useState(currentUser.phone || '');
   const [licenseNumber, setLicenseNumber] = useState(currentUser.licenseNumber || '');
@@ -41,6 +43,8 @@ export const CompleteProfileModal: React.FC<CompleteProfileModalProps> = ({
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+
+  const licenseConfig = getLicenseFieldConfig(profession);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -71,6 +75,7 @@ export const CompleteProfileModal: React.FC<CompleteProfileModalProps> = ({
       const updatedProfile: UserProfile = {
         ...currentUser,
         name: cleanName,
+        profession,
         institution: cleanInstitution,
         phone: cleanPhone,
         licenseNumber: cleanLicense
@@ -183,21 +188,41 @@ export const CompleteProfileModal: React.FC<CompleteProfileModalProps> = ({
           )}
 
           <form onSubmit={handleSubmit} className="space-y-3.5">
-            {/* Nama Lengkap */}
-            <div>
-              <label className="block text-slate-700 font-bold mb-1 font-outfit">
-                Nama Lengkap & Gelar
-              </label>
-              <div className="relative flex items-center">
-                <User className="w-4 h-4 text-slate-400 absolute left-3 pointer-events-none" />
+            {/* Grid 2 Kolom: Nama Lengkap & Profesi */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div>
+                <label className="block text-slate-700 font-bold mb-1 font-outfit text-xs">
+                  Nama Lengkap & Gelar
+                </label>
                 <input
                   type="text"
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Contoh: apt. Andry Maulana, S.Farm"
-                  className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 font-semibold focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 focus:outline-none transition-all"
+                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 font-semibold focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 focus:outline-none transition-all text-xs"
                 />
+              </div>
+
+              <div>
+                <label className="block text-slate-700 font-bold mb-1 font-outfit text-xs">
+                  Profesi / Peran Tenaga Kesehatan
+                </label>
+                <select
+                  value={profession}
+                  onChange={(e) => setProfession(e.target.value)}
+                  className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 font-semibold focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 focus:outline-none transition-all cursor-pointer font-outfit text-xs"
+                >
+                  {PROFESSION_GROUPS.map((group) => (
+                    <optgroup key={group.group} label={`── ${group.group} ──`} className="font-bold text-slate-800 bg-white">
+                      {group.options.map((opt) => (
+                        <option key={opt.id} value={opt.id} className="font-normal text-slate-700 py-1">
+                          {opt.label}
+                        </option>
+                      ))}
+                    </optgroup>
+                  ))}
+                </select>
               </div>
             </div>
 
@@ -205,59 +230,56 @@ export const CompleteProfileModal: React.FC<CompleteProfileModalProps> = ({
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {/* Instansi / Institusi */}
               <div>
-                <label className="block text-slate-700 font-bold mb-1 font-outfit">
-                  Instansi / Faskes
-                </label>
-                <div className="relative flex items-center">
-                  <Building2 className="w-4 h-4 text-slate-400 absolute left-3 pointer-events-none" />
-                  <input
-                    type="text"
-                    required
-                    value={institution}
-                    onChange={(e) => setInstitution(e.target.value)}
-                    placeholder="Contoh: RS Farist / PT Farist / Dinkes / Apotek FD / Universitas Farist"
-                    className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 font-semibold focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 focus:outline-none transition-all"
-                  />
+                <div className="flex items-center justify-between mb-1">
+                  <label className="text-slate-700 font-bold font-outfit text-xs">
+                    Instansi / Tempat Bertugas
+                  </label>
+                  <span className="text-[10px] text-slate-400 font-medium">(Opsional)</span>
                 </div>
+                <input
+                  type="text"
+                  required
+                  value={institution}
+                  onChange={(e) => setInstitution(e.target.value)}
+                  placeholder="Contoh: RS Farist / PT Farist / Dinkes / Apotek FD / Universitas Farist"
+                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 font-semibold focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 focus:outline-none transition-all text-xs"
+                />
               </div>
 
               {/* No. WhatsApp / HP */}
               <div>
-                <label className="block text-slate-700 font-bold mb-1 font-outfit">
-                  No. WhatsApp / HP
+                <label className="block text-slate-700 font-bold mb-1 font-outfit text-xs">
+                  No. WhatsApp / HP Aktif
                 </label>
-                <div className="relative flex items-center">
-                  <Phone className="w-4 h-4 text-slate-400 absolute left-3 pointer-events-none" />
-                  <input
-                    type="tel"
-                    required
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="Contoh: 0812-3456-7890"
-                    className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 font-semibold focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 focus:outline-none transition-all"
-                  />
-                </div>
+                <input
+                  type="tel"
+                  required
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  placeholder="Contoh: 0812-3456-7890"
+                  className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 font-semibold focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 focus:outline-none transition-all text-xs"
+                />
               </div>
             </div>
 
-            {/* Nomor SIPA / SIP / STR (Opsional) */}
+            {/* Nomor Izin Praktik / STR / Identitas Profesi */}
             <div>
               <div className="flex items-center justify-between mb-1">
-                <label className="text-slate-700 font-bold font-outfit">
-                  Nomor SIPA / SIP / STR / Izin Praktik
+                <label className="text-slate-700 font-bold font-outfit text-xs">
+                  {licenseConfig.label}
                 </label>
                 <span className="text-[10px] text-slate-400 font-medium">Opsional</span>
               </div>
-              <div className="relative flex items-center">
-                <FileText className="w-4 h-4 text-slate-400 absolute left-3 pointer-events-none" />
-                <input
-                  type="text"
-                  value={licenseNumber}
-                  onChange={(e) => setLicenseNumber(e.target.value)}
-                  placeholder="Contoh: SIPA: 19920814/SIPA_31.74/2023/2019"
-                  className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 font-medium focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 focus:outline-none transition-all"
-                />
-              </div>
+              <input
+                type="text"
+                value={licenseNumber}
+                onChange={(e) => setLicenseNumber(e.target.value)}
+                placeholder={licenseConfig.placeholder}
+                className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-900 font-medium focus:bg-white focus:border-teal-500 focus:ring-2 focus:ring-teal-500/20 focus:outline-none transition-all text-xs"
+              />
+              <p className="text-[11px] text-slate-400 mt-1 font-medium font-outfit">
+                {licenseConfig.description}
+              </p>
             </div>
 
             {/* Action Buttons */}

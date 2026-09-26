@@ -6,7 +6,7 @@ import {
   deleteCustomerFromFirestore, 
   fetchCustomersFromFirestore
 } from '../firebase';
-import { PROFESSION_GROUPS } from '../data/professionData';
+import { PROFESSION_GROUPS, getLicenseFieldConfig } from '../data/professionData';
 import { 
   Users, 
   Search, 
@@ -2010,6 +2010,19 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                 />
               </div>
 
+              <div>
+                <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1 font-outfit">
+                  {getLicenseFieldConfig(formState.profession).label} <span className="text-[10px] text-slate-400 font-normal">(Opsional)</span>
+                </label>
+                <input
+                  type="text"
+                  value={formState.licenseNumber}
+                  onChange={(e) => setFormState({ ...formState, licenseNumber: e.target.value })}
+                  placeholder={getLicenseFieldConfig(formState.profession).placeholder}
+                  className="w-full px-3.5 py-2 bg-slate-50 dark:bg-[#06191c] border border-slate-200 dark:border-[#184c53] rounded-xl text-xs focus:ring-2 focus:ring-[#3dbfd1] focus:outline-none"
+                />
+              </div>
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1 font-outfit">Pilihan Paket</label>
@@ -2268,14 +2281,22 @@ export const CustomerSubscriptionManager: React.FC<CustomerSubscriptionManagerPr
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 mb-1 font-outfit">Nomor SIPA / SIP / STR / Izin Praktik</label>
+                    <div className="flex items-center justify-between mb-1">
+                      <label className="block text-xs font-bold text-slate-700 dark:text-slate-300 font-outfit">
+                        {getLicenseFieldConfig(formState.profession).label}
+                      </label>
+                      <span className="text-[10px] text-slate-400 font-medium">Opsional</span>
+                    </div>
                     <input
                       type="text"
                       value={formState.licenseNumber}
                       onChange={(e) => setFormState({ ...formState, licenseNumber: e.target.value })}
-                      placeholder="Contoh: SIPA: 19920814/SIPA_31.74/2023/2019"
+                      placeholder={getLicenseFieldConfig(formState.profession).placeholder}
                       className="w-full px-3.5 py-2.5 bg-slate-50 dark:bg-[#06191c] border border-slate-200 dark:border-[#184c53] rounded-xl text-xs font-medium focus:ring-2 focus:ring-[#3dbfd1] focus:outline-none"
                     />
+                    <p className="text-[10.5px] text-slate-400 mt-1 font-medium font-outfit">
+                      {getLicenseFieldConfig(formState.profession).description}
+                    </p>
                   </div>
                 </div>
               )}

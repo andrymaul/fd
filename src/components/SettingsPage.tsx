@@ -11,7 +11,7 @@ import {
   Mail,
   LogOut
 } from 'lucide-react';
-import { PROFESSION_GROUPS } from '../data/professionData';
+import { PROFESSION_GROUPS, getLicenseFieldConfig } from '../data/professionData';
 
 interface SettingsPageProps {
   currentUser: UserProfile | null;
@@ -110,6 +110,8 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
     : isTrialActive 
       ? 'Trial Pro' 
       : (currentUser?.subscriptionPlan || 'Free');
+
+  const licenseConfig = getLicenseFieldConfig(profession);
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-6 animate-in fade-in duration-150">
@@ -325,11 +327,11 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
             </div>
           </div>
 
-          {/* SIPA / STR */}
+          {/* Nomor Izin Praktik / STR / Identitas Profesi */}
           <div>
             <div className="flex items-center justify-between mb-1.5">
               <label className="text-xs font-bold text-slate-700 font-outfit">
-                Nomor SIPA / SIP / STR / Izin Praktik
+                {licenseConfig.label}
               </label>
               <span className="text-[10px] text-slate-400 font-semibold font-outfit">Opsional</span>
             </div>
@@ -337,9 +339,12 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
               type="text"
               value={licenseNumber}
               onChange={(e) => setLicenseNumber(e.target.value)}
-              placeholder="Contoh: SIPA: 19920814/SIPA_31.74/2023/2019"
+              placeholder={licenseConfig.placeholder}
               className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-900 font-medium focus:bg-white focus:border-teal-600 focus:outline-none transition-all"
             />
+            <p className="text-[11px] text-slate-400 mt-1 font-medium font-outfit">
+              {licenseConfig.description}
+            </p>
           </div>
 
           {/* Submit Button */}
