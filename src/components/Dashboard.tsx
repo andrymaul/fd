@@ -37,6 +37,16 @@ import {
   UserCheck,
   X
 } from 'lucide-react';
+import {
+  DuoInteractionIcon,
+  DuoPregnancyIcon,
+  DuoDrugLabIcon,
+  DuoHerbalIcon,
+  DuoSideEffectsIcon,
+  DuoIvCompatibilityIcon,
+  DuoRenalIcon,
+  DuoBudIcon
+} from './icons/ClinicalDuoIcons';
 
 interface DashboardProps {
   currentUser: UserProfile | null;
@@ -95,7 +105,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'interactions',
         title: 'Interaksi Obat',
         keywords: 'cek interaksi obat multi obat ddinter drugs.com major moderate',
-        icon: ShieldAlert,
+        icon: DuoInteractionIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -103,7 +113,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'pregnancy',
         title: 'Bumil & Busui',
         keywords: 'keamanan ibu hamil menyusui fda pllr laktasi hale teratogenik',
-        icon: HeartHandshake,
+        icon: DuoPregnancyIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -111,7 +121,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'drug-lab',
         title: 'Obat & Lab',
         keywords: 'interaksi obat uji laboratorium analit troponin tiroid urine ginjal',
-        icon: FlaskConical,
+        icon: DuoDrugLabIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -119,7 +129,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'herb-drug',
         title: 'Herbal & Jamu',
         keywords: 'interaksi herbal jamu obat oht fitofarmaka fohi suplemen',
-        icon: Leaf,
+        icon: DuoHerbalIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -127,7 +137,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'side-effects',
         title: 'Efek Samping',
         keywords: 'efek samping obat meso bpom naranjo hartwig toksisitas organ adr',
-        icon: Activity,
+        icon: DuoSideEffectsIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -135,7 +145,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'iv-compatibility',
         title: 'Injeksi IV',
         keywords: 'kompatibilitas injeksi iv y-site infus icu pelarut ns d5w presipitasi',
-        icon: Syringe,
+        icon: DuoIvCompatibilityIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -185,7 +195,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'bud',
         title: 'BUD Racikan',
         keywords: 'stabilitas beyond use date bud racikan puyer sirup salep krim usp 795',
-        icon: CalendarClock,
+        icon: DuoBudIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -193,7 +203,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
         id: 'renal-adjuster',
         title: 'Klirens Ginjal',
         keywords: 'kalkulator medis ginjal cockcroft gault egfr ckd-epi crcl hepar ibw',
-        icon: Calculator,
+        icon: DuoRenalIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
