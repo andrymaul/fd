@@ -445,7 +445,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({
                   type="text"
                   value={institution}
                   onChange={(e) => setInstitution(e.target.value)}
-                  placeholder="Contoh: RS Medika / PT Kalbe Farma / Dinkes Kota / Apotek K-24 / Mandiri"
+                  placeholder="Contoh: RS Farist / PT Farist / Dinkes / Apotek FD / Universitas Farist"
                   className="w-full px-3.5 py-2.5 bg-slate-50 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:outline-none focus:border-teal-600 focus:bg-white transition-colors"
                 />
               </div>
