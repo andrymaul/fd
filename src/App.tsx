@@ -81,7 +81,6 @@ const ClinicalLiterature = safeLazy(() => import('./components/ClinicalLiteratur
 const RenalDoseAdjuster = safeLazy(() => import('./components/RenalDoseAdjuster'), 'RenalDoseAdjuster');
 const ClinicalPolypharmacyEvaluator = safeLazy(() => import('./components/ClinicalPolypharmacyEvaluator'), 'ClinicalPolypharmacyEvaluator');
 const ClinicalTherapyGuidelines = safeLazy(() => import('./components/ClinicalTherapyGuidelines'), 'ClinicalTherapyGuidelines');
-const PediatricCompoundingCalculator = safeLazy(() => import('./components/PediatricCompoundingCalculator'), 'PediatricCompoundingCalculator');
 const IvCompatibilityChecker = safeLazy(() => import('./components/IvCompatibilityChecker'), 'IvCompatibilityChecker');
 const WhatsAppPatientCardManager = safeLazy(() => import('./components/WhatsAppPatientCardManager'), 'WhatsAppPatientCardManager');
 const SwamedikasiManager = safeLazy(() => import('./components/SwamedikasiManager'), 'SwamedikasiManager');
@@ -1887,34 +1886,18 @@ export default function App() {
                 )
               )}
 
-              {activeTab === 'pediatric' && (
-                !(isProUser || currentUser?.canAccessPediatric) ? (
-                  renderProFeatureGate(
-                    "Kalkulator Dosis Pediatrik & Konversi Racikan Puyer / Sirup",
-                    "Hitung dosis terapi anak berbasis BB & BSA, konversi peracikan tablet utuh ke serbuk puyer dengan perhitungan zat pengisi Saccharum Lactis, dan takaran botol sirup."
-                  )
-                ) : (
-                  <PediatricCompoundingCalculator
-                    existingDrugs={drugs}
-                    onCheckInteractions={(drugNames) => {
-                      setPreselectedDrugNames(drugNames);
-                      handleSelectTab('interactions');
-                    }}
-                  />
-                )
-              )}
-
-              {activeTab === 'renal-adjuster' && (
-                !(isProUser || currentUser?.canAccessRenal) ? (
+              {(activeTab === 'renal-adjuster' || activeTab === 'pediatric') && (
+                !(isProUser || currentUser?.canAccessRenal || currentUser?.canAccessPediatric) ? (
                   renderProFeatureGate(
                     "Kalkulator Medis & Penyesuaian Dosis",
-                    "Kalkulator farmakoterapi komprehensif: Klirens Ginjal (CrCl/eGFR), Skor Hepar (Child-Pugh & MELD), Konversi Opioid & Paliatif (OME CDC), Berat Badan Ideal (IBW), dan Oksigen Medis."
+                    "Kalkulator farmakoterapi komprehensif: Klirens Ginjal (CrCl/eGFR), Dosis Pediatrik & Puyer, Skor Hepar (Child-Pugh & MELD), Konversi Opioid & Paliatif (OME CDC), Berat Badan Ideal (IBW), dan Oksigen Medis."
                   )
                 ) : (
                   <RenalDoseAdjuster
                     drugs={drugs}
                     currentUser={currentUser}
                     onOpenPricingModal={() => setShowPricingModal(true)}
+                    initialTab={activeTab === 'pediatric' ? 'pediatric' : undefined}
                   />
                 )
               )}

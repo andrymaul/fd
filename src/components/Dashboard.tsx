@@ -16,7 +16,6 @@ import {
   DuoHighAlertIcon,
   DuoPolypharmacyIcon,
   DuoGuidelinesIcon,
-  DuoPediatricIcon,
   DuoBudIcon,
   DuoMedicalCalculatorIcon,
   DuoAntimicrobialIcon,
@@ -159,14 +158,6 @@ export const Dashboard: React.FC<DashboardProps> = ({
       },
 
       // 2. Kalkulator Medis & Racikan
-      {
-        id: 'pediatric',
-        title: 'Pediatrik & Puyer',
-        keywords: 'dosis pediatrik puyer anak racikan sirup bb bsa cangkang kapsul',
-        icon: DuoPediatricIcon,
-        iconColor: PINE_TEAL,
-        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
-      },
       {
         id: 'bud',
         title: 'BUD Racikan',

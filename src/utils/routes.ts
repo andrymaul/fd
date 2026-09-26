@@ -34,8 +34,8 @@ export const TAB_TO_PATH: Record<string, string> = {
 
   // Medical Calculators & Compounding
   'bud': '/kalkulator-bud',
-  'pediatric': '/pediatrik',
-  'renal-adjuster': '/kalkulator-ginjal',
+  'pediatric': '/kalkulator-medis',
+  'renal-adjuster': '/kalkulator-medis',
 
   // Polypharmacy & Patient Education
   'swamedikasi': '/swamedikasi',
@@ -172,12 +172,12 @@ export const PATH_TO_TAB: Record<string, string> = {
   '/bud': 'bud',
   '/beyond-use-date': 'bud',
 
-  '/pediatrik': 'pediatric',
-  '/pediatrik/': 'pediatric',
-  '/pediatric': 'pediatric',
-  '/puyer': 'pediatric',
-  '/dosis-anak': 'pediatric',
-  '/pediatric-dosing': 'pediatric',
+  '/pediatrik': 'renal-adjuster',
+  '/pediatrik/': 'renal-adjuster',
+  '/pediatric': 'renal-adjuster',
+  '/puyer': 'renal-adjuster',
+  '/dosis-anak': 'renal-adjuster',
+  '/pediatric-dosing': 'renal-adjuster',
 
   '/kalkulator-ginjal': 'renal-adjuster',
   '/kalkulator-ginjal/': 'renal-adjuster',

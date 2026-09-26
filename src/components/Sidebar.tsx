@@ -29,7 +29,6 @@ import {
   ClipboardList, 
   Scale, 
   HeartPulse, 
-  Baby, 
   Syringe, 
   MessageSquare,
   Activity,
@@ -147,7 +146,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
         headerBg: 'bg-emerald-500/10 border-emerald-500/20 text-emerald-800 dark:text-emerald-300',
         items: [
           { id: 'bud', label: 'Stabilitas & BUD Racikan', icon: CalendarClock, badge: 'USP', badgeColor: 'text-teal-500 dark:text-teal-400' },
-          { id: 'pediatric', label: 'Dosis Pediatrik & Puyer', icon: Baby, badge: 'Puyer', badgeColor: 'text-rose-400 dark:text-rose-300' },
           { id: 'renal-adjuster', label: 'Kalkulator Medis & Dosis', icon: Calculator, badge: 'Lengkap', badgeColor: 'text-violet-500 dark:text-violet-400' }
         ]
       },
@@ -266,8 +264,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
         return 'bg-gradient-to-r from-rose-950 via-rose-900 to-rose-700 text-white shadow-md shadow-rose-950/50 border border-rose-500/40';
       case 'pregnancy':
         return 'bg-gradient-to-r from-pink-950 via-pink-900 to-pink-700 text-white shadow-md shadow-pink-950/50 border border-pink-500/40';
-      case 'drug-lab':
-        return 'bg-gradient-to-r from-cyan-950 via-cyan-900 to-cyan-700 text-white shadow-md shadow-cyan-950/50 border border-cyan-500/40';
       case 'herb-drug':
         return 'bg-gradient-to-r from-emerald-950 via-emerald-900 to-emerald-700 text-white shadow-md shadow-emerald-950/50 border border-emerald-500/40';
       case 'side-effects':
@@ -280,8 +276,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
         return 'bg-gradient-to-r from-amber-950 via-rose-900 to-amber-700 text-white shadow-md shadow-amber-950/50 border border-amber-500/40';
       case 'bud':
         return 'bg-gradient-to-r from-teal-950 via-teal-900 to-teal-700 text-white shadow-md shadow-teal-950/50 border border-teal-500/40';
-      case 'pediatric':
-        return 'bg-gradient-to-r from-purple-950 via-purple-900 to-purple-700 text-white shadow-md shadow-purple-950/50 border border-purple-500/40';
       case 'renal-adjuster':
         return 'bg-gradient-to-r from-indigo-950 via-indigo-900 to-indigo-700 text-white shadow-md shadow-indigo-950/50 border border-indigo-500/40';
       case 'polypharmacy':
@@ -300,8 +294,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
         return 'bg-gradient-to-r from-cyan-950 via-cyan-900 to-cyan-700 text-white shadow-md shadow-cyan-950/50 border border-cyan-500/40';
       case 'latin-terms':
         return 'bg-gradient-to-r from-purple-950 via-purple-900 to-purple-700 text-white shadow-md shadow-purple-950/50 border border-purple-500/40';
-      case 'history':
-        return 'bg-gradient-to-r from-slate-900 via-slate-800 to-slate-700 text-white shadow-md shadow-slate-950/50 border border-slate-500/40';
       case 'competency':
         return 'bg-gradient-to-r from-emerald-950 via-emerald-900 to-emerald-700 text-white shadow-md shadow-emerald-950/50 border border-emerald-500/40';
       case 'competency-vokasi':
