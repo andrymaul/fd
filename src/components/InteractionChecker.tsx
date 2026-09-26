@@ -7,16 +7,10 @@ import {
 } from '../types';
 import { 
   ShieldCheck, 
-  ExternalLink, 
   RefreshCw, 
   Maximize2, 
   Minimize2, 
-  Sparkles, 
-  Globe, 
-  Activity, 
-  Info,
-  CheckCircle2,
-  Layers
+  Activity 
 } from 'lucide-react';
 
 export interface InteractionCheckerProps {
@@ -63,9 +57,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
     setIsFullscreen((prev) => !prev);
   };
 
-  const handleOpenExternal = () => {
-    window.open(targetUrl, '_blank', 'noopener,noreferrer');
-  };
 
   // Escape key to exit fullscreen
   useEffect(() => {
@@ -81,39 +72,20 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
   return (
     <div className={`transition-all duration-300 ${isFullscreen ? 'fixed inset-0 z-50 bg-slate-900/90 backdrop-blur-md p-2 sm:p-4 flex flex-col' : 'space-y-4'}`}>
       {/* Top Clinical Header & Integration Control Bar */}
-      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-5 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div className="flex items-start sm:items-center gap-3.5">
+      <div className="bg-white dark:bg-[#0c1427] border border-slate-200 dark:border-slate-800 rounded-2xl p-4 sm:p-5 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex items-center gap-3.5">
           <div className="p-2.5 rounded-xl bg-gradient-to-br from-rose-500/10 to-teal-500/10 border border-rose-200 dark:border-rose-900/40 text-rose-600 dark:text-rose-400 shrink-0 shadow-2xs">
             <ShieldCheck className="w-6 h-6" />
           </div>
           <div>
-            <div className="flex items-center gap-2 flex-wrap">
-              <h2 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                Analisis Interaksi Obat &amp; Duplikasi Terapi
-              </h2>
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/60">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                Live Engine Terverifikasi
-              </span>
-            </div>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5 flex items-center gap-1.5">
-              <Globe className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
-              <span>Terhubung langsung ke </span>
-              <a 
-                href={SUBDOMAIN_URL} 
-                target="_blank" 
-                rel="noreferrer" 
-                className="font-mono text-teal-600 dark:text-teal-400 hover:underline font-semibold"
-              >
-                interaksi.farmasidruggist.id
-              </a>
-              <span className="hidden sm:inline text-slate-300 dark:text-slate-600">• Multi-Consensus DDInter 2.0</span>
-            </p>
+            <h2 className="text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+              Analisis Interaksi Obat &amp; Duplikasi Terapi
+            </h2>
           </div>
         </div>
 
         {/* Action Controls */}
-        <div className="flex items-center gap-2 shrink-0 self-end md:self-auto">
+        <div className="flex items-center gap-2 shrink-0 self-end sm:self-auto">
           <button
             onClick={handleRefresh}
             title="Muat Ulang Frame"
@@ -139,14 +111,6 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
                 <span className="hidden sm:inline">Layar Penuh</span>
               </>
             )}
-          </button>
-
-          <button
-            onClick={handleOpenExternal}
-            className="px-3.5 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white shadow-sm flex items-center gap-1.5 cursor-pointer transition-all active:scale-95"
-          >
-            <span>Buka di Tab Baru</span>
-            <ExternalLink className="w-3.5 h-3.5" />
           </button>
         </div>
       </div>
@@ -187,18 +151,7 @@ export const InteractionChecker: React.FC<InteractionCheckerProps> = ({
         />
       </div>
 
-      {/* Quick Footnote & Architecture Badge */}
-      {!isFullscreen && (
-        <div className="flex items-center justify-between text-[11px] text-slate-500 dark:text-slate-400 px-1">
-          <div className="flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-            <span>Didukung Dedicated Server Interaksi Farmasi Druggist — Akses Cepat, Mandiri &amp; Ringan.</span>
-          </div>
-          <div className="hidden sm:flex items-center gap-2">
-            <span className="font-mono text-[10px] text-slate-400">v4.7.0 Micro-Frontend</span>
-          </div>
-        </div>
-      )}
+
     </div>
   );
 };
