@@ -1,6 +1,5 @@
 import { DrugDiseaseInteraction } from '../types';
 import { DRUG_DISEASE_EXTENDED_DATABASE } from './drugDiseaseExtendedData';
-import { DDINTER_OFFICIAL_DISEASE_INTERACTIONS } from './ddinterDiseaseInteractionsData';
 
 const BASE_DRUG_DISEASE_INTERACTIONS: DrugDiseaseInteraction[] = [
   // =========================================================================
@@ -318,8 +317,7 @@ function deduplicateDrugDiseaseInteractions(list: DrugDiseaseInteraction[]): Dru
 
 export const DRUG_DISEASE_INTERACTIONS_DATABASE: DrugDiseaseInteraction[] = deduplicateDrugDiseaseInteractions([
   ...BASE_DRUG_DISEASE_INTERACTIONS,
-  ...DRUG_DISEASE_EXTENDED_DATABASE,
-  ...DDINTER_OFFICIAL_DISEASE_INTERACTIONS
+  ...DRUG_DISEASE_EXTENDED_DATABASE
 ]);
 
 export interface ComorbidityProfile {

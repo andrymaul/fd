@@ -88,7 +88,6 @@ import {
   PNPK_SUMMARY_PRESETS,
   generateInstagramCaption
 } from '../data/instagramStudioPresets';
-import { EXTENDED_INTERACTIONS_DATABASE } from '../data/ddinterInteractions';
 
 type AspectRatio = 'portrait' | 'square' | 'story';
 type ThemeColor =
@@ -622,25 +621,12 @@ export const InstagramPostStudio: React.FC = () => {
     if (!interactionDbSearch.trim()) return [];
     const q = interactionDbSearch.toLowerCase().trim();
     const results: InteractionPreset[] = [];
-    for (const item of EXTENDED_INTERACTIONS_DATABASE) {
+    for (const item of INTERACTION_PRESETS) {
       if (
-        item.drugAName.toLowerCase().includes(q) ||
-        item.drugBName.toLowerCase().includes(q)
+        item.drugA.toLowerCase().includes(q) ||
+        item.drugB.toLowerCase().includes(q)
       ) {
-        results.push({
-          drugA: item.drugAName,
-          drugB: item.drugBName,
-          severity: (item.severity === 'Minor' || item.severity === 'Moderate') ? item.severity : 'Major',
-          mechanism: item.mechanism,
-          solution: item.management,
-          clinicalOutcome: item.clinicalOutcome,
-          alternativeOptions: item.alternativeOptions,
-          mechanismCategory: item.mechanismCategory,
-          ddinterPairId: item.ddinterPairId,
-          ddinterOriginalText: item.ddinterOriginalText,
-          ddinterOriginalManagement: item.ddinterOriginalManagement,
-          source: 'DDInter 2.0 (Nature Protocols 2022 • ddinter2.scbdd.com)'
-        });
+        results.push(item);
         if (results.length >= 35) break;
       }
     }

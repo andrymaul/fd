@@ -1,7 +1,7 @@
 import { GoogleGenAI } from '@google/genai';
 import { Drug } from '../types';
 import { EXTENDED_DRUGS_DATABASE } from '../data/ddinterDrugs';
-import { EXTENDED_INTERACTIONS_DATABASE } from '../data/ddinterInteractions';
+import { INTERACTION_PRESETS } from '../data/instagramStudioPresets';
 
 export interface ChatMessage {
   id: string;
@@ -305,18 +305,18 @@ function generateUniversalClinicalResponse(prompt: string, contextDrugs?: Drug[]
 
   // 3. Multi-drug Interaction Query Check
   if (lower.includes('interaksi') || lower.includes('dan') || lower.includes('vs')) {
-    const interMatch = EXTENDED_INTERACTIONS_DATABASE.find(inter => 
-      (lower.includes(inter.drugAName.toLowerCase()) && lower.includes(inter.drugBName.toLowerCase())) ||
-      (lower.includes(inter.drugAName.toLowerCase()) || lower.includes(inter.drugBName.toLowerCase()))
+    const interMatch = INTERACTION_PRESETS.find(inter => 
+      (lower.includes(inter.drugA.toLowerCase()) && lower.includes(inter.drugB.toLowerCase())) ||
+      (lower.includes(inter.drugA.toLowerCase()) || lower.includes(inter.drugB.toLowerCase()))
     );
 
     if (interMatch) {
-      return `⚡ **EVALUASI INTERAKSI OBAT (DDI): ${interMatch.drugAName} ↔️ ${interMatch.drugBName}**
+      return `⚡ **EVALUASI INTERAKSI OBAT (DDI): ${interMatch.drugA} ↔️ ${interMatch.drugB}**
 
 1. 🔴 **Tingkat Keparahan (Severity)**: **${interMatch.severity.toUpperCase()}**
 2. 🧬 **Mekanisme Farmakologi**: ${interMatch.mechanism}
 3. ⚠️ **Dampak Klinis**: ${interMatch.clinicalOutcome}
-4. 💡 **Solusi & Manajemen Apoteker**: ${interMatch.management}`;
+4. 💡 **Solusi & Manajemen Apoteker**: ${interMatch.solution}`;
     }
   }
 

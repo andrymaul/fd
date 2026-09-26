@@ -1,13 +1,10 @@
 import { Drug, DrugInteraction, PricingPlan, DrugFoodInteraction, TherapeuticDuplication, DDInterDatasetInfo } from '../types';
 import { EXTENDED_DRUGS_DATABASE } from './ddinterDrugs';
-import { EXTENDED_INTERACTIONS_DATABASE } from './ddinterInteractions';
 import { DRUGSCOM_ADDITIONAL_FOOD_INTERACTIONS, DRUGSCOM_ADDITIONAL_THERAPEUTIC_DUPLICATIONS } from './drugsComData';
-import { DDINTER_OFFICIAL_FOOD_INTERACTIONS } from './ddinterFoodInteractionsData';
-import { DDINTER_OFFICIAL_DUPLICATIONS } from './ddinterDuplicationsData';
 import { normalizeFoodEntity } from '../utils/ddinterEngine';
 
 export const INITIAL_DRUGS: Drug[] = EXTENDED_DRUGS_DATABASE;
-export const INITIAL_INTERACTIONS: DrugInteraction[] = EXTENDED_INTERACTIONS_DATABASE;
+export const INITIAL_INTERACTIONS: DrugInteraction[] = [];
 
 export const DDINTER_OFFICIAL_URLS = {
   ddi: 'https://ddinter2.scbdd.com/server/interaction/',
@@ -528,8 +525,7 @@ function deduplicateFoodInteractions(list: DrugFoodInteraction[]): DrugFoodInter
 
 export const SAMPLE_FOOD_INTERACTIONS: DrugFoodInteraction[] = deduplicateFoodInteractions([
   ...BASE_FOOD_INTERACTIONS,
-  ...DRUGSCOM_ADDITIONAL_FOOD_INTERACTIONS,
-  ...DDINTER_OFFICIAL_FOOD_INTERACTIONS
+  ...DRUGSCOM_ADDITIONAL_FOOD_INTERACTIONS
 ]);
 
 const BASE_THERAPEUTIC_DUPLICATIONS: TherapeuticDuplication[] = [
@@ -668,8 +664,7 @@ function deduplicateDuplications(list: TherapeuticDuplication[]): TherapeuticDup
 
 export const SAMPLE_THERAPEUTIC_DUPLICATIONS: TherapeuticDuplication[] = deduplicateDuplications([
   ...BASE_THERAPEUTIC_DUPLICATIONS,
-  ...DRUGSCOM_ADDITIONAL_THERAPEUTIC_DUPLICATIONS,
-  ...DDINTER_OFFICIAL_DUPLICATIONS
+  ...DRUGSCOM_ADDITIONAL_THERAPEUTIC_DUPLICATIONS
 ]);
 
 export const PRICING_PLANS: PricingPlan[] = [
