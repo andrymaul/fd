@@ -3,15 +3,66 @@ import { UserProfile } from '../types';
 import { Mail, Phone, Lock, Eye, EyeOff, Building2, RefreshCw, CheckCircle2, Sparkles, ArrowLeft, Check } from 'lucide-react';
 import { loginWithEmail, registerWithEmail, resendVerificationEmail } from '../firebase';
 
-const PROFESSIONS = [
-  { id: 'Apoteker', label: 'Apoteker', badge: '💊' },
-  { id: 'TTK', label: 'TTK / Vokasi', badge: '🌿' },
-  { id: 'Dokter', label: 'Dokter', badge: '🩺' },
-  { id: 'Mahasiswa', label: 'Mahasiswa', badge: '🎓' },
-  { id: 'Lainnya', label: 'Nakes Lain', badge: '🏥' }
+const PROFESSION_GROUPS = [
+  {
+    group: 'Kefarmasian',
+    options: [
+      { id: 'Apoteker - Rumah Sakit / Klinik', label: 'Apoteker - Rumah Sakit / Klinik' },
+      { id: 'Apoteker - Apotek / Komunitas', label: 'Apoteker - Apotek / Komunitas' },
+      { id: 'Apoteker - Puskesmas / Faskes Primer', label: 'Apoteker - Puskesmas' },
+      { id: 'Apoteker - Industri Farmasi (QA/QC/R&D/Produksi)', label: 'Apoteker - Industri Farmasi (Pabrik Obat)' },
+      { id: 'Apoteker - Distribusi / PBF', label: 'Apoteker - PBF / Distribusi Obat' },
+      { id: 'Apoteker - Regulasi & Pemerintahan (Dinkes/BPOM/Kemenkes)', label: 'Apoteker - Dinkes / BPOM / Kemenkes' },
+      { id: 'Tenaga Teknis Kefarmasian (TTK / D3 Farmasi)', label: 'Tenaga Teknis Kefarmasian (TTK / D3 Farmasi)' },
+      { id: 'Asisten Tenaga Kefarmasian (SMK Farmasi)', label: 'Asisten Tenaga Kefarmasian (SMK Farmasi)' }
+    ]
+  },
+  {
+    group: 'Kedokteran & Keperawatan',
+    options: [
+      { id: 'Dokter Umum', label: 'Dokter Umum' },
+      { id: 'Dokter Spesialis', label: 'Dokter Spesialis' },
+      { id: 'Dokter Gigi', label: 'Dokter Gigi' },
+      { id: 'Perawat (Nurse)', label: 'Perawat (Nurse)' },
+      { id: 'Bidan', label: 'Bidan' }
+    ]
+  },
+  {
+    group: 'Industri, Manajemen & Pemerintahan',
+    options: [
+      { id: 'Profesional Industri Farmasi / Alkes', label: 'Staff / Profesional Industri Farmasi' },
+      { id: 'Staf Regulasi & Pengawasan Obat (Dinkes/BPOM)', label: 'Staf Dinkes / BPOM / Kementerian' },
+      { id: 'Manajemen / Pengelola Fasilitas Kesehatan', label: 'Manajemen RS / Pemilik Sarana Apotek' }
+    ]
+  },
+  {
+    group: 'Pendidikan & Calon Nakes',
+    options: [
+      { id: 'Mahasiswa Profesi Apoteker (PSPPA)', label: 'Mahasiswa Profesi Apoteker (PSPPA)' },
+      { id: 'Mahasiswa S1 Farmasi', label: 'Mahasiswa S1 Farmasi' },
+      { id: 'Mahasiswa D3 / Vokasi Farmasi', label: 'Mahasiswa D3 / Vokasi Farmasi' },
+      { id: 'Mahasiswa Kedokteran / Co-Ass', label: 'Mahasiswa Kedokteran / Co-Ass' },
+      { id: 'Dosen / Peneliti Farmasi & Kedokteran', label: 'Dosen / Peneliti Farmasi' }
+    ]
+  },
+  {
+    group: 'Lainnya',
+    options: [
+      { id: 'Tenaga Kesehatan Lainnya', label: 'Tenaga Kesehatan Lainnya' }
+    ]
+  }
 ];
 
-const FASKES_PRESETS = ['Apotek', 'Rumah Sakit', 'Klinik', 'Puskesmas', 'Kampus', 'Mandiri'];
+const INSTITUTION_PRESETS = [
+  'Apotek',
+  'Rumah Sakit',
+  'Klinik / Puskesmas',
+  'Industri Farmasi',
+  'PBF / Distribusi',
+  'Dinkes / BPOM / Kemenkes',
+  'Kampus / Universitas',
+  'Praktik Mandiri'
+];
 
 interface LoginPageProps {
   onLoginSuccess: (user: UserProfile) => void;
@@ -311,34 +362,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({
         <form onSubmit={handleSubmit} className="space-y-3.5 text-xs">
           {isRegister ? (
             <>
-              {/* 1. Selector Profesi Nakes */}
-              <div className="space-y-1.5">
-                <label className="font-extrabold text-slate-700 block text-xs font-outfit">
-                  Profesi / Peran Tenaga Kesehatan
-                </label>
-                <div className="grid grid-cols-2 sm:grid-cols-5 gap-1.5">
-                  {PROFESSIONS.map((prof) => {
-                    const isSelected = profession === prof.id;
-                    return (
-                      <button
-                        key={prof.id}
-                        type="button"
-                        onClick={() => setProfession(prof.id)}
-                        className={`py-2 px-2.5 rounded-xl border text-xs font-bold font-outfit transition-all flex items-center justify-center gap-1.5 cursor-pointer ${
-                          isSelected
-                            ? 'bg-teal-600 text-white border-teal-600 shadow-xs ring-2 ring-teal-400/20'
-                            : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100 hover:border-slate-300'
-                        }`}
-                      >
-                        <span className="text-sm">{prof.badge}</span>
-                        <span className="truncate">{prof.label}</span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* 2. Grid 2 Kolom: Nama Lengkap & Nomor WhatsApp */}
+              {/* 1. Grid 2 Kolom: Nama Lengkap & Profesi Nakes (Dropdown Tanpa Ikon) */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="font-extrabold text-slate-700 block mb-1 font-outfit text-xs">
@@ -354,6 +378,30 @@ export const LoginPage: React.FC<LoginPageProps> = ({
                   />
                 </div>
 
+                <div>
+                  <label className="font-extrabold text-slate-700 block mb-1 font-outfit text-xs">
+                    Profesi / Peran Tenaga Kesehatan
+                  </label>
+                  <select
+                    value={profession}
+                    onChange={(e) => setProfession(e.target.value)}
+                    className="w-full px-3 py-2.5 bg-slate-50 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:outline-none focus:border-teal-600 focus:bg-white transition-colors cursor-pointer text-xs"
+                  >
+                    {PROFESSION_GROUPS.map((group) => (
+                      <optgroup key={group.group} label={`── ${group.group} ──`} className="font-bold text-slate-800 bg-white">
+                        {group.options.map((opt) => (
+                          <option key={opt.id} value={opt.id} className="font-normal text-slate-700 py-1">
+                            {opt.label}
+                          </option>
+                        ))}
+                      </optgroup>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              {/* 2. Grid 2 Kolom: Nomor WhatsApp & Email */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
                   <label className="font-extrabold text-slate-700 block mb-1 font-outfit text-xs flex items-center justify-between">
                     <span>Nomor WhatsApp / HP</span>
@@ -379,47 +427,6 @@ export const LoginPage: React.FC<LoginPageProps> = ({
                     />
                   </div>
                 </div>
-              </div>
-
-              {/* 3. Grid 2 Kolom: Instansi & Email */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div>
-                  <div className="flex items-center justify-between mb-1">
-                    <label className="font-extrabold text-slate-700 font-outfit text-xs">
-                      Instansi / Faskes
-                    </label>
-                    <span className="text-[10px] text-slate-400 font-medium">(Opsional)</span>
-                  </div>
-                  <div className="relative flex items-center">
-                    <Building2 className="w-4 h-4 text-slate-400 absolute left-3 pointer-events-none" />
-                    <input
-                      type="text"
-                      value={institution}
-                      onChange={(e) => setInstitution(e.target.value)}
-                      placeholder="RS / Apotek / Kampus / Mandiri"
-                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:outline-none focus:border-teal-600 focus:bg-white transition-colors"
-                    />
-                  </div>
-                  {/* Preset saran cepat faskes */}
-                  <div className="flex items-center gap-1 flex-wrap mt-1.5">
-                    {FASKES_PRESETS.map((preset) => (
-                      <button
-                        key={preset}
-                        type="button"
-                        onClick={() => {
-                          if (!institution || institution === 'Praktik Mandiri / Non-Faskes') {
-                            setInstitution(preset);
-                          } else if (!institution.includes(preset)) {
-                            setInstitution(`${preset} ${institution}`);
-                          }
-                        }}
-                        className="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-slate-100 hover:bg-teal-50 hover:text-teal-700 text-slate-600 border border-slate-200/80 transition-colors cursor-pointer"
-                      >
-                        +{preset}
-                      </button>
-                    ))}
-                  </div>
-                </div>
 
                 <div>
                   <label className="font-extrabold text-slate-700 block mb-1 font-outfit text-xs">
@@ -436,6 +443,46 @@ export const LoginPage: React.FC<LoginPageProps> = ({
                       className="w-full pl-9 pr-3 py-2.5 bg-slate-50 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:outline-none focus:border-teal-600 focus:bg-white transition-colors"
                     />
                   </div>
+                </div>
+              </div>
+
+              {/* 3. Baris Penuh: Instansi / Tempat Bertugas / Perusahaan (Fleksibel & Cepat) */}
+              <div>
+                <div className="flex items-center justify-between mb-1">
+                  <label className="font-extrabold text-slate-700 font-outfit text-xs">
+                    Instansi / Tempat Bertugas / Perusahaan
+                  </label>
+                  <span className="text-[10px] text-slate-400 font-medium">(Opsional / Kampus / Mandiri)</span>
+                </div>
+                <div className="relative flex items-center">
+                  <Building2 className="w-4 h-4 text-slate-400 absolute left-3 pointer-events-none" />
+                  <input
+                    type="text"
+                    value={institution}
+                    onChange={(e) => setInstitution(e.target.value)}
+                    placeholder="Contoh: RS Medika / PT Kalbe Farma / Dinkes Kota / Apotek K-24 / Mandiri"
+                    className="w-full pl-9 pr-3 py-2.5 bg-slate-50 rounded-xl border border-slate-200 text-slate-900 font-semibold focus:outline-none focus:border-teal-600 focus:bg-white transition-colors"
+                  />
+                </div>
+                {/* Preset saran cepat instansi */}
+                <div className="flex items-center gap-1.5 flex-wrap mt-1.5">
+                  <span className="text-[10px] text-slate-400 font-medium">Saran cepat:</span>
+                  {INSTITUTION_PRESETS.map((preset) => (
+                    <button
+                      key={preset}
+                      type="button"
+                      onClick={() => {
+                        if (!institution || institution === 'Praktik Mandiri / Non-Faskes') {
+                          setInstitution(preset);
+                        } else if (!institution.includes(preset)) {
+                          setInstitution(`${preset} ${institution}`);
+                        }
+                      }}
+                      className="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-slate-100 hover:bg-teal-50 hover:text-teal-700 text-slate-600 border border-slate-200/80 transition-colors cursor-pointer"
+                    >
+                      +{preset}
+                    </button>
+                  ))}
                 </div>
               </div>
 
