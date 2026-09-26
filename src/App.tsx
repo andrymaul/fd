@@ -1702,19 +1702,26 @@ export default function App() {
               )}
 
               {activeTab === 'interactions' && (
-                <InteractionChecker
-                  drugs={drugs}
-                  interactions={interactions}
-                  currentUser={currentUser}
-                  pricingPlans={pricingPlans}
-                  onOpenPricingModal={() => setShowPricingModal(true)}
-                  onOpenAuthModal={() => handleSelectTab('login')}
-                  onOpenReportModal={(selectedDrugs, matchedInteractions) =>
-                    setReportModalData({ selectedDrugs, interactions: matchedInteractions })
-                  }
-                  preselectedDrugName={preselectedDrugName}
-                  preselectedDrugNames={preselectedDrugNames}
-                />
+                !(isProUser || currentUser?.canAccessInteractions) ? (
+                  renderProFeatureGate(
+                    "Pemeriksa Interaksi Obat Terpadu DDInter 2.0 (Drug Interaction Checker)",
+                    "Akses komprehensif penapisan interaksi multi-obat berstandar DDInter 2.0 (Nature Protocols), evaluasi derajat keparahan klinis (Mayor, Moderat, Minor), monografi verbatim rujukan resmi, serta rekomendasi alternatif bebas interaksi (Clinical Safe Switch)."
+                  )
+                ) : (
+                  <InteractionChecker
+                    drugs={drugs}
+                    interactions={interactions}
+                    currentUser={currentUser}
+                    pricingPlans={pricingPlans}
+                    onOpenPricingModal={() => setShowPricingModal(true)}
+                    onOpenAuthModal={() => handleSelectTab('login')}
+                    onOpenReportModal={(selectedDrugs, matchedInteractions) =>
+                      setReportModalData({ selectedDrugs, interactions: matchedInteractions })
+                    }
+                    preselectedDrugName={preselectedDrugName}
+                    preselectedDrugNames={preselectedDrugNames}
+                  />
+                )
               )}
 
               {activeTab === 'side-effects' && (

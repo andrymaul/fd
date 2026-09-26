@@ -4,7 +4,8 @@ import { getPathFromTab } from '../utils/routes';
 import { 
   Sparkles, 
   Search, 
-  X
+  X,
+  Gift
 } from 'lucide-react';
 import {
   DuoInteractionIcon,
@@ -60,6 +61,8 @@ interface LauncherModule {
   iconBg: string;
 }
 
+const STARTER_MODULE_IDS = new Set(['drugs', 'swamedikasi', 'usage']);
+
 export const Dashboard: React.FC<DashboardProps> = ({
   currentUser,
   drugs = [],
@@ -76,6 +79,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
   onToggleTrialStatus
 }) => {
   const [moduleSearch, setModuleSearch] = useState('');
+  const [selectedPackageFilter, setSelectedPackageFilter] = useState<'all' | 'starter' | 'pro'>('all');
 
   // Standar Palet Warna Pilihan B: Deep Pine Teal (#005f5a) Dominan + Aksen Peringatan Bahaya Medis
   const PINE_TEAL = 'text-[#005f5a] dark:text-teal-400';
@@ -83,6 +87,33 @@ export const Dashboard: React.FC<DashboardProps> = ({
   // Seluruh 27 modul klinis dalam format Launcher Ringkas (Ikon + Nama Tanpa Pengotakan)
   const allModules: LauncherModule[] = useMemo(() => {
     const list: LauncherModule[] = [
+      // === MODUL STARTER (FREE) DI PALING AWAL ===
+      {
+        id: 'drugs',
+        title: 'Katalog Obat',
+        keywords: 'monografi katalog informasi obat bpom mims indikasi dosis efek samping',
+        icon: DuoDrugCatalogIcon,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'swamedikasi',
+        title: 'Swamedikasi',
+        keywords: 'swamedikasi triage apotek keluhan umum wwham obat bebas dotb rujukan',
+        icon: DuoSwamedikasiIcon,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+      {
+        id: 'usage',
+        title: 'Cara Pakai',
+        keywords: 'panduan tata cara pakai sediaan khusus inhaler mdi insulin pen suppositoria obat',
+        icon: DuoUsageGuideIcon,
+        iconColor: PINE_TEAL,
+        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
+      },
+
+      // === MODUL PRO TERPADU ===
       // 1. Skrining & Keamanan Resep
       {
         id: 'interactions',
@@ -185,14 +216,6 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
       // 3. Konseling & Edukasi Pasien
       {
-        id: 'swamedikasi',
-        title: 'Swamedikasi',
-        keywords: 'swamedikasi triage apotek keluhan umum wwham obat bebas dotb rujukan',
-        icon: DuoSwamedikasiIcon,
-        iconColor: PINE_TEAL,
-        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
-      },
-      {
         id: 'whatsapp-pio',
         title: 'Kartu PIO',
         keywords: 'kartu pio whatsapp pasien etiket digital konseling informasi obat',
@@ -205,14 +228,6 @@ export const Dashboard: React.FC<DashboardProps> = ({
         title: 'Edukasi AI',
         keywords: 'generator edukasi farmasi ai master prompt leaflet poster promkes',
         icon: DuoEducationAiIcon,
-        iconColor: PINE_TEAL,
-        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
-      },
-      {
-        id: 'usage',
-        title: 'Cara Pakai',
-        keywords: 'panduan tata cara pakai sediaan khusus inhaler mdi insulin pen suppositoria obat',
-        icon: DuoUsageGuideIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       },
@@ -273,32 +288,32 @@ export const Dashboard: React.FC<DashboardProps> = ({
         icon: DuoRegulationsIcon,
         iconColor: PINE_TEAL,
         iconBg: 'bg-teal-50 dark:bg-teal-950/60'
-      },
-
-      // 5. Modul Inti & Data
-      {
-        id: 'drugs',
-        title: 'Katalog Obat',
-        keywords: 'monografi katalog informasi obat bpom mims indikasi dosis efek samping',
-        icon: DuoDrugCatalogIcon,
-        iconColor: PINE_TEAL,
-        iconBg: 'bg-teal-50 dark:bg-teal-950/60'
       }
     ];
 
     return list;
   }, []);
 
-  // Modul yang tersaring berdasarkan input pencarian
+  // Modul yang tersaring berdasarkan input pencarian dan filter paket
   const filteredModules = useMemo(() => {
-    if (!moduleSearch.trim()) return allModules;
+    let list = allModules;
+
+    // Filter berdasarkan paket (Starter / Pro)
+    if (selectedPackageFilter === 'starter') {
+      list = list.filter((mod) => STARTER_MODULE_IDS.has(mod.id));
+    } else if (selectedPackageFilter === 'pro') {
+      list = list.filter((mod) => !STARTER_MODULE_IDS.has(mod.id));
+    }
+
+    // Filter berdasarkan kata kunci pencarian
+    if (!moduleSearch.trim()) return list;
     const q = moduleSearch.toLowerCase().trim();
-    return allModules.filter((mod) => (
+    return list.filter((mod) => (
       mod.title.toLowerCase().includes(q) ||
       (mod.keywords && mod.keywords.toLowerCase().includes(q)) ||
       mod.id.toLowerCase().includes(q)
     ));
-  }, [allModules, moduleSearch]);
+  }, [allModules, moduleSearch, selectedPackageFilter]);
 
   return (
     <div className="space-y-6 max-w-7xl mx-auto px-1 sm:px-2">
@@ -372,6 +387,63 @@ export const Dashboard: React.FC<DashboardProps> = ({
         )}
       </div>
 
+      {/* FILTER PAKET: SEMUA MODUL vs PAKET STARTER (FREE) vs PAKET PRO */}
+      <div className="flex flex-wrap items-center justify-between gap-2.5 pt-1">
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          {/* Semua Modul */}
+          <button
+            type="button"
+            onClick={() => setSelectedPackageFilter('all')}
+            className={`px-3 py-1.5 rounded-xl text-xs font-bold font-jakarta transition-all cursor-pointer whitespace-nowrap ${
+              selectedPackageFilter === 'all'
+                ? 'bg-[#005f5a] text-white shadow-xs'
+                : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800'
+            }`}
+          >
+            Semua Modul ({allModules.length})
+          </button>
+
+          {/* Paket Starter (FREE) */}
+          <button
+            type="button"
+            onClick={() => setSelectedPackageFilter('starter')}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold font-jakarta transition-all cursor-pointer whitespace-nowrap ${
+              selectedPackageFilter === 'starter'
+                ? 'bg-emerald-600 text-white shadow-xs ring-2 ring-emerald-500/30'
+                : 'bg-emerald-50/90 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-100/80 dark:hover:bg-emerald-950/70 border border-emerald-300/80 dark:border-emerald-800/80'
+            }`}
+          >
+            <Gift className="w-3.5 h-3.5 text-current shrink-0" />
+            <span>Paket Starter ({STARTER_MODULE_IDS.size})</span>
+            <span className={`text-[10px] font-black uppercase px-1.5 py-0.2 rounded-md font-mono ${
+              selectedPackageFilter === 'starter' ? 'bg-emerald-700 text-white' : 'bg-emerald-200/90 text-emerald-900'
+            }`}>
+              FREE
+            </span>
+          </button>
+
+          {/* Paket Pro */}
+          <button
+            type="button"
+            onClick={() => setSelectedPackageFilter('pro')}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold font-jakarta transition-all cursor-pointer whitespace-nowrap ${
+              selectedPackageFilter === 'pro'
+                ? 'bg-amber-600 text-white shadow-xs ring-2 ring-amber-500/30'
+                : 'bg-amber-50/80 dark:bg-amber-950/30 text-amber-900 dark:text-amber-300 hover:bg-amber-100/80 dark:hover:bg-amber-950/60 border border-amber-300/70 dark:border-amber-800/60'
+            }`}
+          >
+            <Sparkles className="w-3.5 h-3.5 text-current shrink-0" />
+            <span>Paket Pro ({allModules.length - STARTER_MODULE_IDS.size})</span>
+          </button>
+        </div>
+
+        {selectedPackageFilter === 'starter' && (
+          <div className="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-950/60 px-3 py-1 rounded-xl border border-emerald-200 dark:border-emerald-800">
+            <span>✨ {STARTER_MODULE_IDS.size} Modul aktif selamanya tanpa biaya langganan</span>
+          </div>
+        )}
+      </div>
+
       {/* BORDERLESS APP LAUNCHER GRID (Ikon & Nama Singkat Tanpa Pengotakan) */}
       {filteredModules.length === 0 ? (
         <div className="bg-white dark:bg-slate-900 rounded-3xl border border-dashed border-slate-200 dark:border-slate-800 p-10 text-center space-y-3">
@@ -396,6 +468,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
           {filteredModules.map((mod) => {
             const Icon = mod.icon;
             const itemHref = getPathFromTab(mod.id);
+            const isStarter = STARTER_MODULE_IDS.has(mod.id);
             return (
               <a
                 key={mod.id}
@@ -410,8 +483,13 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 title={mod.title}
               >
                 {/* Pure Large Standalone Icon - Tanpa Pengotakan/Border/Background Box */}
-                <div className="flex items-center justify-center transition-all duration-300 group-hover:scale-115 group-hover:-translate-y-2">
+                <div className="relative flex items-center justify-center transition-all duration-300 group-hover:scale-115 group-hover:-translate-y-2">
                   <Icon className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 stroke-[1.75] transition-all duration-300 ${mod.iconColor} group-hover:drop-shadow-[0_8px_16px_rgba(0,95,90,0.22)]`} />
+                  {isStarter && (
+                    <span className="absolute -top-1 -right-2 text-[9px] font-black uppercase px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700 font-mono shadow-2xs">
+                      Free
+                    </span>
+                  )}
                 </div>
 
                 {/* Nama Modul Lebih Besar, Tegas & Padat (Font Plus Jakarta Sans) */}

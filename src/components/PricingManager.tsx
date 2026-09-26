@@ -173,6 +173,7 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
       maxHistoryRecords: plan.id === 'free' ? 0 : 999,
       canAccessClinicBranding: plan.id === 'pro',
       canExportExcelCsv: plan.id !== 'free',
+      canAccessInteractions: plan.id !== 'free',
       canAccessIvCompatibility: plan.id !== 'free',
       canAccessPregnancy: plan.id !== 'free',
       canAccessHerbDrug: plan.id !== 'free',
@@ -223,6 +224,7 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
           maxHistoryRecords: 999,
           canAccessClinicBranding: true,
           canExportExcelCsv: true,
+          canAccessInteractions: true,
           canAccessIvCompatibility: true,
           canAccessToxicology: true,
           canAccessHighAlert: true,
@@ -259,7 +261,7 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
       return {
         ...p,
         permissions: {
-          maxDrugsPerCheck: 4,
+          maxDrugsPerCheck: 0,
           canPrintPdfReport: false,
           canAccessFoodInteractions: false,
           canAccessTherapeuticDuplications: false,
@@ -267,6 +269,7 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
           maxHistoryRecords: 0,
           canAccessClinicBranding: false,
           canExportExcelCsv: false,
+          canAccessInteractions: false,
           canAccessIvCompatibility: false,
           canAccessToxicology: false,
           canAccessHighAlert: false,
@@ -853,6 +856,25 @@ export const PricingManager: React.FC<PricingManagerProps> = ({
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {/* Penapisan Interaksi Obat */}
+                  <label className="p-3.5 bg-white rounded-2xl border border-slate-200 hover:border-rose-300 transition-colors shadow-2xs flex items-start gap-3 cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked={Boolean(perms.canAccessInteractions)}
+                      onChange={() => togglePermission('canAccessInteractions')}
+                      className="mt-0.5 rounded text-teal-600 focus:ring-teal-500 w-4 h-4 cursor-pointer"
+                    />
+                    <div className="space-y-0.5">
+                      <p className="text-xs font-bold text-slate-900 font-outfit flex items-center gap-1.5">
+                        <ShieldAlert className="w-3.5 h-3.5 text-rose-600" />
+                        Pemeriksa Interaksi Obat Terpadu (DDInter 2.0)
+                      </p>
+                      <p className="text-[11px] text-slate-500 leading-snug">
+                        Akses modul penapisan interaksi multi-obat, monografi rujukan resmi, derajat klinis &amp; Clinical Safe Switch.
+                      </p>
+                    </div>
+                  </label>
+
                   {/* Kompatibilitas IV */}
                   <label className="p-3.5 bg-white rounded-2xl border border-slate-200 hover:border-sky-300 transition-colors shadow-2xs flex items-start gap-3 cursor-pointer">
                     <input

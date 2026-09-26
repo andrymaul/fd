@@ -674,19 +674,18 @@ export const PRICING_PLANS: PricingPlan[] = [
     priceFormatted: 'Gratis',
     priceValue: 0,
     period: 'Selamanya (Akses Gratis)',
-    description: 'Akses gratis penelusuran monografi obat, panduan cara pakai, swamedikasi apotek, dan uji interaksi hingga 4 obat.',
+    description: 'Akses gratis penelusuran monografi obat, panduan cara pakai, dan modul swamedikasi apotek.',
     features: [
       'Pencarian Seluruh Monografi & Brand Obat Indonesia (Full)',
-      'Cek Interaksi Obat Hingga 4 Obat Sekaligus (Resep Standar)',
       'Modul Swamedikasi Lengkap & Skrining Keluhan (DOWA BPOM)',
       'Akses Modul Panduan Cara Pakai Obat & Edukasi Pasien',
-      'Ringkasan Derajat Keparahan (Major, Moderate, Minor)',
       'Dukungan Komunitas Farmasi & FAQ'
     ],
     isPopular: false,
     ctaText: 'Mulai Gratis Sekarang',
     permissions: {
-      maxDrugsPerCheck: 4,
+      maxDrugsPerCheck: 0,
+      canAccessInteractions: false,
       canPrintPdfReport: false,
       canAccessFoodInteractions: false,
       canAccessTherapeuticDuplications: false,
@@ -758,6 +757,7 @@ export const PRICING_PLANS: PricingPlan[] = [
     ctaText: 'Ambil Promo Pro Rp 199rb / Tahun',
     permissions: {
       maxDrugsPerCheck: 99,
+      canAccessInteractions: true,
       canPrintPdfReport: true,
       canAccessFoodInteractions: true,
       canAccessTherapeuticDuplications: true,
@@ -801,7 +801,7 @@ export interface FeatureComparison {
 
 export const PRICING_FEATURE_COMPARISON: FeatureComparison[] = [
   { featureName: 'Pencarian Seluruh Monografi & Brand Obat', free: 'Akses Penuh', pro: 'Akses Penuh' },
-  { featureName: 'Cek Interaksi Obat Sekaligus (DDInter)', free: 'Hingga 4 Obat', pro: 'Polifarmasi Bebas (>10 Obat)' },
+  { featureName: 'Pemeriksa Interaksi Obat Terpadu (DDInter 2.0)', free: false, pro: 'Akses Penuh (Polifarmasi Bebas)' },
   { featureName: 'Modul Swamedikasi & Skrining Keluhan (DOWA BPOM)', free: true, pro: true },
   { featureName: 'Panduan Cara Pakai Obat & Edukasi Pasien', free: true, pro: true },
   { featureName: 'Kompatibilitas Injeksi IV & ICU (ASHP)', free: false, pro: true },
@@ -830,7 +830,7 @@ export const PRICING_FAQS = [
   },
   {
     q: 'Apa perbedaan mendasar antara Paket Starter dan Paket Pro?',
-    a: 'Paket Starter 100% gratis untuk pencarian seluruh monografi obat, cek interaksi obat hingga 4 obat sekaligus, modul swamedikasi keluhan apotek & DOWA BPOM, dan panduan cara pakai obat. Paket Pro membuka seluruh 18+ modul klinis terpadu: evaluasi polifarmasi tanpa batas (>10 obat sekaligus), kriteria Beers 2023, kompatibilitas IV ICU ASHP Trissel’s, kalkulator BUD racikan USP <795>, dosis anak, keamanan bumil & busui, kartu PIO WhatsApp, Pusat Belajar Farmasi, interaksi lab semu, jamu/herbal, efek samping Naranjo, kalkulator ginjal & skor medis, panduan terapi PNPK Kemenkes, cetak laporan PDF dengan kop surat klinik, dan arsip riwayat cloud.'
+    a: 'Paket Starter 100% gratis untuk pencarian seluruh monografi obat, modul swamedikasi keluhan apotek & DOWA BPOM, dan panduan cara pakai obat. Paket Pro membuka seluruh 21 modul klinis terpadu: cek interaksi obat multi-kombinasi DDInter 2.0 tanpa batas (>10 obat sekaligus), evaluasi polifarmasi, kriteria Beers 2023, kompatibilitas IV ICU ASHP Trissel’s, kalkulator BUD racikan USP <795>, dosis anak, keamanan bumil & busui, kartu PIO WhatsApp, Pusat Belajar Farmasi, interaksi lab semu, jamu/herbal, efek samping Naranjo, kalkulator ginjal & skor medis, panduan terapi PNPK Kemenkes, cetak laporan PDF dengan kop surat klinik, dan arsip riwayat cloud.'
   },
   {
     q: 'Metode pembayaran apa saja yang didukung untuk Paket Pro?',

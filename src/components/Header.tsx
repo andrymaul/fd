@@ -36,7 +36,6 @@ import {
   CalendarClock,
   Leaf,
   Send,
-  ArrowUpRight,
   Clock,
   Instagram,
   Wand2,
@@ -102,7 +101,7 @@ export const Header: React.FC<HeaderProps> = ({
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const profileDropdownRef = useRef<HTMLDivElement>(null);
 
-  // Close profile dropdown on outside click or escape
+  // Close dropdowns on outside click or escape
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (profileDropdownRef.current && !profileDropdownRef.current.contains(event.target as Node)) {

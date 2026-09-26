@@ -39,7 +39,7 @@ const ALL_FAQS: FaqItem[] = [
     id: 'pricing-2',
     category: 'pricing',
     q: 'Apa perbedaan mendasar antara Paket Starter dan Paket Pro?',
-    a: 'Paket Starter 100% gratis untuk pencarian seluruh monografi obat, cek interaksi hingga 4 obat sekaligus, modul swamedikasi keluhan apotek & DOWA BPOM, dan panduan cara pakai obat. Paket Pro membuka seluruh 26 modul klinis terpadu: evaluasi polifarmasi tanpa batas (>10 obat sekaligus), kriteria Beers 2023, kompatibilitas IV ICU ASHP Trissel’s, kalkulator BUD racikan USP <795>, dosis anak, keamanan bumil & busui, kartu PIO WhatsApp, Pusat Belajar Farmasi (UKMPPAI & OSCE), interaksi lab semu, jamu/herbal, efek samping Naranjo, kalkulator ginjal & skor medis, panduan terapi PNPK Kemenkes, cetak laporan PDF dengan kop surat faskes, dan arsip riwayat cloud.'
+    a: 'Paket Starter 100% gratis untuk pencarian seluruh monografi obat, modul swamedikasi keluhan apotek & DOWA BPOM, dan panduan cara pakai obat. Paket Pro membuka seluruh 21 modul klinis terpadu: cek interaksi obat multi-kombinasi DDInter 2.0 tanpa batas (>10 obat sekaligus), evaluasi polifarmasi, kriteria Beers 2023, kompatibilitas IV ICU ASHP Trissel’s, kalkulator BUD racikan USP <795>, dosis anak, keamanan bumil & busui, kartu PIO WhatsApp, Pusat Belajar Farmasi (UKMPPAI & OSCE), interaksi lab semu, jamu/herbal, efek samping Naranjo, kalkulator ginjal & skor medis, panduan terapi PNPK Kemenkes, cetak laporan PDF dengan kop surat faskes, dan arsip riwayat cloud.'
   },
   {
     id: 'pricing-3',

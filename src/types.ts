@@ -216,6 +216,7 @@ export interface UserProfile {
   subscriptionStatus: 'active' | 'expired' | 'trial';
   maxDrugsOverride?: number;
   canExportPdf?: boolean;
+  canAccessInteractions?: boolean;
   canAccessRenal?: boolean;
   canAccessPolypharmacy?: boolean;
   canAccessIvCompatibility?: boolean;
@@ -283,6 +284,7 @@ export interface CustomerPlanPermissions {
   canExportExcelCsv: boolean;
 
   // Modul Skrining Klinis & Keamanan Resep
+  canAccessInteractions?: boolean;
   canAccessIvCompatibility?: boolean;
   canAccessToxicology?: boolean;
   canAccessHighAlert?: boolean;
